@@ -26,18 +26,231 @@ public class GUIRegistroVehiculo extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jTabbedPaneRegistrarvehiculo = new javax.swing.JTabbedPane();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jButtonSalir = new javax.swing.JButton();
+        jButtonSalir1 = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextPaneDisplayRegistro = new javax.swing.JTextPane();
+        jLabelRegistro_de_Vehiculos = new javax.swing.JLabel();
+        jLabelPlaca = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTextPane1 = new javax.swing.JTextPane();
+        jLabelMarca = new javax.swing.JLabel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jTextPane2 = new javax.swing.JTextPane();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        JTextPaneModelo = new javax.swing.JTextPane();
+        jLabelPlacaModelo = new javax.swing.JLabel();
+        jLabelPlacaAnnio = new javax.swing.JLabel();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        jTextPaneAnnio = new javax.swing.JTextPane();
+        jLabelColor = new javax.swing.JLabel();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        jTextPaneColor = new javax.swing.JTextPane();
+        jScrollPane7 = new javax.swing.JScrollPane();
+        jTextPaneCilindraje = new javax.swing.JTextPane();
+        jLabelPlacaCilindraje = new javax.swing.JLabel();
+        jLabelCombustible = new javax.swing.JLabel();
+        jButtonModificarVehiculo = new javax.swing.JButton();
+        jButtonRefrescarRegistro = new javax.swing.JButton();
+        jComboBoxSelectorDeCombustible = new javax.swing.JComboBox<>();
+        jPanel2 = new javax.swing.JPanel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Vehiculo");
+
+        jTabbedPaneRegistrarvehiculo.setBackground(new java.awt.Color(102, 255, 102));
+        jTabbedPaneRegistrarvehiculo.setForeground(new java.awt.Color(0, 0, 0));
+
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+
+        jLabel1.setForeground(java.awt.Color.black);
+        jLabel1.setText("Registrar Vehiculo");
+
+        jButtonSalir.setBackground(new java.awt.Color(0, 51, 255));
+        jButtonSalir.setForeground(new java.awt.Color(255, 255, 255));
+        jButtonSalir.setText("Registrar nuevo vehículo");
+
+        jButtonSalir1.setBackground(new java.awt.Color(255, 51, 153));
+        jButtonSalir1.setForeground(new java.awt.Color(0, 0, 0));
+        jButtonSalir1.setText("Salir");
+
+        jScrollPane1.setViewportView(jTextPaneDisplayRegistro);
+
+        jLabelRegistro_de_Vehiculos.setForeground(new java.awt.Color(0, 0, 0));
+        jLabelRegistro_de_Vehiculos.setText("Registro de Vehiculos");
+
+        jLabelPlaca.setForeground(new java.awt.Color(0, 0, 0));
+        jLabelPlaca.setText("Placa:");
+
+        jScrollPane2.setViewportView(jTextPane1);
+
+        jLabelMarca.setForeground(new java.awt.Color(0, 0, 0));
+        jLabelMarca.setText("Marca:");
+
+        jScrollPane3.setViewportView(jTextPane2);
+
+        jScrollPane4.setViewportView(JTextPaneModelo);
+
+        jLabelPlacaModelo.setForeground(new java.awt.Color(0, 0, 0));
+        jLabelPlacaModelo.setText("Modelo:");
+
+        jLabelPlacaAnnio.setForeground(new java.awt.Color(0, 0, 0));
+        jLabelPlacaAnnio.setText("Año:");
+
+        jScrollPane5.setViewportView(jTextPaneAnnio);
+
+        jLabelColor.setForeground(new java.awt.Color(0, 0, 0));
+        jLabelColor.setText("Color:");
+
+        jScrollPane6.setViewportView(jTextPaneColor);
+
+        jScrollPane7.setViewportView(jTextPaneCilindraje);
+
+        jLabelPlacaCilindraje.setForeground(new java.awt.Color(0, 0, 0));
+        jLabelPlacaCilindraje.setText("Ciilindraje:");
+
+        jLabelCombustible.setForeground(new java.awt.Color(0, 0, 0));
+        jLabelCombustible.setText("Tipo de Combustible:");
+
+        jButtonModificarVehiculo.setBackground(new java.awt.Color(102, 255, 102));
+        jButtonModificarVehiculo.setForeground(new java.awt.Color(255, 255, 255));
+        jButtonModificarVehiculo.setText("Modificar vehiculo existente");
+
+        jButtonRefrescarRegistro.setBackground(new java.awt.Color(255, 204, 204));
+        jButtonRefrescarRegistro.setForeground(new java.awt.Color(0, 0, 0));
+        jButtonRefrescarRegistro.setText("Refrescar despliegue de registro de Vehiculos");
+
+        jComboBoxSelectorDeCombustible.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Gasolina", "Diesel", "Eléctrico", "Gas Natural" }));
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(478, 478, 478)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jButtonModificarVehiculo, javax.swing.GroupLayout.DEFAULT_SIZE, 192, Short.MAX_VALUE)
+                    .addComponent(jButtonSalir, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButtonSalir1, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(48, 48, 48))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(15, 15, 15)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jComboBoxSelectorDeCombustible, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabelPlaca)
+                            .addComponent(jLabelCombustible, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabelPlacaModelo)
+                            .addComponent(jLabelColor)
+                            .addComponent(jLabelMarca)
+                            .addComponent(jLabelPlacaAnnio)
+                            .addComponent(jLabelPlacaCilindraje)
+                            .addComponent(jScrollPane7)
+                            .addComponent(jScrollPane6)
+                            .addComponent(jScrollPane5)
+                            .addComponent(jScrollPane4)
+                            .addComponent(jScrollPane3)
+                            .addComponent(jScrollPane2))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 570, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabelRegistro_de_Vehiculos))
+                    .addComponent(jButtonRefrescarRegistro, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 313, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(40, 40, 40)
+                        .addComponent(jLabelRegistro_de_Vehiculos))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGap(8, 8, 8)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabelPlaca)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(1, 1, 1)
+                        .addComponent(jLabelMarca)
+                        .addGap(1, 1, 1)
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(6, 6, 6)
+                        .addComponent(jLabelPlacaModelo)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(4, 4, 4)
+                        .addComponent(jLabelPlacaAnnio)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabelColor)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(4, 4, 4)
+                        .addComponent(jLabelPlacaCilindraje)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabelCombustible)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jComboBoxSelectorDeCombustible, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButtonRefrescarRegistro)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButtonSalir1)
+                    .addComponent(jButtonSalir))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButtonModificarVehiculo)
+                .addGap(90, 90, 90))
+        );
+
+        jTabbedPaneRegistrarvehiculo.addTab("Registrar Vehiculo", new javax.swing.ImageIcon(getClass().getResource("/AnexosEImagenes/addImage.png")), jPanel1); // NOI18N
+
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 900, Short.MAX_VALUE)
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 608, Short.MAX_VALUE)
+        );
+
+        jTabbedPaneRegistrarvehiculo.addTab("Modificar Vehiculo", new javax.swing.ImageIcon(getClass().getResource("/AnexosEImagenes/editImage.png")), jPanel2); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(jTabbedPaneRegistrarvehiculo, javax.swing.GroupLayout.DEFAULT_SIZE, 900, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jTabbedPaneRegistrarvehiculo, javax.swing.GroupLayout.PREFERRED_SIZE, 550, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 12, Short.MAX_VALUE))
         );
+
+        jTabbedPaneRegistrarvehiculo.getAccessibleContext().setAccessibleName("Registrar Vehículo");
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -79,5 +292,36 @@ public class GUIRegistroVehiculo extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextPane JTextPaneModelo;
+    private javax.swing.JButton jButtonModificarVehiculo;
+    private javax.swing.JButton jButtonRefrescarRegistro;
+    private javax.swing.JButton jButtonSalir;
+    private javax.swing.JButton jButtonSalir1;
+    private javax.swing.JComboBox<String> jComboBoxSelectorDeCombustible;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabelColor;
+    private javax.swing.JLabel jLabelCombustible;
+    private javax.swing.JLabel jLabelMarca;
+    private javax.swing.JLabel jLabelPlaca;
+    private javax.swing.JLabel jLabelPlacaAnnio;
+    private javax.swing.JLabel jLabelPlacaCilindraje;
+    private javax.swing.JLabel jLabelPlacaModelo;
+    private javax.swing.JLabel jLabelRegistro_de_Vehiculos;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JScrollPane jScrollPane6;
+    private javax.swing.JScrollPane jScrollPane7;
+    private javax.swing.JTabbedPane jTabbedPaneRegistrarvehiculo;
+    private javax.swing.JTextPane jTextPane1;
+    private javax.swing.JTextPane jTextPane2;
+    private javax.swing.JTextPane jTextPaneAnnio;
+    private javax.swing.JTextPane jTextPaneCilindraje;
+    private javax.swing.JTextPane jTextPaneColor;
+    private javax.swing.JTextPane jTextPaneDisplayRegistro;
     // End of variables declaration//GEN-END:variables
 }
