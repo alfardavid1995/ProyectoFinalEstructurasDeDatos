@@ -1,4 +1,5 @@
 package proyectofinal_estructuras;
+import EstructurasDeDatos.*;
 
 public class Vehiculo {
     private String numPlacadeVehiculo;
@@ -12,7 +13,7 @@ public class Vehiculo {
     private double precioAlquilerXDiaDeVehiculo;
     private String estadoParaSerAlquilado; // libre o alquilado
     private int cantidadDeVecesAlquilado;
-    //private pilaExtrasVehuculo extras ;
+    private PilaExtras_Vehiculo extrasPila ;
 
     public Vehiculo(String numPlacadeVehiculo, String marcaDeVehiculo, String modeloVehiculo, int aniodeVehiculo, String colorDeVehiculo, int cilindradaDeVehiculo, String tipoCombustibleDeVehiculo, int cantPasajerosdeVehiculo, double precioAlquilerXDiaDeVehiculo, String estadoParaSerAlquilado) {
         this.numPlacadeVehiculo = numPlacadeVehiculo;
