@@ -1,111 +1,123 @@
 package proyectofinal_estructuras;
 
 public class Vehiculo {
-    private String numPlaca;
-    private String marca;
-    private String modelo;
-    private int anio;
-    private String color;
-    private int cilindrada;
-    private String tipoCombustible;
-    private int cantPasajeros;
-    private double precioAlquilerXDia;
+    private String numPlacadeVehiculo;
+    private String marcaDeVehiculo;
+    private String modeloVehiculo;
+    private int aniodeVehiculo;
+    private String colorDeVehiculo;
+    private int cilindradaDeVehiculo;
+    private String tipoCombustibleDeVehiculo;
+    private int cantPasajerosdeVehiculo;
+    private double precioAlquilerXDiaDeVehiculo;
+    private String estadoParaSerAlquilado; // libre o alquilado
+    private int cantidadDeVecesAlquilado;
     //private pilaExtrasVehuculo extras ;
 
-    public Vehiculo(String numPlaca, String marca, String modelo, int anio, 
-            String color, int cilindrada, String tipoCombustible, 
-            int cantPasajeros, double precioAlquilerXDia) {
-        this.numPlaca = numPlaca;
-        this.marca = marca;
-        this.modelo = modelo;
-        this.anio = anio;
-        this.color = color;
-        this.cilindrada = cilindrada;
-        this.tipoCombustible = tipoCombustible;
-        this.cantPasajeros = cantPasajeros;
-        this.precioAlquilerXDia = precioAlquilerXDia;
-    }
-
-    public String getNumPlaca() {
-        return numPlaca;
-    }
-
-    public void setNumPlaca(String numPlaca) {
-        this.numPlaca = numPlaca;
-    }
-
-    public String getMarca() {
-        return marca;
-    }
-
-    public void setMarca(String marca) {
-        this.marca = marca;
-    }
-
-    public String getModelo() {
-        return modelo;
-    }
-
-    public void setModelo(String modelo) {
-        this.modelo = modelo;
-    }
-
-    public int getAnio() {
-        return anio;
-    }
-
-    public void setAnio(int anio) {
-        this.anio = anio;
-    }
-
-    public String getColor() {
-        return color;
-    }
-
-    public void setColor(String color) {
-        this.color = color;
-    }
-
-    public int getCilindrada() {
-        return cilindrada;
-    }
-
-    public void setCilindrada(int cilindrada) {
-        this.cilindrada = cilindrada;
-    }
-
-    public String getTipoCombustible() {
-        return tipoCombustible;
-    }
-
-    public void setTipoCombustible(String tipoCombustible) {
-        this.tipoCombustible = tipoCombustible;
-    }
-
-    public int getCantPasajeros() {
-        return cantPasajeros;
-    }
-
-    public void setCantPasajeros(int cantPasajeros) {
-        this.cantPasajeros = cantPasajeros;
-    }
-
-    public double getPrecioAlquilerXDia() {
-        return precioAlquilerXDia;
-    }
-
-    public void setPrecioAlquilerXDia(double precioAlquilerXDia) {
-        this.precioAlquilerXDia = precioAlquilerXDia;
-    }
-
-    @Override
-    public String toString() {
-        return "Vehiculo{" + "numPlaca=" + numPlaca + ", marca=" + marca 
-                + ", modelo=" + modelo + ", anio=" + anio + ", color=" + color 
-                + ", cilindrada=" + cilindrada + ", tipoCombustible=" 
-                + tipoCombustible + ", cantPasajeros=" + cantPasajeros 
-                + ", precioAlquilerXDia=" + precioAlquilerXDia + '}';
+    public Vehiculo(String numPlacadeVehiculo, String marcaDeVehiculo, String modeloVehiculo, int aniodeVehiculo, String colorDeVehiculo, int cilindradaDeVehiculo, String tipoCombustibleDeVehiculo, int cantPasajerosdeVehiculo, double precioAlquilerXDiaDeVehiculo, String estadoParaSerAlquilado) {
+        this.numPlacadeVehiculo = numPlacadeVehiculo;
+        this.marcaDeVehiculo = marcaDeVehiculo;
+        this.modeloVehiculo = modeloVehiculo;
+        this.aniodeVehiculo = aniodeVehiculo;
+        this.colorDeVehiculo = colorDeVehiculo;
+        this.cilindradaDeVehiculo = cilindradaDeVehiculo;
+        this.tipoCombustibleDeVehiculo = tipoCombustibleDeVehiculo;
+        this.cantPasajerosdeVehiculo = cantPasajerosdeVehiculo;
+        this.precioAlquilerXDiaDeVehiculo = precioAlquilerXDiaDeVehiculo;
+        this.estadoParaSerAlquilado = estadoParaSerAlquilado;
     }
     
+    
+
+    public String getNumPlacadeVehiculo() {
+        return numPlacadeVehiculo;
+    }
+
+    public void setNumPlacadeVehiculo(String numPlacadeVehiculo) {
+        this.numPlacadeVehiculo = numPlacadeVehiculo;
+    }
+
+    public String getMarcaDeVehiculo() {
+        return marcaDeVehiculo;
+    }
+
+    public void setMarcaDeVehiculo(String marcaDeVehiculo) {
+        this.marcaDeVehiculo = marcaDeVehiculo;
+    }
+
+    public String getModeloVehiculo() {
+        return modeloVehiculo;
+    }
+
+    public void setModeloVehiculo(String modeloVehiculo) {
+        this.modeloVehiculo = modeloVehiculo;
+    }
+
+    public int getAniodeVehiculo() {
+        return aniodeVehiculo;
+    }
+
+    public void setAniodeVehiculo(int aniodeVehiculo) {
+        this.aniodeVehiculo = aniodeVehiculo;
+    }
+
+    public String getColorDeVehiculo() {
+        return colorDeVehiculo;
+    }
+
+    public void setColorDeVehiculo(String colorDeVehiculo) {
+        this.colorDeVehiculo = colorDeVehiculo;
+    }
+
+    public int getCilindradaDeVehiculo() {
+        return cilindradaDeVehiculo;
+    }
+
+    public void setCilindradaDeVehiculo(int cilindradaDeVehiculo) {
+        this.cilindradaDeVehiculo = cilindradaDeVehiculo;
+    }
+
+    public String getTipoCombustibleDeVehiculo() {
+        return tipoCombustibleDeVehiculo;
+    }
+
+    public void setTipoCombustibleDeVehiculo(String tipoCombustibleDeVehiculo) {
+        this.tipoCombustibleDeVehiculo = tipoCombustibleDeVehiculo;
+    }
+
+    public int getCantPasajerosdeVehiculo() {
+        return cantPasajerosdeVehiculo;
+    }
+
+    public void setCantPasajerosdeVehiculo(int cantPasajerosdeVehiculo) {
+        this.cantPasajerosdeVehiculo = cantPasajerosdeVehiculo;
+    }
+
+    public double getPrecioAlquilerXDiaDeVehiculo() {
+        return precioAlquilerXDiaDeVehiculo;
+    }
+
+    public void setPrecioAlquilerXDiaDeVehiculo(double precioAlquilerXDiaDeVehiculo) {
+        this.precioAlquilerXDiaDeVehiculo = precioAlquilerXDiaDeVehiculo;
+    }
+
+    public String getEstadoParaSerAlquilado() {
+        return estadoParaSerAlquilado;
+    }
+
+    public void setEstadoParaSerAlquilado(String estadoParaSerAlquilado) {
+        this.estadoParaSerAlquilado = estadoParaSerAlquilado;
+    }
+
+    public int getCantidadDeVecesAlquilado() {
+        return cantidadDeVecesAlquilado;
+    }
+
+    public void setCantidadDeVecesAlquilado(int cantidadDeVecesAlquilado) {
+        this.cantidadDeVecesAlquilado = cantidadDeVecesAlquilado;
+    }
+    
+
+
     
 }

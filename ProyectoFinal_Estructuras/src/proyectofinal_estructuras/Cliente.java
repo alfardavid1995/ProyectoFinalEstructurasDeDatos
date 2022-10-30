@@ -1,6 +1,7 @@
 package proyectofinal_estructuras;
 
 import java.util.Calendar;
+import EstructurasDeDatos.*;
 
 public class Cliente {
     private int cedula;
@@ -8,6 +9,7 @@ public class Cliente {
     private Calendar fechaNacimiento;   
     private String correoElectronico;
     private String categoria;
+    private PilaAlquileresRealizados_Cliente pilaAlquilerdeCliente;
 
     public Cliente(int cedula, String nombreCompleto, Calendar fechaNacimiento, 
             String correoElectronico, String categoria) {
