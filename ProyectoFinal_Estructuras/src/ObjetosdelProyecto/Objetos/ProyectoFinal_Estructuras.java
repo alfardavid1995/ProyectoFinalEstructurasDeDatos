@@ -1,4 +1,4 @@
-package proyectofinal_estructuras;
+package ObjetosdelProyecto.Objetos;
 
 public class ProyectoFinal_Estructuras {
 

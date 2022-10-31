@@ -1,4 +1,4 @@
-package proyectofinal_estructuras;
+package ObjetosdelProyecto.Objetos;
 import EstructurasDeDatos.*;
 
 public class Vehiculo {
@@ -11,7 +11,7 @@ public class Vehiculo {
     private String tipoCombustibleDeVehiculo;
     private int cantPasajerosdeVehiculo;
     private double precioAlquilerXDiaDeVehiculo;
-    private String estadoParaSerAlquilado; // libre o alquilado
+    private String estadoParaSerAlquilado; // disponible o alquilado
     private int cantidadDeVecesAlquilado;
     private PilaExtras_Vehiculo extrasPila ;
 
