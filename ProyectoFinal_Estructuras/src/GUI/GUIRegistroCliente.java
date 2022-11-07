@@ -26,21 +26,519 @@ public class GUIRegistroCliente extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jTabbedPane1 = new javax.swing.JTabbedPane();
+        jPanel1 = new javax.swing.JPanel();
+        jTextFieldNombreCliente = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jTextFieldCedulaCliente = new javax.swing.JTextField();
+        jTextFieldFechaCliente = new javax.swing.JTextField();
+        jTextFieldCorreoCliente = new javax.swing.JTextField();
+        jComboBoxCategorriaClente = new javax.swing.JComboBox<>();
+        jButton1 = new javax.swing.JButton();
+        jPanel2 = new javax.swing.JPanel();
+        jTextFieldNombreClienteModifica = new javax.swing.JTextField();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        jTextFieldCedulaClienteModifica = new javax.swing.JTextField();
+        jTextFieldFechaClienteModifica = new javax.swing.JTextField();
+        jTextFieldCorreoClienteModifica = new javax.swing.JTextField();
+        jComboBoxCategorriaClenteModifica = new javax.swing.JComboBox<>();
+        jButton2 = new javax.swing.JButton();
+        jSeparator1 = new javax.swing.JSeparator();
+        jLabel1 = new javax.swing.JLabel();
+        jTextFieldCedulaClienteVerificar = new javax.swing.JTextField();
+        jButton3 = new javax.swing.JButton();
+        jTextFieldClinetePoseeVehiculo = new javax.swing.JTextField();
+        jButtonEliminaCliente = new javax.swing.JButton();
+        jPanel3 = new javax.swing.JPanel();
+        jPanel4 = new javax.swing.JPanel();
+        jLabel16 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jTextFieldCedulaConsulta = new javax.swing.JTextField();
+        jScrollPane9 = new javax.swing.JScrollPane();
+        jTextPaneInformacionClinete = new javax.swing.JTextPane();
+        jButton4 = new javax.swing.JButton();
+        jButtonRefrescaPanel = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jTextFieldNombreCliente.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jTextFieldNombreCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldNombreClienteActionPerformed(evt);
+            }
+        });
+
+        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel4.setText("Registro de Clientes");
+
+        jLabel5.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel5.setText("Nombre Completo:");
+
+        jLabel6.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel6.setText("Número de Cédula:");
+
+        jLabel7.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel7.setText("Fecha de Nacimiento:");
+
+        jLabel8.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel8.setText("Correo Electrónico:");
+
+        jLabel9.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel9.setText("Categoría de Cliente:");
+
+        jTextFieldCedulaCliente.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jTextFieldCedulaCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldCedulaClienteActionPerformed(evt);
+            }
+        });
+
+        jTextFieldFechaCliente.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jTextFieldFechaCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldFechaClienteActionPerformed(evt);
+            }
+        });
+
+        jTextFieldCorreoCliente.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jTextFieldCorreoCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldCorreoClienteActionPerformed(evt);
+            }
+        });
+
+        jComboBoxCategorriaClente.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jComboBoxCategorriaClente.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Bronce", "Plata", "Oro", "Zafiro" }));
+        jComboBoxCategorriaClente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBoxCategorriaClenteActionPerformed(evt);
+            }
+        });
+
+        jButton1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jButton1.setText("Registrar");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(102, 102, 102)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel4)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jLabel5)
+                                        .addGap(18, 18, 18))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jLabel6)
+                                        .addGap(17, 17, 17)))
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jTextFieldNombreCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 654, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGap(323, 323, 323)
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel7)
+                                            .addComponent(jLabel9))
+                                        .addGap(18, 18, 18)
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jComboBoxCategorriaClente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jTextFieldFechaCliente)
+                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                                .addGap(0, 0, Short.MAX_VALUE)
+                                                .addComponent(jButton1))))))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel8)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGap(18, 18, 18)
+                                        .addComponent(jTextFieldCedulaCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                        .addGap(18, 18, 18)
+                                        .addComponent(jTextFieldCorreoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                        .addContainerGap(250, Short.MAX_VALUE))))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(43, 43, 43)
+                .addComponent(jLabel4)
+                .addGap(44, 44, 44)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTextFieldNombreCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel5))
+                .addGap(68, 68, 68)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel7)
+                    .addComponent(jTextFieldFechaCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextFieldCedulaCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel6))
+                .addGap(68, 68, 68)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTextFieldCorreoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel8)
+                    .addComponent(jLabel9)
+                    .addComponent(jComboBoxCategorriaClente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 91, Short.MAX_VALUE)
+                .addComponent(jButton1)
+                .addGap(170, 170, 170))
+        );
+
+        jTabbedPane1.addTab("Registrar Cliente", jPanel1);
+
+        jTextFieldNombreClienteModifica.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jTextFieldNombreClienteModifica.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldNombreClienteModificaActionPerformed(evt);
+            }
+        });
+
+        jLabel10.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel10.setText("Modificar de Clientes");
+
+        jLabel11.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel11.setText("Nombre Completo:");
+
+        jLabel12.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel12.setText("Numero de Cedula:");
+
+        jLabel13.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel13.setText("Fecha de Nacimiento:");
+
+        jLabel14.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel14.setText("Correo Electrónico:");
+
+        jLabel15.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel15.setText("Categoría de Cliente:");
+
+        jTextFieldCedulaClienteModifica.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jTextFieldCedulaClienteModifica.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldCedulaClienteModificaActionPerformed(evt);
+            }
+        });
+
+        jTextFieldFechaClienteModifica.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jTextFieldFechaClienteModifica.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldFechaClienteModificaActionPerformed(evt);
+            }
+        });
+
+        jTextFieldCorreoClienteModifica.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jTextFieldCorreoClienteModifica.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldCorreoClienteModificaActionPerformed(evt);
+            }
+        });
+
+        jComboBoxCategorriaClenteModifica.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jComboBoxCategorriaClenteModifica.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Bronce", "Plata", "Oro", "Zafiro" }));
+        jComboBoxCategorriaClenteModifica.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBoxCategorriaClenteModificaActionPerformed(evt);
+            }
+        });
+
+        jButton2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jButton2.setText("Modificar");
+
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel1.setText("Agregar el número de cédula del cliente a modificar");
+
+        jTextFieldCedulaClienteVerificar.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jTextFieldCedulaClienteVerificar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldCedulaClienteVerificarActionPerformed(evt);
+            }
+        });
+
+        jButton3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jButton3.setText("Verificar");
+
+        jTextFieldClinetePoseeVehiculo.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jTextFieldClinetePoseeVehiculo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldClinetePoseeVehiculoActionPerformed(evt);
+            }
+        });
+
+        jButtonEliminaCliente.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jButtonEliminaCliente.setText("Eliminar Cliente");
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jSeparator1))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGap(102, 102, 102)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel10)
+                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 316, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(jTextFieldCedulaClienteVerificar, javax.swing.GroupLayout.PREFERRED_SIZE, 337, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                                    .addComponent(jLabel11)
+                                                    .addComponent(jLabel12)
+                                                    .addComponent(jLabel14))
+                                                .addGap(18, 18, 18)
+                                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                    .addComponent(jTextFieldNombreClienteModifica, javax.swing.GroupLayout.PREFERRED_SIZE, 537, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                            .addComponent(jTextFieldCorreoClienteModifica, javax.swing.GroupLayout.DEFAULT_SIZE, 168, Short.MAX_VALUE)
+                                                            .addComponent(jTextFieldCedulaClienteModifica))
+                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                            .addComponent(jLabel13)
+                                                            .addComponent(jLabel15))
+                                                        .addGap(18, 18, 18)
+                                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                            .addComponent(jTextFieldFechaClienteModifica, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                            .addComponent(jComboBoxCategorriaClenteModifica, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                                        .addGap(120, 120, 120)
+                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(jButton3)
+                                            .addComponent(jButton2)))))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGap(289, 289, 289)
+                                .addComponent(jTextFieldClinetePoseeVehiculo, javax.swing.GroupLayout.PREFERRED_SIZE, 537, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 151, Short.MAX_VALUE)))
+                .addContainerGap())
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(498, 498, 498)
+                .addComponent(jButtonEliminaCliente)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(43, 43, 43)
+                .addComponent(jLabel10)
+                .addGap(26, 26, 26)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(jTextFieldCedulaClienteVerificar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton3))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(36, 36, 36)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jTextFieldNombreClienteModifica, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel11))
+                        .addGap(34, 34, 34)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jTextFieldCedulaClienteModifica, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel12)
+                            .addComponent(jLabel13)
+                            .addComponent(jTextFieldFechaClienteModifica, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(146, 146, 146)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jButton2)
+                            .addComponent(jLabel15)
+                            .addComponent(jTextFieldCorreoClienteModifica, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel14)
+                            .addComponent(jComboBoxCategorriaClenteModifica, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(43, 43, 43)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(74, 74, 74)
+                .addComponent(jTextFieldClinetePoseeVehiculo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(54, 54, 54)
+                .addComponent(jButtonEliminaCliente)
+                .addContainerGap(84, Short.MAX_VALUE))
+        );
+
+        jTabbedPane1.addTab("Modifica/Elimina Cliente", jPanel2);
+
+        jLabel16.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel16.setText("Consultas de Clientes");
+
+        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel2.setText("Información del Cliente:");
+
+        jTextFieldCedulaConsulta.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+
+        jTextPaneInformacionClinete.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jScrollPane9.setViewportView(jTextPaneInformacionClinete);
+
+        jButton4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jButton4.setText("Consultar");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+
+        jButtonRefrescaPanel.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jButtonRefrescaPanel.setText("Refrescar");
+        jButtonRefrescaPanel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonRefrescaPanelActionPerformed(evt);
+            }
+        });
+
+        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel3.setText("Cédula a Consultar");
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(102, 102, 102)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel16, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jTextFieldCedulaConsulta)
+                    .addComponent(jButton4, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addGap(74, 74, 74)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 657, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(83, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButtonRefrescaPanel)
+                .addGap(354, 354, 354))
+            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel4Layout.createSequentialGroup()
+                    .addGap(112, 112, 112)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(906, Short.MAX_VALUE)))
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(42, 42, 42)
+                .addComponent(jLabel16)
+                .addGap(70, 70, 70)
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(jTextFieldCedulaConsulta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButton4))
+                    .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 334, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(26, 26, 26)
+                .addComponent(jButtonRefrescaPanel)
+                .addContainerGap(53, Short.MAX_VALUE))
+            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel4Layout.createSequentialGroup()
+                    .addGap(144, 144, 144)
+                    .addComponent(jLabel3)
+                    .addContainerGap(446, Short.MAX_VALUE)))
+        );
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        jTabbedPane1.addTab("Consulta Cliente", jPanel3);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 893, Short.MAX_VALUE)
+            .addComponent(jTabbedPane1)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 575, Short.MAX_VALUE)
+            .addComponent(jTabbedPane1)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jTextFieldNombreClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldNombreClienteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldNombreClienteActionPerformed
+
+    private void jTextFieldCedulaClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldCedulaClienteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldCedulaClienteActionPerformed
+
+    private void jTextFieldFechaClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldFechaClienteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldFechaClienteActionPerformed
+
+    private void jTextFieldCorreoClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldCorreoClienteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldCorreoClienteActionPerformed
+
+    private void jComboBoxCategorriaClenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxCategorriaClenteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBoxCategorriaClenteActionPerformed
+
+    private void jTextFieldNombreClienteModificaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldNombreClienteModificaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldNombreClienteModificaActionPerformed
+
+    private void jTextFieldCedulaClienteModificaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldCedulaClienteModificaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldCedulaClienteModificaActionPerformed
+
+    private void jTextFieldFechaClienteModificaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldFechaClienteModificaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldFechaClienteModificaActionPerformed
+
+    private void jTextFieldCorreoClienteModificaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldCorreoClienteModificaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldCorreoClienteModificaActionPerformed
+
+    private void jComboBoxCategorriaClenteModificaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxCategorriaClenteModificaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBoxCategorriaClenteModificaActionPerformed
+
+    private void jTextFieldCedulaClienteVerificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldCedulaClienteVerificarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldCedulaClienteVerificarActionPerformed
+
+    private void jTextFieldClinetePoseeVehiculoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldClinetePoseeVehiculoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldClinetePoseeVehiculoActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButtonRefrescaPanelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRefrescaPanelActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonRefrescaPanelActionPerformed
 
     /**
      * @param args the command line arguments
@@ -78,5 +576,48 @@ public class GUIRegistroCliente extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButtonEliminaCliente;
+    private javax.swing.JButton jButtonRefrescaPanel;
+    private javax.swing.JComboBox<String> jComboBoxCategorriaClente;
+    private javax.swing.JComboBox<String> jComboBoxCategorriaClenteModifica;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JScrollPane jScrollPane9;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JTextField jTextFieldCedulaCliente;
+    private javax.swing.JTextField jTextFieldCedulaClienteModifica;
+    private javax.swing.JTextField jTextFieldCedulaClienteVerificar;
+    private javax.swing.JTextField jTextFieldCedulaConsulta;
+    private javax.swing.JTextField jTextFieldClinetePoseeVehiculo;
+    private javax.swing.JTextField jTextFieldCorreoCliente;
+    private javax.swing.JTextField jTextFieldCorreoClienteModifica;
+    private javax.swing.JTextField jTextFieldFechaCliente;
+    private javax.swing.JTextField jTextFieldFechaClienteModifica;
+    private javax.swing.JTextField jTextFieldNombreCliente;
+    private javax.swing.JTextField jTextFieldNombreClienteModifica;
+    private javax.swing.JTextPane jTextPaneInformacionClinete;
     // End of variables declaration//GEN-END:variables
 }

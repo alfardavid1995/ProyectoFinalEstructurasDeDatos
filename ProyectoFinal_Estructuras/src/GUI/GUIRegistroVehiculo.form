@@ -39,9 +39,6 @@
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="ff" green="ff" red="ff" type="rgb"/>
         </Property>
-        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="0" green="0" red="0" type="rgb"/>
-        </Property>
       </Properties>
       <AccessibilityProperties>
         <Property name="AccessibleContext.accessibleName" type="java.lang.String" value="Registrar Veh&#xed;culo"/>
@@ -72,10 +69,9 @@
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                   <Group type="102" attributes="0">
-                                      <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                           <Component id="jLabelPlaca" min="-2" max="-2" attributes="0"/>
                                           <Component id="jLabelPlacaModelo" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -86,10 +82,13 @@
                                           <Component id="jScrollPane3" alignment="0" max="32767" attributes="0"/>
                                           <Component id="jScrollPane2" alignment="0" max="32767" attributes="0"/>
                                       </Group>
+                                      <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
                                   </Group>
-                                  <Component id="jButtonLimpiarBusqueda2" alignment="0" min="-2" pref="130" max="-2" attributes="0"/>
+                                  <Group type="102" attributes="0">
+                                      <Component id="jButtonLimpiarBusqueda2" pref="119" max="32767" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                  </Group>
                               </Group>
-                              <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" attributes="0">
                                       <Group type="103" groupAlignment="0" attributes="0">
@@ -111,7 +110,7 @@
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
                               <Component id="jLabelRegistrarVehiculo" min="-2" pref="109" max="-2" attributes="0"/>
-                              <EmptySpace pref="195" max="32767" attributes="0"/>
+                              <EmptySpace pref="222" max="32767" attributes="0"/>
                               <Component id="jLabelRegistro_de_Vehiculos" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="109" max="-2" attributes="0"/>
                               <Component id="jButtonRefrescarRegistroVehiculo1" min="-2" max="-2" attributes="0"/>
@@ -186,7 +185,7 @@
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="jButtonRegistrar" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="96" max="32767" attributes="0"/>
+                      <EmptySpace pref="130" max="32767" attributes="0"/>
                       <Component id="jButtonSalir" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
                   </Group>
@@ -196,9 +195,6 @@
           <SubComponents>
             <Component class="javax.swing.JLabel" name="jLabelRegistrarVehiculo">
               <Properties>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="0" green="0" id="black" palette="1" red="0" type="palette"/>
-                </Property>
                 <Property name="text" type="java.lang.String" value="Registrar Vehiculo"/>
               </Properties>
             </Component>
@@ -215,17 +211,11 @@
             </Container>
             <Component class="javax.swing.JLabel" name="jLabelRegistro_de_Vehiculos">
               <Properties>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="0" green="0" red="0" type="rgb"/>
-                </Property>
                 <Property name="text" type="java.lang.String" value="Registro de Vehiculos"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabelPlaca">
               <Properties>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="0" green="0" red="0" type="rgb"/>
-                </Property>
                 <Property name="text" type="java.lang.String" value="Placa:"/>
               </Properties>
             </Component>
@@ -242,9 +232,6 @@
             </Container>
             <Component class="javax.swing.JLabel" name="jLabelMarca">
               <Properties>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="0" green="0" red="0" type="rgb"/>
-                </Property>
                 <Property name="text" type="java.lang.String" value="Marca:"/>
               </Properties>
             </Component>
@@ -272,17 +259,11 @@
             </Container>
             <Component class="javax.swing.JLabel" name="jLabelPlacaModelo">
               <Properties>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="0" green="0" red="0" type="rgb"/>
-                </Property>
                 <Property name="text" type="java.lang.String" value="Modelo:"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabelPlacaAnnio">
               <Properties>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="0" green="0" red="0" type="rgb"/>
-                </Property>
                 <Property name="text" type="java.lang.String" value="A&#xf1;o:"/>
               </Properties>
             </Component>
@@ -299,9 +280,6 @@
             </Container>
             <Component class="javax.swing.JLabel" name="jLabelColor">
               <Properties>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="0" green="0" red="0" type="rgb"/>
-                </Property>
                 <Property name="text" type="java.lang.String" value="Color:"/>
               </Properties>
             </Component>
@@ -329,17 +307,11 @@
             </Container>
             <Component class="javax.swing.JLabel" name="jLabelPlacaCilindraje">
               <Properties>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="0" green="0" red="0" type="rgb"/>
-                </Property>
                 <Property name="text" type="java.lang.String" value="Ciilindraje:"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabelCombustible">
               <Properties>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="0" green="0" red="0" type="rgb"/>
-                </Property>
                 <Property name="text" type="java.lang.String" value="Tipo de Combustible:"/>
               </Properties>
             </Component>
@@ -388,9 +360,6 @@
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="33" green="ff" red="33" type="rgb"/>
                 </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="0" green="0" red="0" type="rgb"/>
-                </Property>
                 <Property name="text" type="java.lang.String" value="Refrescar Registro Veh&#xed;culo"/>
               </Properties>
             </Component>
@@ -398,9 +367,6 @@
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="cc" green="99" red="ff" type="rgb"/>
-                </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="0" green="0" red="0" type="rgb"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Limpiar B&#xfa;squeda"/>
               </Properties>
@@ -451,7 +417,7 @@
                           </Group>
                           <Component id="jButtonEliminar" alignment="0" min="-2" pref="130" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="39" max="32767" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="103" alignment="1" groupAlignment="0" attributes="0">
                               <Group type="102" attributes="0">
@@ -554,26 +520,17 @@
             </Container>
             <Component class="javax.swing.JLabel" name="jLabelRegistroVehiculo2">
               <Properties>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="0" green="0" red="0" type="rgb"/>
-                </Property>
                 <Property name="text" type="java.lang.String" value="Registro Vehiculos"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabelVehiculoSeleccionado">
               <Properties>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="0" green="0" red="0" type="rgb"/>
-                </Property>
                 <Property name="text" type="java.lang.String" value="Datos de vehiculo Seleccionado:"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel2">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="0" green="0" red="0" type="rgb"/>
-                </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="0" green="0" red="0" type="rgb"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Placa:"/>
@@ -605,9 +562,6 @@
             </Component>
             <Component class="javax.swing.JLabel" name="jLabelParametroAModificar">
               <Properties>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="0" green="0" red="0" type="rgb"/>
-                </Property>
                 <Property name="text" type="java.lang.String" value="Parametro a modificar"/>
               </Properties>
             </Component>
@@ -626,9 +580,6 @@
             </Container>
             <Component class="javax.swing.JLabel" name="jLabelValorAModificar">
               <Properties>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="0" green="0" red="0" type="rgb"/>
-                </Property>
                 <Property name="text" type="java.lang.String" value="Valor a modificar"/>
               </Properties>
             </Component>
@@ -636,9 +587,6 @@
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="33" green="ff" red="33" type="rgb"/>
-                </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="0" green="0" red="0" type="rgb"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Refrescar Registro Global Veh&#xed;culos"/>
               </Properties>
@@ -671,9 +619,6 @@
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="cc" green="99" red="ff" type="rgb"/>
-                </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="0" green="0" red="0" type="rgb"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Limpiar B&#xfa;squeda"/>
               </Properties>
@@ -713,15 +658,12 @@
                                       <Component id="jScrollPane12" alignment="0" max="32767" attributes="0"/>
                                       <Component id="jButtonAplicarCambioTipoCombustible" alignment="0" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <Group type="102" attributes="0">
-                                      <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="jButtonBuscar_Refrescar" min="-2" max="-2" attributes="0"/>
-                                  </Group>
                                   <Component id="jButtonLimpiarbusqueda3" alignment="0" min="-2" pref="176" max="-2" attributes="0"/>
+                                  <Component id="jLabel3" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jButtonBuscar_Refrescar" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <Group type="102" alignment="1" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                   <Component id="jButtonAgregarExtras" pref="125" max="32767" attributes="0"/>
@@ -729,7 +671,7 @@
                               </Group>
                           </Group>
                       </Group>
-                      <EmptySpace max="32767" attributes="0"/>
+                      <EmptySpace pref="44" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Component id="jScrollPane13" max="32767" attributes="0"/>
                           <Component id="jLabelInfoDeVehiculoConExtras" min="-2" max="-2" attributes="0"/>
@@ -743,15 +685,15 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="57" max="-2" attributes="0"/>
-                      <Component id="jLabelInfoDeVehiculoConExtras" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jLabelInfoDeVehiculoConExtras" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="jScrollPane11" min="-2" pref="234" max="-2" attributes="0"/>
                           <Group type="102" attributes="0">
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="jButtonBuscar_Refrescar" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
+                              <Component id="jButtonBuscar_Refrescar" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="jScrollPane12" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -807,9 +749,6 @@
             </Component>
             <Component class="javax.swing.JCheckBox" name="jCheckBoxUsarElTipoDeCombustible">
               <Properties>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="0" green="0" red="0" type="rgb"/>
-                </Property>
                 <Property name="text" type="java.lang.String" value="Usar este tipo de combustible"/>
               </Properties>
             </Component>
@@ -841,9 +780,6 @@
             </Container>
             <Component class="javax.swing.JLabel" name="jLabel1">
               <Properties>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="0" green="0" red="0" type="rgb"/>
-                </Property>
                 <Property name="text" type="java.lang.String" value="Tipo Combustible"/>
               </Properties>
             </Component>
@@ -868,17 +804,11 @@
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel3">
               <Properties>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="0" green="0" red="0" type="rgb"/>
-                </Property>
                 <Property name="text" type="java.lang.String" value="Placa:"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabelInfoDeVehiculoConExtras">
               <Properties>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="0" green="0" red="0" type="rgb"/>
-                </Property>
                 <Property name="text" type="java.lang.String" value="Informacion de vehiculo completa"/>
               </Properties>
             </Component>
@@ -898,9 +828,6 @@
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="0" green="ff" red="33" type="rgb"/>
                 </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="0" green="0" red="0" type="rgb"/>
-                </Property>
                 <Property name="text" type="java.lang.String" value="Agregar Extras"/>
               </Properties>
             </Component>
@@ -909,9 +836,6 @@
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="0" green="66" red="ff" type="rgb"/>
                 </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="0" green="0" red="0" type="rgb"/>
-                </Property>
                 <Property name="text" type="java.lang.String" value="Quitar Extras"/>
               </Properties>
             </Component>
@@ -919,9 +843,6 @@
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="99" red="ff" type="rgb"/>
-                </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="0" green="0" red="0" type="rgb"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Limpiar B&#xfa;squeda"/>
               </Properties>
