@@ -43,73 +43,75 @@ public class PilaExtras_Vehiculo {
         }
     }
 
-//    public boolean search(String reference) {
-//        // Crea una copia de la pila.
-//        NodePila_RegistroVehiculo aux = cima;
-//        // Bandera para verificar si exist el elemento a search.
-//        boolean exist = false;
-//        // Recorre la pila hasta llegar encontrar el node o llegar al final
-//        // de la pila.
-//        while (exist != true && aux != null) {
-//            // Compara si el value del node es igual que al de reference.
-//            if (reference == aux.getVehiculoNodo().getNumPlacadeVehiculo()) {
-//                // Cambia el value de la bandera.
-//                exist = true;
-//            } else {
-//                // Avanza al siguiente node.
-//                aux = aux.getSiguiente();
-//            }
-//        }
-//        // Retorna el value de la bandera.
-//        return exist;
-//    }
-//        public void popModificado(String reference){
-//        // Consulta si el value exist en la pila.
-//        if (search(reference)) {
-//            // Crea una pila auxiliar para guardar los valuees que se 
-//            // vayan desapilando de la pila original.
-//            NodePila_RegistroVehiculo cimapPilaAux = null;
-//            // Recoore la pila hasta llegar al node que tenga el value
-//            // igual que el de reference.
-//            while(reference != cima.getVehiculoNodo().getNumPlacadeVehiculo()){
-//                // Crea un node temporal para agregarlos a la pila auxiliar.
-//                NodePila_RegistroVehiculo temp = new NodePila_RegistroVehiculo();
-//                // Ingresa el value al node temporal.
-//                temp.setVehiculoNodo(cima.getVehiculoNodo());
-//                // Consulta si la pila auxiliar no a sido inicializada.
-//                if(cimapPilaAux == null){
-//                    // Inicializa la pila auxiliar.
-//                    cimapPilaAux = temp;
-//                }
-//                // Caso contrario si la pila auxiliar ya contiene elementos
-//                // los agrega al start.
-//                else{
-//                    temp.setSiguiente(cimapPilaAux);
-//                    cimapPilaAux = temp;
-//                }
-//                // Elimina el node del tope de la pila hasta llegar al node
-//                // que se desea eliminar.
-//                pop();
-//            }
-//            // Elimina el node que coincide con el de reference.
-//            pop();
-//            // Regresa los valuees de la pila auxiliar a la pila original
-//            // mientras la pila auxiliar tenga elementos.
-//            while(cimapPilaAux != null){
-//                // Utiliza el metodo push para regresar los elementos a 
-//                // la pila original.
-//                push(cimapPilaAux.getVehiculoNodo());
-//                // Avansa al siguiente node de la pila auxiliar.
-//                cimapPilaAux = cimapPilaAux.getSiguiente();
-//            }
-//            // Libera la memoria utilizada por la pila auxiliar.
-//            cimapPilaAux = null;
-//        }
-//        else{
-//            System.out.println("El nodo indicado no existe");
-//        }
-//    }
-//    
+    public boolean search(String reference) {
+        // Crea una copia de la pila.
+        NodePila_Extras aux = cima;
+        // Bandera para verificar si exist el elemento a search.
+        boolean exist = false;
+        // Recorre la pila hasta llegar encontrar el node o llegar al final
+        // de la pila.
+        while (exist != true && aux != null) {
+            // Compara si el value del node es igual que al de reference.
+            if (reference.equals(aux.getExtra())) {
+                // Cambia el value de la bandera.
+                exist = true;
+            } else {
+                // Avanza al siguiente node.
+                aux = aux.getSiguiente();
+            }
+        }
+        // Retorna el value de la bandera.
+        return exist;
+    }
+    
+        public void popModificado(String reference){
+        // Consulta si el value exist en la pila.
+        if (search(reference)) {
+            // Crea una pila auxiliar para guardar los valuees que se 
+            // vayan desapilando de la pila original.
+            NodePila_Extras cimaPilaAux = null;
+            // Recoore la pila hasta llegar al node que tenga el value
+            // igual que el de reference.
+            while(!reference.equals(cima.getExtra())){
+                // Crea un node temporal para agregarlos a la pila auxiliar.
+                NodePila_Extras temp = new NodePila_Extras();
+                // Ingresa el value al node temporal.
+                temp.setExtra(cima.getExtra());
+                // Consulta si la pila auxiliar no a sido inicializada.
+                if(cimaPilaAux == null){
+                    // Inicializa la pila auxiliar.
+                    cimaPilaAux = temp;
+                }
+                // Caso contrario si la pila auxiliar ya contiene elementos
+                // los agrega al start.
+                else{
+                    temp.setSiguiente(cimaPilaAux);
+                    cimaPilaAux = temp;
+                }
+                // Elimina el node del tope de la pila hasta llegar al node
+                // que se desea eliminar.
+                pop();
+            }
+            // Elimina el node que coincide con el de reference.
+            pop();
+            // Regresa los valuees de la pila auxiliar a la pila original
+            // mientras la pila auxiliar tenga elementos.
+            while(cimaPilaAux != null){
+                // Utiliza el metodo push para regresar los elementos a 
+                // la pila original.
+                push(cimaPilaAux.getExtra());
+                // Avansa al siguiente node de la pila auxiliar.
+                cimaPilaAux = cimaPilaAux.getSiguiente();
+            }
+            // Libera la memoria utilizada por la pila auxiliar.
+            cimaPilaAux = null;
+        }
+        else{
+            System.out.println("El nodo indicado no existe");
+        }
+    }
+  
+        
     public String listar() {
         String stringConTodalaInfodelaPila = "";
         NodePila_Extras aux = cima;
