@@ -669,6 +669,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Buscar Placa"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonBuscarPlacaModificarVehiculoActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="jButtonSalirModificarVehiculo">
               <Properties>
@@ -856,7 +859,7 @@
 
               <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
               <SubComponents>
-                <Component class="javax.swing.JTextPane" name="jTextPane3">
+                <Component class="javax.swing.JTextPane" name="jtext_numPlaca">
                 </Component>
               </SubComponents>
             </Container>
@@ -885,7 +888,7 @@
 
               <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
               <SubComponents>
-                <Component class="javax.swing.JTextPane" name="jTextPane4">
+                <Component class="javax.swing.JTextPane" name="jtext_extras">
                 </Component>
               </SubComponents>
             </Container>
@@ -896,6 +899,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Agregar Extras"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonAgregarExtrasActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="jButtonQuitarExtras">
               <Properties>

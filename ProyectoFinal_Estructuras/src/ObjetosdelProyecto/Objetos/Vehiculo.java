@@ -13,9 +13,13 @@ public class Vehiculo {
     private double precioAlquilerXDiaDeVehiculo;
     private String estadoParaSerAlquilado; // disponible o alquilado
     private int cantidadDeVecesAlquilado;
-    private PilaExtras_Vehiculo extrasPila ;
+    private PilaExtras_Vehiculo extrasPila = new PilaExtras_Vehiculo();
 
-    public Vehiculo(String numPlacadeVehiculo, String marcaDeVehiculo, String modeloVehiculo, int aniodeVehiculo, String colorDeVehiculo, int cilindradaDeVehiculo, String tipoCombustibleDeVehiculo, int cantPasajerosdeVehiculo, double precioAlquilerXDiaDeVehiculo, String estadoParaSerAlquilado,PilaExtras_Vehiculo extrasPila ) {
+    public Vehiculo() {
+    }
+
+    
+    public Vehiculo(String numPlacadeVehiculo, String marcaDeVehiculo, String modeloVehiculo, int aniodeVehiculo, String colorDeVehiculo, int cilindradaDeVehiculo, String tipoCombustibleDeVehiculo, int cantPasajerosdeVehiculo, double precioAlquilerXDiaDeVehiculo, String estadoParaSerAlquilado ) {
         this.numPlacadeVehiculo = numPlacadeVehiculo;
         this.marcaDeVehiculo = marcaDeVehiculo;
         this.modeloVehiculo = modeloVehiculo;
@@ -26,8 +30,10 @@ public class Vehiculo {
         this.cantPasajerosdeVehiculo = cantPasajerosdeVehiculo;
         this.precioAlquilerXDiaDeVehiculo = precioAlquilerXDiaDeVehiculo;
         this.estadoParaSerAlquilado = estadoParaSerAlquilado;
-        this.extrasPila = null;
+       
     }
+    
+    
     
     
 
@@ -125,6 +131,11 @@ public class Vehiculo {
 
     public void setExtrasPila(PilaExtras_Vehiculo extrasPila) {
         this.extrasPila = extrasPila;
+    }
+
+    @Override
+    public String toString() {
+        return "Vehiculo{" + "numPlacadeVehiculo=" + numPlacadeVehiculo + ", marcaDeVehiculo=" + marcaDeVehiculo + ", modeloVehiculo=" + modeloVehiculo + ", aniodeVehiculo=" + aniodeVehiculo + ", colorDeVehiculo=" + colorDeVehiculo + ", cilindradaDeVehiculo=" + cilindradaDeVehiculo + ", tipoCombustibleDeVehiculo=" + tipoCombustibleDeVehiculo + ", cantPasajerosdeVehiculo=" + cantPasajerosdeVehiculo + ", precioAlquilerXDiaDeVehiculo=" + precioAlquilerXDiaDeVehiculo + ", estadoParaSerAlquilado=" + estadoParaSerAlquilado + ", cantidadDeVecesAlquilado=" + cantidadDeVecesAlquilado + ", extrasPila=" + extrasPila.listar()+ '}';
     }
     
     

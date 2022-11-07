@@ -52,7 +52,7 @@ public class Pila_RegistroVehiculo {
         // de la pila.
         while (exist != true && aux != null) {
             // Compara si el value del node es igual que al de reference.
-            if (reference == aux.getVehiculoNodo().getNumPlacadeVehiculo()) {
+            if (reference.equals(aux.getVehiculoNodo().getNumPlacadeVehiculo())) {
                 // Cambia el value de la bandera.
                 exist = true;
             } else {
@@ -75,7 +75,7 @@ public class Pila_RegistroVehiculo {
             NodePila_RegistroVehiculo cimapPilaAux = null;
             // Recoore la pila hasta llegar al node que tenga el value
             // igual que el de reference.
-            while(reference != cima.getVehiculoNodo().getNumPlacadeVehiculo()){
+            while(!reference.equals(cima.getVehiculoNodo().getNumPlacadeVehiculo())){
                 // Crea un node temporal para agregarlos a la pila auxiliar.
                 NodePila_RegistroVehiculo temp = new NodePila_RegistroVehiculo();
                 // Ingresa el value al node temporal.
@@ -113,15 +113,49 @@ public class Pila_RegistroVehiculo {
             System.out.println("El nodo indicado no existe");
         }
     }
+        public Vehiculo traerVehiculo(String placa){
+        NodePila_RegistroVehiculo aux = cima;
+        Vehiculo vehiculo = new Vehiculo();
+        // Bandera para verificar si exist el elemento a search.
+        boolean exist = false;
+        // Recorre la pila hasta llegar encontrar el node o llegar al final
+        // de la pila.
+        while (exist != true && aux != null) {
+            // Compara si el value del node es igual que al de reference.
+            if (placa.equals(aux.getVehiculoNodo().getNumPlacadeVehiculo())) {
+                // Cambia el value de la bandera.
+                vehiculo=aux.getVehiculoNodo();
+                exist = true;
+            } else {
+                // Avanza al siguiente node.
+                aux = aux.getSiguiente();
+            }
+        }            
+            return vehiculo;
+        }
+        
+      
+        
     
-        public void listar(){
+        public String listar(){
+            String s="";
         // Crea una copia de la pila.
         NodePila_RegistroVehiculo aux = cima;
+      
         // Recorre la pila hasta el ultimo node.
         while(aux != null){
+            s=aux.getVehiculoNodo().toString()+s;
             System.out.println("|\t" + aux.getVehiculoNodo().toString()+ "\t|");
             System.out.println("-----------------");
             aux = aux.getSiguiente();
         }
+        return s;
     }
+
+    
+
+   
+        
+        
+        
 }
