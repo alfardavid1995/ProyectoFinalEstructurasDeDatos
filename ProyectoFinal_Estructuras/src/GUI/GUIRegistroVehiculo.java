@@ -97,10 +97,6 @@ public class GUIRegistroVehiculo extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Vehiculo");
 
-        jTabbedPaneRegistrarvehiculo.setBackground(new java.awt.Color(255, 255, 255));
-
-        JPanelRegistrarVehiculo.setBackground(new java.awt.Color(255, 255, 255));
-
         jLabelRegistrarVehiculo.setText("Registrar Vehiculo");
 
         jScrollPane1.setViewportView(jTextPaneDisplayRegistro);
@@ -258,7 +254,6 @@ public class GUIRegistroVehiculo extends javax.swing.JFrame {
 
         jTabbedPaneRegistrarvehiculo.addTab("Registrar Vehiculo", new javax.swing.ImageIcon(getClass().getResource("/AnexosEImagenes/addImage.png")), JPanelRegistrarVehiculo); // NOI18N
 
-        jPanelModificarVehiculo.setBackground(new java.awt.Color(255, 255, 255));
         jPanelModificarVehiculo.setPreferredSize(new java.awt.Dimension(900, 550));
 
         jScrollPane8.setViewportView(jTextPaneDisplayRegistro1);
@@ -386,8 +381,6 @@ public class GUIRegistroVehiculo extends javax.swing.JFrame {
         );
 
         jTabbedPaneRegistrarvehiculo.addTab("Modificar / Eliminar Vehiculo", new javax.swing.ImageIcon(getClass().getResource("/AnexosEImagenes/editImage.png")), jPanelModificarVehiculo); // NOI18N
-
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
         jComboBoxtipoCombustibleExtras.setBackground(new java.awt.Color(0, 102, 255));
         jComboBoxtipoCombustibleExtras.setForeground(new java.awt.Color(255, 255, 255));
