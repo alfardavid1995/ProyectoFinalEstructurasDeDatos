@@ -15,7 +15,7 @@ public class Vehiculo {
     private int cantidadDeVecesAlquilado;
     private PilaExtras_Vehiculo extrasPila ;
 
-    public Vehiculo(String numPlacadeVehiculo, String marcaDeVehiculo, String modeloVehiculo, int aniodeVehiculo, String colorDeVehiculo, int cilindradaDeVehiculo, String tipoCombustibleDeVehiculo, int cantPasajerosdeVehiculo, double precioAlquilerXDiaDeVehiculo, String estadoParaSerAlquilado) {
+    public Vehiculo(String numPlacadeVehiculo, String marcaDeVehiculo, String modeloVehiculo, int aniodeVehiculo, String colorDeVehiculo, int cilindradaDeVehiculo, String tipoCombustibleDeVehiculo, int cantPasajerosdeVehiculo, double precioAlquilerXDiaDeVehiculo, String estadoParaSerAlquilado,PilaExtras_Vehiculo extrasPila ) {
         this.numPlacadeVehiculo = numPlacadeVehiculo;
         this.marcaDeVehiculo = marcaDeVehiculo;
         this.modeloVehiculo = modeloVehiculo;
@@ -26,6 +26,7 @@ public class Vehiculo {
         this.cantPasajerosdeVehiculo = cantPasajerosdeVehiculo;
         this.precioAlquilerXDiaDeVehiculo = precioAlquilerXDiaDeVehiculo;
         this.estadoParaSerAlquilado = estadoParaSerAlquilado;
+        this.extrasPila = null;
     }
     
     
@@ -117,6 +118,15 @@ public class Vehiculo {
     public void setCantidadDeVecesAlquilado(int cantidadDeVecesAlquilado) {
         this.cantidadDeVecesAlquilado = cantidadDeVecesAlquilado;
     }
+
+    public PilaExtras_Vehiculo getExtrasPila() {
+        return extrasPila;
+    }
+
+    public void setExtrasPila(PilaExtras_Vehiculo extrasPila) {
+        this.extrasPila = extrasPila;
+    }
+    
     
 
 

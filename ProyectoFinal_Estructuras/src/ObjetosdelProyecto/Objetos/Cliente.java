@@ -11,7 +11,7 @@ public class Cliente {
     private String categoria;//Bronce, Plata, Oro, Zafiro 
     private PilaAlquileresRealizados_Cliente pilaAlquilerdeCliente;
     private int cantidadDeAlquileresProcesados;
-
+    
     public Cliente(int cedula, String nombreCompleto, Calendar fechaNacimiento, 
             String correoElectronico, String categoria) {
         this.cedula = cedula;

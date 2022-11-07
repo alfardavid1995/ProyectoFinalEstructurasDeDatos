@@ -620,7 +620,7 @@ public class GUIRegistroVehiculo extends javax.swing.JFrame {
         }
         
         Vehiculo vehiculito = new Vehiculo(placa, marca,modelo,anio,color,
-                cilindraje,combustible,cantPasajeros,precio,estado);
+                cilindraje,combustible,cantPasajeros,precio,estado,null);
         
         miPila.push(vehiculito);
         
