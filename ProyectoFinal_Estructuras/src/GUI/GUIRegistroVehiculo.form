@@ -58,61 +58,75 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
-                              <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Group type="102" attributes="0">
-                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                          <Component id="jLabelPlaca" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabelPlacaModelo" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabelColor" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabelMarca" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jScrollPane6" alignment="0" pref="118" max="32767" attributes="0"/>
-                                          <Component id="jScrollPane4" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="jScrollPane3" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="jScrollPane2" alignment="0" max="32767" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" attributes="0">
-                                      <Component id="jButtonLimpiarBusqueda2" pref="119" max="32767" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                  </Group>
-                              </Group>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" attributes="0">
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="jComboBoxSelectorDeCombustible" min="-2" pref="118" max="-2" attributes="0"/>
-                                          <Component id="jLabelCombustible" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabelPlacaAnnio" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jScrollPane5" min="-2" pref="118" max="-2" attributes="0"/>
-                                          <Component id="jLabelPlacaCilindraje" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jScrollPane7" min="-2" pref="118" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                      <Component id="jScrollPane1" max="32767" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" attributes="0">
-                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                      <Component id="jButtonSalir" min="-2" pref="111" max="-2" attributes="0"/>
-                                  </Group>
-                              </Group>
-                          </Group>
                           <Group type="102" alignment="1" attributes="0">
                               <Component id="jLabelRegistrarVehiculo" min="-2" pref="109" max="-2" attributes="0"/>
-                              <EmptySpace pref="222" max="32767" attributes="0"/>
+                              <EmptySpace pref="209" max="32767" attributes="0"/>
                               <Component id="jLabelRegistro_de_Vehiculos" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="109" max="-2" attributes="0"/>
                               <Component id="jButtonRefrescarRegistroVehiculo1" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="158" max="-2" attributes="0"/>
                           </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" attributes="0">
+                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                          <Component id="jButtonRegistrar" max="32767" attributes="0"/>
+                                          <Component id="jButtonLimpiarBusqueda2" max="32767" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" attributes="0">
+                                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                          <Component id="jScrollPane14" max="32767" attributes="0"/>
+                                          <Component id="jLabelPlaca" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabelPlacaModelo" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabelColor" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabelMarca" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jScrollPane6" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="jScrollPane4" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="jScrollPane3" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="jScrollPane2" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="jLabel4" alignment="0" max="32767" attributes="0"/>
+                                      </Group>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <EmptySpace max="32767" attributes="0"/>
+                                              <Component id="jButtonSalir" min="-2" pref="111" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                  <Group type="102" attributes="0">
+                                                      <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
+                                                      <Group type="103" groupAlignment="0" attributes="0">
+                                                          <Component id="jComboBoxSelectorDeCombustible" min="-2" pref="118" max="-2" attributes="0"/>
+                                                          <Component id="jLabelCombustible" min="-2" max="-2" attributes="0"/>
+                                                          <Component id="jLabelPlacaAnnio" min="-2" max="-2" attributes="0"/>
+                                                          <Component id="jScrollPane5" min="-2" pref="118" max="-2" attributes="0"/>
+                                                          <Component id="jLabelPlacaCilindraje" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                          <Component id="jScrollPane7" min="-2" pref="118" max="-2" attributes="0"/>
+                                                      </Group>
+                                                  </Group>
+                                                  <Group type="102" alignment="0" attributes="0">
+                                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                                      <Component id="jLabel5" min="-2" pref="109" max="-2" attributes="0"/>
+                                                  </Group>
+                                                  <Group type="102" alignment="1" attributes="0">
+                                                      <EmptySpace max="-2" attributes="0"/>
+                                                      <Component id="jScrollPane16" min="-2" pref="113" max="-2" attributes="0"/>
+                                                  </Group>
+                                              </Group>
+                                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                              <Component id="jScrollPane1" max="32767" attributes="0"/>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Component id="jScrollPane15" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                  </Group>
+                              </Group>
+                          </Group>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jButtonRegistrar" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -121,61 +135,79 @@
                   <Group type="102" alignment="0" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
-                              <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="jLabelRegistro_de_Vehiculos" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jButtonRefrescarRegistroVehiculo1" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" attributes="0">
+                                      <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="3" attributes="0">
+                                          <Component id="jLabelRegistro_de_Vehiculos" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jButtonRefrescarRegistroVehiculo1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
+                                      <Component id="jLabelRegistrarVehiculo" min="-2" pref="26" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" attributes="0">
+                                      <Component id="jLabelPlaca" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Component id="jScrollPane2" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="3" attributes="0">
+                                          <Component id="jLabelMarca" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabelCombustible" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="1" attributes="0">
+                                          <Component id="jScrollPane3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jComboBoxSelectorDeCombustible" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="3" attributes="0">
+                                          <Component id="jLabelPlacaModelo" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabelPlacaAnnio" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="jScrollPane4" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jScrollPane5" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="jLabelPlacaCilindraje" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabelColor" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="jScrollPane6" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jScrollPane7" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="3" attributes="0">
+                                          <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="jScrollPane14" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jScrollPane16" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                  <Component id="jScrollPane1" min="-2" pref="255" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <Group type="102" alignment="1" attributes="0">
-                              <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
-                              <Component id="jLabelRegistrarVehiculo" min="-2" pref="26" max="-2" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="239" max="-2" attributes="0"/>
+                              <Component id="jScrollPane15" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
-                              <Component id="jLabelPlaca" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="jScrollPane2" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="jLabelMarca" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabelCombustible" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="1" attributes="0">
-                                  <Component id="jScrollPane3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jComboBoxSelectorDeCombustible" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="jLabelPlacaModelo" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabelPlacaAnnio" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jScrollPane4" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jScrollPane5" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jLabelPlacaCilindraje" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabelColor" alignment="0" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jScrollPane6" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jScrollPane7" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jButtonLimpiarBusqueda2" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <Component id="jScrollPane1" alignment="0" min="-2" pref="255" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <EmptySpace pref="65" max="32767" attributes="0"/>
+                      <Component id="jButtonLimpiarBusqueda2" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="jButtonRegistrar" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="130" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
                       <Component id="jButtonSalir" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
                   </Group>
@@ -216,7 +248,7 @@
 
               <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
               <SubComponents>
-                <Component class="javax.swing.JTextPane" name="jTextPane1">
+                <Component class="javax.swing.JTextPane" name="jTextPanePlaca">
                 </Component>
               </SubComponents>
             </Container>
@@ -232,7 +264,7 @@
 
               <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
               <SubComponents>
-                <Component class="javax.swing.JTextPane" name="jTextPane2">
+                <Component class="javax.swing.JTextPane" name="jTextPaneMarca">
                 </Component>
               </SubComponents>
             </Container>
@@ -243,7 +275,7 @@
 
               <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
               <SubComponents>
-                <Component class="javax.swing.JTextPane" name="JTextPaneModelo">
+                <Component class="javax.swing.JTextPane" name="jTextPaneModelo">
                 </Component>
               </SubComponents>
             </Container>
@@ -336,6 +368,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Registrar Vehiculo"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonRegistrarActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="jButtonSalir">
               <Properties>
@@ -344,6 +379,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Salir"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonSalirActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="jButtonRefrescarRegistroVehiculo1">
               <Properties>
@@ -360,7 +398,53 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Limpiar B&#xfa;squeda"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonLimpiarBusqueda2ActionPerformed"/>
+              </Events>
             </Component>
+            <Component class="javax.swing.JLabel" name="jLabel4">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Cantidad de Pasajeros"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel5">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Precio de Alquiler"/>
+              </Properties>
+            </Component>
+            <Container class="javax.swing.JScrollPane" name="jScrollPane14">
+              <AuxValues>
+                <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+              </AuxValues>
+
+              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+              <SubComponents>
+                <Component class="javax.swing.JTextPane" name="jTextPaneCantPasajeros">
+                </Component>
+              </SubComponents>
+            </Container>
+            <Container class="javax.swing.JScrollPane" name="jScrollPane15">
+              <AuxValues>
+                <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+              </AuxValues>
+
+              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+              <SubComponents>
+                <Component class="javax.swing.JTextPane" name="jTextPane6">
+                </Component>
+              </SubComponents>
+            </Container>
+            <Container class="javax.swing.JScrollPane" name="jScrollPane16">
+              <AuxValues>
+                <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+              </AuxValues>
+
+              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+              <SubComponents>
+                <Component class="javax.swing.JTextPane" name="jTextPanePrecio">
+                </Component>
+              </SubComponents>
+            </Container>
           </SubComponents>
         </Container>
         <Container class="javax.swing.JPanel" name="jPanelModificarVehiculo">
