@@ -1,37 +1,40 @@
-
 package EstructurasDeDatos;
 
 import ObjetosdelProyecto.Objetos.Vehiculo;
 
 public class Pila_RegistroVehiculo {
-     private NodePila_RegistroVehiculo cima;
+
+    private NodePila_RegistroVehiculo cima;
     private int largo;
 
     public Pila_RegistroVehiculo() {
         this.cima = null;
         this.largo = 0;
     }
-    
-    public boolean Vacia(){ return cima == null;}
-    
-    public int tamanio(){ return this.largo;}
-    
-    public void push(Vehiculo vehiculito){
+
+    public boolean Vacia() {
+        return cima == null;
+    }
+
+    public int tamanio() {
+        return this.largo;
+    }
+
+    public void push(Vehiculo vehiculito) {
         NodePila_RegistroVehiculo newNode = new NodePila_RegistroVehiculo();
         newNode.setVehiculoNodo(vehiculito);
-        
-        if (this.Vacia()){
+
+        if (this.Vacia()) {
             this.cima = newNode;
-        }
-        else{  
+        } else {
             newNode.setSiguiente(this.cima);
             this.cima = newNode;
-            
+
         }
         this.largo++;
     }
-    
-    public void pop(){
+
+    public void pop() {
         if (!Vacia()) {
             // Asigna como primer node al siguiente de la pila.
             this.cima = this.cima.getSiguiente();
@@ -39,10 +42,7 @@ public class Pila_RegistroVehiculo {
             this.largo--;
         }
     }
-    
-   
-    
-    
+
     public boolean search(String reference) {
         // Crea una copia de la pila.
         NodePila_RegistroVehiculo aux = cima;
@@ -63,11 +63,8 @@ public class Pila_RegistroVehiculo {
         // Retorna el value de la bandera.
         return exist;
     }
-    
-    
-    
-    
-        public void popModificado(String reference){
+
+    public void popModificado(String reference) {
         // Consulta si el value exist en la pila.
         if (search(reference)) {
             // Crea una pila auxiliar para guardar los valuees que se 
@@ -75,19 +72,18 @@ public class Pila_RegistroVehiculo {
             NodePila_RegistroVehiculo cimapPilaAux = null;
             // Recoore la pila hasta llegar al node que tenga el value
             // igual que el de reference.
-            while(!reference.equals(cima.getVehiculoNodo().getNumPlacadeVehiculo())){
+            while (!reference.equals(cima.getVehiculoNodo().getNumPlacadeVehiculo())) {
                 // Crea un node temporal para agregarlos a la pila auxiliar.
                 NodePila_RegistroVehiculo temp = new NodePila_RegistroVehiculo();
                 // Ingresa el value al node temporal.
                 temp.setVehiculoNodo(cima.getVehiculoNodo());
                 // Consulta si la pila auxiliar no a sido inicializada.
-                if(cimapPilaAux == null){
+                if (cimapPilaAux == null) {
                     // Inicializa la pila auxiliar.
                     cimapPilaAux = temp;
-                }
-                // Caso contrario si la pila auxiliar ya contiene elementos
+                } // Caso contrario si la pila auxiliar ya contiene elementos
                 // los agrega al start.
-                else{
+                else {
                     temp.setSiguiente(cimapPilaAux);
                     cimapPilaAux = temp;
                 }
@@ -99,7 +95,7 @@ public class Pila_RegistroVehiculo {
             pop();
             // Regresa los valuees de la pila auxiliar a la pila original
             // mientras la pila auxiliar tenga elementos.
-            while(cimapPilaAux != null){
+            while (cimapPilaAux != null) {
                 // Utiliza el metodo push para regresar los elementos a 
                 // la pila original.
                 push(cimapPilaAux.getVehiculoNodo());
@@ -108,12 +104,12 @@ public class Pila_RegistroVehiculo {
             }
             // Libera la memoria utilizada por la pila auxiliar.
             cimapPilaAux = null;
-        }
-        else{
+        } else {
             System.out.println("El nodo indicado no existe");
         }
     }
-        public Vehiculo traerVehiculo(String placa){
+
+    public Vehiculo traerVehiculo(String placa) {
         NodePila_RegistroVehiculo aux = cima;
         Vehiculo vehiculo = new Vehiculo();
         // Bandera para verificar si exist el elemento a search.
@@ -124,38 +120,40 @@ public class Pila_RegistroVehiculo {
             // Compara si el value del node es igual que al de reference.
             if (placa.equals(aux.getVehiculoNodo().getNumPlacadeVehiculo())) {
                 // Cambia el value de la bandera.
-                vehiculo=aux.getVehiculoNodo();
+                vehiculo = aux.getVehiculoNodo();
                 exist = true;
             } else {
                 // Avanza al siguiente node.
                 aux = aux.getSiguiente();
             }
-        }            
-            return vehiculo;
         }
-        
-      
-        
-    
-        public String listar(){
-            String s="";
-        // Crea una copia de la pila.
-        NodePila_RegistroVehiculo aux = cima;
-      
-        // Recorre la pila hasta el ultimo node.
-        while(aux != null){
-            s=aux.getVehiculoNodo().toString()+s;
-            System.out.println("|\t" + aux.getVehiculoNodo().toString()+ "\t|");
-            System.out.println("-----------------");
-            aux = aux.getSiguiente();
-        }
-        return s;
+        return vehiculo;
     }
 
-    
+    public String listar() {
+        String stringConTodalaInfodelaPila = "";
+        NodePila_RegistroVehiculo aux = cima;
+        while (aux != null) {
 
-   
-        
-        
-        
+            stringConTodalaInfodelaPila = stringConTodalaInfodelaPila
+                    + aux.getVehiculoNodo().toString() + "\n";
+            aux = aux.getSiguiente();
+        }
+
+        return stringConTodalaInfodelaPila;
+    }
+
+    public String listar2() {
+        String stringConTodalaInfodelaPila = "";
+        NodePila_RegistroVehiculo aux = cima;
+        while (aux != null) {
+
+            stringConTodalaInfodelaPila = stringConTodalaInfodelaPila
+                    + aux.getVehiculoNodo().listar2() + "\n";
+            aux = aux.getSiguiente();
+        }
+
+        return stringConTodalaInfodelaPila;
+    }
+
 }

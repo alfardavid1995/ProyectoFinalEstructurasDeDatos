@@ -1,38 +1,40 @@
-
 package EstructurasDeDatos;
 
 import ObjetosdelProyecto.Objetos.Vehiculo;
 
 public class PilaExtras_Vehiculo {
-     private NodePila_Extras cima;
+
+    private NodePila_Extras cima;
     private int largo;
 
     public PilaExtras_Vehiculo() {
         this.cima = cima;
         this.largo = largo;
     }
-    
-   
-    public boolean Vacia(){ return cima == null;}
-    
-    public int tamanio(){ return this.largo;}
-    
-    public void push(String extra){
+
+    public boolean Vacia() {
+        return cima == null;
+    }
+
+    public int tamanio() {
+        return this.largo;
+    }
+
+    public void push(String extra) {
         NodePila_Extras newNode = new NodePila_Extras();
         newNode.setExtra(extra);
-        
-        if (this.Vacia()){
+
+        if (this.Vacia()) {
             this.cima = newNode;
-        }
-        else{  
+        } else {
             newNode.setSiguiente(this.cima);
             this.cima = newNode;
-            
+
         }
         this.largo++;
     }
-    
-    public void pop(){
+
+    public void pop() {
         if (!Vacia()) {
             // Asigna como primer node al siguiente de la pila.
             this.cima = this.cima.getSiguiente();
@@ -40,10 +42,7 @@ public class PilaExtras_Vehiculo {
             this.largo--;
         }
     }
-    
-   
-    
-    
+
 //    public boolean search(String reference) {
 //        // Crea una copia de la pila.
 //        NodePila_RegistroVehiculo aux = cima;
@@ -64,10 +63,6 @@ public class PilaExtras_Vehiculo {
 //        // Retorna el value de la bandera.
 //        return exist;
 //    }
-    
-    
-    
-    
 //        public void popModificado(String reference){
 //        // Consulta si el value exist en la pila.
 //        if (search(reference)) {
@@ -115,17 +110,17 @@ public class PilaExtras_Vehiculo {
 //        }
 //    }
 //    
-        public String listar(){
-         String s = "";
-        // Crea una copia de la pila.
+    public String listar() {
+        String stringConTodalaInfodelaPila = "";
         NodePila_Extras aux = cima;
-        // Recorre la pila hasta el ultimo node.
-        while(aux != null){
-            s=aux.getExtra().toString()+","+s;
-            
+        while (aux != null) {
+
+            stringConTodalaInfodelaPila = stringConTodalaInfodelaPila
+                    + aux.getExtra().toString() + "---";
             aux = aux.getSiguiente();
         }
-        return s;
+
+        return stringConTodalaInfodelaPila;
     }
 //    
 //    

@@ -24,7 +24,7 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="jTabbedPaneRegistrarvehiculo" alignment="0" pref="880" max="32767" attributes="0"/>
+          <Component id="jTabbedPaneRegistrarvehiculo" alignment="0" pref="882" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
@@ -60,20 +60,13 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="1" attributes="0">
                               <Component id="jLabelRegistrarVehiculo" min="-2" pref="109" max="-2" attributes="0"/>
-                              <EmptySpace pref="209" max="32767" attributes="0"/>
-                              <Component id="jLabelRegistro_de_Vehiculos" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="109" max="-2" attributes="0"/>
-                              <Component id="jButtonRefrescarRegistroVehiculo1" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="158" max="-2" attributes="0"/>
+                              <EmptySpace min="158" pref="767" max="32767" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" attributes="0">
-                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                          <Component id="jButtonRegistrar" max="32767" attributes="0"/>
-                                          <Component id="jButtonLimpiarBusqueda2" max="32767" attributes="0"/>
-                                      </Group>
+                                      <Component id="jButtonRegistrar" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                   </Group>
                                   <Group type="102" attributes="0">
@@ -96,30 +89,44 @@
                                           </Group>
                                           <Group type="102" alignment="0" attributes="0">
                                               <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Group type="102" attributes="0">
-                                                      <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
-                                                      <Group type="103" groupAlignment="0" attributes="0">
-                                                          <Component id="jComboBoxSelectorDeCombustible" min="-2" pref="118" max="-2" attributes="0"/>
-                                                          <Component id="jLabelCombustible" min="-2" max="-2" attributes="0"/>
-                                                          <Component id="jLabelPlacaAnnio" min="-2" max="-2" attributes="0"/>
-                                                          <Component id="jScrollPane5" min="-2" pref="118" max="-2" attributes="0"/>
-                                                          <Component id="jLabelPlacaCilindraje" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                          <Component id="jScrollPane7" min="-2" pref="118" max="-2" attributes="0"/>
+                                                  <Group type="103" groupAlignment="0" attributes="0">
+                                                      <Group type="102" attributes="0">
+                                                          <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
+                                                          <Group type="103" groupAlignment="0" attributes="0">
+                                                              <Component id="jComboBoxSelectorDeCombustible" min="-2" pref="118" max="-2" attributes="0"/>
+                                                              <Component id="jLabelCombustible" min="-2" max="-2" attributes="0"/>
+                                                              <Component id="jLabelPlacaAnnio" min="-2" max="-2" attributes="0"/>
+                                                              <Component id="jScrollPane5" min="-2" pref="118" max="-2" attributes="0"/>
+                                                              <Component id="jLabelPlacaCilindraje" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                              <Component id="jScrollPane7" min="-2" pref="118" max="-2" attributes="0"/>
+                                                          </Group>
+                                                      </Group>
+                                                      <Group type="102" alignment="0" attributes="0">
+                                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                                          <Component id="jLabel5" min="-2" pref="109" max="-2" attributes="0"/>
+                                                      </Group>
+                                                      <Group type="102" alignment="1" attributes="0">
+                                                          <EmptySpace max="-2" attributes="0"/>
+                                                          <Component id="jScrollPane16" min="-2" pref="113" max="-2" attributes="0"/>
                                                       </Group>
                                                   </Group>
                                                   <Group type="102" alignment="0" attributes="0">
-                                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                                      <Component id="jLabel5" min="-2" pref="109" max="-2" attributes="0"/>
-                                                  </Group>
-                                                  <Group type="102" alignment="1" attributes="0">
                                                       <EmptySpace max="-2" attributes="0"/>
-                                                      <Component id="jScrollPane16" min="-2" pref="113" max="-2" attributes="0"/>
+                                                      <Group type="103" groupAlignment="0" attributes="0">
+                                                          <Component id="jLabelPlaca1" min="-2" max="-2" attributes="0"/>
+                                                          <Component id="jComboBox2SelectorEstado" min="-2" max="-2" attributes="0"/>
+                                                      </Group>
                                                   </Group>
                                               </Group>
                                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                              <Component id="jScrollPane1" max="32767" attributes="0"/>
-                                              <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="jScrollPane15" min="-2" max="-2" attributes="0"/>
+                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                  <Group type="102" attributes="0">
+                                                      <Component id="jLabelRegistro_de_Vehiculos" min="-2" max="-2" attributes="0"/>
+                                                      <EmptySpace max="32767" attributes="0"/>
+                                                      <Component id="jButtonRefrescarRegistroVehiculo1" min="-2" max="-2" attributes="0"/>
+                                                  </Group>
+                                                  <Component id="jScrollPane1" max="32767" attributes="0"/>
+                                              </Group>
                                           </Group>
                                       </Group>
                                   </Group>
@@ -135,24 +142,27 @@
                   <Group type="102" alignment="0" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" attributes="0">
-                                      <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="jLabelRegistro_de_Vehiculos" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jButtonRefrescarRegistroVehiculo1" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                  </Group>
-                                  <Group type="102" alignment="1" attributes="0">
-                                      <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
-                                      <Component id="jLabelRegistrarVehiculo" min="-2" pref="26" max="-2" attributes="0"/>
-                                  </Group>
+                              <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="jLabelRegistro_de_Vehiculos" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jButtonRefrescarRegistroVehiculo1" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="1" attributes="0">
+                              <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
+                              <Component id="jLabelRegistrarVehiculo" min="-2" pref="26" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="jLabelPlaca" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabelPlaca1" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" attributes="0">
-                                      <Component id="jLabelPlaca" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                       <Component id="jScrollPane2" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="3" attributes="0">
@@ -195,19 +205,14 @@
                                           <Component id="jScrollPane16" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
-                                  <Component id="jScrollPane1" min="-2" pref="255" max="-2" attributes="0"/>
+                                  <Component id="jComboBox2SelectorEstado" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="239" max="-2" attributes="0"/>
-                              <Component id="jScrollPane15" min="-2" max="-2" attributes="0"/>
-                          </Group>
+                          <Component id="jScrollPane1" min="-2" pref="255" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="65" max="32767" attributes="0"/>
-                      <Component id="jButtonLimpiarBusqueda2" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="jButtonRegistrar" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
+                      <EmptySpace pref="103" max="32767" attributes="0"/>
                       <Component id="jButtonSalir" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
                   </Group>
@@ -329,7 +334,7 @@
             </Container>
             <Component class="javax.swing.JLabel" name="jLabelPlacaCilindraje">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Ciilindraje:"/>
+                <Property name="text" type="java.lang.String" value="Cilindraje:"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabelCombustible">
@@ -390,16 +395,8 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Refrescar Registro Veh&#xed;culo"/>
               </Properties>
-            </Component>
-            <Component class="javax.swing.JButton" name="jButtonLimpiarBusqueda2">
-              <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="cc" green="99" red="ff" type="rgb"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Limpiar B&#xfa;squeda"/>
-              </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonLimpiarBusqueda2ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonRefrescarRegistroVehiculo1ActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel4">
@@ -423,17 +420,6 @@
                 </Component>
               </SubComponents>
             </Container>
-            <Container class="javax.swing.JScrollPane" name="jScrollPane15">
-              <AuxValues>
-                <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
-              </AuxValues>
-
-              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
-              <SubComponents>
-                <Component class="javax.swing.JTextPane" name="jTextPane6">
-                </Component>
-              </SubComponents>
-            </Container>
             <Container class="javax.swing.JScrollPane" name="jScrollPane16">
               <AuxValues>
                 <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
@@ -445,6 +431,26 @@
                 </Component>
               </SubComponents>
             </Container>
+            <Component class="javax.swing.JComboBox" name="jComboBox2SelectorEstado">
+              <Properties>
+                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                  <StringArray count="4">
+                    <StringItem index="0" value="Disponible"/>
+                    <StringItem index="1" value=" Alquilado"/>
+                    <StringItem index="2" value=" En reparaci&#xf3;n"/>
+                    <StringItem index="3" value=" Fuera de circulaci&#xf3;n"/>
+                  </StringArray>
+                </Property>
+              </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+              </AuxValues>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabelPlaca1">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Estado: "/>
+              </Properties>
+            </Component>
           </SubComponents>
         </Container>
         <Container class="javax.swing.JPanel" name="jPanelModificarVehiculo">
@@ -468,39 +474,38 @@
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
-                              <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" attributes="0">
-                                      <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                      <Component id="jButtonBuscarPlacaModificarVehiculo" min="-2" pref="123" max="-2" attributes="0"/>
-                                  </Group>
                                   <Component id="jLabelParametroAModificar" alignment="0" min="-2" pref="137" max="-2" attributes="0"/>
                                   <Component id="jLabelValorAModificar" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jTextFieldPlaca" alignment="0" min="-2" pref="201" max="-2" attributes="0"/>
                                   <Component id="jComboBox1" alignment="0" min="-2" pref="179" max="-2" attributes="0"/>
                                   <Component id="jButtonModificar" alignment="0" min="-2" pref="130" max="-2" attributes="0"/>
-                                  <Component id="jButtonLimpiarBusqueda1" min="-2" pref="130" max="-2" attributes="0"/>
                                   <Component id="jScrollPane10" min="-2" pref="254" max="-2" attributes="0"/>
+                                  <Component id="jLabel2" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jTextFieldPlaca" alignment="0" min="-2" pref="201" max="-2" attributes="0"/>
+                                  <Component id="jButtonBuscarPlacaModificarVehiculo" alignment="0" min="-2" pref="123" max="-2" attributes="0"/>
+                                  <Component id="jLabel6" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jComboBoxtipoCombustibleExtras1" alignment="0" min="-2" pref="136" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace pref="20" max="32767" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Group type="103" alignment="0" groupAlignment="0" attributes="0">
+                                      <Component id="jScrollPane9" alignment="1" min="-2" pref="596" max="-2" attributes="0"/>
+                                      <Component id="jButtonSalirModificarVehiculo" alignment="1" min="-2" pref="103" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="jLabelRegistroVehiculo2" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="32767" attributes="0"/>
+                                      <Component id="jButtonActualizar" min="-2" pref="130" max="-2" attributes="0"/>
+                                  </Group>
                               </Group>
                           </Group>
-                          <Component id="jButtonEliminar" alignment="0" min="-2" pref="130" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace max="32767" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="103" alignment="1" groupAlignment="0" attributes="0">
-                              <Group type="102" attributes="0">
-                                  <Component id="jLabelRegistroVehiculo2" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="119" max="-2" attributes="0"/>
-                                  <Component id="jButtonRefrescarVisualizacionRegistro2" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <Component id="jScrollPane9" min="-2" pref="596" max="-2" attributes="0"/>
-                              <Component id="jLabelVehiculoSeleccionado" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="jButtonEliminar" min="-2" pref="130" max="-2" attributes="0"/>
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                           </Group>
-                          <Component id="jScrollPane8" alignment="1" min="-2" pref="596" max="-2" attributes="0"/>
-                          <Component id="jButtonSalirModificarVehiculo" alignment="1" min="-2" pref="103" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
@@ -509,45 +514,42 @@
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="1" attributes="0">
-                          <Component id="jButtonRefrescarVisualizacionRegistro2" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabelRegistroVehiculo2" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jLabelRegistroVehiculo2" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jButtonActualizar" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="jScrollPane9" min="-2" pref="310" max="-2" attributes="0"/>
-                              <EmptySpace max="32767" attributes="0"/>
-                              <Component id="jLabelVehiculoSeleccionado" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jScrollPane8" min="-2" pref="73" max="-2" attributes="0"/>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <EmptySpace pref="107" max="32767" attributes="0"/>
                               <Component id="jButtonSalirModificarVehiculo" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jButtonBuscarPlacaModificarVehiculo" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
+                              <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="jTextFieldPlaca" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
+                              <Component id="jButtonBuscarPlacaModificarVehiculo" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Component id="jLabelParametroAModificar" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="jComboBox1" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="jLabelValorAModificar" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="jComboBoxtipoCombustibleExtras1" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
+                              <Component id="jLabelValorAModificar" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Component id="jScrollPane10" min="-2" pref="42" max="-2" attributes="0"/>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="jButtonLimpiarBusqueda1" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Component id="jButtonModificar" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="32767" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Component id="jButtonEliminar" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="54" max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -555,17 +557,6 @@
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Container class="javax.swing.JScrollPane" name="jScrollPane8">
-              <AuxValues>
-                <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
-              </AuxValues>
-
-              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
-              <SubComponents>
-                <Component class="javax.swing.JTextPane" name="jTextPaneDisplayRegistro1">
-                </Component>
-              </SubComponents>
-            </Container>
             <Component class="javax.swing.JButton" name="jButtonModificar">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -594,11 +585,6 @@
                 <Property name="text" type="java.lang.String" value="Registro Vehiculos"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabelVehiculoSeleccionado">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Datos de vehiculo Seleccionado:"/>
-              </Properties>
-            </Component>
             <Component class="javax.swing.JLabel" name="jLabel2">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -613,14 +599,17 @@
                   <Color blue="ff" green="33" red="0" type="rgb"/>
                 </Property>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="7">
-                    <StringItem index="0" value="marca del Vehiculo"/>
-                    <StringItem index="1" value="modelo del vehiculo"/>
-                    <StringItem index="2" value="a&#xf1;o del vehiculo"/>
-                    <StringItem index="3" value="color del vehiculo"/>
-                    <StringItem index="4" value="cilindraje del vehiculo"/>
-                    <StringItem index="5" value="cantidad de pasajeros"/>
-                    <StringItem index="6" value="precio de alquiler por d&#xed;a"/>
+                  <StringArray count="10">
+                    <StringItem index="0" value="Placa"/>
+                    <StringItem index="1" value="Marca"/>
+                    <StringItem index="2" value="Modelo"/>
+                    <StringItem index="3" value="A&#xf1;o"/>
+                    <StringItem index="4" value="Color"/>
+                    <StringItem index="5" value="Cilindraje"/>
+                    <StringItem index="6" value="Combustible"/>
+                    <StringItem index="7" value="Pasajeros"/>
+                    <StringItem index="8" value="Precio alquiler"/>
+                    <StringItem index="9" value="Estado"/>
                   </StringArray>
                 </Property>
               </Properties>
@@ -654,18 +643,13 @@
                 <Property name="text" type="java.lang.String" value="Valor a modificar"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="jButtonRefrescarVisualizacionRegistro2">
-              <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="33" green="ff" red="33" type="rgb"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Refrescar Registro Global Veh&#xed;culos"/>
-              </Properties>
-            </Component>
             <Component class="javax.swing.JButton" name="jButtonBuscarPlacaModificarVehiculo">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="ff" green="33" red="0" type="rgb"/>
+                  <Color blue="0" green="cc" red="66" type="rgb"/>
+                </Property>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="0" green="0" red="0" type="rgb"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Buscar Placa"/>
               </Properties>
@@ -689,13 +673,48 @@
                 <Property name="text" type="java.lang.String" value="Eliminar Vehiculo"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="jButtonLimpiarBusqueda1">
+            <Component class="javax.swing.JButton" name="jButtonActualizar">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="cc" green="99" red="ff" type="rgb"/>
+                  <Color blue="33" green="ff" red="99" type="rgb"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Limpiar B&#xfa;squeda"/>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="0" green="0" red="0" type="rgb"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Mostrar todos"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonActualizarActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel6">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Tipo Combustible"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JComboBox" name="jComboBoxtipoCombustibleExtras1">
+              <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="ff" green="66" red="0" type="rgb"/>
+                </Property>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                </Property>
+                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                  <StringArray count="4">
+                    <StringItem index="0" value="Gasolina"/>
+                    <StringItem index="1" value="Diesel"/>
+                    <StringItem index="2" value="El&#xe9;ctrico"/>
+                    <StringItem index="3" value="Gas Natural"/>
+                  </StringArray>
+                </Property>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jComboBoxtipoCombustibleExtras1ActionPerformed"/>
+              </Events>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+              </AuxValues>
             </Component>
           </SubComponents>
         </Container>
@@ -716,35 +735,22 @@
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
-                              <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="jComboBoxtipoCombustibleExtras" min="-2" pref="136" max="-2" attributes="0"/>
-                                      <Component id="jCheckBoxUsarElTipoDeCombustible" max="32767" attributes="0"/>
-                                      <Component id="jLabel1" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jScrollPane12" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="jButtonAplicarCambioTipoCombustible" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Component id="jButtonLimpiarbusqueda3" alignment="0" min="-2" pref="176" max="-2" attributes="0"/>
-                                  <Component id="jLabel3" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jButtonBuscar_Refrescar" alignment="0" min="-2" max="-2" attributes="0"/>
-                              </Group>
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="jLabel3" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="jButtonAgregarExtras" alignment="0" min="-2" pref="125" max="-2" attributes="0"/>
+                              <Component id="jButtonQuitarExtras" min="-2" pref="125" max="-2" attributes="0"/>
+                              <Component id="jButtonBuscar_Refrescar" alignment="0" max="32767" attributes="0"/>
+                              <Component id="jScrollPane12" alignment="0" max="32767" attributes="0"/>
+                              <Component id="jScrollPane13" max="32767" attributes="0"/>
                           </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="jButtonAgregarExtras" pref="125" max="32767" attributes="0"/>
-                                  <Component id="jButtonQuitarExtras" max="32767" attributes="0"/>
-                              </Group>
-                          </Group>
+                          <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="44" max="32767" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="jScrollPane13" max="32767" attributes="0"/>
+                      <EmptySpace pref="42" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="jLabelInfoDeVehiculoConExtras" min="-2" max="-2" attributes="0"/>
-                          <Component id="jScrollPane11" pref="567" max="32767" attributes="0"/>
+                          <Component id="jScrollPane11" min="-2" pref="567" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="69" max="-2" attributes="0"/>
                   </Group>
@@ -754,84 +760,32 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="57" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabelInfoDeVehiculoConExtras" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="jLabelInfoDeVehiculoConExtras" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="1" attributes="0">
                           <Component id="jScrollPane11" min="-2" pref="234" max="-2" attributes="0"/>
                           <Group type="102" attributes="0">
-                              <Component id="jButtonBuscar_Refrescar" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Component id="jScrollPane12" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jComboBoxtipoCombustibleExtras" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
-                              <Component id="jCheckBoxUsarElTipoDeCombustible" min="-2" max="-2" attributes="0"/>
+                              <Component id="jButtonBuscar_Refrescar" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
+                              <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="jButtonAplicarCambioTipoCombustible" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jButtonLimpiarbusqueda3" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
-                      <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jScrollPane13" min="-2" pref="49" max="-2" attributes="0"/>
-                          <Group type="102" attributes="0">
+                              <Component id="jScrollPane13" min="-2" pref="37" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Component id="jButtonAgregarExtras" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="jButtonQuitarExtras" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace pref="110" max="32767" attributes="0"/>
+                      <EmptySpace pref="206" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JComboBox" name="jComboBoxtipoCombustibleExtras">
-              <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="ff" green="66" red="0" type="rgb"/>
-                </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                </Property>
-                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="4">
-                    <StringItem index="0" value="Gasolina"/>
-                    <StringItem index="1" value="Diesel"/>
-                    <StringItem index="2" value="El&#xe9;ctrico"/>
-                    <StringItem index="3" value="Gas Natural"/>
-                  </StringArray>
-                </Property>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jComboBoxtipoCombustibleExtrasActionPerformed"/>
-              </Events>
-              <AuxValues>
-                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-              </AuxValues>
-            </Component>
-            <Component class="javax.swing.JCheckBox" name="jCheckBoxUsarElTipoDeCombustible">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Usar este tipo de combustible"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JButton" name="jButtonAplicarCambioTipoCombustible">
-              <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="ff" green="0" red="0" type="rgb"/>
-                </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Aplicar tipo de combustible"/>
-              </Properties>
-            </Component>
             <Container class="javax.swing.JScrollPane" name="jScrollPane11">
               <AuxValues>
                 <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
@@ -847,11 +801,6 @@
                 </Component>
               </SubComponents>
             </Container>
-            <Component class="javax.swing.JLabel" name="jLabel1">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Tipo Combustible"/>
-              </Properties>
-            </Component>
             <Container class="javax.swing.JScrollPane" name="jScrollPane12">
               <AuxValues>
                 <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
@@ -911,16 +860,10 @@
                 <Property name="text" type="java.lang.String" value="Quitar Extras"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="jButtonLimpiarbusqueda3">
+            <Component class="javax.swing.JLabel" name="jLabel7">
               <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="ff" green="99" red="ff" type="rgb"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Limpiar B&#xfa;squeda"/>
+                <Property name="text" type="java.lang.String" value="Extra:"/>
               </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonLimpiarbusqueda3ActionPerformed"/>
-              </Events>
             </Component>
           </SubComponents>
         </Container>

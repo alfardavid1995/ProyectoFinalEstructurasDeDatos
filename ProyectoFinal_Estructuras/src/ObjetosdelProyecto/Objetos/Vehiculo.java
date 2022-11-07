@@ -135,10 +135,29 @@ public class Vehiculo {
 
     @Override
     public String toString() {
-        return "Vehiculo{" + "numPlacadeVehiculo=" + numPlacadeVehiculo + ", marcaDeVehiculo=" + marcaDeVehiculo + ", modeloVehiculo=" + modeloVehiculo + ", aniodeVehiculo=" + aniodeVehiculo + ", colorDeVehiculo=" + colorDeVehiculo + ", cilindradaDeVehiculo=" + cilindradaDeVehiculo + ", tipoCombustibleDeVehiculo=" + tipoCombustibleDeVehiculo + ", cantPasajerosdeVehiculo=" + cantPasajerosdeVehiculo + ", precioAlquilerXDiaDeVehiculo=" + precioAlquilerXDiaDeVehiculo + ", estadoParaSerAlquilado=" + estadoParaSerAlquilado + ", cantidadDeVecesAlquilado=" + cantidadDeVecesAlquilado + ", extrasPila=" + extrasPila.listar()+ '}';
+        return  "\n-------------------------- Vehiculo -------------------------" +
+                "\n-- Placa: "  + numPlacadeVehiculo + 
+                "\n-- Marca: " + marcaDeVehiculo + 
+                "\n-- Modelo: " + modeloVehiculo +
+                "\n-- Anio: " + aniodeVehiculo + 
+                "\n-- Color: " + colorDeVehiculo + 
+                "\n-- Cilindrada: " + cilindradaDeVehiculo + 
+                "\n-- Tipo combustible: " + tipoCombustibleDeVehiculo + 
+                "\n-- Cantidad pasajeros: " + cantPasajerosdeVehiculo + 
+                "\n-- Precio alquiler: " + precioAlquilerXDiaDeVehiculo +
+                "\n-- Estado: " + estadoParaSerAlquilado + 
+                "\n-- Cantidad veces alquilado: " + cantidadDeVecesAlquilado + 
+                "\n-- Extras: " + extrasPila.listar();
     }
     
-    
+    public String listar2(){
+        return  "\n-------------------------- Vehiculo -------------------------" +
+                "\n-- Placa: "  + numPlacadeVehiculo + 
+                "\n-- Marca: " + marcaDeVehiculo + 
+                "\n-- Precio alquiler: " + precioAlquilerXDiaDeVehiculo +
+                "\n-- Estado: " + estadoParaSerAlquilado + 
+                "\n-- Extras: " + extrasPila.listar();
+    }
 
 
     
