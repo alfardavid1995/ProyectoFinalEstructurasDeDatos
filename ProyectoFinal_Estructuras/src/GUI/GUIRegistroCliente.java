@@ -39,7 +39,7 @@ public class GUIRegistroCliente extends javax.swing.JFrame {
         jTextFieldFechaCliente = new javax.swing.JTextField();
         jTextFieldCorreoCliente = new javax.swing.JTextField();
         jComboBoxCategorriaClente = new javax.swing.JComboBox<>();
-        jButton1 = new javax.swing.JButton();
+        jButtonRegistrarCliente = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jTextFieldNombreClienteModifica = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
@@ -126,11 +126,11 @@ public class GUIRegistroCliente extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jButton1.setText("Registrar");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        jButtonRegistrarCliente.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jButtonRegistrarCliente.setText("Registrar");
+        jButtonRegistrarCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                jButtonRegistrarClienteActionPerformed(evt);
             }
         });
 
@@ -167,7 +167,7 @@ public class GUIRegistroCliente extends javax.swing.JFrame {
                                             .addComponent(jTextFieldFechaCliente)
                                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                                 .addGap(0, 0, Short.MAX_VALUE)
-                                                .addComponent(jButton1))))))
+                                                .addComponent(jButtonRegistrarCliente))))))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel8)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -201,7 +201,7 @@ public class GUIRegistroCliente extends javax.swing.JFrame {
                     .addComponent(jLabel9)
                     .addComponent(jComboBoxCategorriaClente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
-                .addComponent(jButton1)
+                .addComponent(jButtonRegistrarCliente)
                 .addGap(170, 170, 170))
         );
 
@@ -479,7 +479,7 @@ public class GUIRegistroCliente extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1064, Short.MAX_VALUE)
+            .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1064, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -545,9 +545,32 @@ public class GUIRegistroCliente extends javax.swing.JFrame {
        
     }//GEN-LAST:event_jButtonRefrescaPanelActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-       
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void jButtonRegistrarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRegistrarClienteActionPerformed
+
+        String nombre = jTextFieldNombreCliente.getText();
+        int cedula = Integer.parseInt(jTextFieldCedulaCliente.getText());
+        String correo = jTextFieldCorreoCliente.getText();
+        String fechaNacimiento = jTextFieldFechaCliente.getText();
+        String categoria = "";
+        switch (jComboBoxCategorriaClente.getSelectedIndex()) {
+            case 0:
+                categoria = "Bronce";
+
+                break;
+            case 1:
+                categoria = "Plata";
+
+                break;
+            case 2:
+                categoria = "Oro";
+
+                break;
+            case 3:
+                categoria = "Zafiro";
+
+                break;
+        }
+    }//GEN-LAST:event_jButtonRegistrarClienteActionPerformed
 
     /**
      * @param args the command line arguments
@@ -585,12 +608,12 @@ public class GUIRegistroCliente extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButtonEliminaCliente;
     private javax.swing.JButton jButtonRefrescaPanel;
+    private javax.swing.JButton jButtonRegistrarCliente;
     private javax.swing.JComboBox<String> jComboBoxCategorriaClente;
     private javax.swing.JComboBox<String> jComboBoxCategorriaClenteModifica;
     private javax.swing.JLabel jLabel1;
