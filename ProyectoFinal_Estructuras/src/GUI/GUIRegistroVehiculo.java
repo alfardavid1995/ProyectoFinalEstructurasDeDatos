@@ -329,7 +329,7 @@ public class GUIRegistroVehiculo extends javax.swing.JFrame {
         jLabel2.setText("Placa:");
 
         jComboBox1.setBackground(new java.awt.Color(0, 51, 255));
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Placa", "Marca", "Modelo", "Año", "Color", "Cilindraje", "Combustible", "Pasajeros", "Precio alquiler", "Estado" }));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Marca", "Modelo", "Año", "Color", "Cilindraje", "Combustible", "Pasajeros", "Precio alquiler", "Estado" }));
         jComboBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox1ActionPerformed(evt);
@@ -586,27 +586,24 @@ public class GUIRegistroVehiculo extends javax.swing.JFrame {
             switch (jComboBox1.getSelectedIndex()) {
                 case 0:
 
-                    vehiculo.setNumPlacadeVehiculo(modifica);
+                      vehiculo.setMarcaDeVehiculo(modifica);
 
                     break;
                 case 1:
-                    vehiculo.setMarcaDeVehiculo(modifica);
+                   vehiculo.setModeloVehiculo(modifica);
                     break;
                 case 2:
-                    vehiculo.setModeloVehiculo(modifica);
-                    break;
-                case 3:
                     int modifica2 = Integer.parseInt(jTextPaneValorAModificar.getText());
                     vehiculo.setAniodeVehiculo(modifica2);
                     break;
-                case 4:
+                case 3:
                     vehiculo.setColorDeVehiculo(modifica);
                     break;
-                case 5:
+                case 4:
                     modifica2 = Integer.parseInt(jTextPaneValorAModificar.getText());
                     vehiculo.setCilindradaDeVehiculo(modifica2);
                     break;
-                case 6:
+                case 5:
                     switch (jComboBoxtipoCombustible.getSelectedIndex()) {
                         case 0:
                             modifica = "Gasolina";
@@ -627,16 +624,16 @@ public class GUIRegistroVehiculo extends javax.swing.JFrame {
                     }
                     vehiculo.setTipoCombustibleDeVehiculo(modifica);
                     break;
-                case 7:
-                    modifica2 = Integer.parseInt(jTextPaneValorAModificar.getText());
+                case 6:
+                   modifica2 = Integer.parseInt(jTextPaneValorAModificar.getText());
                     vehiculo.setCantPasajerosdeVehiculo(modifica2);
                     break;
-                case 8:
-                    modifica2 = Integer.parseInt(jTextPaneValorAModificar.getText());
+                case 7:
+                     modifica2 = Integer.parseInt(jTextPaneValorAModificar.getText());
                     vehiculo.setPrecioAlquilerXDiaDeVehiculo(modifica2);
                     break;
-                case 9:
-                    switch (jComboBox2Estado.getSelectedIndex()) {
+                case 8:
+                     switch (jComboBox2Estado.getSelectedIndex()) {
                         case 0:
                             modifica = "Disponible";
 
@@ -656,7 +653,7 @@ public class GUIRegistroVehiculo extends javax.swing.JFrame {
                     }
                     vehiculo.setEstadoParaSerAlquilado(modifica);
                     break;
-
+              
             }
 
         } else {
@@ -741,8 +738,6 @@ public class GUIRegistroVehiculo extends javax.swing.JFrame {
     private void jButtonAgregarExtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAgregarExtrasActionPerformed
         String numPlaca = jtext_numPlaca.getText();
         String extra = jtext_extras.getText();
-
-        pilaRegistroVehiculo.search(numPlaca);
 
         if (pilaRegistroVehiculo.search(numPlaca)) {
             Vehiculo vehiculo = pilaRegistroVehiculo.traerVehiculo(numPlaca);//aca traemos el vehiculo a la GUI para que se trabaje desde ahi
