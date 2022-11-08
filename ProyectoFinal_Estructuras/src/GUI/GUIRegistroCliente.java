@@ -634,7 +634,7 @@ public class GUIRegistroCliente extends javax.swing.JFrame {
         } else {
             JOptionPane.showMessageDialog(null, "El cliente no existe");
         }
-        jTextPaneDisplayRegistro.setText(colaRegistroCliente.toString());
+        jTextPaneDisplayModificar.setText(colaRegistroCliente.toString());
     }//GEN-LAST:event_jButtonModificarActionPerformed
 
     private void jButtonMostrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonMostrarActionPerformed
