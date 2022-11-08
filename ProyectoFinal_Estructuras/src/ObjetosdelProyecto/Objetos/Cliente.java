@@ -6,21 +6,24 @@ import EstructurasDeDatos.*;
 public class Cliente {
     private int cedula;
     private String nombreCompleto;
-    private Calendar fechaNacimiento;   
+    private String fechaNacimiento;   
     private String correoElectronico;
     private String categoria;//Bronce, Plata, Oro, Zafiro 
     private PilaAlquileresRealizados_Cliente pilaAlquilerdeCliente;
     private int cantidadDeAlquileresProcesados;
-    
-    public Cliente(int cedula, String nombreCompleto, Calendar fechaNacimiento, 
-            String correoElectronico, String categoria) {
+
+    public Cliente() {
+    }
+
+    public Cliente(int cedula, String nombreCompleto, String fechaNacimiento, String correoElectronico, String categoria, int cantidadDeAlquileresProcesados) {
         this.cedula = cedula;
         this.nombreCompleto = nombreCompleto;
         this.fechaNacimiento = fechaNacimiento;
         this.correoElectronico = correoElectronico;
         this.categoria = categoria;
+        this.cantidadDeAlquileresProcesados = cantidadDeAlquileresProcesados;
     }
-
+ 
     public int getCedula() {
         return cedula;
     }
@@ -37,11 +40,11 @@ public class Cliente {
         this.nombreCompleto = nombreCompleto;
     }
 
-    public Calendar getFechaNacimiento() {
+    public String getFechaNacimiento() {
         return fechaNacimiento;
     }
 
-    public void setFechaNacimiento(Calendar fechaNacimiento) {
+    public void setFechaNacimiento(String fechaNacimiento) {
         this.fechaNacimiento = fechaNacimiento;
     }
 
@@ -78,12 +81,14 @@ public class Cliente {
     }
     
 
-    @Override
-    public String toString() {
-        return "Cliente{" + "cedula=" + cedula + ", nombreCompleto=" 
-                + nombreCompleto + ", fechaNacimiento=" + fechaNacimiento 
-                + ", correoElectronico=" + correoElectronico 
-                + ", categoria=" + categoria + '}';
+    public String listar() {
+        return  "\n -------------------------- Cliente ------------------------- \n" +
+                "\n Nombre: "  + nombreCompleto + 
+                "\n Cédula: " + cedula + 
+                "\n Fecha de Nacimiento: " + fechaNacimiento +
+                "\n Correo: " + correoElectronico + 
+                "\n Categoría: " + categoria + 
+                "\n Cantidad de Alquileres: " + cantidadDeAlquileresProcesados;
     }
-    
+
 }

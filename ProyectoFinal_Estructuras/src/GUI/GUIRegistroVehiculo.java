@@ -312,7 +312,6 @@ public class GUIRegistroVehiculo extends javax.swing.JFrame {
         jPanelModificarVehiculo.setPreferredSize(new java.awt.Dimension(900, 550));
 
         jButtonModificar.setBackground(new java.awt.Color(51, 51, 255));
-        jButtonModificar.setForeground(new java.awt.Color(0, 0, 0));
         jButtonModificar.setText("Modificar Vehiculo");
         jButtonModificar.setActionCommand("Modificar");
         jButtonModificar.addActionListener(new java.awt.event.ActionListener() {
@@ -343,7 +342,6 @@ public class GUIRegistroVehiculo extends javax.swing.JFrame {
         jLabelValorAModificar.setText("Valor a modificar");
 
         jButtonBuscarPlacaModificarVehiculo.setBackground(new java.awt.Color(102, 204, 0));
-        jButtonBuscarPlacaModificarVehiculo.setForeground(new java.awt.Color(0, 0, 0));
         jButtonBuscarPlacaModificarVehiculo.setText("Buscar Placa");
         jButtonBuscarPlacaModificarVehiculo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -355,7 +353,6 @@ public class GUIRegistroVehiculo extends javax.swing.JFrame {
         jButtonSalirModificarVehiculo.setText("Salir");
 
         jButtonEliminar.setBackground(new java.awt.Color(255, 0, 0));
-        jButtonEliminar.setForeground(new java.awt.Color(0, 0, 0));
         jButtonEliminar.setText("Eliminar Vehiculo");
         jButtonEliminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -364,7 +361,6 @@ public class GUIRegistroVehiculo extends javax.swing.JFrame {
         });
 
         jButtonActualizar.setBackground(new java.awt.Color(153, 255, 51));
-        jButtonActualizar.setForeground(new java.awt.Color(0, 0, 0));
         jButtonActualizar.setText("Mostrar todos");
         jButtonActualizar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -386,6 +382,11 @@ public class GUIRegistroVehiculo extends javax.swing.JFrame {
         jLabelPlaca2.setText("Estado: ");
 
         jComboBox2Estado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Disponible", " Alquilado", " En reparación", " Fuera de circulación" }));
+        jComboBox2Estado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox2EstadoActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanelModificarVehiculoLayout = new javax.swing.GroupLayout(jPanelModificarVehiculo);
         jPanelModificarVehiculo.setLayout(jPanelModificarVehiculoLayout);
@@ -479,7 +480,6 @@ public class GUIRegistroVehiculo extends javax.swing.JFrame {
         jScrollPane12.setViewportView(jtext_numPlaca);
 
         jButtonBuscar_Refrescar.setBackground(new java.awt.Color(0, 102, 255));
-        jButtonBuscar_Refrescar.setForeground(new java.awt.Color(0, 0, 0));
         jButtonBuscar_Refrescar.setText("Buscar Placa ");
         jButtonBuscar_Refrescar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -494,7 +494,6 @@ public class GUIRegistroVehiculo extends javax.swing.JFrame {
         jScrollPane13.setViewportView(jtext_extras);
 
         jButtonAgregarExtras.setBackground(new java.awt.Color(51, 255, 0));
-        jButtonAgregarExtras.setForeground(new java.awt.Color(0, 0, 0));
         jButtonAgregarExtras.setText("Agregar Extras");
         jButtonAgregarExtras.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -503,7 +502,6 @@ public class GUIRegistroVehiculo extends javax.swing.JFrame {
         });
 
         jButtonQuitarExtras.setBackground(new java.awt.Color(224, 132, 15));
-        jButtonQuitarExtras.setForeground(new java.awt.Color(0, 0, 0));
         jButtonQuitarExtras.setText("Quitar Extras");
         jButtonQuitarExtras.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -807,13 +805,17 @@ public class GUIRegistroVehiculo extends javax.swing.JFrame {
     private void jButtonEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEliminarActionPerformed
       String placa= jTextFieldPlaca.getText();
      
-       if (pilaRegistroVehiculo.search(placa)) {
+        if (pilaRegistroVehiculo.search(placa)) {
            pilaRegistroVehiculo.popModificado(placa);
            jTextPaneDisplayRegistro2.setText(pilaRegistroVehiculo.listar2());
         } else {
             JOptionPane.showMessageDialog(null, "el vehiculo no existe");
         }
     }//GEN-LAST:event_jButtonEliminarActionPerformed
+
+    private void jComboBox2EstadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox2EstadoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox2EstadoActionPerformed
 
     public void limpiarConsola() {
         jTextPanePlaca.setText("");
