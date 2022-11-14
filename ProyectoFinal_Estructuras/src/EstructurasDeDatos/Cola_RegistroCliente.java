@@ -129,16 +129,16 @@ public class Cola_RegistroCliente {
         return s;
     }
     
-//    public String listar2(){
-//        String stringConTodalaInfodelaCola = "";
-//        NodeCola_RegistroCliente aux = frente;
-//        while (aux != null) {
-//
-//            stringConTodalaInfodelaCola = stringConTodalaInfodelaCola
-//                    + aux.getClienteNodo().listar()+ "\n";
-//            aux = aux.getAtras();
-//        }
-//
-//        return stringConTodalaInfodelaCola;
-//    }
+    public String listar2(){
+        String stringConTodalaInfodelaCola = "";
+        NodeCola_RegistroCliente aux = frente;
+        while (aux != null) {
+
+            stringConTodalaInfodelaCola = stringConTodalaInfodelaCola
+                    + aux.getClienteNodo().listar2()+ "\n";
+            aux = aux.getAtras();
+        }
+
+        return stringConTodalaInfodelaCola;
+    }
 }

@@ -91,4 +91,10 @@ public class Cliente {
                 "\n Cantidad de Alquileres: " + cantidadDeAlquileresProcesados;
     }
 
+     public String listar2() {
+        return  "\n -------------------------- Cliente ------------------------- \n" +
+                "\n Nombre: "  + nombreCompleto + 
+                "\n Cédula: " + cedula + 
+                "\n Categoría: " + categoria;
+    }
 }

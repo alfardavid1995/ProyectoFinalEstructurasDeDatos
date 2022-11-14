@@ -11,7 +11,7 @@ public class Vehiculo {
     private String tipoCombustibleDeVehiculo;
     private int cantPasajerosdeVehiculo;
     private double precioAlquilerXDiaDeVehiculo;
-    private String estadoParaSerAlquilado; // disponible o alquilado
+    private String estadoParaSerAlquilado; // Disponible,Alquilado,En reparación,Fuera de circulación
     private int cantidadDeVecesAlquilado;
     private PilaExtras_Vehiculo extrasPila = new PilaExtras_Vehiculo();
 
