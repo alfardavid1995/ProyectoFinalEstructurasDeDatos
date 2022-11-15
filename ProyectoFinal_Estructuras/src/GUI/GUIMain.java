@@ -18,7 +18,8 @@ public class GUIMain extends javax.swing.JFrame {
                 4, "Gasolina", 5, 90, "Disponible");
         Vehiculo vehiculito4 = new Vehiculo("HRR-9879", "Toyota", "Rush", 2022, "Blanco",
                 4, "Gasolina", 5, 90, "Disponible");
-         Cliente clientito1 = new Cliente(118487,"Alejandro","14-4-2001","ale84@gmail.com",
+        
+        Cliente clientito1 = new Cliente(118487,"Alejandro","14-4-2001","ale84@gmail.com",
             "",0);
         Cliente clientito2 = new Cliente(654641,"Pedro","25-6-1998","pedro36@gmail.com",
             "",0);
@@ -160,6 +161,9 @@ public class GUIMain extends javax.swing.JFrame {
         jButtonConsultar = new javax.swing.JButton();
         jButtonRefrescar = new javax.swing.JButton();
         jLabel19 = new javax.swing.JLabel();
+        jTabbedPane1 = new javax.swing.JTabbedPane();
+        jTabbedPane2 = new javax.swing.JTabbedPane();
+        jTabbedPane3 = new javax.swing.JTabbedPane();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Vehiculo");
@@ -697,90 +701,89 @@ public class GUIMain extends javax.swing.JFrame {
         pestañaRegistroClienteLayout.setHorizontalGroup(
             pestañaRegistroClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pestañaRegistroClienteLayout.createSequentialGroup()
-                .addGroup(pestañaRegistroClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButtonSalir1)
+                .addGroup(pestañaRegistroClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pestañaRegistroClienteLayout.createSequentialGroup()
+                        .addGap(37, 37, 37)
+                        .addComponent(jLabel9)
+                        .addGap(18, 18, 18)
+                        .addComponent(jTextFieldNombreCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(pestañaRegistroClienteLayout.createSequentialGroup()
+                        .addGap(119, 119, 119)
+                        .addComponent(jButtonRegistrarCliente))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pestañaRegistroClienteLayout.createSequentialGroup()
+                        .addContainerGap()
                         .addGroup(pestañaRegistroClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(pestañaRegistroClienteLayout.createSequentialGroup()
-                                .addGap(37, 37, 37)
-                                .addComponent(jLabel9)
-                                .addGap(18, 18, 18)
-                                .addComponent(jTextFieldNombreCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(pestañaRegistroClienteLayout.createSequentialGroup()
-                                .addGap(119, 119, 119)
-                                .addComponent(jButtonRegistrarCliente))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pestañaRegistroClienteLayout.createSequentialGroup()
-                                .addContainerGap()
-                                .addGroup(pestañaRegistroClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(pestañaRegistroClienteLayout.createSequentialGroup()
-                                        .addComponent(jLabel13)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jComboBoxCategorriaClente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(pestañaRegistroClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addGroup(pestañaRegistroClienteLayout.createSequentialGroup()
-                                            .addComponent(jLabel11)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(jTextFieldFechaCliente))
-                                        .addGroup(pestañaRegistroClienteLayout.createSequentialGroup()
-                                            .addGroup(pestañaRegistroClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                                .addComponent(jLabel12)
-                                                .addComponent(jLabel10))
-                                            .addGap(18, 18, 18)
-                                            .addGroup(pestañaRegistroClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addComponent(jTextFieldCedulaCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addComponent(jTextFieldCorreoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
-                        .addGap(22, 22, 22)
+                                .addComponent(jLabel13)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jComboBoxCategorriaClente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(pestañaRegistroClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addGroup(pestañaRegistroClienteLayout.createSequentialGroup()
+                                    .addComponent(jLabel11)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(jTextFieldFechaCliente))
+                                .addGroup(pestañaRegistroClienteLayout.createSequentialGroup()
+                                    .addGroup(pestañaRegistroClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(jLabel12)
+                                        .addComponent(jLabel10))
+                                    .addGap(18, 18, 18)
+                                    .addGroup(pestañaRegistroClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jTextFieldCedulaCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jTextFieldCorreoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
+                .addGap(22, 22, 22)
+                .addGroup(pestañaRegistroClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel17)
+                    .addGroup(pestañaRegistroClienteLayout.createSequentialGroup()
+                        .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 416, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(pestañaRegistroClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(pestañaRegistroClienteLayout.createSequentialGroup()
-                                .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 416, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jButtonSalir1))
+                            .addGroup(pestañaRegistroClienteLayout.createSequentialGroup()
                                 .addGap(134, 134, 134)
-                                .addComponent(jButtonRefrescarRegistroCliente))
-                            .addComponent(jLabel17))))
+                                .addComponent(jButtonRefrescarRegistroCliente)))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         pestañaRegistroClienteLayout.setVerticalGroup(
             pestañaRegistroClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pestañaRegistroClienteLayout.createSequentialGroup()
+                .addGap(72, 72, 72)
+                .addComponent(jButtonRefrescarRegistroCliente)
+                .addGap(26, 26, 26)
+                .addComponent(jButtonSalir1))
+            .addGroup(pestañaRegistroClienteLayout.createSequentialGroup()
                 .addGroup(pestañaRegistroClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pestañaRegistroClienteLayout.createSequentialGroup()
-                        .addGroup(pestañaRegistroClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(pestañaRegistroClienteLayout.createSequentialGroup()
-                                .addGap(25, 25, 25)
-                                .addGroup(pestañaRegistroClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel9)
-                                    .addComponent(jTextFieldNombreCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pestañaRegistroClienteLayout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(jLabel17)))
-                        .addGroup(pestañaRegistroClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(pestañaRegistroClienteLayout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addGroup(pestañaRegistroClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel10)
-                                    .addComponent(jTextFieldCedulaCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(18, 18, 18)
-                                .addGroup(pestañaRegistroClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel12)
-                                    .addComponent(jTextFieldCorreoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(18, 18, 18)
-                                .addGroup(pestañaRegistroClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel11)
-                                    .addComponent(jTextFieldFechaCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(18, 18, 18)
-                                .addGroup(pestañaRegistroClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel13)
-                                    .addComponent(jComboBoxCategorriaClente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(pestañaRegistroClienteLayout.createSequentialGroup()
-                                .addGap(6, 6, 6)
-                                .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(25, 25, 25)
+                        .addGroup(pestañaRegistroClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel9)
+                            .addComponent(jTextFieldNombreCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pestañaRegistroClienteLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel17)))
+                .addGroup(pestañaRegistroClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pestañaRegistroClienteLayout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addGroup(pestañaRegistroClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel10)
+                            .addComponent(jTextFieldCedulaCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(pestañaRegistroClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel12)
+                            .addComponent(jTextFieldCorreoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(pestañaRegistroClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel11)
+                            .addComponent(jTextFieldFechaCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(pestañaRegistroClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel13)
+                            .addComponent(jComboBoxCategorriaClente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(37, 37, 37)
                         .addComponent(jButtonRegistrarCliente))
                     .addGroup(pestañaRegistroClienteLayout.createSequentialGroup()
-                        .addGap(72, 72, 72)
-                        .addComponent(jButtonRefrescarRegistroCliente)))
-                .addGap(26, 26, 26)
-                .addComponent(jButtonSalir1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(6, 6, 6)
+                        .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE))))
         );
 
         panelCliente.addTab("Registrar Cliente", pestañaRegistroCliente);
@@ -1013,6 +1016,11 @@ public class GUIMain extends javax.swing.JFrame {
 
         panelVehiculo.addTab("Cliente", panelCliente);
 
+        jTabbedPane1.addTab("tab1", jTabbedPane2);
+        jTabbedPane1.addTab("tab2", jTabbedPane3);
+
+        panelVehiculo.addTab("Alquiler", jTabbedPane1);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -1217,11 +1225,11 @@ public class GUIMain extends javax.swing.JFrame {
 
         if (colaRegistroCliente.search(cedula)) {
             colaRegistroCliente.eliminaModificado(cedula);
-            jTextPaneDisplayModificar.setText(colaRegistroCliente.toString());
+            
         } else {
             JOptionPane.showMessageDialog(null, "el cliente no existe");
         }
-        jTextPaneDisplayRegistro.setText(colaRegistroCliente.toString());
+        jTextPaneDisplayRegistro.setText(colaRegistroCliente.listar2());
     }//GEN-LAST:event_jButtonEliminar1ActionPerformed
 
     private void jButtonBuscarCedulaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBuscarCedulaActionPerformed
@@ -1545,6 +1553,9 @@ public class GUIMain extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JScrollPane jScrollPane8;
     private javax.swing.JScrollPane jScrollPane9;
+    private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JTabbedPane jTabbedPane2;
+    private javax.swing.JTabbedPane jTabbedPane3;
     private javax.swing.JTextArea jTextAreaVehiculo;
     private javax.swing.JTextField jTextFieldCedulaCliente;
     private javax.swing.JTextField jTextFieldCedulaClienteVerificar;

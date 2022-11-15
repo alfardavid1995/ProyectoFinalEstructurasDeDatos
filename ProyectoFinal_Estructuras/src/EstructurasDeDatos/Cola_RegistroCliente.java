@@ -1,6 +1,7 @@
 package EstructurasDeDatos;
 
 import ObjetosdelProyecto.Objetos.Cliente;
+import javax.swing.JOptionPane;
 
 public class Cola_RegistroCliente {
     private NodeCola_RegistroCliente frente;
@@ -31,7 +32,7 @@ public class Cola_RegistroCliente {
         return aux;
     }
     public boolean search(int reference) {
-        // Crea una copia de la pila.
+        // Crea una copia de la cola.
         NodeCola_RegistroCliente aux = frente;
         // Bandera para verificar si exist el elemento a search.
         boolean exist = false;
@@ -51,51 +52,70 @@ public class Cola_RegistroCliente {
         return exist;
     }
     
-    public void eliminaModificado(int reference) {
-        // Consulta si el value exist en la pila.
-        if (search(reference)) {
-            // Crea una pila auxiliar para guardar los valuees que se 
-            // vayan desapilando de la pila original.
-            NodeCola_RegistroCliente frenteColaAux = null;
-            // Recoore la pila hasta llegar al node que tenga el value
-            // igual que el de reference.
-            while (reference != frente.getClienteNodo().getCedula()) {
-                //!reference.equals(cima.getVehiculoNodo().getNumPlacadeVehiculo())
-                // Crea un node temporal para agregarlos a la pila auxiliar.
-                NodeCola_RegistroCliente temp = new NodeCola_RegistroCliente();
-                // Ingresa el value al node temporal.
-                temp.setClienteNodo(frente.getClienteNodo());
-                // Consulta si la pila auxiliar no a sido inicializada.
-                if (frenteColaAux == null) {
-                    // Inicializa la pila auxiliar.
-                    frenteColaAux = temp;
-                } // Caso contrario si la pila auxiliar ya contiene elementos
-                // los agrega al start.
-                else {
-                    temp.setAtras(frenteColaAux);
-                    frenteColaAux = temp;
-                }
-                // Elimina el node del tope de la pila hasta llegar al node
-                // que se desea eliminar.
-                elimina();
-            }
-            // Elimina el node que coincide con el de reference.
-            elimina();
-            // Regresa los valuees de la pila auxiliar a la pila original
-            // mientras la pila auxiliar tenga elementos.
-            while (frenteColaAux != null) {
-                // Utiliza el metodo push para regresar los elementos a 
-                // la pila original.
-                encola(frenteColaAux.getClienteNodo());
-                // Avansa al siguiente node de la pila auxiliar.
-                frenteColaAux = frenteColaAux.getAtras();
-            }
-            // Libera la memoria utilizada por la pila auxiliar.
-            frenteColaAux = null;
-        } else {
-            System.out.println("El nodo indicado no existe");
-        }
-    }
+//    public void eliminaModificado(int reference) {
+//        // Consulta si el value exist en la cola.
+//        if (search(reference)) {
+//            // Crea una cola auxiliar para guardar los valuees que se 
+//            // vayan desapilando de la cola original.
+//            NodeCola_RegistroCliente frenteColaAux = null;
+//            // Recoore la cola hasta llegar al node que tenga el value
+//            // igual que el de reference.
+//            while (reference != frente.getClienteNodo().getCedula()) {
+//                //!reference.equals(cima.getVehiculoNodo().getNumPlacadeVehiculo())
+//                // Crea un node temporal para agregarlos a la pila auxiliar.
+//                NodeCola_RegistroCliente temp = new NodeCola_RegistroCliente();
+//                // Ingresa el value al node temporal.
+//                temp.setClienteNodo(frente.getClienteNodo());
+//                // Consulta si la pila auxiliar no a sido inicializada.
+//                if (frenteColaAux == null) {
+//                    // Inicializa la pila auxiliar.
+//                    frenteColaAux = temp;
+//                } // Caso contrario si la pila auxiliar ya contiene elementos
+//                // los agrega al start.
+//                else {
+//                    temp.setAtras(frenteColaAux);
+//                    frenteColaAux = temp;
+//                }
+//                // Elimina el node del tope de la pila hasta llegar al node
+//                // que se desea eliminar.
+//                elimina();
+//            }
+//            // Elimina el node que coincide con el de reference.
+//            elimina();
+//            // Regresa los valuees de la pila auxiliar a la pila original
+//            // mientras la pila auxiliar tenga elementos.
+//            while (frenteColaAux != null) {
+//                // Utiliza el metodo push para regresar los elementos a 
+//                // la pila original.
+//                encola(frenteColaAux.getClienteNodo());
+//                // Avansa al siguiente node de la pila auxiliar.
+//                frenteColaAux = frenteColaAux.getAtras();
+//            }
+//            // Libera la memoria utilizada por la pila auxiliar.
+//            frenteColaAux = null;
+//        } else {
+//            System.out.println("El nodo indicado no existe");
+//        }
+//    }
+    
+     public void eliminaModificado(int reference) {
+          if (search(reference)) {
+              NodeCola_RegistroCliente colaCopia = null;
+              NodeCola_RegistroCliente aux = frente;
+              if(reference == frente.getClienteNodo().getCedula()){
+                  elimina();
+              }else{
+                  while(aux.getAtras().getClienteNodo().getCedula()!= reference){                   
+                     aux = aux.getAtras();
+                  }
+                  aux.setAtras(aux.getAtras().getAtras());
+                 
+              }
+          }else{
+              JOptionPane.showMessageDialog(null, "EL cliente no existe");
+          }
+     }
+    
     
     public Cliente traerCliente(int cedula) {
         NodeCola_RegistroCliente aux = frente;
