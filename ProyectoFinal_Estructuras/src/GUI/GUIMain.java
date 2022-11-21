@@ -18,7 +18,10 @@ public class GUIMain extends javax.swing.JFrame {
                 4, "Gasolina", 7, 90, "Disponible");
         Vehiculo vehiculito4 = new Vehiculo("HRR-9879", "Toyota", "Rush", 2022, "Blanco",
                 4, "Gasolina", 12, 90, "Disponible");
-
+        Vehiculo vehiculito5 = new Vehiculo("P-1111", "Nissan", "Versa", 2022, "Azul",
+                4, "Gasolina", 4, 80, "Disponible");
+       
+        
         Cliente clientito1 = new Cliente(118487, "Alejandro", "14-4-2001", "ale84@gmail.com",
                 "", 0);
         Cliente clientito2 = new Cliente(654641, "Pedro", "25-6-1998", "pedro36@gmail.com",
@@ -31,6 +34,7 @@ public class GUIMain extends javax.swing.JFrame {
         pilaRegistroVehiculo.push(vehiculito2);
         pilaRegistroVehiculo.push(vehiculito3);
         pilaRegistroVehiculo.push(vehiculito4);
+        pilaRegistroVehiculo.push(vehiculito5);
         colaRegistroCliente.encola(clientito1);
         colaRegistroCliente.encola(clientito2);
         colaRegistroCliente.encola(clientito3);
@@ -1740,6 +1744,7 @@ public class GUIMain extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField3ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+      int saltos=0;
       int index=jComboBox2.getSelectedIndex();
       int cantPasajeros=0;
       switch(index){
@@ -1756,8 +1761,18 @@ public class GUIMain extends javax.swing.JFrame {
                cantPasajeros=12;
                break;
       }
-       
-       
+       while(saltos!=pilaRegistroVehiculo.tamanio()){
+           if(listaFiltro.comparoCantPasajeros(pilaRegistroVehiculo.retornaVehiculoFiltro(saltos), cantPasajeros)){
+               listaFiltro.agregarVehiculoFiltro(pilaRegistroVehiculo.retornaVehiculoFiltro(saltos));
+           }
+           
+           saltos +=1;
+       }
+     //buscar marcas
+        if(!"".equals(jTextField3.getText())){
+            String marca = jTextField3.getText();
+            
+        }
         System.out.println(listaFiltro.toString());
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -1789,6 +1804,7 @@ public class GUIMain extends javax.swing.JFrame {
         jComboBoxSelectorDeCombustible.setSelectedIndex(0);
     }
 
+    
     /**
      * @param args the command line arguments
      */

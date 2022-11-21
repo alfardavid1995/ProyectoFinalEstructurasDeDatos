@@ -1,13 +1,14 @@
 package EstructurasDeDatos;
 
+
 import ObjetosdelProyecto.Objetos.Vehiculo;
 
 public class Pila_RegistroVehiculo {
-
-    ListaDobleEnlazadaFiltro listaFiltro = new ListaDobleEnlazadaFiltro();
+    
+   
     private NodePila_RegistroVehiculo cima;
     private int largo;
-
+    
     public Pila_RegistroVehiculo() {
         this.cima = null;
         this.largo = 0;
@@ -148,10 +149,33 @@ public class Pila_RegistroVehiculo {
                 // Avanza al siguiente node.
                 aux = aux.getSiguiente();
             }
+            
+            //una variable que me diga que termino
+            
         }
         return vehiculo;
     }
 
+    public Vehiculo retornaVehiculoFiltro(int saltos){
+        NodePila_RegistroVehiculo aux = cima;
+        Vehiculo vehiculo = new Vehiculo();
+        if (saltos == 0 ){
+            vehiculo = aux.getVehiculoNodo();
+        }else{
+            int contador =0;
+            while(contador != saltos){
+                aux= aux.getSiguiente();
+                contador+=1;
+            }
+           vehiculo = aux.getVehiculoNodo();
+        }
+        
+        
+        return vehiculo;
+    }
+    
+    
+    
     public String listar() {
         String stringConTodalaInfodelaPila = "";
         NodePila_RegistroVehiculo aux = cima;

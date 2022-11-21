@@ -6,7 +6,8 @@ public class ListaDobleEnlazadaFiltro {
 
     private NodoListaDobleEnlazadaFiltro cabeza;
     private NodoListaDobleEnlazadaFiltro ultimo;
-
+   
+   
     //si funciona
     public void agregarVehiculoFiltro(Vehiculo vehiculo) {
         if (cabeza == null) {
@@ -34,7 +35,21 @@ public class ListaDobleEnlazadaFiltro {
 
         }
     }
-
+   public void eliminarDeLaLista(Vehiculo vehiculo){
+       
+       
+   }
+   public void recorrerLista(){
+       
+   }
+    
+   public boolean comparoCantPasajeros(Vehiculo vehiculo,int cantPasajeros){
+       boolean coincidencia = false;
+       if(vehiculo.getCantPasajerosdeVehiculo()==cantPasajeros){
+          coincidencia = true;
+       }
+       return coincidencia;
+   }
     
 
     @Override
