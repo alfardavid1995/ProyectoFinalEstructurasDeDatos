@@ -8,7 +8,7 @@ public class ListaDobleEnlazadaFiltro {
     private NodoListaDobleEnlazadaFiltro ultimo;
 
     //si funciona
-    public void listaDobleEnlazadaFiltro(Vehiculo vehiculo) {
+    public void agregarVehiculoFiltro(Vehiculo vehiculo) {
         if (cabeza == null) {
             cabeza = new NodoListaDobleEnlazadaFiltro(vehiculo);
             cabeza.setNext(cabeza);
