@@ -3,7 +3,8 @@ package EstructurasDeDatos;
 import ObjetosdelProyecto.Objetos.Vehiculo;
 
 public class Pila_RegistroVehiculo {
-
+     
+    ListaDobleEnlazadaFiltro listaFiltro = new ListaDobleEnlazadaFiltro();
     private NodePila_RegistroVehiculo cima;
     private int largo;
 
@@ -63,6 +64,8 @@ public class Pila_RegistroVehiculo {
         // Retorna el value de la bandera.
         return exist;
     }
+    
+    
 
     public void popModificado(String reference) {
         // Consulta si el value exist en la pila.
@@ -130,6 +133,27 @@ public class Pila_RegistroVehiculo {
         return vehiculo;
     }
 
+     public void traerVehiculoCantPasajeros(int reference) {
+        NodePila_RegistroVehiculo aux = cima;
+        Vehiculo vehiculo = new Vehiculo();
+       
+       
+        // Recorre la pila hasta llegar al final
+        // de la pila.
+        while ( aux != null) {
+            // Compara si el value del node es igual que al de reference.
+            if (reference == aux.getVehiculoNodo().getCantPasajerosdeVehiculo()) {
+                // Cambia el value de la bandera.
+                vehiculo = aux.getVehiculoNodo();
+               listaFiltro.listaDobleEnlazadaFiltro(vehiculo);
+            } else {
+                // Avanza al siguiente node.
+                aux = aux.getSiguiente();
+            }
+        }
+       
+    }
+    
     public String listar() {
         String stringConTodalaInfodelaPila = "";
         NodePila_RegistroVehiculo aux = cima;

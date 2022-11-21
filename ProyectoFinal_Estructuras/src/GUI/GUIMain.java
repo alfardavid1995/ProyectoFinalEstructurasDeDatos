@@ -18,15 +18,15 @@ public class GUIMain extends javax.swing.JFrame {
                 4, "Gasolina", 5, 90, "Disponible");
         Vehiculo vehiculito4 = new Vehiculo("HRR-9879", "Toyota", "Rush", 2022, "Blanco",
                 4, "Gasolina", 5, 90, "Disponible");
-        
-        Cliente clientito1 = new Cliente(118487,"Alejandro","14-4-2001","ale84@gmail.com",
-            "",0);
-        Cliente clientito2 = new Cliente(654641,"Pedro","25-6-1998","pedro36@gmail.com",
-            "",0);
-        Cliente clientito3 = new Cliente(123213,"Tavo","17-11-1982","tavo@gmail.com",
-            "",0);
-        Cliente clientito4 = new Cliente(11848,"Mariana","10-01-2004","mari98@gmail.com",
-            "",0);
+
+        Cliente clientito1 = new Cliente(118487, "Alejandro", "14-4-2001", "ale84@gmail.com",
+                "", 0);
+        Cliente clientito2 = new Cliente(654641, "Pedro", "25-6-1998", "pedro36@gmail.com",
+                "", 0);
+        Cliente clientito3 = new Cliente(123213, "Tavo", "17-11-1982", "tavo@gmail.com",
+                "", 0);
+        Cliente clientito4 = new Cliente(11848, "Mariana", "10-01-2004", "mari98@gmail.com",
+                "", 0);
         pilaRegistroVehiculo.push(vehiculito1);
         pilaRegistroVehiculo.push(vehiculito2);
         pilaRegistroVehiculo.push(vehiculito3);
@@ -37,9 +37,8 @@ public class GUIMain extends javax.swing.JFrame {
         colaRegistroCliente.encola(clientito4);
         jTextPaneDisplayRegistro.setText(pilaRegistroVehiculo.listar2());
         jTextPaneDisplayRegistro2.setText(pilaRegistroVehiculo.listar2());
-       jTextPaneDisplayRegistro1.setText(colaRegistroCliente.listar2());
-       jTextPaneDisplayModificar.setText(colaRegistroCliente.listar2());
-        
+        jTextPaneDisplayRegistro1.setText(colaRegistroCliente.listar2());
+        jTextPaneDisplayModificar.setText(colaRegistroCliente.listar2());
 
     }
 
@@ -143,7 +142,7 @@ public class GUIMain extends javax.swing.JFrame {
         jButtonBuscarCedula = new javax.swing.JButton();
         jButtonEliminar1 = new javax.swing.JButton();
         jLabelParametroAModificar1 = new javax.swing.JLabel();
-        jComboBoxOpciones = new javax.swing.JComboBox<>();
+        jComboBoxOpcionesCliente = new javax.swing.JComboBox<>();
         jLabelValorAModificar1 = new javax.swing.JLabel();
         jScrollPane15 = new javax.swing.JScrollPane();
         jTextPaneValorAModificar1 = new javax.swing.JTextPane();
@@ -467,11 +466,9 @@ public class GUIMain extends javax.swing.JFrame {
                         .addGap(12, 12, 12))
                     .addGroup(pestañaModificarEliminarVehiculoLayout.createSequentialGroup()
                         .addGroup(pestañaModificarEliminarVehiculoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(pestañaModificarEliminarVehiculoLayout.createSequentialGroup()
-                                .addGap(6, 6, 6)
-                                .addComponent(jButtonModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jLabelPlaca2)
-                            .addComponent(jComboBox2Estado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jComboBox2Estado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButtonModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addGroup(pestañaModificarEliminarVehiculoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(pestañaModificarEliminarVehiculoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -829,10 +826,10 @@ public class GUIMain extends javax.swing.JFrame {
         jLabelParametroAModificar1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabelParametroAModificar1.setText("Parametro a modificar:");
 
-        jComboBoxOpciones.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Nombre", "Fecha de Nacimiento", "Correo" }));
-        jComboBoxOpciones.addActionListener(new java.awt.event.ActionListener() {
+        jComboBoxOpcionesCliente.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Nombre", "Fecha de Nacimiento", "Correo" }));
+        jComboBoxOpcionesCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBoxOpcionesActionPerformed(evt);
+                jComboBoxOpcionesClienteActionPerformed(evt);
             }
         });
 
@@ -883,7 +880,7 @@ public class GUIMain extends javax.swing.JFrame {
                                 .addComponent(jButtonBuscarCedula, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addComponent(jButtonEliminar1, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jComboBoxOpciones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jComboBoxOpcionesCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(pestañaModificaEliminaClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(pestañaModificaEliminaClienteLayout.createSequentialGroup()
                                 .addGap(15, 15, 15)
@@ -892,9 +889,8 @@ public class GUIMain extends javax.swing.JFrame {
                                 .addComponent(jButtonMostrar))
                             .addGroup(pestañaModificaEliminaClienteLayout.createSequentialGroup()
                                 .addGap(18, 18, 18)
-                                .addComponent(jScrollPane17, javax.swing.GroupLayout.PREFERRED_SIZE, 432, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(99, 99, 99)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addComponent(jScrollPane17, javax.swing.GroupLayout.PREFERRED_SIZE, 432, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap(77, Short.MAX_VALUE))
         );
         pestañaModificaEliminaClienteLayout.setVerticalGroup(
             pestañaModificaEliminaClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -916,13 +912,13 @@ public class GUIMain extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(jLabelParametroAModificar1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jComboBoxOpciones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jComboBoxOpcionesCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(jLabelValorAModificar1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jScrollPane15, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jScrollPane17, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(221, 221, 221)
+                .addGap(38, 38, 38)
                 .addGroup(pestañaModificaEliminaClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtonModificar1)
                     .addComponent(jButtonSalir2))
@@ -1097,7 +1093,7 @@ public class GUIMain extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonActualizarActionPerformed
 
     private void jButtonEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEliminarActionPerformed
-        String placa= jTextFieldPlaca.getText();
+        String placa = jTextFieldPlaca.getText();
 
         if (pilaRegistroVehiculo.search(placa)) {
             pilaRegistroVehiculo.popModificado(placa);
@@ -1130,73 +1126,73 @@ public class GUIMain extends javax.swing.JFrame {
             switch (jComboBox1.getSelectedIndex()) {
                 case 0:
 
-                vehiculo.setMarcaDeVehiculo(modifica);
+                    vehiculo.setMarcaDeVehiculo(modifica);
 
-                break;
+                    break;
                 case 1:
-                vehiculo.setModeloVehiculo(modifica);
-                break;
+                    vehiculo.setModeloVehiculo(modifica);
+                    break;
                 case 2:
-                int modifica2 = Integer.parseInt(jTextPaneValorAModificar.getText());
-                vehiculo.setAniodeVehiculo(modifica2);
-                break;
+                    int modifica2 = Integer.parseInt(jTextPaneValorAModificar.getText());
+                    vehiculo.setAniodeVehiculo(modifica2);
+                    break;
                 case 3:
-                vehiculo.setColorDeVehiculo(modifica);
-                break;
+                    vehiculo.setColorDeVehiculo(modifica);
+                    break;
                 case 4:
-                modifica2 = Integer.parseInt(jTextPaneValorAModificar.getText());
-                vehiculo.setCilindradaDeVehiculo(modifica2);
-                break;
+                    modifica2 = Integer.parseInt(jTextPaneValorAModificar.getText());
+                    vehiculo.setCilindradaDeVehiculo(modifica2);
+                    break;
                 case 5:
-                switch (jComboBoxtipoCombustible.getSelectedIndex()) {
-                    case 0:
-                    modifica = "Gasolina";
+                    switch (jComboBoxtipoCombustible.getSelectedIndex()) {
+                        case 0:
+                            modifica = "Gasolina";
 
-                    break;
-                    case 1:
-                    modifica = "Diesel";
+                            break;
+                        case 1:
+                            modifica = "Diesel";
 
-                    break;
-                    case 2:
-                    modifica = "Eléctrico";
+                            break;
+                        case 2:
+                            modifica = "Eléctrico";
 
-                    break;
-                    case 3:
-                    modifica = "Gas Natural";
+                            break;
+                        case 3:
+                            modifica = "Gas Natural";
 
+                            break;
+                    }
+                    vehiculo.setTipoCombustibleDeVehiculo(modifica);
                     break;
-                }
-                vehiculo.setTipoCombustibleDeVehiculo(modifica);
-                break;
                 case 6:
-                modifica2 = Integer.parseInt(jTextPaneValorAModificar.getText());
-                vehiculo.setCantPasajerosdeVehiculo(modifica2);
-                break;
+                    modifica2 = Integer.parseInt(jTextPaneValorAModificar.getText());
+                    vehiculo.setCantPasajerosdeVehiculo(modifica2);
+                    break;
                 case 7:
-                modifica2 = Integer.parseInt(jTextPaneValorAModificar.getText());
-                vehiculo.setPrecioAlquilerXDiaDeVehiculo(modifica2);
-                break;
+                    modifica2 = Integer.parseInt(jTextPaneValorAModificar.getText());
+                    vehiculo.setPrecioAlquilerXDiaDeVehiculo(modifica2);
+                    break;
                 case 8:
-                switch (jComboBox2Estado.getSelectedIndex()) {
-                    case 0:
-                    modifica = "Disponible";
+                    switch (jComboBox2Estado.getSelectedIndex()) {
+                        case 0:
+                            modifica = "Disponible";
 
-                    break;
-                    case 1:
-                    modifica = "Alquilado";
+                            break;
+                        case 1:
+                            modifica = "Alquilado";
 
-                    break;
-                    case 2:
-                    modifica = "En reparacion";
+                            break;
+                        case 2:
+                            modifica = "En reparacion";
 
-                    break;
-                    case 3:
-                    modifica = "Fuera de circulacion";
+                            break;
+                        case 3:
+                            modifica = "Fuera de circulacion";
 
+                            break;
+                    }
+                    vehiculo.setEstadoParaSerAlquilado(modifica);
                     break;
-                }
-                vehiculo.setEstadoParaSerAlquilado(modifica);
-                break;
 
             }
 
@@ -1213,19 +1209,19 @@ public class GUIMain extends javax.swing.JFrame {
         jTextPaneDisplayModificar.setText(colaRegistroCliente.toString());
         jTextFieldCedulaClienteVerificar.setText("");
         jTextPaneValorAModificar.setText("");
-        jComboBoxOpciones.setSelectedIndex(0);
+        jComboBoxOpcionesCliente.setSelectedIndex(0);
     }//GEN-LAST:event_jButtonMostrarActionPerformed
 
-    private void jComboBoxOpcionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxOpcionesActionPerformed
+    private void jComboBoxOpcionesClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxOpcionesClienteActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBoxOpcionesActionPerformed
+    }//GEN-LAST:event_jComboBoxOpcionesClienteActionPerformed
 
     private void jButtonEliminar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEliminar1ActionPerformed
         int cedula = Integer.parseInt(jTextFieldCedulaClienteVerificar.getText());
 
         if (colaRegistroCliente.search(cedula)) {
             colaRegistroCliente.eliminaModificado(cedula);
-            
+
         } else {
             JOptionPane.showMessageDialog(null, "el cliente no existe");
         }
@@ -1248,22 +1244,22 @@ public class GUIMain extends javax.swing.JFrame {
 
     private void jButtonModificar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonModificar1ActionPerformed
         int cedula = Integer.parseInt(jTextFieldCedulaClienteVerificar.getText());
-        String modifica = jTextPaneValorAModificar.getText();
+        String modifica = jTextPaneValorAModificar1.getText();
 
         if (colaRegistroCliente.search(cedula)) {
             Cliente clientito = colaRegistroCliente.traerCliente(cedula);//aca traemos el cliente a la GUI para que se trabaje desde ahi
-            switch (jComboBoxOpciones.getSelectedIndex()) {
+            switch (jComboBoxOpcionesCliente.getSelectedIndex()) {
                 case 0:
-                clientito.setNombreCompleto(modifica);
-                break;
+                    clientito.setNombreCompleto(modifica);
+                    break;
 
                 case 1:
-                clientito.setFechaNacimiento(modifica);
-                break;
+                    clientito.setFechaNacimiento(modifica);
+                    break;
 
                 case 2:
-                clientito.setCorreoElectronico(modifica);
-                break;
+                    clientito.setCorreoElectronico(modifica);
+                    break;
             }
 
         } else {
@@ -1288,26 +1284,26 @@ public class GUIMain extends javax.swing.JFrame {
         String categoria = "";
         switch (jComboBoxCategorriaClente.getSelectedIndex()) {
             case 0:
-            categoria = "Bronce";
+                categoria = "Bronce";
 
-            break;
+                break;
             case 1:
-            categoria = "Plata";
+                categoria = "Plata";
 
-            break;
+                break;
             case 2:
-            categoria = "Oro";
+                categoria = "Oro";
 
-            break;
+                break;
             case 3:
-            categoria = "Zafiro";
+                categoria = "Zafiro";
 
-            break;
+                break;
         }
         int cantAlquileres = 0;
         cantAlquileres = cantAlquileres + 1;
-        Cliente clientito = new Cliente(cedula,nombre,fechaNacimiento,correo,
-            categoria,cantAlquileres);
+        Cliente clientito = new Cliente(cedula, nombre, fechaNacimiento, correo,
+                categoria, cantAlquileres);
 
         colaRegistroCliente.encola(clientito);
 
@@ -1372,42 +1368,42 @@ public class GUIMain extends javax.swing.JFrame {
         String combustible = "";
         switch (jComboBoxSelectorDeCombustible.getSelectedIndex()) {
             case 0:
-            combustible = "Gasolina";
+                combustible = "Gasolina";
 
-            break;
+                break;
             case 1:
-            combustible = "Diesel";
+                combustible = "Diesel";
 
-            break;
+                break;
             case 2:
-            combustible = "Eléctrico";
+                combustible = "Eléctrico";
 
-            break;
+                break;
             case 3:
-            combustible = "Gas Natural";
+                combustible = "Gas Natural";
 
-            break;
+                break;
         }
         switch (jComboBox2SelectorEstado.getSelectedIndex()) {
             case 0:
-            estado = "Disponible";
+                estado = "Disponible";
 
-            break;
+                break;
             case 1:
-            estado = "Alquilado";
+                estado = "Alquilado";
 
-            break;
+                break;
             case 2:
-            estado = "En reparacion";
+                estado = "En reparacion";
 
-            break;
+                break;
             case 3:
-            estado = "Fuera de circulacion";
+                estado = "Fuera de circulacion";
 
-            break;
+                break;
         }
         Vehiculo vehiculito = new Vehiculo(placa, marca, modelo, anio, color,
-            cilindraje, combustible, cantPasajeros, precio, estado);
+                cilindraje, combustible, cantPasajeros, precio, estado);
 
         pilaRegistroVehiculo.push(vehiculito);
 
@@ -1470,7 +1466,7 @@ public class GUIMain extends javax.swing.JFrame {
         });
     }
     Pila_RegistroVehiculo pilaRegistroVehiculo = new Pila_RegistroVehiculo();
-     Cola_RegistroCliente colaRegistroCliente = new Cola_RegistroCliente();
+    Cola_RegistroCliente colaRegistroCliente = new Cola_RegistroCliente();
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonActualizar;
@@ -1498,7 +1494,7 @@ public class GUIMain extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> jComboBox2Estado;
     private javax.swing.JComboBox<String> jComboBox2SelectorEstado;
     private javax.swing.JComboBox<String> jComboBoxCategorriaClente;
-    private javax.swing.JComboBox<String> jComboBoxOpciones;
+    private javax.swing.JComboBox<String> jComboBoxOpcionesCliente;
     private javax.swing.JComboBox<String> jComboBoxSelectorDeCombustible;
     private javax.swing.JComboBox<String> jComboBoxtipoCombustible;
     private javax.swing.JLabel jLabel1;
