@@ -36,9 +36,27 @@ public class ListaDobleEnlazadaFiltro {
         }
     }
    public void eliminarDeLaLista(Vehiculo vehiculo){
-       
-       
+       if(cabeza!=null){
+           if(cabeza.getDato().getCantPasajerosdeVehiculo() <= vehiculo.getCantPasajerosdeVehiculo() && vehiculo.getCantPasajerosdeVehiculo() <= ultimo.getDato().getCantPasajerosdeVehiculo()){
+               if(cabeza.getDato().getCantPasajerosdeVehiculo() == vehiculo.getCantPasajerosdeVehiculo()){
+                   cabeza = cabeza.getNext();
+                   ultimo.setNext(cabeza);
+               }else{
+                   NodoListaDobleEnlazadaFiltro aux = cabeza;
+                   while(aux.getNext() != cabeza && aux.getNext().getDato().getCantPasajerosdeVehiculo() < vehiculo.getCantPasajerosdeVehiculo()){
+                       aux = aux.getNext();
+                   }
+                   if(aux.getNext().getDato().getCantPasajerosdeVehiculo() == vehiculo.getCantPasajerosdeVehiculo()){
+                       if(aux.getNext()==ultimo){
+                           ultimo=aux;
+                       }
+                       aux.setNext(aux.getNext().getNext());
+                   }
+               }
+           }
+       }
    }
+   
    public void recorrerLista(){
        
    }
