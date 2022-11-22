@@ -1,14 +1,8 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package ObjetosdelProyecto.Objetos;
 import EstructurasDeDatos.*;
 
-/**
- *
- * @author css124646
- */
+
 public class SolicitudDeAlquiler {
     private String estadoDeSolicitud;//Registrada, procesada, finalizada, rechazada
     private int idSolicitud;
@@ -21,7 +15,7 @@ public class SolicitudDeAlquiler {
     private String extrasVehiculoSolicitud;
     private double montoSolicitud;
     private Vehiculo vehiculoSolicitud;
-    private ListaDeVehiculosDisponiblesParaAlquilar_SolicitudDeAlquiler listaDeVehiculos;
+    private ListaDobleEnlazadaResultadosBusqueda listaDeVehiculos;
 
     public SolicitudDeAlquiler(String estadoDeSolicitud, int idSolicitud, int cantidadDeDiasSolicitud, Cliente usuarioSolicitud,  Vehiculo vehiculoSolicitud) {
         this.estadoDeSolicitud = estadoDeSolicitud;
@@ -119,11 +113,11 @@ public class SolicitudDeAlquiler {
         this.vehiculoSolicitud = vehiculoSolicitud;
     }
 
-    public ListaDeVehiculosDisponiblesParaAlquilar_SolicitudDeAlquiler getListaDeVehiculos() {
+    public ListaDobleEnlazadaResultadosBusqueda getListaDeVehiculos() {
         return listaDeVehiculos;
     }
 
-    public void setListaDeVehiculos(ListaDeVehiculosDisponiblesParaAlquilar_SolicitudDeAlquiler listaDeVehiculos) {
+    public void setListaDeVehiculos(ListaDobleEnlazadaResultadosBusqueda listaDeVehiculos) {
         this.listaDeVehiculos = listaDeVehiculos;
     }
     

@@ -1,14 +1,12 @@
 package EstructurasDeDatos;
 
-
 import ObjetosdelProyecto.Objetos.Vehiculo;
 
 public class Pila_RegistroVehiculo {
-    
-   
+
     private NodePila_RegistroVehiculo cima;
     private int largo;
-    
+
     public Pila_RegistroVehiculo() {
         this.cima = null;
         this.largo = 0;
@@ -55,6 +53,48 @@ public class Pila_RegistroVehiculo {
         while (exist != true && aux != null) {
             // Compara si el value del node es igual que al de reference.
             if (reference.equals(aux.getVehiculoNodo().getNumPlacadeVehiculo())) {
+                // Cambia el value de la bandera.
+                exist = true;
+            } else {
+                // Avanza al siguiente node.
+                aux = aux.getSiguiente();
+            }
+        }
+        // Retorna el value de la bandera.
+        return exist;
+    }
+
+    public boolean searchMarca(String reference) {
+        // Crea una copia de la pila.
+        NodePila_RegistroVehiculo aux = cima;
+        // Bandera para verificar si exist el elemento a search.
+        boolean exist = false;
+        // Recorre la pila hasta llegar encontrar el node o llegar al final
+        // de la pila.
+        while (exist != true && aux != null) {
+            // Compara si el value del node es igual que al de reference.
+            if (reference.equals(aux.getVehiculoNodo().getMarcaDeVehiculo())) {
+                // Cambia el value de la bandera.
+                exist = true;
+            } else {
+                // Avanza al siguiente node.
+                aux = aux.getSiguiente();
+            }
+        }
+        // Retorna el value de la bandera.
+        return exist;
+    }
+
+    public boolean searchAnio(int reference) {
+        // Crea una copia de la pila.
+        NodePila_RegistroVehiculo aux = cima;
+        // Bandera para verificar si exist el elemento a search.
+        boolean exist = false;
+        // Recorre la pila hasta llegar encontrar el node o llegar al final
+        // de la pila.
+        while (exist != true && aux != null) {
+            // Compara si el value del node es igual que al de reference.
+            if (reference == (aux.getVehiculoNodo().getAniodeVehiculo())) {
                 // Cambia el value de la bandera.
                 exist = true;
             } else {
@@ -143,39 +183,35 @@ public class Pila_RegistroVehiculo {
             if (cantPasajeros == aux.getVehiculoNodo().getCantPasajerosdeVehiculo()) {
                 // Cambia el value de la bandera.
                 vehiculo = aux.getVehiculoNodo();
-                
+
                 aux = aux.getSiguiente();
             } else {
                 // Avanza al siguiente node.
                 aux = aux.getSiguiente();
             }
-            
+
             //una variable que me diga que termino
-            
         }
         return vehiculo;
     }
 
-    public Vehiculo retornaVehiculoFiltro(int saltos){
+    public Vehiculo retornaVehiculoFiltro(int saltos) {
         NodePila_RegistroVehiculo aux = cima;
         Vehiculo vehiculo = new Vehiculo();
-        if (saltos == 0 ){
+        if (saltos == 0) {
             vehiculo = aux.getVehiculoNodo();
-        }else{
-            int contador =0;
-            while(contador != saltos){
-                aux= aux.getSiguiente();
-                contador+=1;
+        } else {
+            int contador = 0;
+            while (contador != saltos) {
+                aux = aux.getSiguiente();
+                contador += 1;
             }
-           vehiculo = aux.getVehiculoNodo();
+            vehiculo = aux.getVehiculoNodo();
         }
-        
-        
+
         return vehiculo;
     }
-    
-    
-    
+
     public String listar() {
         String stringConTodalaInfodelaPila = "";
         NodePila_RegistroVehiculo aux = cima;
