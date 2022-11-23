@@ -11,7 +11,7 @@ public class NodoListaDobleEnlazadaResultadosBusqueda {
     
     @Override
     public String toString(){
-        return "Nodo{"+"dato="+dato+'}';
+        return ""+dato.listar3();
     }
     
     public NodoListaDobleEnlazadaResultadosBusqueda(Vehiculo dato){

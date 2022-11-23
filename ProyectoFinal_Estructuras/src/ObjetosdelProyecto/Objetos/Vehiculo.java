@@ -158,7 +158,16 @@ public class Vehiculo {
                 "\n-- Estado: " + estadoParaSerAlquilado + 
                 "\n-- Extras: " + extrasPila.listar();
     }
-
+    
+     public String listar3(){
+        return  "\n-------------------------- Vehiculo -------------------------" +
+                "\n-- Placa: "  + numPlacadeVehiculo + 
+                "\n-- Marca: " + marcaDeVehiculo + 
+                "\n-- Modelo: " + modeloVehiculo +
+                "\n-- Año: " + aniodeVehiculo + 
+                "\n-- Cantidad de pasajeros: " + cantPasajerosdeVehiculo + 
+                "\n-- Extras: " + extrasPila.listar();
+    }
 
     
 }

@@ -1817,32 +1817,69 @@ public class GUIMain extends javax.swing.JFrame {
 
             saltos += 1;
         }
+
+        //buscar por marca
         if (!listaFiltro.Vacia()) {
             if (!"".equals(jTextFieldMarca.getText())) {
+
                 String marca = jTextFieldMarca.getText();
                 if (listaFiltro.buscarXMarca(marca)) {
-                    JOptionPane.showMessageDialog(null, "SI hay marca");
+//                    JOptionPane.showMessageDialog(null, "SI hay marca");
                     listaFiltro.eliminaXMarca(marca);
                 } else {
-                    JOptionPane.showMessageDialog(null, "No hay  vehiculos de la marca "
+
+                    jTextAreaCarrosDisponibles.setText("No hay  vehiculos de la marca "
                             + marca + " con " + cantPasajeros + " pasajeros");
                     listaFiltro.limpiarLista();
                     limpiarConsola2();
                 }
             }
-             if (!"".equals(jTextFieldAnio.getText())) {
+            //buscar por anio
+            if (!"".equals(jTextFieldAnio.getText())) {
                 int anio = Integer.parseInt(jTextFieldAnio.getText());
                 if (listaFiltro.buscarXAnio(anio)) {
-                    JOptionPane.showMessageDialog(null, "SI hay anio");
+//                    JOptionPane.showMessageDialog(null, "SI hay anio");
                     listaFiltro.eliminaXAnio(anio);
                 } else {
-                    JOptionPane.showMessageDialog(null, "No hay  vehiculos del anio "
+
+                    jTextAreaCarrosDisponibles.setText("No hay  vehiculos del año "
                             + anio + " con " + cantPasajeros + " pasajeros");
                     listaFiltro.limpiarLista();
                     limpiarConsola2();
                 }
             }
+            //buscar por modelo
+            if (!"".equals(jTextFieldModelo.getText())) {
+                String modelo = jTextFieldModelo.getText();
+                if (listaFiltro.buscarXModelo(modelo)) {
+//                    JOptionPane.showMessageDialog(null, "SI hay modelo");
+                    listaFiltro.eliminaXModelo(modelo);
+                } else {
+                    jTextAreaCarrosDisponibles.setText("No hay  vehiculos del modelo "
+                            + modelo + " con " + cantPasajeros + " pasajeros");
+                    listaFiltro.limpiarLista();
+                    limpiarConsola2();
+                }
+            }
+            // buscar por extras
+            if (!"".equals(jTextAreaExtras.getText())) {
+                String extra = jTextAreaExtras.getText();
+                if (listaFiltro.buscarXExtra(extra)) {
+//                    JOptionPane.showMessageDialog(null, "SI hay extra");
+                    listaFiltro.eliminaXExtra(extra);
+                } else {
+
+                    jTextAreaCarrosDisponibles.setText("No hay  vehiculos con "
+                            + extra + " de " + cantPasajeros + " pasajeros");
+                    listaFiltro.limpiarLista();
+                    limpiarConsola2();
+                }
+            }
         }
+        if (!listaFiltro.Vacia()) {
+            jTextAreaCarrosDisponibles.setText(listaFiltro.toString2());
+        }
+
     }//GEN-LAST:event_jButtonLimpiarActionPerformed
 
     private void jTextFieldModeloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldModeloActionPerformed
@@ -1862,7 +1899,7 @@ public class GUIMain extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonCrearSolicitudActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        jTextAreaCarrosDisponibles.setText(listaFiltro.toString());
+
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -1881,9 +1918,6 @@ public class GUIMain extends javax.swing.JFrame {
         jComboBoxSelectorDeCombustible.setSelectedIndex(0);
     }
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">

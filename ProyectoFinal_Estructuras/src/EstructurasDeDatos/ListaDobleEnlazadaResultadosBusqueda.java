@@ -155,34 +155,76 @@ public class ListaDobleEnlazadaResultadosBusqueda {
         }
     }
 
+    public boolean buscarXModelo(String modelo) {
+        int cont = 0;
+        boolean exist = false;
+        NodoListaDobleEnlazadaResultadosBusqueda aux = cabeza;
+        while (!exist && cont != tamanio()) {
+
+            if (aux.getDato().getModeloVehiculo().equals(modelo)) {
+                exist = true;
+            }
+            aux = aux.getNext();
+            cont += 1;
+
+        }
+
+        return exist;
+    }
+
+    public void eliminaXModelo(String modelo) {
+        int tamanioAntes = tamanio();
+        int cont = 0;
+        NodoListaDobleEnlazadaResultadosBusqueda aux = cabeza;
+        while (cont != tamanioAntes) {
+
+            if (!aux.getDato().getModeloVehiculo().equals(modelo)) {
+                eliminarDeLaLista(aux.getDato().getNumPlacadeVehiculo());
+
+            }
+            aux = aux.getNext();
+            cont += 1;
+        }
+    }
+
+    public boolean buscarXExtra(String extra) {
+        int cont = 0;
+        boolean exist = false;
+        NodoListaDobleEnlazadaResultadosBusqueda aux = cabeza;
+        while (!exist && cont != tamanio()) {
+
+            if (aux.getDato().getExtrasPila().search(extra)) {
+                exist = true;
+            }
+            aux = aux.getNext();
+            cont += 1;
+
+        }
+
+        return exist;
+    }
+
+    public void eliminaXExtra(String extra) {
+        int tamanioAntes = tamanio();
+        int cont = 0;
+        NodoListaDobleEnlazadaResultadosBusqueda aux = cabeza;
+        while (cont != tamanioAntes) {
+
+            if (!aux.getDato().getExtrasPila().search(extra)) {
+                eliminarDeLaLista(aux.getDato().getNumPlacadeVehiculo());
+
+            }
+            aux = aux.getNext();
+            cont += 1;
+        }
+    }
+
     public boolean comparoCantPasajeros(Vehiculo vehiculo, int cantPasajeros) {
         boolean coincidencia = false;
         if (vehiculo.getCantPasajerosdeVehiculo() == cantPasajeros) {
             coincidencia = true;
         }
         return coincidencia;
-    }
-
-    public void buscarXModelo(String modelo) {
-        int cont = tamanio();
-
-        while (cont == tamanio() && cont != 0) {
-
-            NodoListaDobleEnlazadaResultadosBusqueda aux = cabeza;
-            if (!aux.getDato().getModeloVehiculo().equals(modelo)) {
-                eliminarDeLaLista(cabeza.getDato().getNumPlacadeVehiculo());
-            } else {
-                if (!aux.getNext().getDato().getModeloVehiculo().equals(modelo)) {
-                    eliminarDeLaLista(aux.getNext().getDato().getNumPlacadeVehiculo());
-                } else {
-
-                    aux = aux.getNext();
-                }
-            }
-
-            cont -= 1;
-
-        }
     }
 
     @Override
@@ -210,6 +252,28 @@ public class ListaDobleEnlazadaResultadosBusqueda {
         return s;
     }
 
+    public String toString2() {
+        NodoListaDobleEnlazadaResultadosBusqueda aux = cabeza;
+
+        String s = "\n";
+        if (aux != null) {
+//            s += "back: " + aux.getBack() + ",\n";
+            s += "Tu busqueda: " + aux + "\n ";
+//            s += "Next: " + aux.getNext() + ",\n";
+            s += "------------------------------------------\n";
+            aux = aux.getNext();
+            while (aux != cabeza) {
+
+//                s += "back: " + aux.getBack() + ",\n";
+                s += "Tu busqueda: " + aux.toString() + ",\n ";
+//                s += "Next: " + aux.getNext() + ",\n";
+                s += "------------------------------------------\n";
+                aux = aux.getNext();
+            }
+        } 
+        return s;
+    }
+    
     public String toStringcopia() {
         NodoListaDobleEnlazadaResultadosBusqueda aux = cabeza;
         String s = "Lista: ";

@@ -118,7 +118,7 @@ public class PilaExtras_Vehiculo {
         while (aux != null) {
 
             stringConTodalaInfodelaPila = stringConTodalaInfodelaPila
-                    + aux.getExtra().toString() + "---";
+                    + aux.getExtra().toString() + " --- ";
             aux = aux.getSiguiente();
         }
 
