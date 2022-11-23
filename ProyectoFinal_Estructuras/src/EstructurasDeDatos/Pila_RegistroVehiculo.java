@@ -105,7 +105,27 @@ public class Pila_RegistroVehiculo {
         // Retorna el value de la bandera.
         return exist;
     }
-
+    
+     public boolean searchPasajeros(int reference) {
+        // Crea una copia de la pila.
+        NodePila_RegistroVehiculo aux = cima;
+        // Bandera para verificar si exist el elemento a search.
+        boolean exist = false;
+        // Recorre la pila hasta llegar encontrar el node o llegar al final
+        // de la pila.
+        while (exist != true && aux != null) {
+            // Compara si el value del node es igual que al de reference.
+            if (reference == (aux.getVehiculoNodo().getCantPasajerosdeVehiculo())) {
+                // Cambia el value de la bandera.
+                exist = true;
+            } else {
+                // Avanza al siguiente node.
+                aux = aux.getSiguiente();
+            }
+        }
+        // Retorna el value de la bandera.
+        return exist;
+    }
     public void popModificado(String reference) {
         // Consulta si el value exist en la pila.
         if (search(reference)) {

@@ -6,13 +6,15 @@ import ObjetosdelProyecto.Objetos.Vehiculo;
 import javax.swing.JOptionPane;
 
 public class GUIMain extends javax.swing.JFrame {
-    public void limpiarConsola2(){
+
+    public void limpiarConsola2() {
         jTextFieldMarca.setText("");
         jTextFieldAnio.setText("");
         jTextFieldModelo.setText("");
         jTextAreaExtras.setText("");
         jComboBoxCantPasajeros.setSelectedIndex(0);
     }
+
     public GUIMain() {
         initComponents();
         this.setLocationRelativeTo(null);
@@ -34,6 +36,9 @@ public class GUIMain extends javax.swing.JFrame {
         Vehiculo vehiculito6 = new Vehiculo("P-222", "Honda", "CR-V", 2023, "Negro",
                 4, "Gasolina", 4, 80, "Disponible");
 
+        Vehiculo vehiculito7 = new Vehiculo("L-2006", "Toyota", "Hilux", 2021, "Azul",
+                4, "Gasolina", 4, 90, "Disponible");
+
         Cliente clientito1 = new Cliente(118487, "Alejandro", "14-4-2001", "ale84@gmail.com",
                 "", 0);
         Cliente clientito2 = new Cliente(654641, "Pedro", "25-6-1998", "pedro36@gmail.com",
@@ -48,6 +53,7 @@ public class GUIMain extends javax.swing.JFrame {
         pilaRegistroVehiculo.push(vehiculito4);
         pilaRegistroVehiculo.push(vehiculito5);
         pilaRegistroVehiculo.push(vehiculito6);
+        pilaRegistroVehiculo.push(vehiculito7);
         colaRegistroCliente.encola(clientito1);
         colaRegistroCliente.encola(clientito2);
         colaRegistroCliente.encola(clientito3);
@@ -1811,54 +1817,32 @@ public class GUIMain extends javax.swing.JFrame {
 
             saltos += 1;
         }
-
-        //buscar por marca y anio
-        if (!"".equals(jTextFieldMarca.getText()) && !"".equals(jTextFieldAnio.getText())) {
-            String marca = jTextFieldMarca.getText();
-            int anio = Integer.parseInt(jTextFieldAnio.getText());
-            if (pilaRegistroVehiculo.searchMarca(marca) && pilaRegistroVehiculo.searchAnio(anio)) {
-                listaFiltro.buscarXMarca(marca);
-                listaFiltro.buscarXAnio(anio);
-                jTextAreaCarrosDisponibles.setText(listaFiltro.toString());
-            } else {
-                JOptionPane.showMessageDialog(null, "No hay  vehiculos de la marca " + marca + " con el año " + anio);
-                listaFiltro.limpiarLista();
-                limpiarConsola2();
-                jTextAreaCarrosDisponibles.setText(listaFiltro.toString());
+        if (!listaFiltro.Vacia()) {
+            if (!"".equals(jTextFieldMarca.getText())) {
+                String marca = jTextFieldMarca.getText();
+                if (listaFiltro.buscarXMarca(marca)) {
+                    JOptionPane.showMessageDialog(null, "SI hay marca");
+                    listaFiltro.eliminaXMarca(marca);
+                } else {
+                    JOptionPane.showMessageDialog(null, "No hay  vehiculos de la marca "
+                            + marca + " con " + cantPasajeros + " pasajeros");
+                    listaFiltro.limpiarLista();
+                    limpiarConsola2();
+                }
+            }
+             if (!"".equals(jTextFieldAnio.getText())) {
+                int anio = Integer.parseInt(jTextFieldAnio.getText());
+                if (listaFiltro.buscarXAnio(anio)) {
+                    JOptionPane.showMessageDialog(null, "SI hay anio");
+                    listaFiltro.eliminaXAnio(anio);
+                } else {
+                    JOptionPane.showMessageDialog(null, "No hay  vehiculos del anio "
+                            + anio + " con " + cantPasajeros + " pasajeros");
+                    listaFiltro.limpiarLista();
+                    limpiarConsola2();
+                }
             }
         }
-        //buscar marcas
-        if (!"".equals(jTextFieldMarca.getText())) {
-            String marca = jTextFieldMarca.getText();
-            if (pilaRegistroVehiculo.searchMarca(marca)) {
-                listaFiltro.buscarXMarca(marca);
-                jTextAreaCarrosDisponibles.setText(listaFiltro.toString());
-            } else {
-                JOptionPane.showMessageDialog(null, "No hay  vehiculos de la marca " + marca);
-                limpiarConsola2();
-                listaFiltro.limpiarLista();
-                jTextAreaCarrosDisponibles.setText(listaFiltro.toString());
-            }
-
-        }
-
-        //buscar por anio
-           if (!"".equals(jTextFieldAnio.getText())) {
-                
-               int anio = Integer.parseInt(jTextFieldAnio.getText());
-               if(pilaRegistroVehiculo.searchAnio(anio)){
-                     listaFiltro.buscarXAnio(anio);
-                      jTextAreaCarrosDisponibles.setText(listaFiltro.toString());
-                }else{
-                   JOptionPane.showMessageDialog(null, "No hay  vehiculos del año "+anio);
-                   listaFiltro.limpiarLista();
-                   limpiarConsola2();
-                   jTextAreaCarrosDisponibles.setText(listaFiltro.toString());
-               }
-               
-                
-            }
-
     }//GEN-LAST:event_jButtonLimpiarActionPerformed
 
     private void jTextFieldModeloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldModeloActionPerformed

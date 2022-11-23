@@ -91,16 +91,88 @@ public class ListaDobleEnlazadaResultadosBusqueda {
 
     }
 
-    public void buscarXMarca(String marca) {
+    public boolean buscarXMarca(String marca) {
+        int cont = 0;
+        boolean exist = false;
+        NodoListaDobleEnlazadaResultadosBusqueda aux = cabeza;
+        while (!exist && cont != tamanio()) {
+
+            if (aux.getDato().getMarcaDeVehiculo().equals(marca)) {
+                exist = true;
+            }
+            aux = aux.getNext();
+            cont += 1;
+
+        }
+
+        return exist;
+    }
+
+    public void eliminaXMarca(String marca) {
+        int tamanioAntes = tamanio();
+        int cont = 0;
+        NodoListaDobleEnlazadaResultadosBusqueda aux = cabeza;
+        while (cont != tamanioAntes) {
+
+            if (!aux.getDato().getMarcaDeVehiculo().equals(marca)) {
+                eliminarDeLaLista(aux.getDato().getNumPlacadeVehiculo());
+
+            }
+            aux = aux.getNext();
+            cont += 1;
+        }
+    }
+
+    public boolean buscarXAnio(int anio) {
+        int cont = 0;
+        boolean exist = false;
+        NodoListaDobleEnlazadaResultadosBusqueda aux = cabeza;
+        while (!exist && cont != tamanio()) {
+
+            if (aux.getDato().getAniodeVehiculo() == anio) {
+                exist = true;
+            }
+            aux = aux.getNext();
+            cont += 1;
+
+        }
+
+        return exist;
+    }
+
+    public void eliminaXAnio(int anio) {
+        int tamanioAntes = tamanio();
+        int cont = 0;
+        NodoListaDobleEnlazadaResultadosBusqueda aux = cabeza;
+        while (cont != tamanioAntes) {
+
+            if (aux.getDato().getAniodeVehiculo() != anio) {
+                eliminarDeLaLista(aux.getDato().getNumPlacadeVehiculo());
+
+            }
+            aux = aux.getNext();
+            cont += 1;
+        }
+    }
+
+    public boolean comparoCantPasajeros(Vehiculo vehiculo, int cantPasajeros) {
+        boolean coincidencia = false;
+        if (vehiculo.getCantPasajerosdeVehiculo() == cantPasajeros) {
+            coincidencia = true;
+        }
+        return coincidencia;
+    }
+
+    public void buscarXModelo(String modelo) {
         int cont = tamanio();
-        
+
         while (cont == tamanio() && cont != 0) {
 
             NodoListaDobleEnlazadaResultadosBusqueda aux = cabeza;
-            if (!aux.getDato().getMarcaDeVehiculo().equals(marca)) {
+            if (!aux.getDato().getModeloVehiculo().equals(modelo)) {
                 eliminarDeLaLista(cabeza.getDato().getNumPlacadeVehiculo());
             } else {
-                if (!aux.getNext().getDato().getMarcaDeVehiculo().equals(marca)) {
+                if (!aux.getNext().getDato().getModeloVehiculo().equals(modelo)) {
                     eliminarDeLaLista(aux.getNext().getDato().getNumPlacadeVehiculo());
                 } else {
 
@@ -111,37 +183,6 @@ public class ListaDobleEnlazadaResultadosBusqueda {
             cont -= 1;
 
         }
-    }
-
-    public void buscarXAnio(int anio) {
-        int cont = tamanio();
-        
-        
-            while (cont == tamanio() && cont != 0) {
-                NodoListaDobleEnlazadaResultadosBusqueda aux = cabeza;
-                if (aux.getDato().getAniodeVehiculo() != anio) {
-                    eliminarDeLaLista(cabeza.getDato().getNumPlacadeVehiculo());
-                } else {
-                    if (aux.getNext().getDato().getAniodeVehiculo() != anio) {
-                        eliminarDeLaLista(aux.getNext().getDato().getNumPlacadeVehiculo());
-                    } else {
-
-                        aux = aux.getNext();
-                    }
-                }
-
-                cont -= 1;
-
-            
-        }
-    }
-
-    public boolean comparoCantPasajeros(Vehiculo vehiculo, int cantPasajeros) {
-        boolean coincidencia = false;
-        if (vehiculo.getCantPasajerosdeVehiculo() == cantPasajeros) {
-            coincidencia = true;
-        }
-        return coincidencia;
     }
 
     @Override
