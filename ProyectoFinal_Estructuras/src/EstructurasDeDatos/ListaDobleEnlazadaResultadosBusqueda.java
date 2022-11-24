@@ -227,27 +227,45 @@ public class ListaDobleEnlazadaResultadosBusqueda {
         return coincidencia;
     }
 
+    public Vehiculo asignarVehiculoASoli() {
+        Vehiculo vehiculo = cabeza.getDato();
+        if (tamanio() > 1) {
+            int numRam = randInt(1,tamanio());
+            NodoListaDobleEnlazadaResultadosBusqueda aux = cabeza;
+            for (int i = 0; i < numRam; i++) {
+                aux = aux.getNext();
+            }
+            vehiculo = aux.getDato();
+        }
+
+        return vehiculo;
+    }
+
+    public static int randInt(int min, int max) {
+
+        int randomNum = min + (int) (Math.random() * ((max - min) + 1));
+
+        return randomNum;
+    }
+
     @Override
     public String toString() {
         NodoListaDobleEnlazadaResultadosBusqueda aux = cabeza;
 
         String s = "\n";
         if (aux != null) {
-//            s += "back: " + aux.getBack() + ",\n";
-            s += "Nodo actual: " + aux + ",\n ";
-//            s += "Next: " + aux.getNext() + ",\n";
+
+            s += "Posibles vehiculos: " + aux + ",\n ";
+
             s += "--------------------------\n";
             aux = aux.getNext();
             while (aux != cabeza) {
 
-//                s += "back: " + aux.getBack() + ",\n";
-                s += "Nodo actual: " + aux + ",\n ";
-//                s += "Next: " + aux.getNext() + ",\n";
+                s += "Posibles vehiculos: " + aux + ",\n ";
+
                 s += "--------------------------\n";
                 aux = aux.getNext();
             }
-        } else {
-            s += "No hay  vehiculos con las especificaciones dadas";
         }
         return s;
     }
@@ -270,10 +288,10 @@ public class ListaDobleEnlazadaResultadosBusqueda {
                 s += "------------------------------------------\n";
                 aux = aux.getNext();
             }
-        } 
+        }
         return s;
     }
-    
+
     public String toStringcopia() {
         NodoListaDobleEnlazadaResultadosBusqueda aux = cabeza;
         String s = "Lista: ";

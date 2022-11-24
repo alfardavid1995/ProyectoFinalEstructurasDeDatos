@@ -6,23 +6,21 @@ import EstructurasDeDatos.*;
 public class SolicitudDeAlquiler {
     private String estadoDeSolicitud;//Registrada, procesada, finalizada, rechazada
     private int idSolicitud;
+    private static int IDSolicitudActual = 1;
     private int cantidadDeDiasSolicitud;
     private Cliente usuarioSolicitud;
-    private int cantidadMinimaPasajerosSolicitud;
-    private String marcaVehiculoSolicitud;
-    private String modelovehiculoSolicitud;
-    private int anioVehiculoEnLaSolicitud;
-    private String extrasVehiculoSolicitud;
-    private double montoSolicitud;
-    private Vehiculo vehiculoSolicitud;
-    private ListaDobleEnlazadaResultadosBusqueda listaDeVehiculos;
+    private Vehiculo vehiculoSoli;
 
-    public SolicitudDeAlquiler(String estadoDeSolicitud, int idSolicitud, int cantidadDeDiasSolicitud, Cliente usuarioSolicitud,  Vehiculo vehiculoSolicitud) {
+    public SolicitudDeAlquiler() {
+    }
+
+    public SolicitudDeAlquiler(String estadoDeSolicitud, int cantidadDeDiasSolicitud, Cliente usuarioSolicitud, Vehiculo vehiculoSoli) {
         this.estadoDeSolicitud = estadoDeSolicitud;
-        this.idSolicitud = idSolicitud;
         this.cantidadDeDiasSolicitud = cantidadDeDiasSolicitud;
-        this.montoSolicitud = montoSolicitud;
-        this.vehiculoSolicitud = vehiculoSolicitud;
+        this.usuarioSolicitud = usuarioSolicitud;
+        this.vehiculoSoli = vehiculoSoli;
+        this.idSolicitud = IDSolicitudActual;
+        IDSolicitudActual++;
     }
 
     public String getEstadoDeSolicitud() {
@@ -57,69 +55,29 @@ public class SolicitudDeAlquiler {
         this.usuarioSolicitud = usuarioSolicitud;
     }
 
-    public int getCantidadMinimaPasajerosSolicitud() {
-        return cantidadMinimaPasajerosSolicitud;
+    public Vehiculo getVehiculoSoli() {
+        return vehiculoSoli;
     }
 
-    public void setCantidadMinimaPasajerosSolicitud(int cantidadMinimaPasajerosSolicitud) {
-        this.cantidadMinimaPasajerosSolicitud = cantidadMinimaPasajerosSolicitud;
+    public void setVehiculoSoli(Vehiculo vehiculoSoli) {
+        this.vehiculoSoli = vehiculoSoli;
     }
 
-    public String getMarcaVehiculoSolicitud() {
-        return marcaVehiculoSolicitud;
+   
+ 
+    
+   
+
+    @Override
+    public String toString() {
+        return "\n-----------------------Solicitud------------------ " + "\n"
+                + "Id Solicitud: " + idSolicitud + "\t"
+                + "Cantidad de dias: " + cantidadDeDiasSolicitud + "\n"
+                +  usuarioSolicitud.listar2() + "\n"
+                +  vehiculoSoli.listar3();
     }
 
-    public void setMarcaVehiculoSolicitud(String marcaVehiculoSolicitud) {
-        this.marcaVehiculoSolicitud = marcaVehiculoSolicitud;
-    }
-
-    public String getModelovehiculoSolicitud() {
-        return modelovehiculoSolicitud;
-    }
-
-    public void setModelovehiculoSolicitud(String modelovehiculoSolicitud) {
-        this.modelovehiculoSolicitud = modelovehiculoSolicitud;
-    }
-
-    public int getAnioVehiculoEnLaSolicitud() {
-        return anioVehiculoEnLaSolicitud;
-    }
-
-    public void setAnioVehiculoEnLaSolicitud(int anioVehiculoEnLaSolicitud) {
-        this.anioVehiculoEnLaSolicitud = anioVehiculoEnLaSolicitud;
-    }
-
-    public String getExtrasVehiculoSolicitud() {
-        return extrasVehiculoSolicitud;
-    }
-
-    public void setExtrasVehiculoSolicitud(String extrasVehiculoSolicitud) {
-        this.extrasVehiculoSolicitud = extrasVehiculoSolicitud;
-    }
-
-    public double getMontoSolicitud() {
-        return montoSolicitud;
-    }
-
-    public void setMontoSolicitud(double montoSolicitud) {
-        this.montoSolicitud = montoSolicitud;
-    }
-
-    public Vehiculo getVehiculoSolicitud() {
-        return vehiculoSolicitud;
-    }
-
-    public void setVehiculoSolicitud(Vehiculo vehiculoSolicitud) {
-        this.vehiculoSolicitud = vehiculoSolicitud;
-    }
-
-    public ListaDobleEnlazadaResultadosBusqueda getListaDeVehiculos() {
-        return listaDeVehiculos;
-    }
-
-    public void setListaDeVehiculos(ListaDobleEnlazadaResultadosBusqueda listaDeVehiculos) {
-        this.listaDeVehiculos = listaDeVehiculos;
-    }
+    
     
     
     

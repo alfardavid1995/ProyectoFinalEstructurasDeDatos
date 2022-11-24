@@ -2,6 +2,7 @@ package GUI;
 
 import EstructurasDeDatos.*;
 import ObjetosdelProyecto.Objetos.Cliente;
+import ObjetosdelProyecto.Objetos.SolicitudDeAlquiler;
 import ObjetosdelProyecto.Objetos.Vehiculo;
 import javax.swing.JOptionPane;
 
@@ -196,7 +197,7 @@ public class GUIMain extends javax.swing.JFrame {
         jTextFieldAnio = new javax.swing.JTextField();
         jScrollPane19 = new javax.swing.JScrollPane();
         jTextAreaExtras = new javax.swing.JTextArea();
-        jButtonLimpiar = new javax.swing.JButton();
+        jButtonBuscar = new javax.swing.JButton();
         jLabel23 = new javax.swing.JLabel();
         jLabel24 = new javax.swing.JLabel();
         jTextFieldModelo = new javax.swing.JTextField();
@@ -204,14 +205,8 @@ public class GUIMain extends javax.swing.JFrame {
         jTextAreaCarrosDisponibles = new javax.swing.JTextArea();
         jComboBoxCantPasajeros = new javax.swing.JComboBox<>();
         jButtonCrearSolicitud = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jPanel3 = new javax.swing.JPanel();
-        jLabel25 = new javax.swing.JLabel();
-        jScrollPane21 = new javax.swing.JScrollPane();
-        jTextAreaSolicitudes = new javax.swing.JTextArea();
-        jButtonRechazar = new javax.swing.JButton();
-        jButtonAtender = new javax.swing.JButton();
+        jLabel30 = new javax.swing.JLabel();
+        jTextFieldCedula = new javax.swing.JTextField();
         jPanel2 = new javax.swing.JPanel();
         jLabel26 = new javax.swing.JLabel();
         jLabel27 = new javax.swing.JLabel();
@@ -1065,7 +1060,7 @@ public class GUIMain extends javax.swing.JFrame {
         panelVehiculo.addTab("Cliente", panelCliente);
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel8.setText("Dias de Alquiler");
+        jLabel8.setText("Cedula");
 
         jLabel14.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel14.setText("Cantidad de Pasajeros");
@@ -1092,11 +1087,11 @@ public class GUIMain extends javax.swing.JFrame {
         jTextAreaExtras.setRows(5);
         jScrollPane19.setViewportView(jTextAreaExtras);
 
-        jButtonLimpiar.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jButtonLimpiar.setText("Buscar");
-        jButtonLimpiar.addActionListener(new java.awt.event.ActionListener() {
+        jButtonBuscar.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jButtonBuscar.setText("Buscar");
+        jButtonBuscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonLimpiarActionPerformed(evt);
+                jButtonBuscarActionPerformed(evt);
             }
         });
 
@@ -1127,19 +1122,8 @@ public class GUIMain extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setText("Mostrar");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-
-        jButton2.setText("Limpiar");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
-            }
-        });
+        jLabel30.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel30.setText("Dias de Alquiler");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -1152,16 +1136,23 @@ public class GUIMain extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(jLabel14)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(jComboBoxCantPasajeros, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                                .addComponent(jLabel14)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(jComboBoxCantPasajeros, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                                .addComponent(jLabel30)
+                                                .addGap(63, 63, 63)
+                                                .addComponent(jTextFieldDiasAlquiler, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addGap(98, 98, 98))
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addComponent(jLabel8)
-                                        .addGap(63, 63, 63)
-                                        .addComponent(jTextFieldDiasAlquiler, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGap(98, 98, 98)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(jTextFieldCedula, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(32, 32, 32)))
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
@@ -1184,16 +1175,9 @@ public class GUIMain extends javax.swing.JFrame {
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                 .addComponent(jScrollPane19, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGroup(jPanel1Layout.createSequentialGroup()
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(jPanel1Layout.createSequentialGroup()
-                                            .addComponent(jButtonLimpiar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addGap(18, 18, 18))
-                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                            .addComponent(jButton1)
-                                            .addGap(53, 53, 53)))
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jButton2)
-                                        .addComponent(jButtonCrearSolicitud)))))))
+                                    .addComponent(jButtonBuscar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(jButtonCrearSolicitud))))))
                 .addContainerGap(67, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -1205,7 +1189,10 @@ public class GUIMain extends javax.swing.JFrame {
                         .addComponent(jLabel22))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jLabel16)))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel16)
+                            .addComponent(jLabel8)
+                            .addComponent(jTextFieldCedula, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -1213,27 +1200,15 @@ public class GUIMain extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jButtonCrearSolicitud)
-                            .addComponent(jButtonLimpiar))
-                        .addGap(31, 31, 31)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButton1)
-                            .addComponent(jButton2))
-                        .addGap(100, 100, 100))
+                            .addComponent(jButtonBuscar))
+                        .addGap(154, 154, 154))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel8)
-                            .addComponent(jTextFieldDiasAlquiler, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel20)
-                            .addComponent(jTextFieldMarca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel14)
-                                    .addComponent(jComboBoxCantPasajeros, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(42, 42, 42)
-                                .addComponent(jLabel23))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                    .addComponent(jTextFieldDiasAlquiler, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel20)
+                                    .addComponent(jTextFieldMarca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(19, 19, 19)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(jTextFieldAnio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1242,67 +1217,21 @@ public class GUIMain extends javax.swing.JFrame {
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(jLabel21)
                                     .addComponent(jTextFieldModelo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(37, 37, 37)))
+                                .addGap(37, 37, 37))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel30)
+                                .addGap(28, 28, 28)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel14)
+                                    .addComponent(jComboBoxCantPasajeros, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(42, 42, 42)
+                                .addComponent(jLabel23)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jScrollPane20, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(28, 28, 28))))
         );
 
         jTabbedPane4.addTab("Solicitud de Alquiler", jPanel1);
-
-        jLabel25.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel25.setText("Solicitudes Registradas");
-
-        jTextAreaSolicitudes.setColumns(20);
-        jTextAreaSolicitudes.setRows(5);
-        jScrollPane21.setViewportView(jTextAreaSolicitudes);
-
-        jButtonRechazar.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jButtonRechazar.setText("Rechazar");
-        jButtonRechazar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonRechazarActionPerformed(evt);
-            }
-        });
-
-        jButtonAtender.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jButtonAtender.setText(" Atender ");
-        jButtonAtender.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonAtenderActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButtonAtender)
-                .addGap(39, 39, 39)
-                .addComponent(jButtonRechazar)
-                .addGap(100, 100, 100)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel25)
-                    .addComponent(jScrollPane21, javax.swing.GroupLayout.PREFERRED_SIZE, 554, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(64, 64, 64))
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(30, 30, 30)
-                .addComponent(jLabel25)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jButtonRechazar)
-                        .addComponent(jButtonAtender))
-                    .addComponent(jScrollPane21, javax.swing.GroupLayout.PREFERRED_SIZE, 363, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(27, Short.MAX_VALUE))
-        );
-
-        jTabbedPane4.addTab("Asignar Vehiculo", jPanel3);
 
         jLabel26.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel26.setText("Filtro de Consulta");
@@ -1785,11 +1714,63 @@ public class GUIMain extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBoxSelectorDeCombustibleActionPerformed
 
-    private void jTextFieldMarcaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldMarcaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldMarcaActionPerformed
+    private void jButtonCrearSolicitudActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCrearSolicitudActionPerformed
 
-    private void jButtonLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonLimpiarActionPerformed
+        if ("".equals(jTextFieldCedula.getText()) || "".equals(jTextFieldDiasAlquiler.getText())) {
+            JOptionPane.showMessageDialog(null, "Complete todos los campos ");
+        } else {
+
+            if (!listaFiltro.Vacia()) {
+                int diasAlquiler = Integer.parseInt(jTextFieldDiasAlquiler.getText());
+                int cedula = Integer.parseInt(jTextFieldCedula.getText());
+                Cliente clientito = colaRegistroCliente.traerCliente(cedula);
+                if (colaRegistroCliente.search(cedula)) {
+                    //aca traemos el cliente a la GUI para que se trabaje desde ahi
+
+                    if (clientito.getCategoria().equals("") && diasAlquiler >= 30) {
+                        clientito.setCategoria("Bronce");
+                        JOptionPane.showMessageDialog(null, "Felicidades subiste a " + clientito.getCategoria());
+                    } else {
+                        if (clientito.getCategoria().equals("Bronce") && diasAlquiler >= 30) {
+                            clientito.setCategoria("Plata");
+                            JOptionPane.showMessageDialog(null, "Felicidades subiste a " + clientito.getCategoria());
+                        } else {
+                            if (clientito.getCategoria().equals("Plata") && diasAlquiler >= 30) {
+                                clientito.setCategoria("Oro");
+                                JOptionPane.showMessageDialog(null, "Felicidades subiste a " + clientito.getCategoria());
+                            } else {
+                                if (clientito.getCategoria().equals("Oro") && diasAlquiler >= 30) {
+                                    clientito.setCategoria("Zafiro");
+                                    JOptionPane.showMessageDialog(null, "Felicidades subiste a " + clientito.getCategoria());
+                                }
+                            }
+                        }
+                    }
+
+                } else {
+                    JOptionPane.showMessageDialog(null, "El cliente no existe");
+                }
+                
+                
+                soliAlquiler = new SolicitudDeAlquiler("Registrada", diasAlquiler,clientito,listaFiltro.asignarVehiculoASoli());
+                
+                listaSoli.agregarSolicitud(soliAlquiler);
+                
+                jTextAreaFiltroConsulta.setText(listaSoli.toString());
+                
+            } else {
+                JOptionPane.showMessageDialog(null, "Tiene hacer una busqueda de vehiculos primero");
+            }
+        }
+
+
+    }//GEN-LAST:event_jButtonCrearSolicitudActionPerformed
+
+    private void jTextFieldModeloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldModeloActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldModeloActionPerformed
+
+    private void jButtonBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBuscarActionPerformed
         if (!listaFiltro.Vacia()) {
             listaFiltro.limpiarLista();
         }
@@ -1824,7 +1805,7 @@ public class GUIMain extends javax.swing.JFrame {
 
                 String marca = jTextFieldMarca.getText();
                 if (listaFiltro.buscarXMarca(marca)) {
-//                    JOptionPane.showMessageDialog(null, "SI hay marca");
+                    //                    JOptionPane.showMessageDialog(null, "SI hay marca");
                     listaFiltro.eliminaXMarca(marca);
                 } else {
 
@@ -1838,7 +1819,7 @@ public class GUIMain extends javax.swing.JFrame {
             if (!"".equals(jTextFieldAnio.getText())) {
                 int anio = Integer.parseInt(jTextFieldAnio.getText());
                 if (listaFiltro.buscarXAnio(anio)) {
-//                    JOptionPane.showMessageDialog(null, "SI hay anio");
+                    //                    JOptionPane.showMessageDialog(null, "SI hay anio");
                     listaFiltro.eliminaXAnio(anio);
                 } else {
 
@@ -1852,7 +1833,7 @@ public class GUIMain extends javax.swing.JFrame {
             if (!"".equals(jTextFieldModelo.getText())) {
                 String modelo = jTextFieldModelo.getText();
                 if (listaFiltro.buscarXModelo(modelo)) {
-//                    JOptionPane.showMessageDialog(null, "SI hay modelo");
+                    //                    JOptionPane.showMessageDialog(null, "SI hay modelo");
                     listaFiltro.eliminaXModelo(modelo);
                 } else {
                     jTextAreaCarrosDisponibles.setText("No hay  vehiculos del modelo "
@@ -1865,7 +1846,7 @@ public class GUIMain extends javax.swing.JFrame {
             if (!"".equals(jTextAreaExtras.getText())) {
                 String extra = jTextAreaExtras.getText();
                 if (listaFiltro.buscarXExtra(extra)) {
-//                    JOptionPane.showMessageDialog(null, "SI hay extra");
+                    //                    JOptionPane.showMessageDialog(null, "SI hay extra");
                     listaFiltro.eliminaXExtra(extra);
                 } else {
 
@@ -1879,32 +1860,11 @@ public class GUIMain extends javax.swing.JFrame {
         if (!listaFiltro.Vacia()) {
             jTextAreaCarrosDisponibles.setText(listaFiltro.toString2());
         }
+    }//GEN-LAST:event_jButtonBuscarActionPerformed
 
-    }//GEN-LAST:event_jButtonLimpiarActionPerformed
-
-    private void jTextFieldModeloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldModeloActionPerformed
+    private void jTextFieldMarcaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldMarcaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldModeloActionPerformed
-
-    private void jButtonRechazarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRechazarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonRechazarActionPerformed
-
-    private void jButtonAtenderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAtenderActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonAtenderActionPerformed
-
-    private void jButtonCrearSolicitudActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCrearSolicitudActionPerformed
-
-    }//GEN-LAST:event_jButtonCrearSolicitudActionPerformed
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-
-    }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        limpiarConsola2();
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_jTextFieldMarcaActionPerformed
 
     public void limpiarConsola() {
         jTextPanePlaca.setText("");
@@ -1955,12 +1915,12 @@ public class GUIMain extends javax.swing.JFrame {
     Pila_RegistroVehiculo pilaRegistroVehiculo = new Pila_RegistroVehiculo();
     Cola_RegistroCliente colaRegistroCliente = new Cola_RegistroCliente();
     ListaDobleEnlazadaResultadosBusqueda listaFiltro = new ListaDobleEnlazadaResultadosBusqueda();
+    ListaDobleEnlazadaSolicitudesAlquiler listaSoli = new ListaDobleEnlazadaSolicitudesAlquiler();
+    SolicitudDeAlquiler soliAlquiler = new SolicitudDeAlquiler();
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButtonActualizar;
     private javax.swing.JButton jButtonAgregarExtras;
-    private javax.swing.JButton jButtonAtender;
+    private javax.swing.JButton jButtonBuscar;
     private javax.swing.JButton jButtonBuscarCedula;
     private javax.swing.JButton jButtonBuscarPlacaModificarVehiculo;
     private javax.swing.JButton jButtonBuscar_Refrescar;
@@ -1969,12 +1929,10 @@ public class GUIMain extends javax.swing.JFrame {
     private javax.swing.JButton jButtonCrearSolicitud;
     private javax.swing.JButton jButtonEliminar;
     private javax.swing.JButton jButtonEliminar1;
-    private javax.swing.JButton jButtonLimpiar;
     private javax.swing.JButton jButtonModificar;
     private javax.swing.JButton jButtonModificar1;
     private javax.swing.JButton jButtonMostrar;
     private javax.swing.JButton jButtonQuitarExtras;
-    private javax.swing.JButton jButtonRechazar;
     private javax.swing.JButton jButtonRefrescar;
     private javax.swing.JButton jButtonRefrescarRegistroCliente;
     private javax.swing.JButton jButtonRefrescarRegistroVehiculo1;
@@ -2009,12 +1967,12 @@ public class GUIMain extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
-    private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -2040,7 +1998,6 @@ public class GUIMain extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelValorAModificar1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane10;
@@ -2055,7 +2012,6 @@ public class GUIMain extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane19;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane20;
-    private javax.swing.JScrollPane jScrollPane21;
     private javax.swing.JScrollPane jScrollPane22;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
@@ -2068,9 +2024,9 @@ public class GUIMain extends javax.swing.JFrame {
     private javax.swing.JTextArea jTextAreaCarrosDisponibles;
     private javax.swing.JTextArea jTextAreaExtras;
     private javax.swing.JTextArea jTextAreaFiltroConsulta;
-    private javax.swing.JTextArea jTextAreaSolicitudes;
     private javax.swing.JTextArea jTextAreaVehiculo;
     private javax.swing.JTextField jTextFieldAnio;
+    private javax.swing.JTextField jTextFieldCedula;
     private javax.swing.JTextField jTextFieldCedulaCliente;
     private javax.swing.JTextField jTextFieldCedulaClienteVerificar;
     private javax.swing.JTextField jTextFieldCedulaConsulta;
