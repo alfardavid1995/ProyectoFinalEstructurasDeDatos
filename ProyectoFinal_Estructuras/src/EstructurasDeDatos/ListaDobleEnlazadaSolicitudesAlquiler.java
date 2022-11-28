@@ -1,6 +1,7 @@
 package EstructurasDeDatos;
 
 import ObjetosdelProyecto.Objetos.SolicitudDeAlquiler;
+import java.time.temporal.Temporal;
 
 public class ListaDobleEnlazadaSolicitudesAlquiler {
 
@@ -52,30 +53,41 @@ public class ListaDobleEnlazadaSolicitudesAlquiler {
         
             
         }else{
-            if(existeZafiro()&&solicitud.getUsuarioSolicitud().getIndiceCategoria()==4){//si existe un zafiro y la categoria es igual a 4 mandelo al final de zafiro
-                
+            if(existeClienteZafiro()&&solicitud.getUsuarioSolicitud().getIndiceCategoria()==4){//si existe un zafiro y la categoria es igual a 4 mandelo al final de zafiro
                 //lo manda al final de la lista de zafiros,
-                if(existeOro() || existePlata() || existeBronce()){//revisa si hay oro plata o bronce para ver si tiene que enlazarlo para atras si no no lo que se hace es que se pone la etiqueta de ultimo 
+                NodoListaDobleEnlazadaSolicitudesAlquiler temporal;
+                temporal=cabeza;
+                if(temporal.getDato().getUsuarioSolicitud().getIndiceCategoria()<4){
+                    //
+                }
+                temporal=temporal.getNext();
+                while(temporal!=cabeza){
+                    if(temporal.getDato().getUsuarioSolicitud().getIndiceCategoria()<4){
+                        temporal.setBack(nuevoDatoAlquiler);
+                    }
+                }
+                
+                if(existeClienteOro() || existeClientePlata() || existeClienteBronce()|| existeClienteSinClasificacion()){//revisa si hay oro plata o bronce para ver si tiene que enlazarlo para atras si no no lo que se hace es que se pone la etiqueta de ultimo 
                     NodoListaDobleEnlazadaSolicitudesAlquiler aux;
-                    if(existeOro()){
+                    if(existeClienteOro()){//si existe oro en la lista debe enlazar el primer oro con el ultimo zafiro
                         aux=cabeza;
                         if (aux.getDato().getUsuarioSolicitud().getIndiceCategoria()==3) {
                             
                         }
                     }
-                    if(existePlata()){
+                    if(existeClientePlata()&&!existeClienteOro()){//si existe plata y no oro debe enlazarlo con el primer plata y el ultomo zafiro
                         aux=cabeza;
                         if (aux.getDato().getUsuarioSolicitud().getIndiceCategoria()==3) {
                             
                         }
                     }
-                    if(existeBronce()){
+                    if(existeClienteBronce()&&!existeClienteOro()&&!existeClientePlata()){//si existe un bronce y no un plata debe enlazarlo con el primer bronce que tenga
                         aux=cabeza;
                         if (aux.getDato().getUsuarioSolicitud().getIndiceCategoria()==3) {
                             
                         }
                     }
-                }else{//en este caso no hay de otro tipo de oro plata o bronce o ni mierda asi que se manda al final
+                }else{//en este caso no hay de otro tipo de oro plata o bronce o nada mas asi que se manda al final y se enlaza al inicio
                     NodoListaDobleEnlazadaSolicitudesAlquiler aux;     
                     aux=ultimo;
                     ultimo=nuevoDatoAlquiler;
@@ -83,22 +95,23 @@ public class ListaDobleEnlazadaSolicitudesAlquiler {
                     ultimo.setNext(cabeza);
                     cabeza.setBack(ultimo); 
                 }
-            }else if(!existeZafiro()&&solicitud.getUsuarioSolicitud().getIndiceCategoria()==4){//si no existe un zafiro y la categoria es igual a 4 mandelo al inicio de zafiro
+                
+            }else if(!existeClienteZafiro()&&solicitud.getUsuarioSolicitud().getIndiceCategoria()==4){//si no existe un zafiro y la categoria es igual a 4 mandelo al inicio de zafiro
                 //mandelo al inicio de zafiro
             }
-            if(existeOro()&&solicitud.getUsuarioSolicitud().getIndiceCategoria()==3){//si hay oro en la lista y la categoria es 3 mandelo al final de la lista
+            if(existeClienteOro()&&solicitud.getUsuarioSolicitud().getIndiceCategoria()==3){//si hay oro en la lista y la categoria es 3 mandelo al final de la lista
                 //mandelo para el final de oro
-            }else if(!existeOro()&&solicitud.getUsuarioSolicitud().getIndiceCategoria()==3){//si no hay oro y la categoria del objeto a insertar es 3 mandelo al inicio de oro
+            }else if(!existeClienteOro()&&solicitud.getUsuarioSolicitud().getIndiceCategoria()==3){//si no hay oro y la categoria del objeto a insertar es 3 mandelo al inicio de oro
                 //mandelo para el inicio de oro
             }
-            if(existePlata()&&solicitud.getUsuarioSolicitud().getIndiceCategoria()==2){//si hay plata y la categoria es al final de plata mandelo al final de plata
+            if(existeClientePlata()&&solicitud.getUsuarioSolicitud().getIndiceCategoria()==2){//si hay plata y la categoria es al final de plata mandelo al final de plata
                 //mandelo para el final de plata
-            }else if(!existePlata()&&solicitud.getUsuarioSolicitud().getIndiceCategoria()==2){//si no hay plata y la categoria es 2 mandelo al inicio de plata
+            }else if(!existeClientePlata()&&solicitud.getUsuarioSolicitud().getIndiceCategoria()==2){//si no hay plata y la categoria es 2 mandelo al inicio de plata
                 //mandelo al inicio de plata
             }
-            if(existeBronce()&&solicitud.getUsuarioSolicitud().getIndiceCategoria()==1){//si hay bronces y la categoria es 1 mandelo al final de bronce
+            if(existeClienteBronce()&&solicitud.getUsuarioSolicitud().getIndiceCategoria()==1){//si hay bronces y la categoria es 1 mandelo al final de bronce
                 //mandelo para el final de bronce
-            }else if(!existeBronce() && solicitud.getUsuarioSolicitud().getIndiceCategoria()==1){//si no hay bronce mandelo al inicio de bronce
+            }else if(!existeClienteBronce() && solicitud.getUsuarioSolicitud().getIndiceCategoria()==1){//si no hay bronce mandelo al inicio de bronce
                 //mandelo al inicio de bronce
             }
         }
@@ -107,7 +120,7 @@ public class ListaDobleEnlazadaSolicitudesAlquiler {
         
     }
     
-    public boolean existeZafiro(){
+    public boolean existeClienteZafiro(){
         boolean existeZafiro =  false;
         NodoListaDobleEnlazadaSolicitudesAlquiler aux;
         aux=cabeza;
@@ -127,7 +140,7 @@ public class ListaDobleEnlazadaSolicitudesAlquiler {
         return existeZafiro;   
     }
     
-    public boolean existeOro(){
+    public boolean existeClienteOro(){
         boolean existeOro =  false;
         NodoListaDobleEnlazadaSolicitudesAlquiler aux;
         aux=cabeza;
@@ -147,18 +160,18 @@ public class ListaDobleEnlazadaSolicitudesAlquiler {
         return existeOro;   
     }
     
-    public boolean existePlata(){
+    public boolean existeClientePlata(){
         boolean existePlata =  false;
         NodoListaDobleEnlazadaSolicitudesAlquiler aux;
         aux=cabeza;
         
         if (cabeza!=null){
-            if(aux.getDato().getUsuarioSolicitud().getIndiceCategoria()==3){
+            if(aux.getDato().getUsuarioSolicitud().getIndiceCategoria()==2){
                 existePlata=true;
             }
             aux=aux.getNext();
             while(aux!=cabeza){
-                if(aux.getDato().getUsuarioSolicitud().getIndiceCategoria()==3){
+                if(aux.getDato().getUsuarioSolicitud().getIndiceCategoria()==2){
                     existePlata=true;
                 }
                 aux=aux.getNext();
@@ -167,18 +180,18 @@ public class ListaDobleEnlazadaSolicitudesAlquiler {
         return existePlata;
     }
     
-    public boolean existeBronce(){
+    public boolean existeClienteBronce(){
         boolean existeBronce =  false;
         NodoListaDobleEnlazadaSolicitudesAlquiler aux;
         aux=cabeza;
         
         if (cabeza!=null){
-            if(aux.getDato().getUsuarioSolicitud().getIndiceCategoria()==3){
+            if(aux.getDato().getUsuarioSolicitud().getIndiceCategoria()==1){
                 existeBronce=true;
             }
             aux=aux.getNext();
             while(aux!=cabeza){
-                if(aux.getDato().getUsuarioSolicitud().getIndiceCategoria()==3){
+                if(aux.getDato().getUsuarioSolicitud().getIndiceCategoria()==1){
                     existeBronce=true;
                 }
                 aux=aux.getNext();
@@ -187,6 +200,25 @@ public class ListaDobleEnlazadaSolicitudesAlquiler {
         return existeBronce;
     }
     
+    public boolean existeClienteSinClasificacion(){
+        boolean existeClientesinClasificacion =  false;
+        NodoListaDobleEnlazadaSolicitudesAlquiler aux;
+        aux=cabeza;
+        
+        if (cabeza!=null){
+            if(aux.getDato().getUsuarioSolicitud().getIndiceCategoria()==0){
+                existeClientesinClasificacion=true;
+            }
+            aux=aux.getNext();
+            while(aux!=cabeza){
+                if(aux.getDato().getUsuarioSolicitud().getIndiceCategoria()==0){
+                    existeClientesinClasificacion=true;
+                }
+                aux=aux.getNext();
+            }     
+        }
+        return existeClientesinClasificacion;
+    }   
     
     
     
