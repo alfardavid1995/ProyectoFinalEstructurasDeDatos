@@ -54,8 +54,8 @@ public class ListaDobleEnlazadaSolicitudesAlquiler {
         }else{
             if(existeZafiro()&&solicitud.getUsuarioSolicitud().getIndiceCategoria()==4){//si existe un zafiro y la categoria es igual a 4 mandelo al final de zafiro
                 
-                //lo manda al fianl de la lista de zafiros,
-                if(existeOro() || existePlata() || existeBronce()){//revisa si hay oro plata o bronce para ver si tiene que enlazarlo para atras
+                //lo manda al final de la lista de zafiros,
+                if(existeOro() || existePlata() || existeBronce()){//revisa si hay oro plata o bronce para ver si tiene que enlazarlo para atras si no no lo que se hace es que se pone la etiqueta de ultimo 
                     NodoListaDobleEnlazadaSolicitudesAlquiler aux;
                     if(existeOro()){
                         aux=cabeza;
@@ -75,6 +75,13 @@ public class ListaDobleEnlazadaSolicitudesAlquiler {
                             
                         }
                     }
+                }else{//en este caso no hay de otro tipo de oro plata o bronce o ni mierda asi que se manda al final
+                    NodoListaDobleEnlazadaSolicitudesAlquiler aux;     
+                    aux=ultimo;
+                    ultimo=nuevoDatoAlquiler;
+                    ultimo.setBack(aux);
+                    ultimo.setNext(cabeza);
+                    cabeza.setBack(ultimo); 
                 }
             }else if(!existeZafiro()&&solicitud.getUsuarioSolicitud().getIndiceCategoria()==4){//si no existe un zafiro y la categoria es igual a 4 mandelo al inicio de zafiro
                 //mandelo al inicio de zafiro
