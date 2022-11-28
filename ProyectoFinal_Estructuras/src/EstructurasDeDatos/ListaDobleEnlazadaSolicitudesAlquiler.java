@@ -40,8 +40,10 @@ public class ListaDobleEnlazadaSolicitudesAlquiler {
     //criterios de ordenamiento para lista de solicitudes
     //1.Zafiro, 2.Oro, 3.Plata, 4.Bronce, 5 Sin categoria
     public void agregarSolicitudDependiendoDeTipoCLiente(SolicitudDeAlquiler solicitud) {
+        NodoListaDobleEnlazadaSolicitudesAlquiler nuevoDatoAlquiler = new NodoListaDobleEnlazadaSolicitudesAlquiler(solicitud);
+        
         if (cabeza == null) {
-            cabeza = new NodoListaDobleEnlazadaSolicitudesAlquiler(solicitud);
+            cabeza = nuevoDatoAlquiler;
             cabeza.setNext(cabeza);
             cabeza.setBack(cabeza);
             ultimo = cabeza;
@@ -53,8 +55,26 @@ public class ListaDobleEnlazadaSolicitudesAlquiler {
             if(existeZafiro()&&solicitud.getUsuarioSolicitud().getIndiceCategoria()==4){//si existe un zafiro y la categoria es igual a 4 mandelo al final de zafiro
                 
                 //lo manda al fianl de la lista de zafiros,
-                if(existeOro() || existePlata() || existeBronce()){//revisa si hay oro plata o bronce
-                    // debe enlazar el oro el plata o el bronce al zafiro
+                if(existeOro() || existePlata() || existeBronce()){//revisa si hay oro plata o bronce para ver si tiene que enlazarlo para atras
+                    NodoListaDobleEnlazadaSolicitudesAlquiler aux;
+                    if(existeOro()){
+                        aux=cabeza;
+                        if (aux.getDato().getUsuarioSolicitud().getIndiceCategoria()==3) {
+                            
+                        }
+                    }
+                    if(existePlata()){
+                        aux=cabeza;
+                        if (aux.getDato().getUsuarioSolicitud().getIndiceCategoria()==3) {
+                            
+                        }
+                    }
+                    if(existeBronce()){
+                        aux=cabeza;
+                        if (aux.getDato().getUsuarioSolicitud().getIndiceCategoria()==3) {
+                            
+                        }
+                    }
                 }
             }else if(!existeZafiro()&&solicitud.getUsuarioSolicitud().getIndiceCategoria()==4){//si no existe un zafiro y la categoria es igual a 4 mandelo al inicio de zafiro
                 //mandelo al inicio de zafiro
