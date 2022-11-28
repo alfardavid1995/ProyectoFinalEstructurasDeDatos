@@ -36,7 +36,132 @@ public class ListaDobleEnlazadaSolicitudesAlquiler {
         }
         this.largo++;
     }
-
+    
+    //criterios de ordenamiento para lista de solicitudes
+    //1.Zafiro, 2.Oro, 3.Plata, 4.Bronce, 5 Sin categoria
+    public void agregarSolicitudDependiendoDeTipoCLiente(SolicitudDeAlquiler solicitud) {
+        if (cabeza == null) {
+            cabeza = new NodoListaDobleEnlazadaSolicitudesAlquiler(solicitud);
+            cabeza.setNext(cabeza);
+            cabeza.setBack(cabeza);
+            ultimo = cabeza;
+            ultimo.setNext(cabeza);
+            ultimo.setBack(cabeza);
+        
+            
+        }else{
+            if(existeZafiro()&&solicitud.getUsuarioSolicitud().getIndiceCategoria()==4){//si existe un zafiro y la categoria es igual a 4 mandelo al final de zafiro
+                
+                //lo manda al fianl de la lista de zafiros,
+                if(existeOro() || existePlata() || existeBronce()){//revisa si hay oro plata o bronce
+                    // debe enlazar el oro el plata o el bronce al zafiro
+                }
+            }else if(!existeZafiro()&&solicitud.getUsuarioSolicitud().getIndiceCategoria()==4){//si no existe un zafiro y la categoria es igual a 4 mandelo al inicio de zafiro
+                //mandelo al inicio de zafiro
+            }
+            if(existeOro()&&solicitud.getUsuarioSolicitud().getIndiceCategoria()==3){//si hay oro en la lista y la categoria es 3 mandelo al final de la lista
+                //mandelo para el final de oro
+            }else if(!existeOro()&&solicitud.getUsuarioSolicitud().getIndiceCategoria()==3){//si no hay oro y la categoria del objeto a insertar es 3 mandelo al inicio de oro
+                //mandelo para el inicio de oro
+            }
+            if(existePlata()&&solicitud.getUsuarioSolicitud().getIndiceCategoria()==2){//si hay plata y la categoria es al final de plata mandelo al final de plata
+                //mandelo para el final de plata
+            }else if(!existePlata()&&solicitud.getUsuarioSolicitud().getIndiceCategoria()==2){//si no hay plata y la categoria es 2 mandelo al inicio de plata
+                //mandelo al inicio de plata
+            }
+            if(existeBronce()&&solicitud.getUsuarioSolicitud().getIndiceCategoria()==1){//si hay bronces y la categoria es 1 mandelo al final de bronce
+                //mandelo para el final de bronce
+            }else if(!existeBronce() && solicitud.getUsuarioSolicitud().getIndiceCategoria()==1){//si no hay bronce mandelo al inicio de bronce
+                //mandelo al inicio de bronce
+            }
+        }
+        
+        
+        
+    }
+    
+    public boolean existeZafiro(){
+        boolean existeZafiro =  false;
+        NodoListaDobleEnlazadaSolicitudesAlquiler aux;
+        aux=cabeza;
+        
+        if (cabeza!=null){
+            if(aux.getDato().getUsuarioSolicitud().getIndiceCategoria()==4){
+                existeZafiro=true;
+            }
+            aux=aux.getNext();
+            while(aux!=cabeza){
+                if(aux.getDato().getUsuarioSolicitud().getIndiceCategoria()==4){
+                    existeZafiro=true;
+                }
+                aux=aux.getNext();
+            }     
+        }
+        return existeZafiro;   
+    }
+    
+    public boolean existeOro(){
+        boolean existeOro =  false;
+        NodoListaDobleEnlazadaSolicitudesAlquiler aux;
+        aux=cabeza;
+        
+        if (cabeza!=null){
+            if(aux.getDato().getUsuarioSolicitud().getIndiceCategoria()==3){
+                existeOro=true;
+            }
+            aux=aux.getNext();
+            while(aux!=cabeza){
+                if(aux.getDato().getUsuarioSolicitud().getIndiceCategoria()==3){
+                    existeOro=true;
+                }
+                aux=aux.getNext();
+            }     
+        }
+        return existeOro;   
+    }
+    
+    public boolean existePlata(){
+        boolean existePlata =  false;
+        NodoListaDobleEnlazadaSolicitudesAlquiler aux;
+        aux=cabeza;
+        
+        if (cabeza!=null){
+            if(aux.getDato().getUsuarioSolicitud().getIndiceCategoria()==3){
+                existePlata=true;
+            }
+            aux=aux.getNext();
+            while(aux!=cabeza){
+                if(aux.getDato().getUsuarioSolicitud().getIndiceCategoria()==3){
+                    existePlata=true;
+                }
+                aux=aux.getNext();
+            }     
+        }
+        return existePlata;
+    }
+    
+    public boolean existeBronce(){
+        boolean existeBronce =  false;
+        NodoListaDobleEnlazadaSolicitudesAlquiler aux;
+        aux=cabeza;
+        
+        if (cabeza!=null){
+            if(aux.getDato().getUsuarioSolicitud().getIndiceCategoria()==3){
+                existeBronce=true;
+            }
+            aux=aux.getNext();
+            while(aux!=cabeza){
+                if(aux.getDato().getUsuarioSolicitud().getIndiceCategoria()==3){
+                    existeBronce=true;
+                }
+                aux=aux.getNext();
+            }     
+        }
+        return existeBronce;
+    }
+    
+    
+    
     
     
     public int tamanio() {

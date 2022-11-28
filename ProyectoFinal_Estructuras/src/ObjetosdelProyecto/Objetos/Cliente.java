@@ -8,9 +8,10 @@ public class Cliente {
     private String nombreCompleto;
     private String fechaNacimiento;   
     private String correoElectronico;
-    private String categoria;//Bronce, Plata, Oro, Zafiro 
+    private String categoria;//Bronce, Plata, Oro, Zafiro, nada 
     private PilaAlquileresRealizados_Cliente pilaAlquilerdeCliente;
     private int cantidadDeAlquileresProcesados;
+    private int indiceCategoria = 0;
 
     public Cliente() {
     }
@@ -22,7 +23,24 @@ public class Cliente {
         this.correoElectronico = correoElectronico;
         this.categoria = categoria;
         this.cantidadDeAlquileresProcesados = cantidadDeAlquileresProcesados;
+
+        
+        if (categoria.equals("Zafiro")) {
+            this.indiceCategoria = 4;
+        } else if (categoria.equals("Oro")) {
+            this.indiceCategoria = 3;
+        }else if (categoria.equals("Plata")) {
+            this.indiceCategoria = 2;
+        }else if (categoria.equals("Bronce")) {
+            this.indiceCategoria = 1;
+        } else {
+            this.indiceCategoria = 0;
+        }
+        
     }
+        
+        
+    
  
     public int getCedula() {
         return cedula;
@@ -54,6 +72,14 @@ public class Cliente {
 
     public void setCorreoElectronico(String correoElectronico) {
         this.correoElectronico = correoElectronico;
+    }
+
+    public int getIndiceCategoria() {
+        return indiceCategoria;
+    }
+
+    public void setIndiceCategoria(int indiceCategoria) {
+        this.indiceCategoria = indiceCategoria;
     }
 
     public String getCategoria() {

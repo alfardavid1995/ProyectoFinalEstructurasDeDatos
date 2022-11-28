@@ -1,6 +1,7 @@
 
 package ObjetosdelProyecto.Objetos;
 import EstructurasDeDatos.*;
+import java.util.Calendar;
 
 
 public class SolicitudDeAlquiler {
@@ -10,6 +11,7 @@ public class SolicitudDeAlquiler {
     private int cantidadDeDiasSolicitud;
     private Cliente usuarioSolicitud;
     private Vehiculo vehiculoSoli;
+    private Calendar fechadeCreaciondelaSolicitud;
 
     public SolicitudDeAlquiler() {
     }
