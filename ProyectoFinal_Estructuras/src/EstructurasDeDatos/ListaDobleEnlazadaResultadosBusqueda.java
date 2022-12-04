@@ -91,6 +91,38 @@ public class ListaDobleEnlazadaResultadosBusqueda {
 
     }
 
+    public boolean buscarXDisponibilidad() {
+        int cont = 0;
+        boolean exist = false;
+        NodoListaDobleEnlazadaResultadosBusqueda aux = cabeza;
+        while (!exist && cont != tamanio()) {
+
+            if (aux.getDato().getEstadoParaSerAlquilado().equals("Disponible")) {
+                exist = true;
+            }
+            aux = aux.getNext();
+            cont += 1;
+
+        }
+
+        return exist;
+    }
+
+    public void eliminaXDisponibilidad() {
+        int tamanioAntes = tamanio();
+        int cont = 0;
+        NodoListaDobleEnlazadaResultadosBusqueda aux = cabeza;
+        while (cont != tamanioAntes) {
+
+            if (!aux.getDato().getEstadoParaSerAlquilado().equals("Disponible")) {
+                eliminarDeLaLista(aux.getDato().getNumPlacadeVehiculo());
+
+            }
+            aux = aux.getNext();
+            cont += 1;
+        }
+    }
+
     public boolean buscarXMarca(String marca) {
         int cont = 0;
         boolean exist = false;
@@ -192,7 +224,6 @@ public class ListaDobleEnlazadaResultadosBusqueda {
         boolean exist = false;
         NodoListaDobleEnlazadaResultadosBusqueda aux = cabeza;
         while (!exist && cont != tamanio()) {
-
             if (aux.getDato().getExtrasPila().search(extra)) {
                 exist = true;
             }
@@ -218,6 +249,38 @@ public class ListaDobleEnlazadaResultadosBusqueda {
             cont += 1;
         }
     }
+    
+    public boolean buscarParaZafiros(int anio) {
+        int cont = 0;
+        boolean exist = false;
+        NodoListaDobleEnlazadaResultadosBusqueda aux = cabeza;
+        while (!exist && cont != tamanio()) {
+
+            if (aux.getDato().getAniodeVehiculo() >= anio) {
+                exist = true;
+            }
+            aux = aux.getNext();
+            cont += 1;
+
+        }
+
+        return exist;
+    }
+
+    public void eliminaParaZafiros(int anio) {
+        int tamanioAntes = tamanio();
+        int cont = 0;
+        NodoListaDobleEnlazadaResultadosBusqueda aux = cabeza;
+        while (cont != tamanioAntes) {
+
+            if (aux.getDato().getAniodeVehiculo() < anio) {
+                eliminarDeLaLista(aux.getDato().getNumPlacadeVehiculo());
+
+            }
+            aux = aux.getNext();
+            cont += 1;
+        }
+    }
 
     public boolean comparoCantPasajeros(Vehiculo vehiculo, int cantPasajeros) {
         boolean coincidencia = false;
@@ -230,7 +293,7 @@ public class ListaDobleEnlazadaResultadosBusqueda {
     public Vehiculo asignarVehiculoASoli() {
         Vehiculo vehiculo = cabeza.getDato();
         if (tamanio() > 1) {
-            int numRam = randInt(1,tamanio());
+            int numRam = randInt(1, tamanio());
             NodoListaDobleEnlazadaResultadosBusqueda aux = cabeza;
             for (int i = 0; i < numRam; i++) {
                 aux = aux.getNext();

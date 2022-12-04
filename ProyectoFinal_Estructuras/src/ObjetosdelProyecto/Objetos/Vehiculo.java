@@ -169,5 +169,10 @@ public class Vehiculo {
                 "\n-- Extras: " + extrasPila.listar();
     }
 
-    
+    public String listar4(){
+        return  "\n---------------- Vehiculo ----------------" +
+                "\n-- Placa: "  + numPlacadeVehiculo + 
+                "\n-- Marca: " + marcaDeVehiculo ;
+    }
+
 }

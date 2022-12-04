@@ -4,6 +4,7 @@ import ObjetosdelProyecto.Objetos.Cliente;
 import javax.swing.JOptionPane;
 
 public class Cola_RegistroCliente {
+
     private NodeCola_RegistroCliente frente;
     private NodeCola_RegistroCliente ultimo;
     private int largo;
@@ -11,26 +12,32 @@ public class Cola_RegistroCliente {
     public Cola_RegistroCliente() {
     }
     
-    public void encola(Cliente clientito){
+     public int tamanio() {
+        return this.largo;
+    }
+    public void encola(Cliente clientito) {
         NodeCola_RegistroCliente nodito = new NodeCola_RegistroCliente();
         nodito.setClienteNodo(clientito);
-        if(frente == null){  // significa que la cola esta vacia
+        if (frente == null) {  // significa que la cola esta vacia
             frente = nodito;
             ultimo = nodito;
-        } else{
+        } else {
             ultimo.setAtras(nodito);
-            ultimo=nodito;
+            ultimo = nodito;
         }
+        this.largo++;
     }
-    
-    public NodeCola_RegistroCliente elimina(){
+
+    public NodeCola_RegistroCliente elimina() {
         NodeCola_RegistroCliente aux = frente;
-        if(frente!=null){
-            frente=frente.getAtras();
+        if (frente != null) {
+            frente = frente.getAtras();
             aux.setAtras(null);
         }
+        this.largo--;
         return aux;
     }
+
     public boolean search(int reference) {
         // Crea una copia de la cola.
         NodeCola_RegistroCliente aux = frente;
@@ -51,72 +58,25 @@ public class Cola_RegistroCliente {
         // Retorna el value de la bandera.
         return exist;
     }
-    
-//    public void eliminaModificado(int reference) {
-//        // Consulta si el value exist en la cola.
-//        if (search(reference)) {
-//            // Crea una cola auxiliar para guardar los valuees que se 
-//            // vayan desapilando de la cola original.
-//            NodeCola_RegistroCliente frenteColaAux = null;
-//            // Recoore la cola hasta llegar al node que tenga el value
-//            // igual que el de reference.
-//            while (reference != frente.getClienteNodo().getCedula()) {
-//                //!reference.equals(cima.getVehiculoNodo().getNumPlacadeVehiculo())
-//                // Crea un node temporal para agregarlos a la pila auxiliar.
-//                NodeCola_RegistroCliente temp = new NodeCola_RegistroCliente();
-//                // Ingresa el value al node temporal.
-//                temp.setClienteNodo(frente.getClienteNodo());
-//                // Consulta si la pila auxiliar no a sido inicializada.
-//                if (frenteColaAux == null) {
-//                    // Inicializa la pila auxiliar.
-//                    frenteColaAux = temp;
-//                } // Caso contrario si la pila auxiliar ya contiene elementos
-//                // los agrega al start.
-//                else {
-//                    temp.setAtras(frenteColaAux);
-//                    frenteColaAux = temp;
-//                }
-//                // Elimina el node del tope de la pila hasta llegar al node
-//                // que se desea eliminar.
-//                elimina();
-//            }
-//            // Elimina el node que coincide con el de reference.
-//            elimina();
-//            // Regresa los valuees de la pila auxiliar a la pila original
-//            // mientras la pila auxiliar tenga elementos.
-//            while (frenteColaAux != null) {
-//                // Utiliza el metodo push para regresar los elementos a 
-//                // la pila original.
-//                encola(frenteColaAux.getClienteNodo());
-//                // Avansa al siguiente node de la pila auxiliar.
-//                frenteColaAux = frenteColaAux.getAtras();
-//            }
-//            // Libera la memoria utilizada por la pila auxiliar.
-//            frenteColaAux = null;
-//        } else {
-//            System.out.println("El nodo indicado no existe");
-//        }
-//    }
-    
-     public void eliminaModificado(int reference) {
-          if (search(reference)) {
-              NodeCola_RegistroCliente colaCopia = null;
-              NodeCola_RegistroCliente aux = frente;
-              if(reference == frente.getClienteNodo().getCedula()){
-                  elimina();
-              }else{
-                  while(aux.getAtras().getClienteNodo().getCedula()!= reference){                   
-                     aux = aux.getAtras();
-                  }
-                  aux.setAtras(aux.getAtras().getAtras());
-                 
-              }
-          }else{
-              JOptionPane.showMessageDialog(null, "EL cliente no existe");
-          }
-     }
-    
-    
+
+    public void eliminaModificado(int reference) {
+        if (search(reference)) {
+            NodeCola_RegistroCliente colaCopia = null;
+            NodeCola_RegistroCliente aux = frente;
+            if (reference == frente.getClienteNodo().getCedula()) {
+                elimina();
+            } else {
+                while (aux.getAtras().getClienteNodo().getCedula() != reference) {
+                    aux = aux.getAtras();
+                }
+                aux.setAtras(aux.getAtras().getAtras());
+
+            }
+        } else {
+            JOptionPane.showMessageDialog(null, "EL cliente no existe");
+        }
+    }
+
     public Cliente traerCliente(int cedula) {
         NodeCola_RegistroCliente aux = frente;
         Cliente clientito = new Cliente();
@@ -137,25 +97,44 @@ public class Cola_RegistroCliente {
         }
         return clientito;
     }
-    
+
+    public Cliente retornaCliente(int saltos) {
+        NodeCola_RegistroCliente aux = frente;
+        Cliente cliente = new Cliente();
+        if (saltos == 0) {
+
+            cliente = aux.getClienteNodo();
+
+        } else {
+            int contador = 0;
+            while (contador != saltos) {
+                aux = aux.getAtras();
+                contador += 1;
+            }
+            cliente = aux.getClienteNodo();
+        }
+
+        return cliente;
+    }
+
     @Override
-    public String toString(){
-        String s="";
-        NodeCola_RegistroCliente aux=frente;
-        while(aux!=null){
-            s+=aux.getClienteNodo().listar()+"\n";
-            aux=aux.getAtras();
+    public String toString() {
+        String s = "";
+        NodeCola_RegistroCliente aux = frente;
+        while (aux != null) {
+            s += aux.getClienteNodo().listar() + "\n";
+            aux = aux.getAtras();
         }
         return s;
     }
-    
-    public String listar2(){
+
+    public String listar2() {
         String stringConTodalaInfodelaCola = "";
         NodeCola_RegistroCliente aux = frente;
         while (aux != null) {
 
             stringConTodalaInfodelaCola = stringConTodalaInfodelaCola
-                    + aux.getClienteNodo().listar2()+ "\n";
+                    + aux.getClienteNodo().listar2() + "\n";
             aux = aux.getAtras();
         }
 

@@ -1,7 +1,5 @@
 package EstructurasDeDatos;
 
-import ObjetosdelProyecto.Objetos.Vehiculo;
-
 public class PilaExtras_Vehiculo {
 
     private NodePila_Extras cima;

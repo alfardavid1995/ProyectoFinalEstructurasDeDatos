@@ -2,13 +2,13 @@ package EstructurasDeDatos;
 
 import ObjetosdelProyecto.Objetos.SolicitudDeAlquiler;
 
-public class NodoListaDobleEnlazadaSolicitudesAlquiler {
+public class NodoListaDobleEnlazadaAlquileresConsultar {
     private SolicitudDeAlquiler dato;
-    private NodoListaDobleEnlazadaSolicitudesAlquiler next;
-    private NodoListaDobleEnlazadaSolicitudesAlquiler back;
+    private NodoListaDobleEnlazadaAlquileresConsultar next;
+    private NodoListaDobleEnlazadaAlquileresConsultar back;
     
     
-    public NodoListaDobleEnlazadaSolicitudesAlquiler(SolicitudDeAlquiler dato){
+    public NodoListaDobleEnlazadaAlquileresConsultar(SolicitudDeAlquiler dato){
         this.dato=dato;
     }
 
@@ -20,19 +20,19 @@ public class NodoListaDobleEnlazadaSolicitudesAlquiler {
         this.dato = dato;
     }
 
-    public NodoListaDobleEnlazadaSolicitudesAlquiler getNext() {
+    public NodoListaDobleEnlazadaAlquileresConsultar getNext() {
         return next;
     }
 
-    public void setNext(NodoListaDobleEnlazadaSolicitudesAlquiler next) {
+    public void setNext(NodoListaDobleEnlazadaAlquileresConsultar next) {
         this.next = next;
     }
 
-    public NodoListaDobleEnlazadaSolicitudesAlquiler getBack() {
+    public NodoListaDobleEnlazadaAlquileresConsultar getBack() {
         return back;
     }
 
-    public void setBack(NodoListaDobleEnlazadaSolicitudesAlquiler back) {
+    public void setBack(NodoListaDobleEnlazadaAlquileresConsultar back) {
         this.back = back;
     }
 
