@@ -8,8 +8,19 @@ public class ListaDobleEnlazadaSolicitudesAlquiler {
     private NodoListaDobleEnlazadaSolicitudesAlquiler cabeza;
     private NodoListaDobleEnlazadaSolicitudesAlquiler ultimo;
     private int largo;
+    private int cantidadSolicitudesProcesadasZafiro= 0;
+    private int cantidadSolicitudesProcesadasOro = 0;
+    private int cantidadSolicitudesProcesadasPlata= 0;
+    private int cantidadSolicitudesProcesadasBronce= 0;
+    private int cantidadSolicitudesProcesadasSinCategoria= 0;
     
-     public void agregarSolicitud(SolicitudDeAlquiler solicitud) {
+    private double totalSolicitudesProcesadasZafiro= 0;
+    private double totalSolicitudesProcesadasOro= 0;
+    private double totaldSolicitudesProcesadasPlata= 0;
+    private double totalSolicitudesProcesadasBronce= 0;
+    private double totalSolicitudesProcesadasSinCategoria= 0;
+
+    public void agregarSolicitud(SolicitudDeAlquiler solicitud) {
         if (cabeza == null) {
             cabeza = new NodoListaDobleEnlazadaSolicitudesAlquiler(solicitud);
             cabeza.setNext(cabeza);
@@ -33,10 +44,9 @@ public class ListaDobleEnlazadaSolicitudesAlquiler {
             //hacemos que aux sea nueva cabeza
             cabeza = aux;
         }
-         this.largo++;
+        this.largo++;
 
     }
-    
 
     public int tamanio() {
         return this.largo;
@@ -73,32 +83,31 @@ public class ListaDobleEnlazadaSolicitudesAlquiler {
         }
         return soli;
     }
-    
-    
-     public SolicitudDeAlquiler retornaSoli(int saltos) {
+
+    public SolicitudDeAlquiler retornaSoli(int saltos) {
         NodoListaDobleEnlazadaSolicitudesAlquiler aux = cabeza;
         SolicitudDeAlquiler soli = new SolicitudDeAlquiler();
-        if(saltos == 0){
-            soli= aux .getDato();
-        }else{
+        if (saltos == 0) {
+            soli = aux.getDato();
+        } else {
             int contador = 0;
-            while(contador != saltos){
+            while (contador != saltos) {
                 aux = aux.getNext();
-                contador +=1;
+                contador += 1;
             }
-            soli= aux.getDato();
+            soli = aux.getDato();
         }
         return soli;
     }
-     
+
     public int existZafiro() {
         int cont = 0;
         int exist = 0;
         NodoListaDobleEnlazadaSolicitudesAlquiler aux = cabeza;
         while (exist == 0 && cont != tamanio()) {
 
-            if (aux.getDato().getUsuarioSolicitud().getCategoria().equals("Zafiro") &&
-                    aux.getDato().getEstadoDeSolicitud().equals("Registrada")) {
+            if (aux.getDato().getUsuarioSolicitud().getCategoria().equals("Zafiro")
+                    && aux.getDato().getEstadoDeSolicitud().equals("Registrada")) {
                 exist = aux.getDato().getIdSolicitud();
             }
             aux = aux.getNext();
@@ -115,8 +124,8 @@ public class ListaDobleEnlazadaSolicitudesAlquiler {
         NodoListaDobleEnlazadaSolicitudesAlquiler aux = cabeza;
         while (exist == 0 && cont != tamanio()) {
 
-            if (aux.getDato().getUsuarioSolicitud().getCategoria().equals("Oro") &&
-                    aux.getDato().getEstadoDeSolicitud().equals("Registrada")) {
+            if (aux.getDato().getUsuarioSolicitud().getCategoria().equals("Oro")
+                    && aux.getDato().getEstadoDeSolicitud().equals("Registrada")) {
                 exist = aux.getDato().getIdSolicitud();
             }
             aux = aux.getNext();
@@ -133,8 +142,8 @@ public class ListaDobleEnlazadaSolicitudesAlquiler {
         NodoListaDobleEnlazadaSolicitudesAlquiler aux = cabeza;
         while (exist == 0 && cont != tamanio()) {
 
-            if (aux.getDato().getUsuarioSolicitud().getCategoria().equals("Plata")&&
-                    aux.getDato().getEstadoDeSolicitud().equals("Registrada")) {
+            if (aux.getDato().getUsuarioSolicitud().getCategoria().equals("Plata")
+                    && aux.getDato().getEstadoDeSolicitud().equals("Registrada")) {
                 exist = aux.getDato().getIdSolicitud();
             }
             aux = aux.getNext();
@@ -151,8 +160,8 @@ public class ListaDobleEnlazadaSolicitudesAlquiler {
         NodoListaDobleEnlazadaSolicitudesAlquiler aux = cabeza;
         while (exist == 0 && cont != tamanio()) {
 
-            if (aux.getDato().getUsuarioSolicitud().getCategoria().equals("Bronce")&&
-                    aux.getDato().getEstadoDeSolicitud().equals("Registrada")) {
+            if (aux.getDato().getUsuarioSolicitud().getCategoria().equals("Bronce")
+                    && aux.getDato().getEstadoDeSolicitud().equals("Registrada")) {
                 exist = aux.getDato().getIdSolicitud();
             }
             aux = aux.getNext();
@@ -169,8 +178,8 @@ public class ListaDobleEnlazadaSolicitudesAlquiler {
         NodoListaDobleEnlazadaSolicitudesAlquiler aux = cabeza;
         while (exist == 0 && cont != tamanio()) {
 
-            if (aux.getDato().getUsuarioSolicitud().getCategoria().equals("")&&
-                    aux.getDato().getEstadoDeSolicitud().equals("Registrada")) {
+            if (aux.getDato().getUsuarioSolicitud().getCategoria().equals("")
+                    && aux.getDato().getEstadoDeSolicitud().equals("Registrada")) {
                 exist = aux.getDato().getIdSolicitud();
             }
             aux = aux.getNext();
@@ -197,15 +206,15 @@ public class ListaDobleEnlazadaSolicitudesAlquiler {
 
         return exist;
     }
-    
-    public boolean existVehiculoSoli(String placa){
+
+    public boolean existVehiculoSoli(String placa) {
         int cont = 0;
         boolean exist = false;
         NodoListaDobleEnlazadaSolicitudesAlquiler aux = cabeza;
         while (!exist && cont != tamanio()) {
 
-            if (aux.getDato().getEstadoDeSolicitud().equals("Procesada")&&
-                    aux.getDato().getVehiculoSoli().getNumPlacadeVehiculo().equals(placa)) {
+            if (aux.getDato().getEstadoDeSolicitud().equals("Procesada")
+                    && aux.getDato().getVehiculoSoli().getNumPlacadeVehiculo().equals(placa)) {
                 exist = true;
             }
             aux = aux.getNext();
@@ -215,7 +224,7 @@ public class ListaDobleEnlazadaSolicitudesAlquiler {
 
         return exist;
     }
-    
+
     public SolicitudDeAlquiler traerSoliVehiculo(String placa) {
         NodoListaDobleEnlazadaSolicitudesAlquiler aux = cabeza;
         SolicitudDeAlquiler soli = new SolicitudDeAlquiler();
@@ -238,14 +247,14 @@ public class ListaDobleEnlazadaSolicitudesAlquiler {
         }
         return soli;
     }
-    
-     public boolean buscarVehiculo(Vehiculo vehiculo) {
+
+    public boolean buscarVehiculo(Vehiculo vehiculo) {
         int cont = 0;
         boolean exist = false;
         NodoListaDobleEnlazadaSolicitudesAlquiler aux = cabeza;
         while (!exist && cont != tamanio()) {
 
-            if (aux.getDato().getVehiculoSoli()== vehiculo) {
+            if (aux.getDato().getVehiculoSoli() == vehiculo) {
                 exist = true;
             }
             aux = aux.getNext();
@@ -255,8 +264,7 @@ public class ListaDobleEnlazadaSolicitudesAlquiler {
 
         return exist;
     }
-    
-    
+
 //
 //    public void eliminarDeLaLista(String placa) {
 //        if (cabeza != null) {
@@ -298,6 +306,90 @@ public class ListaDobleEnlazadaSolicitudesAlquiler {
 //
 //    }
 //
+
+    public int getCantidadSolicitudesProcesadasZafiro() {
+        return cantidadSolicitudesProcesadasZafiro;
+    }
+
+    public void setCantidadSolicitudesProcesadasZafiro(int cantidadSolicitudesProcesadasZafiro) {
+        this.cantidadSolicitudesProcesadasZafiro = cantidadSolicitudesProcesadasZafiro;
+    }
+
+    public int getCantidadSolicitudesProcesadasOro() {
+        return cantidadSolicitudesProcesadasOro;
+    }
+
+    public void setCantidadSolicitudesProcesadasOro(int cantidadSolicitudesProcesadasOro) {
+        this.cantidadSolicitudesProcesadasOro = cantidadSolicitudesProcesadasOro;
+    }
+
+    public int getCantidadSolicitudesProcesadasPlata() {
+        return cantidadSolicitudesProcesadasPlata;
+    }
+
+    public void setCantidadSolicitudesProcesadasPlata(int cantidadSolicitudesProcesadasPlata) {
+        this.cantidadSolicitudesProcesadasPlata = cantidadSolicitudesProcesadasPlata;
+    }
+
+    public int getCantidadSolicitudesProcesadasBronce() {
+        return cantidadSolicitudesProcesadasBronce;
+    }
+
+    public void setCantidadSolicitudesProcesadasBronce(int cantidadSolicitudesProcesadasBronce) {
+        this.cantidadSolicitudesProcesadasBronce = cantidadSolicitudesProcesadasBronce;
+    }
+
+    public int getCantidadSolicitudesProcesadasSinCategoria() {
+        return cantidadSolicitudesProcesadasSinCategoria;
+    }
+
+    public void setCantidadSolicitudesProcesadasSinCategoria(int cantidadSolicitudesProcesadasSinCategoria) {
+        this.cantidadSolicitudesProcesadasSinCategoria = cantidadSolicitudesProcesadasSinCategoria;
+    }
+
+    public double getTotalSolicitudesProcesadasZafiro() {
+        return totalSolicitudesProcesadasZafiro;
+    }
+
+    public void setTotalSolicitudesProcesadasZafiro(double totalSolicitudesProcesadasZafiro) {
+        this.totalSolicitudesProcesadasZafiro = totalSolicitudesProcesadasZafiro;
+    }
+
+    public double getTotalSolicitudesProcesadasOro() {
+        return totalSolicitudesProcesadasOro;
+    }
+
+    public void setTotalSolicitudesProcesadasOro(double totalSolicitudesProcesadasOro) {
+        this.totalSolicitudesProcesadasOro = totalSolicitudesProcesadasOro;
+    }
+
+    public double getTotaldSolicitudesProcesadasPlata() {
+        return totaldSolicitudesProcesadasPlata;
+    }
+
+    public void setTotaldSolicitudesProcesadasPlata(double totaldSolicitudesProcesadasPlata) {
+        this.totaldSolicitudesProcesadasPlata = totaldSolicitudesProcesadasPlata;
+    }
+
+    public double getTotalSolicitudesProcesadasBronce() {
+        return totalSolicitudesProcesadasBronce;
+    }
+
+    public void setTotalSolicitudesProcesadasBronce(double totalSolicitudesProcesadasBronce) {
+        this.totalSolicitudesProcesadasBronce = totalSolicitudesProcesadasBronce;
+    }
+
+    public double getTotalSolicitudesProcesadasSinCategoria() {
+        return totalSolicitudesProcesadasSinCategoria;
+    }
+
+    public void setTotalSolicitudesProcesadasSinCategoria(double totalSolicitudesProcesadasSinCategoria) {
+        this.totalSolicitudesProcesadasSinCategoria = totalSolicitudesProcesadasSinCategoria;
+    }
+    
+    
+    
+    
     @Override
     public String toString() {
         NodoListaDobleEnlazadaSolicitudesAlquiler aux = cabeza;

@@ -10,7 +10,7 @@ import java.time.LocalDate;
 import javax.swing.JOptionPane;
 
 public class GUIMain extends javax.swing.JFrame {
-    
+
     public void limpiarConsola2() {
         jTextFieldMarca.setText("");
         jTextFieldAnio.setText("");
@@ -18,7 +18,7 @@ public class GUIMain extends javax.swing.JFrame {
         jTextAreaExtras.setText("");
         jComboBoxCantPasajeros.setSelectedIndex(0);
     }
-    
+
     public void creacionDeListaConsultaSoli() {
         int saltos = 0;
         if (!listaConsulta.Vacia()) {
@@ -26,14 +26,14 @@ public class GUIMain extends javax.swing.JFrame {
         }
         while (saltos != listaSoli.tamanio()) {
             SolicitudDeAlquiler soli = listaSoli.retornaSoli(saltos);
-            
+
             listaConsulta.agregarSolicitud(soli);
-            
+
             saltos += 1;
-            
+
         }
     }
-    
+
     public void creacionDeListaBusqueda(SolicitudDeAlquiler soli) {
         int saltos = 0;
         if (!listaFiltro.Vacia()) {
@@ -41,69 +41,69 @@ public class GUIMain extends javax.swing.JFrame {
         }
         while (saltos != pilaRegistroVehiculo.tamanio()) {
             Vehiculo vehiculo = pilaRegistroVehiculo.retornaVehiculoFiltro(saltos);
-            
+
             if (listaFiltro.comparoCantPasajeros(vehiculo, soli.getPasajeros())) {
                 listaFiltro.agregarVehiculoFiltro(vehiculo);
-                
+
             }
-            
+
             saltos += 1;
         }
         //buscar por disponibilidad
         if (!listaFiltro.Vacia()) {
-            
+
             if (listaFiltro.buscarXDisponibilidad()) {
                 //                    JOptionPane.showMessageDialog(null, "SI hay marca");
                 listaFiltro.eliminaXDisponibilidad();
             } else {
-                
+
                 jTextAreaSolicitudesRegistradas.setText("No hay  vehiculos disponibles "
                         + " con " + soli.getPasajeros() + " pasajeros");
                 soli.setEstadoDeSolicitud("Rechazada");
                 listaFiltro.limpiarLista();
-                
+
             }
-            
+
         }
-        
+
         if (!listaFiltro.Vacia()) {
             //buscar por marca
             if (!soli.getMarca().equals("-")) {
                 filtro = true;
-                
+
                 if (listaFiltro.buscarXMarca(soli.getMarca())) {
                     //                    JOptionPane.showMessageDialog(null, "SI hay marca");
                     listaFiltro.eliminaXMarca(soli.getMarca());
                 } else {
-                    
+
                     jTextAreaSolicitudesRegistradas.setText("No hay  vehiculos de la marca "
                             + soli.getMarca() + " con " + soli.getPasajeros() + " pasajeros");
                     soli.setEstadoDeSolicitud("Rechazada");
                     listaFiltro.limpiarLista();
-                    
+
                 }
             }
 
             //buscar por anio
             if (soli.getAnio() != 0) {
                 filtro = true;
-                
+
                 if (listaFiltro.buscarXAnio(soli.getAnio())) {
                     //                    JOptionPane.showMessageDialog(null, "SI hay anio");
                     listaFiltro.eliminaXAnio(soli.getAnio());
                 } else {
-                    
+
                     jTextAreaSolicitudesRegistradas.setText("No hay  vehiculos del año "
                             + soli.getAnio() + " con " + soli.getPasajeros() + " pasajeros");
                     soli.setEstadoDeSolicitud("Rechazada");
                     listaFiltro.limpiarLista();
-                    
+
                 }
             }
             //buscar por modelo
             if (!soli.getModelo().equals("-")) {
                 filtro = true;
-                
+
                 if (listaFiltro.buscarXModelo(soli.getModelo())) {
                     //                    JOptionPane.showMessageDialog(null, "SI hay modelo");
                     listaFiltro.eliminaXModelo(soli.getModelo());
@@ -112,28 +112,28 @@ public class GUIMain extends javax.swing.JFrame {
                             + soli.getModelo() + " con " + soli.getPasajeros() + " pasajeros");
                     soli.setEstadoDeSolicitud("Rechazada");
                     listaFiltro.limpiarLista();
-                    
+
                 }
             }
             // buscar por extras
             if (!soli.getExtra().equals("-")) {
                 filtro = true;
-                
+
                 if (listaFiltro.buscarXExtra(soli.getExtra())) {
                     //                    JOptionPane.showMessageDialog(null, "SI hay extra");
                     listaFiltro.eliminaXExtra(soli.getExtra());
                 } else {
-                    
+
                     jTextAreaCarrosDisponibles.setText("No hay  vehiculos con "
                             + soli.getExtra() + " de " + soli.getPasajeros() + " pasajeros");
                     soli.setEstadoDeSolicitud("Rechazada");
                     listaFiltro.limpiarLista();
-                    
+
                 }
             }
         }
     }
-    
+
     public void subirCategoriaCliente(Cliente cliente) {
         if (cliente.getCategoria().equals("")) {
             cliente.setCategoria("Bronce");
@@ -155,31 +155,31 @@ public class GUIMain extends javax.swing.JFrame {
             }
         }
     }
-    
+
     public GUIMain() {
         initComponents();
         this.setLocationRelativeTo(null);
         Vehiculo vehiculito1 = new Vehiculo("P-5489", "Toyota", "Hilux", 2020, "rojo",
                 4, "Gasolina", 4, 80, "Disponible");
-        
+
         Vehiculo vehiculito2 = new Vehiculo("LDW-8899", "Hyundai", "Accent", 2019, "Blanco",
                 4, "Gasolina", 5, 60, "Disponible");
-        
+
         Vehiculo vehiculito3 = new Vehiculo("654-ARDS", "Chevrolet", "Malibu", 2019, "Azul",
                 4, "Gasolina", 7, 90, "Disponible");
-        
+
         Vehiculo vehiculito4 = new Vehiculo("HRR-9879", "Toyota", "Rush", 2019, "Blanco",
                 4, "Gasolina", 12, 90, "Disponible");
-        
+
         Vehiculo vehiculito5 = new Vehiculo("P-1111", "Nissan", "Versa", 2019, "Azul",
                 4, "Gasolina", 4, 80, "Disponible");
-        
+
         Vehiculo vehiculito6 = new Vehiculo("P-222", "Honda", "CR-V", 2019, "Negro",
                 4, "Gasolina", 4, 80, "Disponible");
-        
+
         Vehiculo vehiculito7 = new Vehiculo("L-2006", "Toyota", "Hilux", 2019, "Azul",
                 4, "Gasolina", 4, 90, "Disponible");
-        
+
         Cliente clientito1 = new Cliente(118487, "Alejandro", "14-4-2001", "ale84@gmail.com",
                 "Zafiro", 0, false);
         Cliente clientito2 = new Cliente(654641, "Pedro", "25-6-1998", "pedro36@gmail.com",
@@ -210,7 +210,7 @@ public class GUIMain extends javax.swing.JFrame {
 //        listaSoli.agregarSolicitud(soliAlquiler);
 //        jTextAreaSolicitudes.setText(listaSoli.toString2());
     }
-    
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -401,7 +401,7 @@ public class GUIMain extends javax.swing.JFrame {
         jButton3 = new javax.swing.JButton();
         jPanel10 = new javax.swing.JPanel();
         jScrollPane26 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        jTextAreaPromedio = new javax.swing.JTextArea();
         jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -1759,11 +1759,16 @@ public class GUIMain extends javax.swing.JFrame {
 
         jTabbedPane2.addTab("Top 5 Vehiculos", jPanel9);
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane26.setViewportView(jTextArea1);
+        jTextAreaPromedio.setColumns(20);
+        jTextAreaPromedio.setRows(5);
+        jScrollPane26.setViewportView(jTextAreaPromedio);
 
         jButton2.setText("Calcular");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
         jPanel10.setLayout(jPanel10Layout);
@@ -1807,7 +1812,7 @@ public class GUIMain extends javax.swing.JFrame {
     private void jButtonQuitarExtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonQuitarExtrasActionPerformed
         String numPlaca = jtext_numPlaca.getText();
         String extra = jtext_extras.getText();
-        
+
         if (pilaRegistroVehiculo.search(numPlaca)) {
             Vehiculo vehiculo = pilaRegistroVehiculo.traerVehiculo(numPlaca);//aca traemos el vehiculo a la GUI para que se trabaje desde ahi
             vehiculo.getExtrasPila().popModificado(extra);//conseguimoos el vehiculo y le insertamos el extra
@@ -1822,7 +1827,7 @@ public class GUIMain extends javax.swing.JFrame {
     private void jButtonAgregarExtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAgregarExtrasActionPerformed
         String numPlaca = jtext_numPlaca.getText();
         String extra = jtext_extras.getText();
-        
+
         if (pilaRegistroVehiculo.search(numPlaca)) {
             Vehiculo vehiculo = pilaRegistroVehiculo.traerVehiculo(numPlaca);//aca traemos el vehiculo a la GUI para que se trabaje desde ahi
             vehiculo.getExtrasPila().push(extra);//conseguimoos el vehiculo y le insertamos el extra
@@ -1838,7 +1843,7 @@ public class GUIMain extends javax.swing.JFrame {
 
     private void jButtonBuscar_RefrescarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBuscar_RefrescarActionPerformed
         String numPlaca = jtext_numPlaca.getText();
-        
+
         if (pilaRegistroVehiculo.search(numPlaca)) {
             jTextAreaVehiculo.setText(pilaRegistroVehiculo.traerVehiculo(numPlaca).toString());
         } else {
@@ -1863,17 +1868,17 @@ public class GUIMain extends javax.swing.JFrame {
 
     private void jButtonEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEliminarActionPerformed
         String placa = jTextFieldPlaca.getText();
-        
+
         if (pilaRegistroVehiculo.search(placa)) {
             Vehiculo vehiculo = pilaRegistroVehiculo.traerVehiculo(placa);
-            
+
             if (listaSoli.buscarVehiculo(vehiculo)) {
                 JOptionPane.showMessageDialog(null, "El vehiculo no se puede eliminar, porque fue alquilado");
             } else {
                 pilaRegistroVehiculo.popModificado(placa);
                 jTextPaneDisplayRegistro2.setText(pilaRegistroVehiculo.listar2());
             }
-            
+
         } else {
             JOptionPane.showMessageDialog(null, "el vehiculo no existe");
         }
@@ -1881,7 +1886,7 @@ public class GUIMain extends javax.swing.JFrame {
 
     private void jButtonBuscarPlacaModificarVehiculoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBuscarPlacaModificarVehiculoActionPerformed
         String numPlaca = jTextFieldPlaca.getText();
-        
+
         if (pilaRegistroVehiculo.search(numPlaca)) {
             jTextPaneDisplayRegistro2.setText(pilaRegistroVehiculo.traerVehiculo(numPlaca).toString());
         } else {
@@ -1896,14 +1901,14 @@ public class GUIMain extends javax.swing.JFrame {
     private void jButtonModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonModificarActionPerformed
         String numPlaca = jTextFieldPlaca.getText();
         String modifica = jTextPaneValorAModificar.getText();
-        
+
         if (pilaRegistroVehiculo.search(numPlaca)) {
             Vehiculo vehiculo = pilaRegistroVehiculo.traerVehiculo(numPlaca);//aca traemos el vehiculo a la GUI para que se trabaje desde ahi
             switch (jComboBox1.getSelectedIndex()) {
                 case 0:
-                    
+
                     vehiculo.setMarcaDeVehiculo(modifica);
-                    
+
                     break;
                 case 1:
                     vehiculo.setModeloVehiculo(modifica);
@@ -1923,19 +1928,19 @@ public class GUIMain extends javax.swing.JFrame {
                     switch (jComboBoxtipoCombustible.getSelectedIndex()) {
                         case 0:
                             modifica = "Gasolina";
-                            
+
                             break;
                         case 1:
                             modifica = "Diesel";
-                            
+
                             break;
                         case 2:
                             modifica = "Eléctrico";
-                            
+
                             break;
                         case 3:
                             modifica = "Gas Natural";
-                            
+
                             break;
                     }
                     vehiculo.setTipoCombustibleDeVehiculo(modifica);
@@ -1952,26 +1957,26 @@ public class GUIMain extends javax.swing.JFrame {
                     switch (jComboBox2Estado.getSelectedIndex()) {
                         case 0:
                             modifica = "Disponible";
-                            
+
                             break;
                         case 1:
                             modifica = "Alquilado";
-                            
+
                             break;
                         case 2:
                             modifica = "En reparacion";
-                            
+
                             break;
                         case 3:
                             modifica = "Fuera de circulacion";
-                            
+
                             break;
                     }
                     vehiculo.setEstadoParaSerAlquilado(modifica);
                     break;
-                
+
             }
-            
+
         } else {
             JOptionPane.showMessageDialog(null, "el vehiculo no existe");
         }
@@ -1994,18 +1999,18 @@ public class GUIMain extends javax.swing.JFrame {
 
     private void jButtonEliminar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEliminar1ActionPerformed
         int cedula = Integer.parseInt(jTextFieldCedulaClienteVerificar.getText());
-        
+
         if (colaRegistroCliente.search(cedula)) {
-            
+
             Cliente cliente = colaRegistroCliente.traerCliente(cedula);
             if (cliente.isAlquilando()) {
                 JOptionPane.showMessageDialog(null, "No se puede eliminar al cliente, porque ha iniciado un alquiler");
             } else {
-                
+
                 colaRegistroCliente.eliminaModificado(cedula);
-                
+
             }
-            
+
         } else {
             JOptionPane.showMessageDialog(null, "el cliente no existe");
         }
@@ -2014,7 +2019,7 @@ public class GUIMain extends javax.swing.JFrame {
 
     private void jButtonBuscarCedulaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBuscarCedulaActionPerformed
         int cedula = Integer.parseInt(jTextFieldCedulaClienteVerificar.getText());
-        
+
         if (colaRegistroCliente.search(cedula)) {
             jTextPaneDisplayModificar.setText(colaRegistroCliente.traerCliente(cedula).listar());
         } else {
@@ -2029,23 +2034,23 @@ public class GUIMain extends javax.swing.JFrame {
     private void jButtonModificar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonModificar1ActionPerformed
         int cedula = Integer.parseInt(jTextFieldCedulaClienteVerificar.getText());
         String modifica = jTextPaneValorAModificar1.getText();
-        
+
         if (colaRegistroCliente.search(cedula)) {
             Cliente clientito = colaRegistroCliente.traerCliente(cedula);//aca traemos el cliente a la GUI para que se trabaje desde ahi
             switch (jComboBoxOpcionesCliente.getSelectedIndex()) {
                 case 0:
                     clientito.setNombreCompleto(modifica);
                     break;
-                
+
                 case 1:
                     clientito.setFechaNacimiento(modifica);
                     break;
-                
+
                 case 2:
                     clientito.setCorreoElectronico(modifica);
                     break;
             }
-            
+
         } else {
             JOptionPane.showMessageDialog(null, "El cliente no existe");
         }
@@ -2069,30 +2074,30 @@ public class GUIMain extends javax.swing.JFrame {
         switch (jComboBoxCategorriaClente.getSelectedIndex()) {
             case 0:
                 categoria = "Bronce";
-                
+
                 break;
             case 1:
                 categoria = "Plata";
-                
+
                 break;
             case 2:
                 categoria = "Oro";
-                
+
                 break;
             case 3:
                 categoria = "Zafiro";
-                
+
                 break;
         }
         int cantAlquileres = 0;
         cantAlquileres = cantAlquileres + 1;
         Cliente clientito = new Cliente(cedula, nombre, fechaNacimiento, correo,
                 categoria, cantAlquileres, false);
-        
+
         colaRegistroCliente.encola(clientito);
-        
+
         jTextPaneDisplayRegistro1.setText(colaRegistroCliente.toString());
-        
+
         limpiarConsola();
     }//GEN-LAST:event_jButtonRegistrarClienteActionPerformed
 
@@ -2145,46 +2150,46 @@ public class GUIMain extends javax.swing.JFrame {
         switch (jComboBoxSelectorDeCombustible.getSelectedIndex()) {
             case 0:
                 combustible = "Gasolina";
-                
+
                 break;
             case 1:
                 combustible = "Diesel";
-                
+
                 break;
             case 2:
                 combustible = "Eléctrico";
-                
+
                 break;
             case 3:
                 combustible = "Gas Natural";
-                
+
                 break;
         }
         switch (jComboBox2SelectorEstado.getSelectedIndex()) {
             case 0:
                 estado = "Disponible";
-                
+
                 break;
             case 1:
                 estado = "Alquilado";
-                
+
                 break;
             case 2:
                 estado = "En reparacion";
-                
+
                 break;
             case 3:
                 estado = "Fuera de circulacion";
-                
+
                 break;
         }
         Vehiculo vehiculito = new Vehiculo(placa, marca, modelo, anio, color,
                 cilindraje, combustible, cantPasajeros, precio, estado);
-        
+
         pilaRegistroVehiculo.push(vehiculito);
-        
+
         jTextPaneDisplayRegistro.setText(pilaRegistroVehiculo.listar2());
-        
+
         limpiarConsola();
     }//GEN-LAST:event_jButtonRegistrarActionPerformed
 
@@ -2193,16 +2198,16 @@ public class GUIMain extends javax.swing.JFrame {
     }//GEN-LAST:event_jComboBoxSelectorDeCombustibleActionPerformed
 
     private void jButtonCrearSolicitudActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCrearSolicitudActionPerformed
-        
+
         if ("".equals(jTextFieldCedula.getText()) || "".equals(jTextFieldDiasAlquiler.getText())
                 || "".equals(jTextFieldAnioAlquiler.getText()) || "".equals(jTextFieldMesAlquiler.getText())
                 || "".equals(jTextFieldDiaAlquiler.getText())) {
             JOptionPane.showMessageDialog(null, "Complete todos los campos ");
         } else {
-            
+
             int diasAlquiler = Integer.parseInt(jTextFieldDiasAlquiler.getText());
             int cedula = Integer.parseInt(jTextFieldCedula.getText());
-            
+
             if (colaRegistroCliente.search(cedula)) {
                 //aca traemos el cliente a la GUI para que se trabaje desde ahi
                 Cliente clientito = colaRegistroCliente.traerCliente(cedula);
@@ -2241,7 +2246,7 @@ public class GUIMain extends javax.swing.JFrame {
                         cantPasajeros = 12;
                         break;
                 }
-                
+
                 String marca = "-";
                 int anio = 0;
                 String modelo = "-";
@@ -2258,25 +2263,25 @@ public class GUIMain extends javax.swing.JFrame {
                 if (!"".equals(jTextAreaExtras.getText())) {
                     extra = jTextAreaExtras.getText();
                 }
-                
+
                 int anioAlquiler = Integer.parseInt(jTextFieldAnioAlquiler.getText());
                 int monthAlquiler = Integer.parseInt(jTextFieldMesAlquiler.getText());
                 int diaAlquiler = Integer.parseInt(jTextFieldDiaAlquiler.getText());
-                
+
                 LocalDate fechaInicialAlquiler = LocalDate.of(anioAlquiler, monthAlquiler, diaAlquiler);
                 LocalDate fechaFinalAlquiler = fechaInicialAlquiler.plusDays(diasAlquiler);
-                
+
                 soliAlquiler = new SolicitudDeAlquiler("Registrada", diasAlquiler, clientito,
                         cantPasajeros, marca, anio, modelo, extra, fechaInicialAlquiler, fechaFinalAlquiler, 0);
                 listaSoli.agregarSolicitud(soliAlquiler);
-                
+
                 jTextAreaSolicitudes.setText(listaSoli.toString());
             } else {
                 JOptionPane.showMessageDialog(null, "El cliente no existe");
             }
-            
+
         }
-        
+
 
     }//GEN-LAST:event_jButtonCrearSolicitudActionPerformed
 
@@ -2311,34 +2316,34 @@ public class GUIMain extends javax.swing.JFrame {
             if (colaRegistroCliente.search(cedula)) {
                 while (saltos != pilaRegistroVehiculo.tamanio()) {
                     Vehiculo vehiculo = pilaRegistroVehiculo.retornaVehiculoFiltro(saltos);
-                    
+
                     if (listaFiltro.comparoCantPasajeros(vehiculo, cantPasajeros)) {
                         listaFiltro.agregarVehiculoFiltro(vehiculo);
-                        
+
                     }
-                    
+
                     saltos += 1;
                 }
 
                 //buscar por disponibilidad
                 if (!listaFiltro.Vacia()) {
-                    
+
                     if (listaFiltro.buscarXDisponibilidad()) {
                         //                    JOptionPane.showMessageDialog(null, "SI hay marca");
                         listaFiltro.eliminaXDisponibilidad();
                     } else {
-                        
+
                         jTextAreaCarrosDisponibles.setText("No hay  vehiculos disponibles "
                                 + " con " + cantPasajeros + " pasajeros");
                         listaFiltro.limpiarLista();
                         limpiarConsola2();
                     }
-                    
+
                 }
 
                 //buscar por marca
                 if (!listaFiltro.Vacia()) {
-                    
+
                     if (!"".equals(jTextFieldMarca.getText())) {
                         filtro = true;
                         String marca = jTextFieldMarca.getText();
@@ -2346,7 +2351,7 @@ public class GUIMain extends javax.swing.JFrame {
                             //                    JOptionPane.showMessageDialog(null, "SI hay marca");
                             listaFiltro.eliminaXMarca(marca);
                         } else {
-                            
+
                             jTextAreaCarrosDisponibles.setText("No hay  vehiculos de la marca "
                                     + marca + " con " + cantPasajeros + " pasajeros");
                             listaFiltro.limpiarLista();
@@ -2362,7 +2367,7 @@ public class GUIMain extends javax.swing.JFrame {
                             //                    JOptionPane.showMessageDialog(null, "SI hay anio");
                             listaFiltro.eliminaXAnio(anio);
                         } else {
-                            
+
                             jTextAreaCarrosDisponibles.setText("No hay  vehiculos del año "
                                     + anio + " con " + cantPasajeros + " pasajeros");
                             listaFiltro.limpiarLista();
@@ -2391,7 +2396,7 @@ public class GUIMain extends javax.swing.JFrame {
                             //                    JOptionPane.showMessageDialog(null, "SI hay extra");
                             listaFiltro.eliminaXExtra(extra);
                         } else {
-                            
+
                             jTextAreaCarrosDisponibles.setText("No hay  vehiculos con "
                                     + extra + " de " + cantPasajeros + " pasajeros");
                             listaFiltro.limpiarLista();
@@ -2404,16 +2409,16 @@ public class GUIMain extends javax.swing.JFrame {
                         JOptionPane.showMessageDialog(null, "El cliente es zafiro");
                         int anio = 2020;
                         if (listaFiltro.buscarParaZafiros(anio)) {
-                            
+
                             listaFiltro.eliminaParaZafiros(anio);
                         } else {
-                            
+
                             jTextAreaCarrosDisponibles.setText("No hay  vehiculos de años recientes para clientes Zafiros");
                             listaFiltro.limpiarLista();
                             limpiarConsola2();
                         }
                     }
-                    
+
                 }
                 if (!listaFiltro.Vacia()) {
                     jTextAreaCarrosDisponibles.setText(listaFiltro.toString2());
@@ -2421,7 +2426,7 @@ public class GUIMain extends javax.swing.JFrame {
             } else {
                 JOptionPane.showMessageDialog(null, "El cliente no existe");
             }
-            
+
         } else {
             JOptionPane.showMessageDialog(null, "Complete el campo de la cedula");
         }
@@ -2454,16 +2459,18 @@ public class GUIMain extends javax.swing.JFrame {
                                     soli.getUsuarioSolicitud().getListaAlquilerdeCliente().agregarAlquiler(soli);
                                     soli.getUsuarioSolicitud().setAlquilando(true);
                                     double monto = soliAlquiler.calcularMonto(vehiculo.getPrecioAlquilerXDiaDeVehiculo(), soli.getCantidadDeDiasSolicitud());
-                                    
+                                    listaSoli.setCantidadSolicitudesProcesadasZafiro(listaSoli.getCantidadSolicitudesProcesadasZafiro() + 1);
+                                    listaSoli.setTotalSolicitudesProcesadasZafiro(listaSoli.getTotalSolicitudesProcesadasZafiro() + monto);
                                     soli.setMontoAlquiler(monto);
+
                                     jTextAreaSolicitudesRegistradas.setText(soli.toString2());
                                 } else {
                                     jTextAreaSolicitudesRegistradas.setText("No hay  vehiculos de años recientes para clientes Zafiros");
                                     soli.setEstadoDeSolicitud("Rechazada");
                                     listaFiltro.limpiarLista();
-                                    
+
                                 }
-                                
+
                             } else {
                                 Vehiculo vehiculo = listaFiltro.asignarVehiculoASoli();
                                 vehiculo.setEstadoParaSerAlquilado("Alquilado");
@@ -2474,12 +2481,12 @@ public class GUIMain extends javax.swing.JFrame {
                                 soli.getUsuarioSolicitud().getListaAlquilerdeCliente().agregarAlquiler(soli);
                                 soli.getUsuarioSolicitud().setAlquilando(true);
                                 double monto = soliAlquiler.calcularMonto(vehiculo.getPrecioAlquilerXDiaDeVehiculo(), soli.getCantidadDeDiasSolicitud());
-                                
+
                                 soli.setMontoAlquiler(monto);
                                 jTextAreaSolicitudesRegistradas.setText(soli.toString2());
                             }
                         }
-                        
+
                     }
                 } else if (listaSoli.existOro() != 0) {
                     idSoli = listaSoli.existOro();
@@ -2496,13 +2503,15 @@ public class GUIMain extends javax.swing.JFrame {
                         soli.getUsuarioSolicitud().getListaAlquilerdeCliente().agregarAlquiler(soli);
                         soli.getUsuarioSolicitud().setAlquilando(true);
                         double monto = soliAlquiler.calcularMonto(vehiculo.getPrecioAlquilerXDiaDeVehiculo(), soli.getCantidadDeDiasSolicitud());
+                        listaSoli.setCantidadSolicitudesProcesadasOro(listaSoli.getCantidadSolicitudesProcesadasOro() + 1);
+                        listaSoli.setTotalSolicitudesProcesadasOro(listaSoli.getTotalSolicitudesProcesadasOro() + monto);
                         if (monto > 70000) {
                             subirCategoriaCliente(soli.getUsuarioSolicitud());
                         }
                         soli.setMontoAlquiler(monto);
                         jTextAreaSolicitudesRegistradas.setText(soli.toString2());
                     }
-                    
+
                 } else if (listaSoli.existPlata() != 0) {
                     idSoli = listaSoli.existPlata();
                     SolicitudDeAlquiler soli = listaSoli.traerSoli(idSoli);
@@ -2518,6 +2527,8 @@ public class GUIMain extends javax.swing.JFrame {
                         soli.getUsuarioSolicitud().getListaAlquilerdeCliente().agregarAlquiler(soli);
                         soli.getUsuarioSolicitud().setAlquilando(true);
                         double monto = soliAlquiler.calcularMonto(vehiculo.getPrecioAlquilerXDiaDeVehiculo(), soli.getCantidadDeDiasSolicitud());
+                        listaSoli.setCantidadSolicitudesProcesadasPlata(listaSoli.getCantidadSolicitudesProcesadasPlata() + 1);
+                        listaSoli.setTotaldSolicitudesProcesadasPlata(listaSoli.getTotaldSolicitudesProcesadasPlata() + monto);
                         if (monto > 70000) {
                             subirCategoriaCliente(soli.getUsuarioSolicitud());
                         }
@@ -2539,13 +2550,15 @@ public class GUIMain extends javax.swing.JFrame {
                         soli.getUsuarioSolicitud().getListaAlquilerdeCliente().agregarAlquiler(soli);
                         soli.getUsuarioSolicitud().setAlquilando(true);
                         double monto = soliAlquiler.calcularMonto(vehiculo.getPrecioAlquilerXDiaDeVehiculo(), soli.getCantidadDeDiasSolicitud());
+                        listaSoli.setCantidadSolicitudesProcesadasBronce(listaSoli.getCantidadSolicitudesProcesadasBronce() + 1);
+                        listaSoli.setTotalSolicitudesProcesadasBronce(listaSoli.getTotalSolicitudesProcesadasBronce() + monto);
                         if (monto > 70000) {
                             subirCategoriaCliente(soli.getUsuarioSolicitud());
                         }
                         soli.setMontoAlquiler(monto);
                         jTextAreaSolicitudesRegistradas.setText(soli.toString2());
                     }
-                    
+
                 } else {
                     idSoli = listaSoli.existSinCategoria();
                     SolicitudDeAlquiler soli = listaSoli.traerSoli(idSoli);
@@ -2561,26 +2574,28 @@ public class GUIMain extends javax.swing.JFrame {
                         soli.getUsuarioSolicitud().getListaAlquilerdeCliente().agregarAlquiler(soli);
                         soli.getUsuarioSolicitud().setAlquilando(true);
                         double monto = soliAlquiler.calcularMonto(vehiculo.getPrecioAlquilerXDiaDeVehiculo(), soli.getCantidadDeDiasSolicitud());
+                        listaSoli.setCantidadSolicitudesProcesadasSinCategoria(listaSoli.getCantidadSolicitudesProcesadasSinCategoria() + 1);
+                        listaSoli.setTotalSolicitudesProcesadasSinCategoria(listaSoli.getTotalSolicitudesProcesadasSinCategoria() + monto);
                         if (monto > 70000) {
                             subirCategoriaCliente(soli.getUsuarioSolicitud());
                         }
                         soli.setMontoAlquiler(monto);
                         jTextAreaSolicitudesRegistradas.setText(soli.toString2());
                     }
-                    
+
                 }
-                
+
             } else {
                 JOptionPane.showMessageDialog(null, "No hay solicitudes registradas");
             }
         } else {
             JOptionPane.showMessageDialog(null, "No hay solicitudes que atender");
-            
+
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButtonConsultarFiltroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonConsultarFiltroActionPerformed
-        
+
         creacionDeListaConsultaSoli();
         String placa = "-";
         int cedula = 0;
@@ -2602,9 +2617,9 @@ public class GUIMain extends javax.swing.JFrame {
             case 4:
                 estado = "Rechazada";
                 break;
-            
+
         }
-        
+
         if (!listaConsulta.Vacia()) {
             if (!"".equals(jTextFieldNumPlaca.getText())) {
                 placa = jTextFieldNumPlaca.getText();
@@ -2614,7 +2629,7 @@ public class GUIMain extends javax.swing.JFrame {
                     JOptionPane.showMessageDialog(null, "No existe una solicitud con un vehiculo placa: " + placa);
                     listaConsulta.limpiarLista();
                 }
-                
+
             }
         }
         if (!listaConsulta.Vacia()) {
@@ -2630,7 +2645,7 @@ public class GUIMain extends javax.swing.JFrame {
         }
         if (!listaConsulta.Vacia()) {
             if (!"".equals(estado)) {
-                
+
                 if (listaConsulta.buscarXEstado(estado)) {
                     listaConsulta.eliminaXEstado(estado);
                 } else {
@@ -2640,7 +2655,7 @@ public class GUIMain extends javax.swing.JFrame {
             }
         }
         jTextAreaFiltroConsulta.setText(listaConsulta.toString());
-        
+
 
     }//GEN-LAST:event_jButtonConsultarFiltroActionPerformed
 
@@ -2657,7 +2672,7 @@ public class GUIMain extends javax.swing.JFrame {
                 soli.getVehiculoSoli().setEstadoParaSerAlquilado("Disponible");
                 soli.setEstadoDeSolicitud("Finalizada");
                 jTextAreaDevolucion.setText(soli.toString2());
-                Devolucion devolucion = new Devolucion(soli,jTextFieldCondicionesDevo.getText());
+                Devolucion devolucion = new Devolucion(soli, jTextFieldCondicionesDevo.getText());
                 listaDevo.agregarAlquiler(devolucion);
                 jTextAreaDevo.setText(listaDevo.toString2());
             } else {
@@ -2669,23 +2684,42 @@ public class GUIMain extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonDevolucionActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        int saltos =0;
-        if(!listaTopClientes.Vacia()){
-         listaTopClientes.limpiarLista();
+        int saltos = 0;
+        if (!listaTopClientes.Vacia()) {
+            listaTopClientes.limpiarLista();
         }
-        while(saltos != colaRegistroCliente.tamanio()){
+        while (saltos != colaRegistroCliente.tamanio()) {
             Cliente cliente = colaRegistroCliente.retornaCliente(saltos);
             listaTopClientes.agregarClienteTop(cliente);
-            saltos+=1;
+            saltos += 1;
         }
         jTextAreaTopClientes.setText(listaTopClientes.toString());
-        
+
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-   
+
     }//GEN-LAST:event_jButton3ActionPerformed
-    
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        String s = "";
+
+        double promedioZafiro = listaSoli.getTotalSolicitudesProcesadasZafiro() / listaSoli.getCantidadSolicitudesProcesadasZafiro();
+        double promedioOro = listaSoli.getTotalSolicitudesProcesadasOro() / listaSoli.getCantidadSolicitudesProcesadasOro();
+        double promedioPlata = listaSoli.getTotaldSolicitudesProcesadasPlata() / listaSoli.getCantidadSolicitudesProcesadasPlata();
+        double promedioBronce = listaSoli.getTotalSolicitudesProcesadasBronce() / listaSoli.getCantidadSolicitudesProcesadasBronce();
+        double promedioSinCategoria = listaSoli.getTotalSolicitudesProcesadasSinCategoria() / listaSoli.getCantidadSolicitudesProcesadasSinCategoria();
+
+        s = s + "El promedio de categoria Zafiro es: " + promedioZafiro + " y el total es: " + listaSoli.getTotalSolicitudesProcesadasZafiro() + "\n"
+                + "El promedio de categoria Oro es: " + promedioOro + " y el total es: " + listaSoli.getTotalSolicitudesProcesadasOro() + "\n"
+                + "El promedio de categoria Plata es: " + promedioPlata + " y el total es: " + listaSoli.getTotaldSolicitudesProcesadasPlata()+ "\n"
+                + "El promedio de categoria Bronce es: " + promedioBronce + " y el total es: " + listaSoli.getTotalSolicitudesProcesadasBronce() + "\n"
+                + "El promedio de sin categoria es: " + promedioSinCategoria + " y el total es: " + listaSoli.getTotalSolicitudesProcesadasSinCategoria()+ "\n";
+
+        jTextAreaPromedio.setText(s);
+
+    }//GEN-LAST:event_jButton2ActionPerformed
+
     public void limpiarConsola() {
         jTextPanePlaca.setText("");
         jTextPaneMarca.setText("");
@@ -2697,7 +2731,7 @@ public class GUIMain extends javax.swing.JFrame {
         jTextPaneCilindraje.setText("");
         jComboBoxSelectorDeCombustible.setSelectedIndex(0);
     }
-    
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -2709,21 +2743,21 @@ public class GUIMain extends javax.swing.JFrame {
                 if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
-                    
+
                 }
             }
         } catch (ClassNotFoundException ex) {
             java.util.logging.Logger.getLogger(GUIMain.class
                     .getName()).log(java.util.logging.Level.SEVERE, null, ex);
-            
+
         } catch (InstantiationException ex) {
             java.util.logging.Logger.getLogger(GUIMain.class
                     .getName()).log(java.util.logging.Level.SEVERE, null, ex);
-            
+
         } catch (IllegalAccessException ex) {
             java.util.logging.Logger.getLogger(GUIMain.class
                     .getName()).log(java.util.logging.Level.SEVERE, null, ex);
-            
+
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(GUIMain.class
                     .getName()).log(java.util.logging.Level.SEVERE, null, ex);
@@ -2750,7 +2784,7 @@ public class GUIMain extends javax.swing.JFrame {
     ListaDobleEnlazadaDevolucion listaDevo = new ListaDobleEnlazadaDevolucion();
     ListaDobleEnlazadaTopClientes listaTopClientes = new ListaDobleEnlazadaTopClientes();
     ListaDobleEnlazadaTopVehiculos listaTopVehiculos = new ListaDobleEnlazadaTopVehiculos();
-    
+
     boolean filtro = false;//variable para saber si busca con filtro
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
@@ -2885,12 +2919,12 @@ public class GUIMain extends javax.swing.JFrame {
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTabbedPane jTabbedPane2;
     private javax.swing.JTabbedPane jTabbedPane4;
-    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextArea jTextAreaCarrosDisponibles;
     private javax.swing.JTextArea jTextAreaDevo;
     private javax.swing.JTextArea jTextAreaDevolucion;
     private javax.swing.JTextArea jTextAreaExtras;
     private javax.swing.JTextArea jTextAreaFiltroConsulta;
+    private javax.swing.JTextArea jTextAreaPromedio;
     private javax.swing.JTextArea jTextAreaSolicitudes;
     private javax.swing.JTextArea jTextAreaSolicitudesRegistradas;
     private javax.swing.JTextArea jTextAreaTopClientes;
