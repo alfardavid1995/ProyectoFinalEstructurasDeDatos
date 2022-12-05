@@ -404,7 +404,7 @@ public class GUIMain extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Vehiculo");
+        setTitle("Rent Car");
 
         jLabelRegistrarVehiculo.setText("Registrar Vehiculo");
 
@@ -1791,6 +1791,8 @@ public class GUIMain extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(panelVehiculo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 509, Short.MAX_VALUE)
         );
+
+        panelVehiculo.getAccessibleContext().setAccessibleName("Rent Car");
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
