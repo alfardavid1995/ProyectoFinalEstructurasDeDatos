@@ -113,7 +113,7 @@ public class ListaDobleEnlazadaAlquileresConsultar {
         NodoListaDobleEnlazadaAlquileresConsultar aux = cabeza;
         while (cont != tamanioAntes) {
 
-            if (!aux.getDato().getVehiculoSoli().getNumPlacadeVehiculo().equals(placa)) {
+            if (aux.getDato().getVehiculoSoli() == null || !aux.getDato().getVehiculoSoli().getNumPlacadeVehiculo().equals(placa)) {
                 eliminarDeLaLista(aux.getDato().getIdSolicitud());
 
             }

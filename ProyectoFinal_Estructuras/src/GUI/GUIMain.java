@@ -342,7 +342,6 @@ public class GUIMain extends javax.swing.JFrame {
         jTextFieldAnio = new javax.swing.JTextField();
         jScrollPane19 = new javax.swing.JScrollPane();
         jTextAreaExtras = new javax.swing.JTextArea();
-        jButtonBuscar = new javax.swing.JButton();
         jLabel23 = new javax.swing.JLabel();
         jLabel24 = new javax.swing.JLabel();
         jTextFieldModelo = new javax.swing.JTextField();
@@ -1256,14 +1255,6 @@ public class GUIMain extends javax.swing.JFrame {
         jTextAreaExtras.setRows(5);
         jScrollPane19.setViewportView(jTextAreaExtras);
 
-        jButtonBuscar.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jButtonBuscar.setText("Buscar");
-        jButtonBuscar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonBuscarActionPerformed(evt);
-            }
-        });
-
         jLabel23.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel23.setText("Carros disponibles");
 
@@ -1370,10 +1361,7 @@ public class GUIMain extends javax.swing.JFrame {
                                     .addComponent(jLabel16))
                                 .addGap(33, 33, 33)))
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addComponent(jButtonBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jButtonCrearSolicitud))
+                            .addComponent(jButtonCrearSolicitud, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel22)
                                 .addGap(77, 77, 77))
@@ -1439,9 +1427,7 @@ public class GUIMain extends javax.swing.JFrame {
                         .addComponent(jScrollPane20, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap())
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButtonCrearSolicitud)
-                            .addComponent(jButtonBuscar))
+                        .addComponent(jButtonCrearSolicitud)
                         .addGap(154, 154, 154))))
         );
 
@@ -2289,150 +2275,6 @@ public class GUIMain extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextFieldModeloActionPerformed
 
-    private void jButtonBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBuscarActionPerformed
-        if (!listaFiltro.Vacia()) {
-            listaFiltro.limpiarLista();
-        }
-        int saltos = 0;
-        int index = jComboBoxCantPasajeros.getSelectedIndex();
-        int cantPasajeros = 0;
-        switch (index) {
-            case 0:
-                cantPasajeros = 4;
-                break;
-            case 1:
-                cantPasajeros = 5;
-                break;
-            case 2:
-                cantPasajeros = 7;
-                break;
-            case 3:
-                cantPasajeros = 12;
-                break;
-        }
-        if (!"".equals(jTextFieldCedula.getText())) {
-            int cedula = Integer.parseInt(jTextFieldCedula.getText());
-            Cliente clientito = colaRegistroCliente.traerCliente(cedula);
-            if (colaRegistroCliente.search(cedula)) {
-                while (saltos != pilaRegistroVehiculo.tamanio()) {
-                    Vehiculo vehiculo = pilaRegistroVehiculo.retornaVehiculoFiltro(saltos);
-
-                    if (listaFiltro.comparoCantPasajeros(vehiculo, cantPasajeros)) {
-                        listaFiltro.agregarVehiculoFiltro(vehiculo);
-
-                    }
-
-                    saltos += 1;
-                }
-
-                //buscar por disponibilidad
-                if (!listaFiltro.Vacia()) {
-
-                    if (listaFiltro.buscarXDisponibilidad()) {
-                        //                    JOptionPane.showMessageDialog(null, "SI hay marca");
-                        listaFiltro.eliminaXDisponibilidad();
-                    } else {
-
-                        jTextAreaCarrosDisponibles.setText("No hay  vehiculos disponibles "
-                                + " con " + cantPasajeros + " pasajeros");
-                        listaFiltro.limpiarLista();
-                        limpiarConsola2();
-                    }
-
-                }
-
-                //buscar por marca
-                if (!listaFiltro.Vacia()) {
-
-                    if (!"".equals(jTextFieldMarca.getText())) {
-                        filtro = true;
-                        String marca = jTextFieldMarca.getText();
-                        if (listaFiltro.buscarXMarca(marca)) {
-                            //                    JOptionPane.showMessageDialog(null, "SI hay marca");
-                            listaFiltro.eliminaXMarca(marca);
-                        } else {
-
-                            jTextAreaCarrosDisponibles.setText("No hay  vehiculos de la marca "
-                                    + marca + " con " + cantPasajeros + " pasajeros");
-                            listaFiltro.limpiarLista();
-                            limpiarConsola2();
-                        }
-                    }
-
-                    //buscar por anio
-                    if (!"".equals(jTextFieldAnio.getText())) {
-                        filtro = true;
-                        int anio = Integer.parseInt(jTextFieldAnio.getText());
-                        if (listaFiltro.buscarXAnio(anio)) {
-                            //                    JOptionPane.showMessageDialog(null, "SI hay anio");
-                            listaFiltro.eliminaXAnio(anio);
-                        } else {
-
-                            jTextAreaCarrosDisponibles.setText("No hay  vehiculos del año "
-                                    + anio + " con " + cantPasajeros + " pasajeros");
-                            listaFiltro.limpiarLista();
-                            limpiarConsola2();
-                        }
-                    }
-                    //buscar por modelo
-                    if (!"".equals(jTextFieldModelo.getText())) {
-                        filtro = true;
-                        String modelo = jTextFieldModelo.getText();
-                        if (listaFiltro.buscarXModelo(modelo)) {
-                            //                    JOptionPane.showMessageDialog(null, "SI hay modelo");
-                            listaFiltro.eliminaXModelo(modelo);
-                        } else {
-                            jTextAreaCarrosDisponibles.setText("No hay  vehiculos del modelo "
-                                    + modelo + " con " + cantPasajeros + " pasajeros");
-                            listaFiltro.limpiarLista();
-                            limpiarConsola2();
-                        }
-                    }
-                    // buscar por extras
-                    if (!"".equals(jTextAreaExtras.getText())) {
-                        filtro = true;
-                        String extra = jTextAreaExtras.getText();
-                        if (listaFiltro.buscarXExtra(extra)) {
-                            //                    JOptionPane.showMessageDialog(null, "SI hay extra");
-                            listaFiltro.eliminaXExtra(extra);
-                        } else {
-
-                            jTextAreaCarrosDisponibles.setText("No hay  vehiculos con "
-                                    + extra + " de " + cantPasajeros + " pasajeros");
-                            listaFiltro.limpiarLista();
-                            limpiarConsola2();
-                        }
-                    }
-
-                    //busqueda especial para zafiros
-                    if (clientito.getCategoria().equals("Zafiro") && filtro == false) {
-                        JOptionPane.showMessageDialog(null, "El cliente es zafiro");
-                        int anio = 2020;
-                        if (listaFiltro.buscarParaZafiros(anio)) {
-
-                            listaFiltro.eliminaParaZafiros(anio);
-                        } else {
-
-                            jTextAreaCarrosDisponibles.setText("No hay  vehiculos de años recientes para clientes Zafiros");
-                            listaFiltro.limpiarLista();
-                            limpiarConsola2();
-                        }
-                    }
-
-                }
-                if (!listaFiltro.Vacia()) {
-                    jTextAreaCarrosDisponibles.setText(listaFiltro.toString2());
-                }
-            } else {
-                JOptionPane.showMessageDialog(null, "El cliente no existe");
-            }
-
-        } else {
-            JOptionPane.showMessageDialog(null, "Complete el campo de la cedula");
-        }
-
-    }//GEN-LAST:event_jButtonBuscarActionPerformed
-
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         if (!listaSoli.Vacia()) {
             if (listaSoli.existSoliRegistrada()) {
@@ -2794,7 +2636,6 @@ public class GUIMain extends javax.swing.JFrame {
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButtonActualizar;
     private javax.swing.JButton jButtonAgregarExtras;
-    private javax.swing.JButton jButtonBuscar;
     private javax.swing.JButton jButtonBuscarCedula;
     private javax.swing.JButton jButtonBuscarPlacaModificarVehiculo;
     private javax.swing.JButton jButtonBuscar_Refrescar;
