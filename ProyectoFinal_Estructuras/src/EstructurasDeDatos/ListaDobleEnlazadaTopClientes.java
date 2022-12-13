@@ -101,13 +101,15 @@ public class ListaDobleEnlazadaTopClientes {
 //            s += "Next: " + aux.getNext() + ",\n";
             s += "--------------------------\n";
             aux = aux.getNext();
-            while (aux != cabeza) {
-
+            int contador = 0 ;
+            while (aux != cabeza && contador != 4) {
+                
 //                s += "back: " + aux.getBack() + ",\n";
                 s += aux.toString() + ",\n ";
 //                s += "Next: " + aux.getNext() + ",\n";
                 s += "--------------------------\n";
                 aux = aux.getNext();
+                contador +=1;
             }
         } else {
             s += "No hay  vehiculos con las especificaciones dadas";

@@ -2078,7 +2078,7 @@ public class GUIMain extends javax.swing.JFrame {
                 break;
         }
         int cantAlquileres = 0;
-        cantAlquileres = cantAlquileres + 1;
+        
         Cliente clientito = new Cliente(cedula, nombre, fechaNacimiento, correo,
                 categoria, cantAlquileres, false);
 
@@ -2548,17 +2548,46 @@ public class GUIMain extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         String s = "";
 
-        double promedioZafiro = listaSoli.getTotalSolicitudesProcesadasZafiro() / listaSoli.getCantidadSolicitudesProcesadasZafiro();
-        double promedioOro = listaSoli.getTotalSolicitudesProcesadasOro() / listaSoli.getCantidadSolicitudesProcesadasOro();
-        double promedioPlata = listaSoli.getTotaldSolicitudesProcesadasPlata() / listaSoli.getCantidadSolicitudesProcesadasPlata();
-        double promedioBronce = listaSoli.getTotalSolicitudesProcesadasBronce() / listaSoli.getCantidadSolicitudesProcesadasBronce();
-        double promedioSinCategoria = listaSoli.getTotalSolicitudesProcesadasSinCategoria() / listaSoli.getCantidadSolicitudesProcesadasSinCategoria();
+        double promedioZafiro = 0;
+        double promedioOro = 0;
+        double promedioPlata = 0;
+        double promedioBronce = 0;
+        double promedioSinCategoria = 0;
 
-        s = s + "El promedio de categoria Zafiro es: " + promedioZafiro + " y el total es: " + listaSoli.getTotalSolicitudesProcesadasZafiro() + "\n"
-                + "El promedio de categoria Oro es: " + promedioOro + " y el total es: " + listaSoli.getTotalSolicitudesProcesadasOro() + "\n"
-                + "El promedio de categoria Plata es: " + promedioPlata + " y el total es: " + listaSoli.getTotaldSolicitudesProcesadasPlata()+ "\n"
-                + "El promedio de categoria Bronce es: " + promedioBronce + " y el total es: " + listaSoli.getTotalSolicitudesProcesadasBronce() + "\n"
-                + "El promedio de sin categoria es: " + promedioSinCategoria + " y el total es: " + listaSoli.getTotalSolicitudesProcesadasSinCategoria()+ "\n";
+        if (listaSoli.getCantidadSolicitudesProcesadasZafiro() != 0) {
+            promedioZafiro = listaSoli.getTotalSolicitudesProcesadasZafiro() / listaSoli.getCantidadSolicitudesProcesadasZafiro();
+        }
+        if (listaSoli.getCantidadSolicitudesProcesadasOro() != 0) {
+            promedioOro = listaSoli.getTotalSolicitudesProcesadasOro() / listaSoli.getCantidadSolicitudesProcesadasOro();
+        }
+        if (listaSoli.getCantidadSolicitudesProcesadasPlata() != 0) {
+            promedioPlata = listaSoli.getTotaldSolicitudesProcesadasPlata() / listaSoli.getCantidadSolicitudesProcesadasPlata();
+
+        }
+        if (listaSoli.getCantidadSolicitudesProcesadasBronce() != 0) {
+            promedioBronce = listaSoli.getTotalSolicitudesProcesadasBronce() / listaSoli.getCantidadSolicitudesProcesadasBronce();
+
+        }
+        if (listaSoli.getCantidadSolicitudesProcesadasSinCategoria() != 0) {
+            promedioSinCategoria = listaSoli.getTotalSolicitudesProcesadasSinCategoria() / listaSoli.getCantidadSolicitudesProcesadasSinCategoria();
+
+        }
+
+        s = s + "El promedio de categoria Zafiro es: " + promedioZafiro 
+                + " y el total es: " 
+                + listaSoli.getTotalSolicitudesProcesadasZafiro() + "\n\n"
+                + "El promedio de categoria Oro es: " 
+                + promedioOro + " y el total es: " 
+                + listaSoli.getTotalSolicitudesProcesadasOro() + "\n\n"
+                + "El promedio de categoria Plata es: " 
+                + promedioPlata + " y el total es: " 
+                + listaSoli.getTotaldSolicitudesProcesadasPlata() + "\n\n"
+                + "El promedio de categoria Bronce es: " 
+                + promedioBronce + " y el total es: " 
+                + listaSoli.getTotalSolicitudesProcesadasBronce() + "\n\n"
+                + "El promedio de sin categoria es: " 
+                + promedioSinCategoria + " y el total es: "
+                + listaSoli.getTotalSolicitudesProcesadasSinCategoria() + "\n\n";
 
         jTextAreaPromedio.setText(s);
 
