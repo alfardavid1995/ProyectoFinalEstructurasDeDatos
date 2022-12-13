@@ -592,7 +592,7 @@ public class GUIMain extends javax.swing.JFrame {
                         .addContainerGap(137, Short.MAX_VALUE))))
         );
 
-        pestañasVehiculo.addTab("Registrar Vehiculo", new javax.swing.ImageIcon(getClass().getResource("/AnexosEImagenes/addImage.png")), pestañaRegistrarVehiculo); // NOI18N
+        pestañasVehiculo.addTab("Registrar Vehiculo", pestañaRegistrarVehiculo);
 
         pestañaModificarEliminarVehiculo.setPreferredSize(new java.awt.Dimension(900, 550));
 
@@ -752,7 +752,7 @@ public class GUIMain extends javax.swing.JFrame {
                 .addGap(36, 36, 36))
         );
 
-        pestañasVehiculo.addTab("Modificar / Eliminar Vehiculo", new javax.swing.ImageIcon(getClass().getResource("/AnexosEImagenes/editImage.png")), pestañaModificarEliminarVehiculo); // NOI18N
+        pestañasVehiculo.addTab("Modificar / Eliminar Vehiculo", pestañaModificarEliminarVehiculo);
 
         jTextAreaVehiculo.setColumns(20);
         jTextAreaVehiculo.setRows(5);
@@ -838,7 +838,7 @@ public class GUIMain extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        pestañasVehiculo.addTab("Modificaciones Extras", new javax.swing.ImageIcon(getClass().getResource("/AnexosEImagenes/golive.png")), pestañaExtras, ""); // NOI18N
+        pestañasVehiculo.addTab("Modificaciones Extras", null, pestañaExtras, "");
 
         panelVehiculo.addTab("Vehiculo", pestañasVehiculo);
         pestañasVehiculo.getAccessibleContext().setAccessibleName("Registrar Vehículo");
@@ -1389,7 +1389,7 @@ public class GUIMain extends javax.swing.JFrame {
                         .addComponent(jLabel23)
                         .addGap(12, 12, 12))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(0, 23, Short.MAX_VALUE)
+                        .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(jLabel16)
                         .addGap(37, 37, 37)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -2548,7 +2548,7 @@ public class GUIMain extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-
+            
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
