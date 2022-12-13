@@ -2548,7 +2548,8 @@ public class GUIMain extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-            
+            listaTopVehiculos.calculaMejorVehiculo(pilaRegistroVehiculo);
+            jTextAreaTopVehiculos.setText(listaTopVehiculos.toStringModificado());
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -2662,7 +2663,7 @@ public class GUIMain extends javax.swing.JFrame {
     ListaDobleEnlazadaAlquileres_Cliente listaAlquileresCliente = new ListaDobleEnlazadaAlquileres_Cliente();
     ListaDobleEnlazadaDevolucion listaDevo = new ListaDobleEnlazadaDevolucion();
     ListaDobleEnlazadaTopClientes listaTopClientes = new ListaDobleEnlazadaTopClientes();
-    ListaDobleEnlazadaTopVehiculos listaTopVehiculos = new ListaDobleEnlazadaTopVehiculos();
+    ListaOrdenadaTopVehiculos listaTopVehiculos = new ListaOrdenadaTopVehiculos();
 
     boolean filtro = false;//variable para saber si busca con filtro
     // Variables declaration - do not modify//GEN-BEGIN:variables
