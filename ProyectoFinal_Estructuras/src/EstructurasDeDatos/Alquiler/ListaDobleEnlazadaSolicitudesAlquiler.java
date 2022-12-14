@@ -30,7 +30,7 @@ public class ListaDobleEnlazadaSolicitudesAlquiler {
             ultimo.setBack(cabeza);
         } else if (solicitud.getFechaCreacion().isAfter
                                      (cabeza.getDato().getFechaCreacion())
-                || solicitud.getHoraCreacion().isAfter
+                                     || solicitud.getHoraCreacion().isAfter
                                     (cabeza.getDato().getHoraCreacion())) {
                    //es caso de que el numero sea a la izquierda de la cabeza
 

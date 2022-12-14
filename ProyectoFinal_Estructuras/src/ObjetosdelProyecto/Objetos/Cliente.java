@@ -113,7 +113,7 @@ public class Cliente {
                 + "\n Categoría: " + c
                 + "\n Cantidad de Alquileres: " + cantidadDeAlquileresProcesados
                 + "\n Alquilando: " + s
-                + "\n Alquileres: " + listaAlquilerdeCliente;
+                + "\n Alquileres: " + listaAlquilerdeCliente.toString();
     }
 
     public String listar2() {

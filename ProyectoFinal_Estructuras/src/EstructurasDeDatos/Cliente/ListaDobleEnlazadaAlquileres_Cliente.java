@@ -26,7 +26,8 @@ public class ListaDobleEnlazadaAlquileres_Cliente {
     public boolean Vacia() {
         return cabeza == null;
     }
-
+    
+     //si funciona
     public void agregarAlquiler(SolicitudDeAlquiler solicitud) {
         if (cabeza == null) {
             cabeza = new NodoListaDobleEnlazadaAlquileres_Cliente(solicitud);
@@ -36,14 +37,14 @@ public class ListaDobleEnlazadaAlquileres_Cliente {
             ultimo.setNext(cabeza);
             ultimo.setBack(cabeza);
         } else if (solicitud.getFechaCreacion().isAfter
-        (cabeza.getDato().getFechaCreacion())
-                || solicitud.getHoraCreacion().isAfter
-        (cabeza.getDato().getHoraCreacion())) {
-                //es caso de que el numero sea a la izquierda de la cabeza
+                                     (cabeza.getDato().getFechaCreacion())
+                                     || solicitud.getHoraCreacion().isAfter
+                                    (cabeza.getDato().getHoraCreacion())) {
+                    //es caso de que el numero sea a la izquierda de la cabeza
 
             //creamos el nodo que se llame aux
             NodoListaDobleEnlazadaAlquileres_Cliente aux = new 
-        NodoListaDobleEnlazadaAlquileres_Cliente(solicitud);
+            NodoListaDobleEnlazadaAlquileres_Cliente(solicitud);
             //le ponemos que el next de aux sea la cabaza
             aux.setNext(cabeza);
             //le especificamos que el back de aux que sea el ultimo
@@ -54,26 +55,15 @@ public class ListaDobleEnlazadaAlquileres_Cliente {
             ultimo.setNext(aux);
             //hacemos que aux sea nueva cabeza
             cabeza = aux;
-        }
-        this.largo++;
-
-    }
-
-    //si funciona
-    public void agregarAlquilersss(SolicitudDeAlquiler solicitud) {
-        if (cabeza == null) {
-            cabeza = new NodoListaDobleEnlazadaAlquileres_Cliente(solicitud);
-            cabeza.setNext(cabeza);
-            cabeza.setBack(cabeza);
-            ultimo = cabeza;
-            ultimo.setNext(cabeza);
-            ultimo.setBack(cabeza);
-        } else {
+        } else if (solicitud.getFechaCreacion().isBefore
+                                     (cabeza.getDato().getFechaCreacion())
+                                     || solicitud.getHoraCreacion().isBefore
+                                    (cabeza.getDato().getHoraCreacion())) {
 
             //en caso para 3 o mas, para insertar de ultimo
             //creamos el nodo aux y le insertamos el nuevo dato
             NodoListaDobleEnlazadaAlquileres_Cliente aux = new 
-                    NodoListaDobleEnlazadaAlquileres_Cliente(solicitud);
+            NodoListaDobleEnlazadaAlquileres_Cliente(solicitud);
             //ultimo setnext aux
             ultimo.setNext(aux);
             //aux setback ultimo
@@ -85,9 +75,34 @@ public class ListaDobleEnlazadaAlquileres_Cliente {
             //cabeza set back ultimo
             cabeza.setBack(ultimo);
 
+        } else {//en caso de en medio
+
+//            en caso de insertar en medio
+            NodoListaDobleEnlazadaAlquileres_Cliente nuevoNodo = new 
+            NodoListaDobleEnlazadaAlquileres_Cliente(solicitud);
+//            nodo aux es cabeza
+            NodoListaDobleEnlazadaAlquileres_Cliente aux = cabeza;
+            
+    
+            
+            
+            while (aux.getDato().getFechaCreacion().isBefore(nuevoNodo.getDato().getFechaCreacion())){
+                aux = aux.getNext();
+            }
+            //usamos el back de aux como referencia
+            NodoListaDobleEnlazadaAlquileres_Cliente auxAnterior = aux.getBack();
+            //unimos el next de auxAterior de referencia con el nuevo nodo
+            auxAnterior.setNext(nuevoNodo);
+            //unimos el back de nuevoNodo con el auxAnterior de referencia
+            nuevoNodo.setBack(auxAnterior);
+            //unimos el next de nuevoNodo con el aux 
+            nuevoNodo.setNext(aux);
+            //unimos el back de aux con el nuevoNodo
+            aux.setBack(nuevoNodo);
         }
         this.largo++;
     }
+    
 
     public SolicitudDeAlquiler traerSoli(int idSoli) {
         NodoListaDobleEnlazadaAlquileres_Cliente aux = cabeza;
@@ -112,113 +127,7 @@ public class ListaDobleEnlazadaAlquileres_Cliente {
         return soli;
     }
 
-    public int existZafiro() {
-        int cont = 0;
-        int exist = 0;
-        NodoListaDobleEnlazadaAlquileres_Cliente aux = cabeza;
-        while (exist == 0 && cont != tamanio()) {
-
-            if (aux.getDato().getUsuarioSolicitud().getCategoria().
-                                                    equals("Zafiro")) {
-                exist = aux.getDato().getIdSolicitud();
-            }
-            aux = aux.getNext();
-            cont += 1;
-
-        }
-
-        return exist;
-    }
-
-    public int existOro() {
-        int cont = 0;
-        int exist = 0;
-        NodoListaDobleEnlazadaAlquileres_Cliente aux = cabeza;
-        while (exist == 0 && cont != tamanio()) {
-
-            if (aux.getDato().getUsuarioSolicitud().getCategoria().
-                                                        equals("Oro")) {
-                exist = aux.getDato().getIdSolicitud();
-            }
-            aux = aux.getNext();
-            cont += 1;
-
-        }
-
-        return exist;
-    }
-
-    public int existPlata() {
-        int cont = 0;
-        int exist = 0;
-        NodoListaDobleEnlazadaAlquileres_Cliente aux = cabeza;
-        while (exist == 0 && cont != tamanio()) {
-
-            if (aux.getDato().getUsuarioSolicitud().getCategoria().
-                                                     equals("Plata")) {
-                exist = aux.getDato().getIdSolicitud();
-            }
-            aux = aux.getNext();
-            cont += 1;
-
-        }
-
-        return exist;
-    }
-
-    public int existBronce() {
-        int cont = 0;
-        int exist = 0;
-        NodoListaDobleEnlazadaAlquileres_Cliente aux = cabeza;
-        while (exist == 0 && cont != tamanio()) {
-
-            if (aux.getDato().getUsuarioSolicitud().getCategoria().
-                                                    equals("Bronce")) {
-                exist = aux.getDato().getIdSolicitud();
-            }
-            aux = aux.getNext();
-            cont += 1;
-
-        }
-
-        return exist;
-    }
-
-    public int existSinCategoria() {
-        int cont = 0;
-        int exist = 0;
-        NodoListaDobleEnlazadaAlquileres_Cliente aux = cabeza;
-        while (exist == 0 && cont != tamanio()) {
-
-            if (aux.getDato().getUsuarioSolicitud().getCategoria().
-                                                        equals("")) {
-                exist = aux.getDato().getIdSolicitud();
-            }
-            aux = aux.getNext();
-            cont += 1;
-
-        }
-
-        return exist;
-    }
-
-    public int existSoliRegistrada() {
-        int cont = 0;
-        int exist = 0;
-        NodoListaDobleEnlazadaAlquileres_Cliente aux = cabeza;
-        while (exist == 0 && cont != tamanio()) {
-
-            if (aux.getDato().getEstadoDeSolicitud().equals("Registrada")) {
-                exist = aux.getDato().getIdSolicitud();
-            }
-            aux = aux.getNext();
-            cont += 1;
-
-        }
-
-        return exist;
-    }
-
+   
     @Override
     public String toString() {
         NodoListaDobleEnlazadaAlquileres_Cliente aux = cabeza;
@@ -239,7 +148,7 @@ public class ListaDobleEnlazadaAlquileres_Cliente {
                 aux = aux.getNext();
             }
         } else {
-            s += "No hay  vehiculos con las especificaciones dadas";
+            s += "No tiene alquileres";
         }
         return s;
     }
