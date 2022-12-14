@@ -1,8 +1,6 @@
 package ObjetosdelProyecto.Objetos;
 
 import EstructurasDeDatos.Cliente.ListaDobleEnlazadaAlquileres_Cliente;
-import java.util.Calendar;
-import EstructurasDeDatos.*;
 
 public class Cliente {
 
@@ -11,14 +9,17 @@ public class Cliente {
     private String fechaNacimiento;
     private String correoElectronico;
     private String categoria;//Bronce, Plata, Oro, Zafiro 
-    private ListaDobleEnlazadaAlquileres_Cliente listaAlquilerdeCliente = new ListaDobleEnlazadaAlquileres_Cliente();
+    private ListaDobleEnlazadaAlquileres_Cliente listaAlquilerdeCliente = 
+            new ListaDobleEnlazadaAlquileres_Cliente();
     private int cantidadDeAlquileresProcesados;
-    private boolean alquilando ;
+    private boolean alquilando;
 
     public Cliente() {
     }
 
-    public Cliente(int cedula, String nombreCompleto, String fechaNacimiento, String correoElectronico, String categoria, int cantidadDeAlquileresProcesados, boolean alquilando) {
+    public Cliente(int cedula, String nombreCompleto, String fechaNacimiento, 
+            String correoElectronico, String categoria,
+            int cantidadDeAlquileresProcesados, boolean alquilando) {
         this.cedula = cedula;
         this.nombreCompleto = nombreCompleto;
         this.fechaNacimiento = fechaNacimiento;
@@ -72,7 +73,8 @@ public class Cliente {
         return listaAlquilerdeCliente;
     }
 
-    public void setListaAlquilerdeCliente(ListaDobleEnlazadaAlquileres_Cliente listaAlquilerdeCliente) {
+    public void setListaAlquilerdeCliente(ListaDobleEnlazadaAlquileres_Cliente 
+                                                       listaAlquilerdeCliente) {
         this.listaAlquilerdeCliente = listaAlquilerdeCliente;
     }
 
@@ -99,34 +101,46 @@ public class Cliente {
         } else {
             s = "No";
         }
+          String c = "Sin categoria";
+        if (!categoria.equals("")) {
+            c = categoria;
+        }
         return "\n -------------------------- Cliente ------------------------- \n"
                 + "\n Nombre: " + nombreCompleto
                 + "\n Cédula: " + cedula
                 + "\n Fecha de Nacimiento: " + fechaNacimiento
                 + "\n Correo: " + correoElectronico
-                + "\n Categoría: " + categoria
+                + "\n Categoría: " + c
                 + "\n Cantidad de Alquileres: " + cantidadDeAlquileresProcesados
                 + "\n Alquilando: " + s
                 + "\n Alquileres: " + listaAlquilerdeCliente;
     }
 
     public String listar2() {
+         String c = "Sin categoria";
+        if (!categoria.equals("")) {
+            c = categoria;
+        }
         return "\n -------------------------- Cliente ------------------------- \n"
                 + "\n Nombre: " + nombreCompleto
                 + "\n Cédula: " + cedula
-                + "\n Categoría: " + categoria;
+                + "\n Categoría: " + c;
     }
 
     public String listar3() {
         return "\n --------------- Cliente --------------- \n"
                 + "\n Nombre: " + nombreCompleto;
     }
-    
-      public String listar4() {
+
+    public String listar4() {
+        String c = "Sin categoria";
+        if (!categoria.equals("")) {
+            c = categoria;
+        }
         return "\n -------------------------- Cliente ------------------------- \n"
                 + "\n Nombre: " + nombreCompleto
                 + "\n Cédula: " + cedula
                 + "\n Cantidad de Alquileres: " + cantidadDeAlquileresProcesados
-                + "\n Categoría: " + categoria;
+                + "\n Categoría: " + c;
     }
 }

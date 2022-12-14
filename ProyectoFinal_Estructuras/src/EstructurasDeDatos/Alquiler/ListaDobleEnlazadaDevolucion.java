@@ -1,7 +1,6 @@
-package EstructurasDeDatos;
+package EstructurasDeDatos.Alquiler;
 
 import ObjetosdelProyecto.Objetos.Devolucion;
-import ObjetosdelProyecto.Objetos.SolicitudDeAlquiler;
 
 public class ListaDobleEnlazadaDevolucion {
 
@@ -28,7 +27,7 @@ public class ListaDobleEnlazadaDevolucion {
         return cabeza == null;
     }
 
-   public void agregarAlquiler(Devolucion devolucion) {
+   public void agregarDevolucion(Devolucion devolucion) {
         if (cabeza == null) {
             cabeza = new NodoListaDobleEnlazadaDevolucion(devolucion);
             cabeza.setNext(cabeza);

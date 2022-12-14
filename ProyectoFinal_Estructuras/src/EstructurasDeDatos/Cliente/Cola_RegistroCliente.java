@@ -11,10 +11,11 @@ public class Cola_RegistroCliente {
 
     public Cola_RegistroCliente() {
     }
-    
-     public int tamanio() {
+
+    public int tamanio() {
         return this.largo;
     }
+
     public void encola(Cliente clientito) {
         NodeCola_RegistroCliente nodito = new NodeCola_RegistroCliente();
         nodito.setClienteNodo(clientito);

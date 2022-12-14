@@ -61,8 +61,8 @@ public class PilaExtras_Vehiculo {
         // Retorna el value de la bandera.
         return exist;
     }
-    
-        public void popModificado(String reference){
+
+    public void popModificado(String reference) {
         // Consulta si el value exist en la pila.
         if (search(reference)) {
             // Crea una pila auxiliar para guardar los valuees que se 
@@ -70,19 +70,18 @@ public class PilaExtras_Vehiculo {
             NodePila_Extras cimaPilaAux = null;
             // Recoore la pila hasta llegar al node que tenga el value
             // igual que el de reference.
-            while(!reference.equals(cima.getExtra())){
+            while (!reference.equals(cima.getExtra())) {
                 // Crea un node temporal para agregarlos a la pila auxiliar.
                 NodePila_Extras temp = new NodePila_Extras();
                 // Ingresa el value al node temporal.
                 temp.setExtra(cima.getExtra());
                 // Consulta si la pila auxiliar no a sido inicializada.
-                if(cimaPilaAux == null){
+                if (cimaPilaAux == null) {
                     // Inicializa la pila auxiliar.
                     cimaPilaAux = temp;
-                }
-                // Caso contrario si la pila auxiliar ya contiene elementos
+                } // Caso contrario si la pila auxiliar ya contiene elementos
                 // los agrega al start.
-                else{
+                else {
                     temp.setSiguiente(cimaPilaAux);
                     cimaPilaAux = temp;
                 }
@@ -94,7 +93,7 @@ public class PilaExtras_Vehiculo {
             pop();
             // Regresa los valuees de la pila auxiliar a la pila original
             // mientras la pila auxiliar tenga elementos.
-            while(cimaPilaAux != null){
+            while (cimaPilaAux != null) {
                 // Utiliza el metodo push para regresar los elementos a 
                 // la pila original.
                 push(cimaPilaAux.getExtra());
@@ -103,13 +102,11 @@ public class PilaExtras_Vehiculo {
             }
             // Libera la memoria utilizada por la pila auxiliar.
             cimaPilaAux = null;
-        }
-        else{
+        } else {
             System.out.println("El nodo indicado no existe");
         }
     }
-  
-        
+
     public String listar() {
         String stringConTodalaInfodelaPila = "";
         NodePila_Extras aux = cima;

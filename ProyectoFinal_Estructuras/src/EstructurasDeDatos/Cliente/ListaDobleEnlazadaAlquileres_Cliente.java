@@ -27,7 +27,7 @@ public class ListaDobleEnlazadaAlquileres_Cliente {
         return cabeza == null;
     }
 
-   public void agregarAlquiler(SolicitudDeAlquiler solicitud) {
+    public void agregarAlquiler(SolicitudDeAlquiler solicitud) {
         if (cabeza == null) {
             cabeza = new NodoListaDobleEnlazadaAlquileres_Cliente(solicitud);
             cabeza.setNext(cabeza);
@@ -35,11 +35,15 @@ public class ListaDobleEnlazadaAlquileres_Cliente {
             ultimo = cabeza;
             ultimo.setNext(cabeza);
             ultimo.setBack(cabeza);
-        } else if (solicitud.getFechaCreacion().isAfter(cabeza.getDato().getFechaCreacion())
-                || solicitud.getHoraCreacion().isAfter(cabeza.getDato().getHoraCreacion())) {//es caso de que el numero sea a la izquierda de la cabeza
+        } else if (solicitud.getFechaCreacion().isAfter
+        (cabeza.getDato().getFechaCreacion())
+                || solicitud.getHoraCreacion().isAfter
+        (cabeza.getDato().getHoraCreacion())) {
+                //es caso de que el numero sea a la izquierda de la cabeza
 
             //creamos el nodo que se llame aux
-            NodoListaDobleEnlazadaAlquileres_Cliente aux = new NodoListaDobleEnlazadaAlquileres_Cliente(solicitud);
+            NodoListaDobleEnlazadaAlquileres_Cliente aux = new 
+        NodoListaDobleEnlazadaAlquileres_Cliente(solicitud);
             //le ponemos que el next de aux sea la cabaza
             aux.setNext(cabeza);
             //le especificamos que el back de aux que sea el ultimo
@@ -51,7 +55,7 @@ public class ListaDobleEnlazadaAlquileres_Cliente {
             //hacemos que aux sea nueva cabeza
             cabeza = aux;
         }
-         this.largo++;
+        this.largo++;
 
     }
 
@@ -68,7 +72,8 @@ public class ListaDobleEnlazadaAlquileres_Cliente {
 
             //en caso para 3 o mas, para insertar de ultimo
             //creamos el nodo aux y le insertamos el nuevo dato
-            NodoListaDobleEnlazadaAlquileres_Cliente aux = new NodoListaDobleEnlazadaAlquileres_Cliente(solicitud);
+            NodoListaDobleEnlazadaAlquileres_Cliente aux = new 
+                    NodoListaDobleEnlazadaAlquileres_Cliente(solicitud);
             //ultimo setnext aux
             ultimo.setNext(aux);
             //aux setback ultimo
@@ -113,7 +118,8 @@ public class ListaDobleEnlazadaAlquileres_Cliente {
         NodoListaDobleEnlazadaAlquileres_Cliente aux = cabeza;
         while (exist == 0 && cont != tamanio()) {
 
-            if (aux.getDato().getUsuarioSolicitud().getCategoria().equals("Zafiro")) {
+            if (aux.getDato().getUsuarioSolicitud().getCategoria().
+                                                    equals("Zafiro")) {
                 exist = aux.getDato().getIdSolicitud();
             }
             aux = aux.getNext();
@@ -130,7 +136,8 @@ public class ListaDobleEnlazadaAlquileres_Cliente {
         NodoListaDobleEnlazadaAlquileres_Cliente aux = cabeza;
         while (exist == 0 && cont != tamanio()) {
 
-            if (aux.getDato().getUsuarioSolicitud().getCategoria().equals("Oro")) {
+            if (aux.getDato().getUsuarioSolicitud().getCategoria().
+                                                        equals("Oro")) {
                 exist = aux.getDato().getIdSolicitud();
             }
             aux = aux.getNext();
@@ -147,7 +154,8 @@ public class ListaDobleEnlazadaAlquileres_Cliente {
         NodoListaDobleEnlazadaAlquileres_Cliente aux = cabeza;
         while (exist == 0 && cont != tamanio()) {
 
-            if (aux.getDato().getUsuarioSolicitud().getCategoria().equals("Plata")) {
+            if (aux.getDato().getUsuarioSolicitud().getCategoria().
+                                                     equals("Plata")) {
                 exist = aux.getDato().getIdSolicitud();
             }
             aux = aux.getNext();
@@ -164,7 +172,8 @@ public class ListaDobleEnlazadaAlquileres_Cliente {
         NodoListaDobleEnlazadaAlquileres_Cliente aux = cabeza;
         while (exist == 0 && cont != tamanio()) {
 
-            if (aux.getDato().getUsuarioSolicitud().getCategoria().equals("Bronce")) {
+            if (aux.getDato().getUsuarioSolicitud().getCategoria().
+                                                    equals("Bronce")) {
                 exist = aux.getDato().getIdSolicitud();
             }
             aux = aux.getNext();
@@ -181,7 +190,8 @@ public class ListaDobleEnlazadaAlquileres_Cliente {
         NodoListaDobleEnlazadaAlquileres_Cliente aux = cabeza;
         while (exist == 0 && cont != tamanio()) {
 
-            if (aux.getDato().getUsuarioSolicitud().getCategoria().equals("")) {
+            if (aux.getDato().getUsuarioSolicitud().getCategoria().
+                                                        equals("")) {
                 exist = aux.getDato().getIdSolicitud();
             }
             aux = aux.getNext();
@@ -209,47 +219,6 @@ public class ListaDobleEnlazadaAlquileres_Cliente {
         return exist;
     }
 
-//
-//    public void eliminarDeLaLista(String placa) {
-//        if (cabeza != null) {
-//            if (cabeza.getDato() == ultimo.getDato()) {
-//                //si unicamente hay un vehiculo en la lista
-//                cabeza = null;
-//                ultimo = null;
-//
-//            } else {
-//                if (cabeza.getDato().getNumPlacadeVehiculo().equals(placa)) {
-//                    // si hay mas de 1 pero se elimina el primero
-//                    cabeza = cabeza.getNext();
-//                    cabeza.setBack(ultimo);
-//                    ultimo.setNext(cabeza);
-//
-//                } else if (ultimo.getDato().getNumPlacadeVehiculo().equals(placa)) {
-//                    //si hay mas de 1 pero se elimina el ultimo
-//
-//                    ultimo = ultimo.getBack();
-//                    ultimo.setNext(cabeza);
-//                    ultimo.setBack(cabeza);
-//
-//                } else {
-//
-//                    NodoListaDobleEnlazadaSolicitudesAlquiler aux = cabeza;
-//                    while (aux.getNext() != cabeza && !aux.getNext().getDato().getNumPlacadeVehiculo().equals(placa)) {
-//                        aux = aux.getNext();
-//                    }
-//                    if (aux.getNext().getDato().getNumPlacadeVehiculo().equals(placa)) {
-//                        aux.setNext(aux.getNext().getNext());
-//                        aux.getNext().setBack(aux);
-//                    }
-//
-//                }
-//
-//            }
-//            this.largo--;
-//        }
-//
-//    }
-//
     @Override
     public String toString() {
         NodoListaDobleEnlazadaAlquileres_Cliente aux = cabeza;

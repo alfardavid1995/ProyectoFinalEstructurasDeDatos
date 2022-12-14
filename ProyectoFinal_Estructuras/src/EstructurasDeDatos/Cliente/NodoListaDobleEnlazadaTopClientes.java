@@ -2,7 +2,6 @@ package EstructurasDeDatos.Cliente;
 
 import ObjetosdelProyecto.Objetos.Cliente;
 
-
 public class NodoListaDobleEnlazadaTopClientes {
 
     private Cliente dato;
@@ -37,12 +36,9 @@ public class NodoListaDobleEnlazadaTopClientes {
         this.back = back;
     }
 
-   
-
     @Override
     public String toString() {
         return dato.listar4();
     }
 
-    
 }

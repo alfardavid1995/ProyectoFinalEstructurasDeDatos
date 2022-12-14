@@ -1,16 +1,20 @@
 package GUI;
 
+import EstructurasDeDatos.Alquiler.ListaDobleEnlazadaSolicitudesAlquiler;
+import EstructurasDeDatos.Alquiler.ListaDobleEnlazadaResultadosBusqueda;
+import EstructurasDeDatos.Alquiler.ListaDobleEnlazadaDevolucion;
+import EstructurasDeDatos.Alquiler.ListaDobleEnlazadaAlquileresConsultar;
 import EstructurasDeDatos.Cliente.ListaDobleEnlazadaTopClientes;
 import EstructurasDeDatos.Cliente.ListaDobleEnlazadaAlquileres_Cliente;
 import EstructurasDeDatos.Cliente.Cola_RegistroCliente;
 import EstructurasDeDatos.Vehiculo.ListaDobleEnlazadaTopVehiculos;
 import EstructurasDeDatos.Vehiculo.Pila_RegistroVehiculo;
-import EstructurasDeDatos.*;
 
 import ObjetosdelProyecto.Objetos.Cliente;
 import ObjetosdelProyecto.Objetos.Devolucion;
 import ObjetosdelProyecto.Objetos.SolicitudDeAlquiler;
 import ObjetosdelProyecto.Objetos.Vehiculo;
+import java.time.DateTimeException;
 import java.time.LocalDate;
 import javax.swing.JOptionPane;
 
@@ -47,7 +51,8 @@ public class GUIMain extends javax.swing.JFrame {
         while (saltos != pilaRegistroVehiculo.tamanio()) {
             Vehiculo vehiculo = pilaRegistroVehiculo.retornaVehiculoFiltro(saltos);
 
-            if (listaFiltro.comparoCantPasajeros(vehiculo, soli.getPasajeros())) {
+            if (listaFiltro.comparoCantPasajeros(vehiculo,
+                    soli.getPasajeros())) {
                 listaFiltro.agregarVehiculoFiltro(vehiculo);
 
             }
@@ -58,11 +63,12 @@ public class GUIMain extends javax.swing.JFrame {
         if (!listaFiltro.Vacia()) {
 
             if (listaFiltro.buscarXDisponibilidad()) {
-                //                    JOptionPane.showMessageDialog(null, "SI hay marca");
+
                 listaFiltro.eliminaXDisponibilidad();
             } else {
 
-                jTextAreaSolicitudesRegistradas.setText("No hay  vehiculos disponibles "
+                jTextAreaSolicitudesRegistradas.
+                        setText("No hay  vehiculos disponibles "
                         + " con " + soli.getPasajeros() + " pasajeros");
                 soli.setEstadoDeSolicitud("Rechazada");
                 listaFiltro.limpiarLista();
@@ -77,12 +83,13 @@ public class GUIMain extends javax.swing.JFrame {
                 filtro = true;
 
                 if (listaFiltro.buscarXMarca(soli.getMarca())) {
-                    //                    JOptionPane.showMessageDialog(null, "SI hay marca");
+
                     listaFiltro.eliminaXMarca(soli.getMarca());
                 } else {
 
-                    jTextAreaSolicitudesRegistradas.setText("No hay  vehiculos de la marca "
-                            + soli.getMarca() + " con " + soli.getPasajeros() + " pasajeros");
+                    jTextAreaSolicitudesRegistradas.setText
+                ("No hay  vehiculos de la marca "+ soli.getMarca() + " con " + 
+                soli.getPasajeros() + " pasajeros");
                     soli.setEstadoDeSolicitud("Rechazada");
                     listaFiltro.limpiarLista();
 
@@ -94,12 +101,13 @@ public class GUIMain extends javax.swing.JFrame {
                 filtro = true;
 
                 if (listaFiltro.buscarXAnio(soli.getAnio())) {
-                    //                    JOptionPane.showMessageDialog(null, "SI hay anio");
+
                     listaFiltro.eliminaXAnio(soli.getAnio());
                 } else {
 
-                    jTextAreaSolicitudesRegistradas.setText("No hay  vehiculos del año "
-                            + soli.getAnio() + " con " + soli.getPasajeros() + " pasajeros");
+                    jTextAreaSolicitudesRegistradas.setText
+                    ("No hay  vehiculos del año " + soli.getAnio() + " con "
+                            + soli.getPasajeros() + " pasajeros");
                     soli.setEstadoDeSolicitud("Rechazada");
                     listaFiltro.limpiarLista();
 
@@ -110,11 +118,12 @@ public class GUIMain extends javax.swing.JFrame {
                 filtro = true;
 
                 if (listaFiltro.buscarXModelo(soli.getModelo())) {
-                    //                    JOptionPane.showMessageDialog(null, "SI hay modelo");
+
                     listaFiltro.eliminaXModelo(soli.getModelo());
                 } else {
-                    jTextAreaSolicitudesRegistradas.setText("No hay  vehiculos del modelo "
-                            + soli.getModelo() + " con " + soli.getPasajeros() + " pasajeros");
+                    jTextAreaSolicitudesRegistradas.setText
+                ("No hay  vehiculos del modelo " + soli.getModelo() + " con "
+                            + soli.getPasajeros() + " pasajeros");
                     soli.setEstadoDeSolicitud("Rechazada");
                     listaFiltro.limpiarLista();
 
@@ -125,12 +134,12 @@ public class GUIMain extends javax.swing.JFrame {
                 filtro = true;
 
                 if (listaFiltro.buscarXExtra(soli.getExtra())) {
-                    //                    JOptionPane.showMessageDialog(null, "SI hay extra");
+                    
                     listaFiltro.eliminaXExtra(soli.getExtra());
                 } else {
 
-                    jTextAreaCarrosDisponibles.setText("No hay  vehiculos con "
-                            + soli.getExtra() + " de " + soli.getPasajeros() + " pasajeros");
+                jTextAreaSoli.setText("No hay  vehiculos con "
+                + soli.getExtra() + " de " + soli.getPasajeros() + " pasajeros");
                     soli.setEstadoDeSolicitud("Rechazada");
                     listaFiltro.limpiarLista();
 
@@ -142,19 +151,23 @@ public class GUIMain extends javax.swing.JFrame {
     public void subirCategoriaCliente(Cliente cliente) {
         if (cliente.getCategoria().equals("")) {
             cliente.setCategoria("Bronce");
-            JOptionPane.showMessageDialog(null, "Felicidades subiste a " + cliente.getCategoria());
+            JOptionPane.showMessageDialog(null, "Felicidades "
+                                    + "subiste a " + cliente.getCategoria());
         } else {
             if (cliente.getCategoria().equals("Bronce")) {
                 cliente.setCategoria("Plata");
-                JOptionPane.showMessageDialog(null, "Felicidades subiste a " + cliente.getCategoria());
+                JOptionPane.showMessageDialog(null, "Felicidades "
+                                        + "subiste a " + cliente.getCategoria());
             } else {
                 if (cliente.getCategoria().equals("Plata")) {
                     cliente.setCategoria("Oro");
-                    JOptionPane.showMessageDialog(null, "Felicidades subiste a " + cliente.getCategoria());
+                    JOptionPane.showMessageDialog(null, "Felicidades "
+                                        + "subiste a " + cliente.getCategoria());
                 } else {
                     if (cliente.getCategoria().equals("Oro")) {
                         cliente.setCategoria("Zafiro");
-                        JOptionPane.showMessageDialog(null, "Felicidades subiste a " + cliente.getCategoria());
+                        JOptionPane.showMessageDialog(null, 
+                                "Felicidades subiste a " + cliente.getCategoria());
                     }
                 }
             }
@@ -164,56 +177,90 @@ public class GUIMain extends javax.swing.JFrame {
     public GUIMain() {
         initComponents();
         this.setLocationRelativeTo(null);
-        Vehiculo vehiculito1 = new Vehiculo("P-5489", "Toyota", "Hilux", 2020, "rojo",
-                4, "Gasolina", 4, 80, "Disponible");
+        Vehiculo vehiculito1 = new Vehiculo("P-5489",
+                "Toyota", "Hilux", 2020, 
+                "rojo",4, 
+                "Gasolina", 4, 
+                80, "Disponible");
 
-        Vehiculo vehiculito2 = new Vehiculo("LDW-8899", "Hyundai", "Accent", 2019, "Blanco",
-                4, "Gasolina", 5, 60, "Disponible");
+        Vehiculo vehiculito2 = new Vehiculo("LDW-8899", 
+                "Hyundai", "Accent", 2019,
+                "Blanco",
+                4, "Gasolina", 
+                5, 60, 
+                "Disponible");
 
-        Vehiculo vehiculito3 = new Vehiculo("654-ARDS", "Chevrolet", "Malibu", 2019, "Azul",
-                4, "Gasolina", 7, 90, "Disponible");
+        Vehiculo vehiculito3 = new Vehiculo("654-ARDS", 
+                "Chevrolet", "Malibu", 2019, 
+                "Azul",4, 
+                "Gasolina", 7, 
+                90, "Disponible");
 
-        Vehiculo vehiculito4 = new Vehiculo("HRR-9879", "Toyota", "Rush", 2019, "Blanco",
-                4, "Gasolina", 12, 90, "Disponible");
+        Vehiculo vehiculito4 = new Vehiculo("HRR-9879", 
+                "Toyota", "Rush", 2019, 
+                "Blanco",4, 
+                "Gasolina", 12, 
+                90, "Disponible");
 
-        Vehiculo vehiculito5 = new Vehiculo("P-1111", "Nissan", "Versa", 2019, "Azul",
-                4, "Gasolina", 4, 80, "Disponible");
+        Vehiculo vehiculito5 = new Vehiculo("P-1111", 
+                "Nissan", "Versa", 2019, 
+                "Azul",4, 
+                "Gasolina", 4, 
+                80,"Disponible");
 
-        Vehiculo vehiculito6 = new Vehiculo("P-222", "Honda", "CR-V", 2019, "Negro",
-                4, "Gasolina", 4, 80, "Disponible");
+        Vehiculo vehiculito6 = new Vehiculo("P-222", 
+                "Honda", "CR-V", 2019,
+                "Negro",4, 
+                "Gasolina", 4, 
+                80, "Disponible");
 
-        Vehiculo vehiculito7 = new Vehiculo("L-2006", "Toyota", "Hilux", 2019, "Azul",
-                4, "Gasolina", 4, 90, "Disponible");
+        Vehiculo vehiculito7 = new Vehiculo("L-2006", 
+                "Toyota", "Hilux", 2019, 
+                "Azul",4,
+                "Gasolina", 4, 
+                90, "Disponible");
 
-        Cliente clientito1 = new Cliente(118487, "Alejandro", "14-4-2001", "ale84@gmail.com",
+        Cliente clientito1 = new Cliente(118487, "Alejandro", 
+                "14-4-2001", "ale84@gmail.com",
                 "Zafiro", 0, false);
-        Cliente clientito2 = new Cliente(654641, "Pedro", "25-6-1998", "pedro36@gmail.com",
+        Cliente clientito2 = new Cliente(654641, "Pedro", 
+                "25-6-1998", "pedro36@gmail.com",
                 "", 0, false);
-        Cliente clientito3 = new Cliente(123213, "Tavo", "17-11-1982", "tavo@gmail.com",
+        Cliente clientito3 = new Cliente(123213, "Tavo", 
+                "17-11-1982", "tavo@gmail.com",
                 "", 0, false);
-        Cliente clientito4 = new Cliente(11848, "Mariana", "10-01-2004", "mari98@gmail.com",
+        Cliente clientito4 = new Cliente(11848, "Mariana", 
+                "10-01-2004", "mari98@gmail.com",
                 "", 0, false);
+        
         pilaRegistroVehiculo.push(vehiculito1);
+        
         pilaRegistroVehiculo.push(vehiculito2);
+        
         pilaRegistroVehiculo.push(vehiculito3);
+        
         pilaRegistroVehiculo.push(vehiculito4);
+        
         pilaRegistroVehiculo.push(vehiculito5);
+        
         pilaRegistroVehiculo.push(vehiculito6);
+        
         pilaRegistroVehiculo.push(vehiculito7);
+        
         colaRegistroCliente.encola(clientito1);
+        
         colaRegistroCliente.encola(clientito2);
+        
         colaRegistroCliente.encola(clientito3);
+        
         colaRegistroCliente.encola(clientito4);
+        
         jTextPaneDisplayRegistro.setText(pilaRegistroVehiculo.listar2());
         jTextPaneDisplayRegistro2.setText(pilaRegistroVehiculo.listar2());
         jTextPaneDisplayRegistro1.setText(colaRegistroCliente.listar2());
         jTextPaneDisplayModificar.setText(colaRegistroCliente.listar2());
 
-//        soliAlquiler = new SolicitudDeAlquiler("Procesada", 14, clientito1, 4, "-", 0, "-", "-");
-//        listaSoli.agregarSolicitud(soliAlquiler);
-//        soliAlquiler = new SolicitudDeAlquiler("Procesada", 55, clientito3, 4, "-", 0, "-", "-");
-//        listaSoli.agregarSolicitud(soliAlquiler);
-//        jTextAreaSolicitudes.setText(listaSoli.toString2());
+        
     }
 
     @SuppressWarnings("unchecked")
@@ -349,7 +396,7 @@ public class GUIMain extends javax.swing.JFrame {
         jLabel24 = new javax.swing.JLabel();
         jTextFieldModelo = new javax.swing.JTextField();
         jScrollPane20 = new javax.swing.JScrollPane();
-        jTextAreaCarrosDisponibles = new javax.swing.JTextArea();
+        jTextAreaSoli = new javax.swing.JTextArea();
         jComboBoxCantPasajeros = new javax.swing.JComboBox<>();
         jButtonCrearSolicitud = new javax.swing.JButton();
         jLabel30 = new javax.swing.JLabel();
@@ -524,7 +571,7 @@ public class GUIMain extends javax.swing.JFrame {
                                             .addComponent(jScrollPane7, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE))
                                         .addGap(0, 0, Short.MAX_VALUE))
                                     .addGroup(pestañaRegistrarVehiculoLayout.createSequentialGroup()
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, 28, Short.MAX_VALUE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, 71, Short.MAX_VALUE)
                                         .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pestañaRegistrarVehiculoLayout.createSequentialGroup()
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -533,7 +580,7 @@ public class GUIMain extends javax.swing.JFrame {
                         .addGroup(pestañaRegistrarVehiculoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(pestañaRegistrarVehiculoLayout.createSequentialGroup()
                                 .addComponent(jLabelRegistro_de_Vehiculos)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 360, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 325, Short.MAX_VALUE)
                                 .addComponent(jButtonRefrescarRegistroVehiculo1))
                             .addComponent(jScrollPane1))))
                 .addContainerGap())
@@ -594,7 +641,7 @@ public class GUIMain extends javax.swing.JFrame {
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(pestañaRegistrarVehiculoLayout.createSequentialGroup()
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(137, Short.MAX_VALUE))))
+                        .addContainerGap(129, Short.MAX_VALUE))))
         );
 
         pestañasVehiculo.addTab("Registrar Vehiculo", new javax.swing.ImageIcon(getClass().getResource("/AnexosEImagenes/addImage.png")), pestañaRegistrarVehiculo); // NOI18N
@@ -1105,7 +1152,7 @@ public class GUIMain extends javax.swing.JFrame {
                             .addGroup(pestañaModificaEliminaClienteLayout.createSequentialGroup()
                                 .addGap(18, 18, 18)
                                 .addComponent(jScrollPane17, javax.swing.GroupLayout.PREFERRED_SIZE, 432, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(131, Short.MAX_VALUE))
+                .addContainerGap(141, Short.MAX_VALUE))
         );
         pestañaModificaEliminaClienteLayout.setVerticalGroup(
             pestañaModificaEliminaClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1135,7 +1182,7 @@ public class GUIMain extends javax.swing.JFrame {
                     .addComponent(jScrollPane17, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(38, 38, 38)
                 .addComponent(jButtonModificar1)
-                .addContainerGap(130, Short.MAX_VALUE))
+                .addContainerGap(126, Short.MAX_VALUE))
         );
 
         panelCliente.addTab("Modifica/Elimina Cliente", pestañaModificaEliminaCliente);
@@ -1218,7 +1265,7 @@ public class GUIMain extends javax.swing.JFrame {
             .addGroup(pestañaConsultaClienteLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, 356, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(81, Short.MAX_VALUE))
+                .addContainerGap(85, Short.MAX_VALUE))
         );
 
         panelCliente.addTab("Consulta Cliente", pestañaConsultaCliente);
@@ -1248,7 +1295,7 @@ public class GUIMain extends javax.swing.JFrame {
         jScrollPane19.setViewportView(jTextAreaExtras);
 
         jLabel23.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel23.setText("Carros disponibles");
+        jLabel23.setText("Solicitud");
 
         jLabel24.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel24.setText("Año");
@@ -1259,9 +1306,9 @@ public class GUIMain extends javax.swing.JFrame {
             }
         });
 
-        jTextAreaCarrosDisponibles.setColumns(20);
-        jTextAreaCarrosDisponibles.setRows(5);
-        jScrollPane20.setViewportView(jTextAreaCarrosDisponibles);
+        jTextAreaSoli.setColumns(20);
+        jTextAreaSoli.setRows(5);
+        jScrollPane20.setViewportView(jTextAreaSoli);
 
         jComboBoxCantPasajeros.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jComboBoxCantPasajeros.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "4", "5", "7", "12" }));
@@ -1275,7 +1322,7 @@ public class GUIMain extends javax.swing.JFrame {
         });
 
         jLabel30.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel30.setText("Dias de Alquiler");
+        jLabel30.setText("Dias de Alquiler:");
 
         jLabel31.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel31.setText("Fecha de alquiler:");
@@ -1325,7 +1372,7 @@ public class GUIMain extends javax.swing.JFrame {
                                         .addComponent(jLabel8)
                                         .addGap(47, 47, 47)
                                         .addComponent(jTextFieldCedula, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1350,11 +1397,10 @@ public class GUIMain extends javax.swing.JFrame {
                                     .addComponent(jLabel16))
                                 .addGap(33, 33, 33)))
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButtonCrearSolicitud, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel22)
-                                .addGap(77, 77, 77))
-                            .addComponent(jScrollPane19, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jButtonCrearSolicitud, javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(jScrollPane19, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel22))
                         .addGap(35, 35, 35))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel23)
@@ -1365,11 +1411,15 @@ public class GUIMain extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(30, 30, 30)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel8)
-                            .addComponent(jTextFieldCedula, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel22))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(30, 30, 30)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel8)
+                                    .addComponent(jTextFieldCedula, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(jLabel22)))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
@@ -1390,13 +1440,13 @@ public class GUIMain extends javax.swing.JFrame {
                                     .addComponent(jLabel30)
                                     .addComponent(jTextFieldDiasAlquiler, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addComponent(jScrollPane19, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
                         .addComponent(jLabel23)
                         .addGap(12, 12, 12))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(0, 23, Short.MAX_VALUE)
+                        .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(jLabel16)
-                        .addGap(37, 37, 37)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel20)
                             .addGroup(jPanel1Layout.createSequentialGroup()
@@ -1444,7 +1494,7 @@ public class GUIMain extends javax.swing.JFrame {
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGap(139, 139, 139)
                 .addComponent(jScrollPane21, javax.swing.GroupLayout.PREFERRED_SIZE, 654, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(140, Short.MAX_VALUE))
+                .addContainerGap(150, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jButton4)
@@ -1457,7 +1507,7 @@ public class GUIMain extends javax.swing.JFrame {
                 .addComponent(jScrollPane21, javax.swing.GroupLayout.PREFERRED_SIZE, 344, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(26, 26, 26)
                 .addComponent(jButton4)
-                .addContainerGap(44, Short.MAX_VALUE))
+                .addContainerGap(45, Short.MAX_VALUE))
         );
 
         jTabbedPane4.addTab("Solicitudes", jPanel4);
@@ -1494,7 +1544,7 @@ public class GUIMain extends javax.swing.JFrame {
                 .addComponent(jScrollPane23, javax.swing.GroupLayout.PREFERRED_SIZE, 347, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(26, 26, 26)
                 .addComponent(jButton1)
-                .addContainerGap(41, Short.MAX_VALUE))
+                .addContainerGap(42, Short.MAX_VALUE))
         );
 
         jTabbedPane4.addTab("Atender Solicitudes", jPanel3);
@@ -1549,7 +1599,7 @@ public class GUIMain extends javax.swing.JFrame {
                         .addComponent(jLabel28)
                         .addGap(18, 18, 18)
                         .addComponent(jComboBoxEstadoAlquiler, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
                 .addComponent(jScrollPane22, javax.swing.GroupLayout.PREFERRED_SIZE, 430, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(82, 82, 82))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
@@ -1565,7 +1615,7 @@ public class GUIMain extends javax.swing.JFrame {
                 .addGap(32, 32, 32)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jScrollPane22, javax.swing.GroupLayout.DEFAULT_SIZE, 287, Short.MAX_VALUE)
+                        .addComponent(jScrollPane22, javax.swing.GroupLayout.DEFAULT_SIZE, 282, Short.MAX_VALUE)
                         .addGap(18, 18, 18)
                         .addComponent(jButtonConsultarFiltro)
                         .addGap(36, 36, 36))
@@ -1631,7 +1681,7 @@ public class GUIMain extends javax.swing.JFrame {
                                 .addGap(254, 254, 254)))
                         .addComponent(jScrollPane24, javax.swing.GroupLayout.PREFERRED_SIZE, 414, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jLabel36))
-                .addContainerGap(94, Short.MAX_VALUE))
+                .addContainerGap(104, Short.MAX_VALUE))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1653,7 +1703,7 @@ public class GUIMain extends javax.swing.JFrame {
                     .addGroup(jPanel6Layout.createSequentialGroup()
                         .addGap(79, 79, 79)
                         .addComponent(jScrollPane24, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(154, Short.MAX_VALUE))
+                .addContainerGap(146, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Devolucion vehiculo", jPanel6);
@@ -1706,7 +1756,7 @@ public class GUIMain extends javax.swing.JFrame {
             .addGroup(jPanel8Layout.createSequentialGroup()
                 .addGap(186, 186, 186)
                 .addComponent(jScrollPane28, javax.swing.GroupLayout.PREFERRED_SIZE, 550, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(197, Short.MAX_VALUE))
+                .addContainerGap(207, Short.MAX_VALUE))
         );
         jPanel8Layout.setVerticalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1715,7 +1765,7 @@ public class GUIMain extends javax.swing.JFrame {
                 .addComponent(jScrollPane28, javax.swing.GroupLayout.PREFERRED_SIZE, 307, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(33, 33, 33)
                 .addComponent(jButton5)
-                .addContainerGap(64, Short.MAX_VALUE))
+                .addContainerGap(59, Short.MAX_VALUE))
         );
 
         jTabbedPane2.addTab("Top 5 Clientes", jPanel8);
@@ -1739,7 +1789,7 @@ public class GUIMain extends javax.swing.JFrame {
             .addGroup(jPanel9Layout.createSequentialGroup()
                 .addGap(154, 154, 154)
                 .addComponent(jScrollPane27, javax.swing.GroupLayout.PREFERRED_SIZE, 609, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(170, Short.MAX_VALUE))
+                .addContainerGap(180, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel9Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jButton3)
@@ -1752,7 +1802,7 @@ public class GUIMain extends javax.swing.JFrame {
                 .addComponent(jScrollPane27, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(35, 35, 35)
                 .addComponent(jButton3)
-                .addContainerGap(69, Short.MAX_VALUE))
+                .addContainerGap(70, Short.MAX_VALUE))
         );
 
         jTabbedPane2.addTab("Top 5 Vehiculos", jPanel9);
@@ -1776,7 +1826,7 @@ public class GUIMain extends javax.swing.JFrame {
             .addGroup(jPanel10Layout.createSequentialGroup()
                 .addGap(158, 158, 158)
                 .addComponent(jScrollPane26, javax.swing.GroupLayout.PREFERRED_SIZE, 589, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(186, Short.MAX_VALUE))
+                .addContainerGap(196, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel10Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jButton2)
@@ -1789,7 +1839,7 @@ public class GUIMain extends javax.swing.JFrame {
                 .addComponent(jScrollPane26, javax.swing.GroupLayout.PREFERRED_SIZE, 261, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(64, 64, 64)
                 .addComponent(jButton2)
-                .addContainerGap(76, Short.MAX_VALUE))
+                .addContainerGap(71, Short.MAX_VALUE))
         );
 
         jTabbedPane2.addTab("Promedio y total", jPanel10);
@@ -1813,44 +1863,73 @@ public class GUIMain extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonQuitarExtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonQuitarExtrasActionPerformed
-        String numPlaca = jtext_numPlaca.getText();
-        String extra = jtext_extras.getText();
 
-        if (pilaRegistroVehiculo.search(numPlaca)) {
-            Vehiculo vehiculo = pilaRegistroVehiculo.traerVehiculo(numPlaca);//aca traemos el vehiculo a la GUI para que se trabaje desde ahi
-            vehiculo.getExtrasPila().popModificado(extra);//conseguimoos el vehiculo y le insertamos el extra
-
+        if (jtext_numPlaca.getText().equals("") || 
+                jtext_extras.getText().equals("")) {
+            JOptionPane.showMessageDialog(null, 
+                    "Ingrese un extra", "Alerta", HEIGHT);
         } else {
-            JOptionPane.showMessageDialog(null, "el vehiculo no existe");
-        }
-        jTextAreaVehiculo.setText(pilaRegistroVehiculo.traerVehiculo(numPlaca).toString());
-        jtext_extras.setText("");
+            String numPlaca = jtext_numPlaca.getText();
+            String extra = jtext_extras.getText();
+
+            if (pilaRegistroVehiculo.search(numPlaca)) {
+                Vehiculo vehiculo = pilaRegistroVehiculo.traerVehiculo
+                                                            (numPlaca);
+            //aca traemos el vehiculo a la GUI para que se trabaje desde ahi
+                vehiculo.getExtrasPila().popModificado(extra);
+                //conseguimoos el vehiculo y le insertamos el extra
+
+            } else {
+                JOptionPane.showMessageDialog(null, 
+                        "el vehiculo no existe");
+            }
+            jTextAreaVehiculo.setText(pilaRegistroVehiculo.
+                    traerVehiculo(numPlaca).toString());
+            jtext_extras.setText("");
     }//GEN-LAST:event_jButtonQuitarExtrasActionPerformed
-
+    }
     private void jButtonAgregarExtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAgregarExtrasActionPerformed
-        String numPlaca = jtext_numPlaca.getText();
-        String extra = jtext_extras.getText();
 
-        if (pilaRegistroVehiculo.search(numPlaca)) {
-            Vehiculo vehiculo = pilaRegistroVehiculo.traerVehiculo(numPlaca);//aca traemos el vehiculo a la GUI para que se trabaje desde ahi
-            vehiculo.getExtrasPila().push(extra);//conseguimoos el vehiculo y le insertamos el extra
-            pilaRegistroVehiculo.popModificado(numPlaca);//eliminamos el  vehiculo de la pila
-            pilaRegistroVehiculo.push(vehiculo);// Insertamos nuevamente el vehiculo con las extras nuevas
-
+        if (jtext_numPlaca.getText().equals("") ||
+                jtext_extras.getText().equals("")) {
+            JOptionPane.showMessageDialog(null, 
+                    "Ingrese un extra", "Alerta", HEIGHT);
         } else {
-            JOptionPane.showMessageDialog(null, "el vehiculo no existe");
+            String numPlaca = jtext_numPlaca.getText();
+            String extra = jtext_extras.getText();
+
+            if (pilaRegistroVehiculo.search(numPlaca)) {
+               //aca traemos el vehiculo a la GUI para que se trabaje desde ahi 
+                Vehiculo vehiculo = pilaRegistroVehiculo.
+                        traerVehiculo(numPlaca);
+                //conseguimoos el vehiculo y le insertamos el extra
+                vehiculo.getExtrasPila().push(extra);
+                //eliminamos el  vehiculo de la pila
+                pilaRegistroVehiculo.popModificado(numPlaca);
+                // Insertamos nuevamente el vehiculo con las extras nuevas
+                pilaRegistroVehiculo.push(vehiculo);
+
+            } else {
+                JOptionPane.showMessageDialog(null, 
+                        "el vehiculo no existe");
+            }
+            jTextAreaVehiculo.setText(pilaRegistroVehiculo.traerVehiculo
+        (numPlaca).toString());
+            jtext_extras.setText("");
+
         }
-        jTextAreaVehiculo.setText(pilaRegistroVehiculo.traerVehiculo(numPlaca).toString());
-        jtext_extras.setText("");
+
     }//GEN-LAST:event_jButtonAgregarExtrasActionPerformed
 
     private void jButtonBuscar_RefrescarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBuscar_RefrescarActionPerformed
         String numPlaca = jtext_numPlaca.getText();
 
         if (pilaRegistroVehiculo.search(numPlaca)) {
-            jTextAreaVehiculo.setText(pilaRegistroVehiculo.traerVehiculo(numPlaca).toString());
+            jTextAreaVehiculo.setText(pilaRegistroVehiculo.
+                    traerVehiculo(numPlaca).toString());
         } else {
-            JOptionPane.showMessageDialog(null, "el vehiculo no existe");
+            JOptionPane.showMessageDialog(null, 
+                    "El vehiculo no existe");
         }
     }//GEN-LAST:event_jButtonBuscar_RefrescarActionPerformed
 
@@ -1876,14 +1955,17 @@ public class GUIMain extends javax.swing.JFrame {
             Vehiculo vehiculo = pilaRegistroVehiculo.traerVehiculo(placa);
 
             if (listaSoli.buscarVehiculo(vehiculo)) {
-                JOptionPane.showMessageDialog(null, "El vehiculo no se puede eliminar, porque fue alquilado");
+                JOptionPane.showMessageDialog(null, 
+                        "El vehiculo no se puede eliminar, "
+                                + "porque fue alquilado");
             } else {
                 pilaRegistroVehiculo.popModificado(placa);
                 jTextPaneDisplayRegistro2.setText(pilaRegistroVehiculo.listar2());
             }
 
         } else {
-            JOptionPane.showMessageDialog(null, "el vehiculo no existe");
+            JOptionPane.showMessageDialog(null, 
+                    "El vehiculo no existe");
         }
     }//GEN-LAST:event_jButtonEliminarActionPerformed
 
@@ -1891,9 +1973,11 @@ public class GUIMain extends javax.swing.JFrame {
         String numPlaca = jTextFieldPlaca.getText();
 
         if (pilaRegistroVehiculo.search(numPlaca)) {
-            jTextPaneDisplayRegistro2.setText(pilaRegistroVehiculo.traerVehiculo(numPlaca).toString());
+            jTextPaneDisplayRegistro2.setText(pilaRegistroVehiculo.
+                    traerVehiculo(numPlaca).toString());
         } else {
-            JOptionPane.showMessageDialog(null, "el vehiculo no existe");
+            JOptionPane.showMessageDialog(null, 
+                    "El vehiculo no existe");
         }
     }//GEN-LAST:event_jButtonBuscarPlacaModificarVehiculoActionPerformed
 
@@ -1906,7 +1990,9 @@ public class GUIMain extends javax.swing.JFrame {
         String modifica = jTextPaneValorAModificar.getText();
 
         if (pilaRegistroVehiculo.search(numPlaca)) {
-            Vehiculo vehiculo = pilaRegistroVehiculo.traerVehiculo(numPlaca);//aca traemos el vehiculo a la GUI para que se trabaje desde ahi
+            //aca traemos el vehiculo a la GUI para que se trabaje desde ahi
+            Vehiculo vehiculo = pilaRegistroVehiculo.traerVehiculo  
+                                                                (numPlaca);
             switch (jComboBox1.getSelectedIndex()) {
                 case 0:
 
@@ -1920,15 +2006,18 @@ public class GUIMain extends javax.swing.JFrame {
                     int modifica2 = 0;
                     try {
 
-                        modifica2 = Integer.parseInt(jTextPaneValorAModificar.getText());
+                        modifica2 = Integer.parseInt(
+                                jTextPaneValorAModificar.getText());
                         if (modifica2 >= 2000) {
                             vehiculo.setAniodeVehiculo(modifica2);
                         } else {
-                            JOptionPane.showMessageDialog(null, "Digite un año superior al 2000");
+                            JOptionPane.showMessageDialog(null, 
+                                    "Digite un año superior al 2000");
                         }
 
                     } catch (Exception e) {
-                        JOptionPane.showMessageDialog(null, "Digite un valor numerico");
+                        JOptionPane.showMessageDialog(null, 
+                                "Digite un valor numerico");
                     }
 
                     break;
@@ -1943,7 +2032,8 @@ public class GUIMain extends javax.swing.JFrame {
                     vehiculo.setCilindradaDeVehiculo(modifica2);
 
                 } catch (Exception e) {
-                    JOptionPane.showMessageDialog(null, "Digite un valor numerico");
+                    JOptionPane.showMessageDialog(null, 
+                            "Digite un valor numerico");
                 }
 
                 break;
@@ -1976,7 +2066,8 @@ public class GUIMain extends javax.swing.JFrame {
                     vehiculo.setCantPasajerosdeVehiculo(modifica2);
 
                 } catch (Exception e) {
-                    JOptionPane.showMessageDialog(null, "Digite un valor numerico");
+                    JOptionPane.showMessageDialog(null, 
+                            "Digite un valor numerico");
                 }
 
                 break;
@@ -1985,11 +2076,14 @@ public class GUIMain extends javax.swing.JFrame {
                     
                      try {
 
-                    modifica2 = Integer.parseInt(jTextPaneValorAModificar.getText());
-                    vehiculo.setPrecioAlquilerXDiaDeVehiculo(modifica2);
+                    modifica2 = Integer.parseInt(
+                            jTextPaneValorAModificar.getText());
+                    vehiculo.setPrecioAlquilerXDiaDeVehiculo
+                                (modifica2);
 
                 } catch (Exception e) {
-                    JOptionPane.showMessageDialog(null, "Digite un valor numerico");
+                    JOptionPane.showMessageDialog(null, 
+                            "Digite un valor numerico");
                 }
                 break;
                 case 8:
@@ -2015,14 +2109,16 @@ public class GUIMain extends javax.swing.JFrame {
                     break;
 
             }
-            jTextPaneDisplayRegistro2.setText(pilaRegistroVehiculo.traerVehiculo(numPlaca).toString());
+            jTextPaneDisplayRegistro2.setText(pilaRegistroVehiculo.
+                    traerVehiculo(numPlaca).toString());
         } else {
-            JOptionPane.showMessageDialog(null, "el vehiculo no existe");
+            JOptionPane.showMessageDialog(null, 
+                    "El vehiculo no existe");
         }
     }//GEN-LAST:event_jButtonModificarActionPerformed
 
     private void jButtonMostrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonMostrarActionPerformed
-       jTextPaneDisplayModificar.setText(colaRegistroCliente.listar2());
+        jTextPaneDisplayModificar.setText(colaRegistroCliente.listar2());
         jTextFieldCedulaClienteVerificar.setText("");
         jTextPaneValorAModificar.setText("");
         jComboBoxOpcionesCliente.setSelectedIndex(0);
@@ -2033,63 +2129,94 @@ public class GUIMain extends javax.swing.JFrame {
     }//GEN-LAST:event_jComboBoxOpcionesClienteActionPerformed
 
     private void jButtonEliminar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEliminar1ActionPerformed
-        int cedula = Integer.parseInt(jTextFieldCedulaClienteVerificar.getText());
-
-        if (colaRegistroCliente.search(cedula)) {
-
-            Cliente cliente = colaRegistroCliente.traerCliente(cedula);
-            if (cliente.isAlquilando()) {
-                JOptionPane.showMessageDialog(null, "No se puede eliminar al cliente, porque ha iniciado un alquiler");
-            } else {
-
-                colaRegistroCliente.eliminaModificado(cedula);
-
-            }
-
+        if (jTextFieldCedulaClienteVerificar.getText().equals("")) {
+            JOptionPane.showMessageDialog(null, 
+                    "Digite una cedula", "Alerta", HEIGHT);
         } else {
-            JOptionPane.showMessageDialog(null, "el cliente no existe");
+
+            int cedula = Integer.parseInt(jTextFieldCedulaClienteVerificar.getText());
+
+            if (colaRegistroCliente.search(cedula)) {
+
+                Cliente cliente = colaRegistroCliente.traerCliente(cedula);
+                if (cliente.isAlquilando()) {
+                    JOptionPane.showMessageDialog(null, 
+                            "No se puede eliminar al cliente, "
+                                    + "porque ha iniciado un alquiler");
+                } else {
+
+                    colaRegistroCliente.eliminaModificado(cedula);
+
+                }
+
+            } else {
+                JOptionPane.showMessageDialog(null, 
+                        "El cliente no existe");
+            }
+            jTextPaneDisplayModificar.setText(colaRegistroCliente.listar2());
         }
-        jTextPaneDisplayModificar.setText(colaRegistroCliente.listar2());
     }//GEN-LAST:event_jButtonEliminar1ActionPerformed
 
     private void jButtonBuscarCedulaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBuscarCedulaActionPerformed
-        int cedula = Integer.parseInt(jTextFieldCedulaClienteVerificar.getText());
-
-        if (colaRegistroCliente.search(cedula)) {
-            jTextPaneDisplayModificar.setText(colaRegistroCliente.traerCliente(cedula).listar());
+        if (jTextFieldCedulaClienteVerificar.getText().equals("")) {
+            JOptionPane.showMessageDialog(null, 
+                    "Digite una cedula", "Alerta", HEIGHT);
         } else {
-            JOptionPane.showMessageDialog(null, "El cliente no existe");
-        }
-    }//GEN-LAST:event_jButtonBuscarCedulaActionPerformed
+            int cedula = Integer.parseInt(jTextFieldCedulaClienteVerificar.getText());
 
+            if (colaRegistroCliente.search(cedula)) {
+                jTextPaneDisplayModificar.setText
+                        (colaRegistroCliente.traerCliente(cedula).listar());
+            } else {
+                JOptionPane.showMessageDialog(null, 
+                        "El cliente no existe");
+            }
+    }//GEN-LAST:event_jButtonBuscarCedulaActionPerformed
+    }
     private void jTextFieldCedulaClienteVerificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldCedulaClienteVerificarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextFieldCedulaClienteVerificarActionPerformed
 
     private void jButtonModificar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonModificar1ActionPerformed
-        int cedula = Integer.parseInt(jTextFieldCedulaClienteVerificar.getText());
-        String modifica = jTextPaneValorAModificar1.getText();
 
-        if (colaRegistroCliente.search(cedula)) {
-            Cliente clientito = colaRegistroCliente.traerCliente(cedula);//aca traemos el cliente a la GUI para que se trabaje desde ahi
-            switch (jComboBoxOpcionesCliente.getSelectedIndex()) {
-                case 0:
-                    clientito.setNombreCompleto(modifica);
-                    break;
-
-                case 1:
-                    clientito.setFechaNacimiento(modifica);
-                    break;
-
-                case 2:
-                    clientito.setCorreoElectronico(modifica);
-                    break;
-            }
-
+        if (jTextFieldCedulaClienteVerificar.getText().equals("")) {
+            JOptionPane.showMessageDialog(null, 
+                    "Digite una cedula", "Alerta", HEIGHT);
         } else {
-            JOptionPane.showMessageDialog(null, "El cliente no existe");
+            int cedula = Integer.parseInt(jTextFieldCedulaClienteVerificar.getText());
+            if (jTextPaneValorAModificar1.getText().equals("")) {
+                JOptionPane.showMessageDialog(null, 
+                        "Complete todos los campos", 
+                        "Alerta", HEIGHT);
+            } else {
+                String modifica = jTextPaneValorAModificar1.getText();
+
+                if (colaRegistroCliente.search(cedula)) {
+                   //aca traemos el cliente a la GUI para que se trabaje desde ahi
+                    Cliente clientito = colaRegistroCliente.
+                            traerCliente(cedula);
+                    switch (jComboBoxOpcionesCliente.getSelectedIndex()) {
+                        case 0:
+                            clientito.setNombreCompleto(modifica);
+                            break;
+
+                        case 1:
+                            clientito.setFechaNacimiento(modifica);
+                            break;
+
+                        case 2:
+                            clientito.setCorreoElectronico(modifica);
+                            break;
+                    }
+
+                } else {
+                    JOptionPane.showMessageDialog(null, 
+                            "El cliente no existe");
+                }
+                jTextPaneDisplayModificar.setText(colaRegistroCliente.
+                        traerCliente(cedula).listar());
+            }
         }
-        jTextPaneDisplayModificar.setText(colaRegistroCliente.toString());
     }//GEN-LAST:event_jButtonModificar1ActionPerformed
 
     private void jButtonSalir1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSalir1ActionPerformed
@@ -2101,39 +2228,58 @@ public class GUIMain extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonRefrescarRegistroClienteActionPerformed
 
     private void jButtonRegistrarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRegistrarClienteActionPerformed
-        String nombre = jTextFieldNombreCliente.getText();
-        int cedula = Integer.parseInt(jTextFieldCedulaCliente.getText());
-        String correo = jTextFieldCorreoCliente.getText();
-        String fechaNacimiento = jTextFieldFechaCliente.getText();
-        String categoria = "";
-        switch (jComboBoxCategorriaClente.getSelectedIndex()) {
-            case 0:
-                categoria = "Bronce";
+        try {
+            String nombre = jTextFieldNombreCliente.getText();
+            int cedula = Integer.parseInt(jTextFieldCedulaCliente.getText());
+            String correo = jTextFieldCorreoCliente.getText();
+            String fechaNacimiento = jTextFieldFechaCliente.getText();
+            String categoria = "";
+            switch (jComboBoxCategorriaClente.getSelectedIndex()) {
+                case 0:
+                    categoria = "";
 
-                break;
-            case 1:
-                categoria = "Plata";
+                    break;
+                case 1:
+                    categoria = "Bronce";
 
-                break;
-            case 2:
-                categoria = "Oro";
+                    break;
+                case 2:
+                    categoria = "Plata";
 
-                break;
-            case 3:
-                categoria = "Zafiro";
+                    break;
+                case 3:
+                    categoria = "Oro";
 
-                break;
+                    break;
+                case 4:
+                    categoria = "Zafiro";
+
+                    break;
+            }
+            int cantAlquileres = 0;
+
+            Cliente clientito = new Cliente(cedula, nombre, 
+                    fechaNacimiento, correo,
+                    categoria, cantAlquileres, false);
+
+            if (!colaRegistroCliente.search(clientito.getCedula())) {
+
+                colaRegistroCliente.encola(clientito);
+                jTextPaneDisplayRegistro1.setText(colaRegistroCliente.listar2());
+                jTextPaneDisplayModificar.setText(colaRegistroCliente.listar2());
+                limpiarConsola();
+
+            } else {
+                JOptionPane.showMessageDialog(null, 
+                        "El cliente ya existe", "Alerta", HEIGHT);
+            }
+
+        } catch (NumberFormatException error) {
+            JOptionPane.showMessageDialog(null, 
+                    "Hay valores incorrectos, verifique los datos del "
+                            + "cliente nuevo", "Alerta", HEIGHT);
         }
-        int cantAlquileres = 0;
 
-        Cliente clientito = new Cliente(cedula, nombre, fechaNacimiento, correo,
-                categoria, cantAlquileres, false);
-
-        colaRegistroCliente.encola(clientito);
-
-        jTextPaneDisplayRegistro1.setText(colaRegistroCliente.listar2());
-        jTextPaneDisplayModificar.setText(colaRegistroCliente.listar2());
-        limpiarConsola();
     }//GEN-LAST:event_jButtonRegistrarClienteActionPerformed
 
     private void jComboBoxCategorriaClenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxCategorriaClenteActionPerformed
@@ -2153,14 +2299,31 @@ public class GUIMain extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonRefrescarActionPerformed
 
     private void jButtonConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonConsultarActionPerformed
-        int cedula = Integer.parseInt(jTextFieldCedulaConsulta.getText());
-        if (colaRegistroCliente.search(cedula)) {
-            jTextPaneInformacionClinete.setText(colaRegistroCliente.traerCliente(cedula).listar());
-        } else {
-            jTextPaneInformacionClinete.setText("");
-            JOptionPane.showMessageDialog(null, "El cliente no existe");
+        try {
+            if (jTextFieldCedulaConsulta.getText().equals("")) {
+                JOptionPane.showMessageDialog(null, 
+                        "Digite una cedula", "Alerta", HEIGHT);
+            } else {
+                int cedula = Integer.parseInt(jTextFieldCedulaConsulta.getText());
+                if (colaRegistroCliente.search(cedula)) {
+                    jTextPaneInformacionClinete.setText(colaRegistroCliente.
+                            traerCliente(cedula).listar());
+                } else {
+                    jTextPaneInformacionClinete.setText("");
+                    JOptionPane.showMessageDialog(null, 
+                            "El cliente no existe", "Alerta", 
+                            HEIGHT);
+
+                    jTextFieldCedulaConsulta.setText("");
+                }
+            }
+        } catch (NumberFormatException error) {
+            JOptionPane.showMessageDialog(null, 
+                    "Digite un valor numerico", "Alerta", 
+                    HEIGHT);
             jTextFieldCedulaConsulta.setText("");
         }
+
     }//GEN-LAST:event_jButtonConsultarActionPerformed
 
     private void jButtonRefrescarRegistroVehiculo1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRefrescarRegistroVehiculo1ActionPerformed
@@ -2172,60 +2335,70 @@ public class GUIMain extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonSalirActionPerformed
 
     private void jButtonRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRegistrarActionPerformed
-        String placa = jTextPanePlaca.getText();
-        String marca = jTextPaneMarca.getText();
-        String modelo = jTextPaneModelo.getText();
-        String color = jTextPaneColor.getText();
-        String estado = "";
-        int cantPasajeros = Integer.parseInt(jTextPaneCantPasajeros.getText());
-        double precio = Double.parseDouble(jTextPaneAnnio.getText());
-        int anio = Integer.parseInt(jTextPaneAnnio.getText());
-        int cilindraje = Integer.parseInt(jTextPaneCilindraje.getText());
-        String combustible = "";
-        switch (jComboBoxSelectorDeCombustible.getSelectedIndex()) {
-            case 0:
-                combustible = "Gasolina";
+        try {
+            String placa = jTextPanePlaca.getText();
+            String marca = jTextPaneMarca.getText();
+            String modelo = jTextPaneModelo.getText();
+            String color = jTextPaneColor.getText();
+            String estado = "";
+            int cantPasajeros = Integer.parseInt(jTextPaneCantPasajeros.getText());
+            double precio = Double.parseDouble(jTextPaneAnnio.getText());
+            int anio = Integer.parseInt(jTextPaneAnnio.getText());
+            int cilindraje = Integer.parseInt(jTextPaneCilindraje.getText());
+            String combustible = "";
+            switch (jComboBoxSelectorDeCombustible.getSelectedIndex()) {
+                case 0:
+                    combustible = "Gasolina";
 
-                break;
-            case 1:
-                combustible = "Diesel";
+                    break;
+                case 1:
+                    combustible = "Diesel";
 
-                break;
-            case 2:
-                combustible = "Eléctrico";
+                    break;
+                case 2:
+                    combustible = "Eléctrico";
 
-                break;
-            case 3:
-                combustible = "Gas Natural";
+                    break;
+                case 3:
+                    combustible = "Gas Natural";
 
-                break;
+                    break;
+            }
+            switch (jComboBox2SelectorEstado.getSelectedIndex()) {
+                case 0:
+                    estado = "Disponible";
+
+                    break;
+                case 1:
+                    estado = "Alquilado";
+
+                    break;
+                case 2:
+                    estado = "En reparacion";
+
+                    break;
+                case 3:
+                    estado = "Fuera de circulacion";
+
+                    break;
+            }
+            Vehiculo vehiculito = new Vehiculo(placa, 
+                    marca, modelo, anio, 
+                    color,cilindraje, 
+                    combustible, cantPasajeros, 
+                    precio, estado);
+
+            pilaRegistroVehiculo.push(vehiculito);
+
+            jTextPaneDisplayRegistro.setText(pilaRegistroVehiculo.listar2());
+            jTextPaneDisplayRegistro2.setText(pilaRegistroVehiculo.listar2());
+            limpiarConsola();
+        } catch (NumberFormatException error) {
+            JOptionPane.showMessageDialog(null, 
+                    "Hay valores incorrectos, verifique los datos del "
+                            + "vehiculo nuevo", "Alerta", HEIGHT);
         }
-        switch (jComboBox2SelectorEstado.getSelectedIndex()) {
-            case 0:
-                estado = "Disponible";
 
-                break;
-            case 1:
-                estado = "Alquilado";
-
-                break;
-            case 2:
-                estado = "En reparacion";
-
-                break;
-            case 3:
-                estado = "Fuera de circulacion";
-
-                break;
-        }
-        Vehiculo vehiculito = new Vehiculo(placa, marca, modelo, anio, color,
-                cilindraje, combustible, cantPasajeros, precio, estado);
-
-        pilaRegistroVehiculo.push(vehiculito);
-
-        jTextPaneDisplayRegistro.setText(pilaRegistroVehiculo.listar2());
-        jTextPaneDisplayRegistro2.setText(pilaRegistroVehiculo.listar2());
-        limpiarConsola();
     }//GEN-LAST:event_jButtonRegistrarActionPerformed
 
     private void jComboBoxSelectorDeCombustibleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxSelectorDeCombustibleActionPerformed
@@ -2233,88 +2406,124 @@ public class GUIMain extends javax.swing.JFrame {
     }//GEN-LAST:event_jComboBoxSelectorDeCombustibleActionPerformed
 
     private void jButtonCrearSolicitudActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCrearSolicitudActionPerformed
+        try {
+            if ("".equals(jTextFieldCedula.getText()) || 
+                    "".equals(jTextFieldDiasAlquiler.getText())
+                    || "".equals(jTextFieldAnioAlquiler.getText()) ||
+                    "".equals(jTextFieldMesAlquiler.getText())
+                    || "".equals(jTextFieldDiaAlquiler.getText())) {
+                JOptionPane.showMessageDialog(null, 
+                        "Hay campos vacios, complete todos los campos", 
+                        "Alerta", HEIGHT);
+            } else {
 
-        if ("".equals(jTextFieldCedula.getText()) || "".equals(jTextFieldDiasAlquiler.getText())
-                || "".equals(jTextFieldAnioAlquiler.getText()) || "".equals(jTextFieldMesAlquiler.getText())
-                || "".equals(jTextFieldDiaAlquiler.getText())) {
-            JOptionPane.showMessageDialog(null, "Complete todos los campos ");
-        } else {
+                int diasAlquiler = Integer.parseInt(jTextFieldDiasAlquiler.getText());
+                int cedula = Integer.parseInt(jTextFieldCedula.getText());
 
-            int diasAlquiler = Integer.parseInt(jTextFieldDiasAlquiler.getText());
-            int cedula = Integer.parseInt(jTextFieldCedula.getText());
-
-            if (colaRegistroCliente.search(cedula)) {
-                //aca traemos el cliente a la GUI para que se trabaje desde ahi
-                Cliente clientito = colaRegistroCliente.traerCliente(cedula);
-                if (clientito.getCategoria().equals("") && diasAlquiler >= 30) {
-                    clientito.setCategoria("Bronce");
-                    JOptionPane.showMessageDialog(null, "Felicidades subiste a " + clientito.getCategoria());
-                } else {
-                    if (clientito.getCategoria().equals("Bronce") && diasAlquiler >= 30) {
-                        clientito.setCategoria("Plata");
-                        JOptionPane.showMessageDialog(null, "Felicidades subiste a " + clientito.getCategoria());
+                if (colaRegistroCliente.search(cedula)) {
+                    //aca traemos el cliente a la GUI para que se trabaje desde ahi
+                    Cliente clientito = colaRegistroCliente.traerCliente(cedula);
+                    if (clientito.getCategoria().equals("") && diasAlquiler >= 30) {
+                        clientito.setCategoria("Bronce");
+                        JOptionPane.showMessageDialog(null, 
+                                "Felicidades " + clientito.getNombreCompleto() +
+                                        " subiste a " + clientito.getCategoria());
                     } else {
-                        if (clientito.getCategoria().equals("Plata") && diasAlquiler >= 30) {
-                            clientito.setCategoria("Oro");
-                            JOptionPane.showMessageDialog(null, "Felicidades subiste a " + clientito.getCategoria());
+                        if (clientito.getCategoria().equals("Bronce") &&
+                                diasAlquiler >= 30) {
+                            clientito.setCategoria("Plata");
+                            JOptionPane.showMessageDialog(null, 
+                                 "Felicidades " + clientito.getNombreCompleto() 
+                                  + " subiste a " + clientito.getCategoria());
                         } else {
-                            if (clientito.getCategoria().equals("Oro") && diasAlquiler >= 30) {
-                                clientito.setCategoria("Zafiro");
-                                JOptionPane.showMessageDialog(null, "Felicidades subiste a " + clientito.getCategoria());
+                            if (clientito.getCategoria().equals("Plata") 
+                                    && diasAlquiler >= 30) {
+                                clientito.setCategoria("Oro");
+                                JOptionPane.showMessageDialog(null, 
+                                "Felicidades " + clientito.getNombreCompleto() + 
+                                       " subiste a " + clientito.getCategoria());
+                            } else {
+                            if (clientito.getCategoria().equals("Oro") && 
+                                        diasAlquiler >= 30) {
+                                    clientito.setCategoria("Zafiro");
+                                    JOptionPane.showMessageDialog(null,
+                                  "Felicidades " + clientito.getNombreCompleto() + 
+                                     " subiste a " + clientito.getCategoria());
+                                }
                             }
                         }
                     }
-                }
-                int index = jComboBoxCantPasajeros.getSelectedIndex();
-                int cantPasajeros = 0;
-                switch (index) {
-                    case 0:
-                        cantPasajeros = 4;
-                        break;
-                    case 1:
-                        cantPasajeros = 5;
-                        break;
-                    case 2:
-                        cantPasajeros = 7;
-                        break;
-                    case 3:
-                        cantPasajeros = 12;
-                        break;
+                    int index = jComboBoxCantPasajeros.getSelectedIndex();
+                    int cantPasajeros = 0;
+                    switch (index) {
+                        case 0:
+                            cantPasajeros = 4;
+                            break;
+                        case 1:
+                            cantPasajeros = 5;
+                            break;
+                        case 2:
+                            cantPasajeros = 7;
+                            break;
+                        case 3:
+                            cantPasajeros = 12;
+                            break;
+                    }
+
+                    String marca = "-";
+                    int anio = 0;
+                    String modelo = "-";
+                    String extra = "-";
+                    if (!"".equals(jTextFieldMarca.getText())) {
+                        marca = jTextFieldMarca.getText();
+                    }
+                    if (!"".equals(jTextFieldAnio.getText())) {
+                        anio = Integer.parseInt(jTextFieldAnio.getText());
+                    }
+                    if (!"".equals(jTextFieldModelo.getText())) {
+                        modelo = jTextFieldModelo.getText();
+                    }
+                    if (!"".equals(jTextAreaExtras.getText())) {
+                        extra = jTextAreaExtras.getText();
+                    }
+
+                    int anioAlquiler = Integer.parseInt
+                                            (jTextFieldAnioAlquiler.getText());
+                    int monthAlquiler = Integer.parseInt
+                                            (jTextFieldMesAlquiler.getText());
+                    int diaAlquiler = Integer.parseInt
+                                            (jTextFieldDiaAlquiler.getText());
+
+                    LocalDate fechaInicialAlquiler = LocalDate.of(anioAlquiler, 
+                            monthAlquiler, diaAlquiler);
+                    LocalDate fechaFinalAlquiler = fechaInicialAlquiler.
+                            plusDays(diasAlquiler);
+
+                    soliAlquiler = new SolicitudDeAlquiler(
+                            "Registrada", 
+                            diasAlquiler, clientito,
+                            cantPasajeros, marca, anio, modelo, extra, 
+                            fechaInicialAlquiler, fechaFinalAlquiler, 
+                            0);
+                    jTextAreaSoli.setText(soliAlquiler.toString());
+                    listaSoli.agregarSolicitud(soliAlquiler);
+
+                    jTextAreaSolicitudes.setText(listaSoli.toString());
+                } else {
+                    JOptionPane.showMessageDialog(null, 
+                            "El cliente no existe");
                 }
 
-                String marca = "-";
-                int anio = 0;
-                String modelo = "-";
-                String extra = "-";
-                if (!"".equals(jTextFieldMarca.getText())) {
-                    marca = jTextFieldMarca.getText();
-                }
-                if (!"".equals(jTextFieldAnio.getText())) {
-                    anio = Integer.parseInt(jTextFieldAnio.getText());
-                }
-                if (!"".equals(jTextFieldModelo.getText())) {
-                    modelo = jTextFieldModelo.getText();
-                }
-                if (!"".equals(jTextAreaExtras.getText())) {
-                    extra = jTextAreaExtras.getText();
-                }
-
-                int anioAlquiler = Integer.parseInt(jTextFieldAnioAlquiler.getText());
-                int monthAlquiler = Integer.parseInt(jTextFieldMesAlquiler.getText());
-                int diaAlquiler = Integer.parseInt(jTextFieldDiaAlquiler.getText());
-
-                LocalDate fechaInicialAlquiler = LocalDate.of(anioAlquiler, monthAlquiler, diaAlquiler);
-                LocalDate fechaFinalAlquiler = fechaInicialAlquiler.plusDays(diasAlquiler);
-
-                soliAlquiler = new SolicitudDeAlquiler("Registrada", diasAlquiler, clientito,
-                        cantPasajeros, marca, anio, modelo, extra, fechaInicialAlquiler, fechaFinalAlquiler, 0);
-                listaSoli.agregarSolicitud(soliAlquiler);
-
-                jTextAreaSolicitudes.setText(listaSoli.toString());
-            } else {
-                JOptionPane.showMessageDialog(null, "El cliente no existe");
             }
-
+        } catch (NumberFormatException error) {
+            JOptionPane.showMessageDialog(null, 
+                    "Hay valores incorrectos, "
+                            + "verifique los datos de la solicitud", 
+                    "Alerta", HEIGHT);
+        } catch (DateTimeException error2) {
+            JOptionPane.showMessageDialog(null, ""
+                    + "Verifique la fecha de alquiler de la solicitud", 
+                    "Alerta", HEIGHT);
         }
 
 
@@ -2327,13 +2536,16 @@ public class GUIMain extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         if (!listaSoli.Vacia()) {
             if (listaSoli.existSoliRegistrada()) {
-                JOptionPane.showMessageDialog(null, "Si hay solicitudes registradas");
+                JOptionPane.showMessageDialog(null, 
+                        "Si hay solicitudes registradas");
                 int idSoli = 0;
                 if (listaSoli.existZafiro() != 0) {
                     idSoli = listaSoli.existZafiro();
                     SolicitudDeAlquiler soli = listaSoli.traerSoli(idSoli);
-                    if (soli.getUsuarioSolicitud().getCategoria().equals("Zafiro")) {
-                        JOptionPane.showMessageDialog(null, "La solicitud es zafiro");
+                    if (soli.getUsuarioSolicitud().getCategoria().
+                            equals("Zafiro")) {
+                        JOptionPane.showMessageDialog(null, 
+                                "La solicitud es zafiro");
                         creacionDeListaBusqueda(soli);
                         if (!listaFiltro.Vacia()) {
                             //busqueda especial para zafiros
@@ -2341,12 +2553,24 @@ public class GUIMain extends javax.swing.JFrame {
                                 int anio = 2020;
                                 if (listaFiltro.buscarParaZafiros(anio)) {
                                     listaFiltro.eliminaParaZafiros(anio);
-                                    Vehiculo vehiculo = listaFiltro.asignarVehiculoASoli();
-                                    vehiculo.setEstadoParaSerAlquilado("Alquilado");
-                                    vehiculo.setCantidadDeVecesAlquilado(vehiculo.getCantidadDeVecesAlquilado() + 1);
+                                    
+                                    Vehiculo vehiculo = listaFiltro.
+                                            asignarVehiculoASoli();
+                                    
+                                    vehiculo.setEstadoParaSerAlquilado
+                                                ("Alquilado");
+                                    
+                                    vehiculo.setCantidadDeVecesAlquilado
+                                    (vehiculo.getCantidadDeVecesAlquilado() + 1);
+                                    
                                     soli.setVehiculoSoli(vehiculo);
+                                    
                                     soli.setEstadoDeSolicitud("Procesada");
-                                    soli.getUsuarioSolicitud().setCantidadDeAlquileresProcesados(soli.getUsuarioSolicitud().getCantidadDeAlquileresProcesados() + 1);
+                                    
+                                    soli.getUsuarioSolicitud().setCantidadDeAlquileresProcesados
+                                   (soli.getUsuarioSolicitud().
+                                      getCantidadDeAlquileresProcesados() + 1);
+                                    
                                     soli.getUsuarioSolicitud().getListaAlquilerdeCliente().agregarAlquiler(soli);
                                     soli.getUsuarioSolicitud().setAlquilando(true);
                                     double monto = soliAlquiler.calcularMonto(vehiculo.getPrecioAlquilerXDiaDeVehiculo(), soli.getCantidadDeDiasSolicitud());
@@ -2354,7 +2578,8 @@ public class GUIMain extends javax.swing.JFrame {
                                     listaSoli.setTotalSolicitudesProcesadasZafiro(listaSoli.getTotalSolicitudesProcesadasZafiro() + monto);
                                     soli.setMontoAlquiler(monto);
 
-                                    jTextAreaSolicitudesRegistradas.setText(soli.toString2());
+                                    jTextAreaSolicitudesRegistradas.setText(soli.toString());
+                                    jTextAreaSolicitudes.setText(listaSoli.toString());
                                 } else {
                                     jTextAreaSolicitudesRegistradas.setText("No hay  vehiculos de años recientes para clientes Zafiros");
                                     soli.setEstadoDeSolicitud("Rechazada");
@@ -2374,7 +2599,8 @@ public class GUIMain extends javax.swing.JFrame {
                                 double monto = soliAlquiler.calcularMonto(vehiculo.getPrecioAlquilerXDiaDeVehiculo(), soli.getCantidadDeDiasSolicitud());
 
                                 soli.setMontoAlquiler(monto);
-                                jTextAreaSolicitudesRegistradas.setText(soli.toString2());
+                                jTextAreaSolicitudesRegistradas.setText(soli.toString());
+                                jTextAreaSolicitudes.setText(listaSoli.toString());
                             }
                         }
 
@@ -2400,7 +2626,8 @@ public class GUIMain extends javax.swing.JFrame {
                             subirCategoriaCliente(soli.getUsuarioSolicitud());
                         }
                         soli.setMontoAlquiler(monto);
-                        jTextAreaSolicitudesRegistradas.setText(soli.toString2());
+                        jTextAreaSolicitudesRegistradas.setText(soli.toString());
+                        jTextAreaSolicitudes.setText(listaSoli.toString());
                     }
 
                 } else if (listaSoli.existPlata() != 0) {
@@ -2424,7 +2651,8 @@ public class GUIMain extends javax.swing.JFrame {
                             subirCategoriaCliente(soli.getUsuarioSolicitud());
                         }
                         soli.setMontoAlquiler(monto);
-                        jTextAreaSolicitudesRegistradas.setText(soli.toString2());
+                        jTextAreaSolicitudesRegistradas.setText(soli.toString());
+                        jTextAreaSolicitudes.setText(listaSoli.toString());
                     }
                 } else if (listaSoli.existBronce() != 0) {
                     idSoli = listaSoli.existBronce();
@@ -2447,7 +2675,8 @@ public class GUIMain extends javax.swing.JFrame {
                             subirCategoriaCliente(soli.getUsuarioSolicitud());
                         }
                         soli.setMontoAlquiler(monto);
-                        jTextAreaSolicitudesRegistradas.setText(soli.toString2());
+                        jTextAreaSolicitudesRegistradas.setText(soli.toString());
+                        jTextAreaSolicitudes.setText(listaSoli.toString());
                     }
 
                 } else {
@@ -2471,7 +2700,8 @@ public class GUIMain extends javax.swing.JFrame {
                             subirCategoriaCliente(soli.getUsuarioSolicitud());
                         }
                         soli.setMontoAlquiler(monto);
-                        jTextAreaSolicitudesRegistradas.setText(soli.toString2());
+                        jTextAreaSolicitudesRegistradas.setText(soli.toString());
+                        jTextAreaSolicitudes.setText(listaSoli.toString());
                     }
 
                 }
@@ -2491,6 +2721,7 @@ public class GUIMain extends javax.swing.JFrame {
         String placa = "-";
         int cedula = 0;
         String estado = "";
+
         int index = jComboBoxEstadoAlquiler.getSelectedIndex();
         switch (index) {
             case 0:
@@ -2498,26 +2729,33 @@ public class GUIMain extends javax.swing.JFrame {
                 break;
             case 1:
                 estado = "Registrada";
+
                 break;
             case 2:
                 estado = "Procesada";
+
                 break;
             case 3:
                 estado = "Finalizada";
+
                 break;
             case 4:
                 estado = "Rechazada";
+
                 break;
 
         }
 
         if (!listaConsulta.Vacia()) {
             if (!"".equals(jTextFieldNumPlaca.getText())) {
+
                 placa = jTextFieldNumPlaca.getText();
                 if (listaConsulta.buscarXPlaca(placa)) {
                     listaConsulta.eliminaXPlaca(placa);
+
                 } else {
-                    JOptionPane.showMessageDialog(null, "No existe una solicitud con un vehiculo placa: " + placa);
+                    JOptionPane.showMessageDialog(null, 
+                     "No existe una solicitud con un vehiculo placa: " + placa);
                     listaConsulta.limpiarLista();
                 }
 
@@ -2529,7 +2767,8 @@ public class GUIMain extends javax.swing.JFrame {
                 if (listaConsulta.buscarXCedula(cedula)) {
                     listaConsulta.eliminaXCedula(cedula);
                 } else {
-                    JOptionPane.showMessageDialog(null, "No existe una solicitud con un cliente cedula: " + cedula);
+                    JOptionPane.showMessageDialog(null, 
+                    "No existe una solicitud con un cliente cedula: " + cedula);
                     listaConsulta.limpiarLista();
                 }
             }
@@ -2539,12 +2778,16 @@ public class GUIMain extends javax.swing.JFrame {
 
                 if (listaConsulta.buscarXEstado(estado)) {
                     listaConsulta.eliminaXEstado(estado);
+
                 } else {
-                    JOptionPane.showMessageDialog(null, "No existe una solicitud con un estado: " + estado);
+                    JOptionPane.showMessageDialog(null, 
+                           "No existe una solicitud con un estado: " + estado);
                     listaConsulta.limpiarLista();
                 }
+
             }
         }
+
         jTextAreaFiltroConsulta.setText(listaConsulta.toString());
 
 
@@ -2555,22 +2798,40 @@ public class GUIMain extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButtonDevolucionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDevolucionActionPerformed
-        String placa = jTextFieldPlacaDevo.getText();
-        if (!listaSoli.Vacia()) {
-            if (listaSoli.existVehiculoSoli(placa)) {
-                SolicitudDeAlquiler soli = listaSoli.traerSoliVehiculo(placa);
-                soli.getUsuarioSolicitud().setAlquilando(false);
-                soli.getVehiculoSoli().setEstadoParaSerAlquilado("Disponible");
-                soli.setEstadoDeSolicitud("Finalizada");
-                jTextAreaDevolucion.setText(soli.toString2());
-                Devolucion devolucion = new Devolucion(soli, jTextFieldCondicionesDevo.getText());
-                listaDevo.agregarAlquiler(devolucion);
-                jTextAreaDevo.setText(listaDevo.toString2());
-            } else {
-                JOptionPane.showMessageDialog(null, "No existe una solicitud con un Vehiculo placa " + placa);
-            }
+        if (jTextFieldPlacaDevo.getText().equals("")) {
+            JOptionPane.showMessageDialog(null, 
+                    "Digite una placa", "Alerta", HEIGHT);
         } else {
-            JOptionPane.showMessageDialog(null, "No hay solicitudes");
+
+            String placa = jTextFieldPlacaDevo.getText();
+            if (!listaSoli.Vacia()) {
+                if (listaSoli.existVehiculoSoli(placa)) {
+                    if (jTextFieldCondicionesDevo.getText().equals("")) {
+                        JOptionPane.showMessageDialog(null, 
+               "Digite el estado del vehiculo", "Alerta", HEIGHT);
+                    } else {
+                        SolicitudDeAlquiler soli = listaSoli.traerSoliVehiculo(placa);
+                        soli.getUsuarioSolicitud().setAlquilando(false);
+                        soli.getVehiculoSoli().setEstadoParaSerAlquilado
+                            ("Disponible");
+                        soli.setEstadoDeSolicitud("Finalizada");
+                        jTextAreaDevolucion.setText(soli.toString());
+
+                        Devolucion devolucion = new Devolucion(soli, 
+                           jTextFieldCondicionesDevo.getText());
+                        listaDevo.agregarDevolucion(devolucion);
+                        jTextAreaDevo.setText(listaDevo.toString2());
+                        jTextAreaSolicitudes.setText(listaSoli.toString());
+                    }
+
+                } else {
+                    JOptionPane.showMessageDialog(null,
+                      "No existe una solicitud con un Vehiculo placa " + placa);
+                }
+            } else {
+                JOptionPane.showMessageDialog(null, 
+                        "No hay solicitudes");
+            }
         }
     }//GEN-LAST:event_jButtonDevolucionActionPerformed
 
@@ -2603,7 +2864,7 @@ public class GUIMain extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         String s = "";
-        
+
         double promedioZafiro = 0;
         double promedioOro = 0;
         double promedioPlata = 0;
@@ -2611,21 +2872,26 @@ public class GUIMain extends javax.swing.JFrame {
         double promedioSinCategoria = 0;
 
         if (listaSoli.getCantidadSolicitudesProcesadasZafiro() != 0) {
-            promedioZafiro = listaSoli.getTotalSolicitudesProcesadasZafiro() / listaSoli.getCantidadSolicitudesProcesadasZafiro();
+            promedioZafiro = listaSoli.getTotalSolicitudesProcesadasZafiro() /
+                    listaSoli.getCantidadSolicitudesProcesadasZafiro();
         }
         if (listaSoli.getCantidadSolicitudesProcesadasOro() != 0) {
-            promedioOro = listaSoli.getTotalSolicitudesProcesadasOro() / listaSoli.getCantidadSolicitudesProcesadasOro();
+            promedioOro = listaSoli.getTotalSolicitudesProcesadasOro() / 
+                    listaSoli.getCantidadSolicitudesProcesadasOro();
         }
         if (listaSoli.getCantidadSolicitudesProcesadasPlata() != 0) {
-            promedioPlata = listaSoli.getTotaldSolicitudesProcesadasPlata() / listaSoli.getCantidadSolicitudesProcesadasPlata();
+            promedioPlata = listaSoli.getTotaldSolicitudesProcesadasPlata() / 
+                    listaSoli.getCantidadSolicitudesProcesadasPlata();
 
         }
         if (listaSoli.getCantidadSolicitudesProcesadasBronce() != 0) {
-            promedioBronce = listaSoli.getTotalSolicitudesProcesadasBronce() / listaSoli.getCantidadSolicitudesProcesadasBronce();
+            promedioBronce = listaSoli.getTotalSolicitudesProcesadasBronce() / 
+                    listaSoli.getCantidadSolicitudesProcesadasBronce();
 
         }
         if (listaSoli.getCantidadSolicitudesProcesadasSinCategoria() != 0) {
-            promedioSinCategoria = listaSoli.getTotalSolicitudesProcesadasSinCategoria() / listaSoli.getCantidadSolicitudesProcesadasSinCategoria();
+            promedioSinCategoria = listaSoli.getTotalSolicitudesProcesadasSinCategoria() /
+                    listaSoli.getCantidadSolicitudesProcesadasSinCategoria();
 
         }
 
@@ -2846,12 +3112,12 @@ public class GUIMain extends javax.swing.JFrame {
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTabbedPane jTabbedPane2;
     private javax.swing.JTabbedPane jTabbedPane4;
-    private javax.swing.JTextArea jTextAreaCarrosDisponibles;
     private javax.swing.JTextArea jTextAreaDevo;
     private javax.swing.JTextArea jTextAreaDevolucion;
     private javax.swing.JTextArea jTextAreaExtras;
     private javax.swing.JTextArea jTextAreaFiltroConsulta;
     private javax.swing.JTextArea jTextAreaPromedio;
+    private javax.swing.JTextArea jTextAreaSoli;
     private javax.swing.JTextArea jTextAreaSolicitudes;
     private javax.swing.JTextArea jTextAreaSolicitudesRegistradas;
     private javax.swing.JTextArea jTextAreaTopClientes;

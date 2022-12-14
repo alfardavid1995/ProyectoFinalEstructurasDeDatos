@@ -12,8 +12,6 @@ public class NodoListaDobleEnlazadaTopVehiculos {
         this.dato = dato;
     }
 
-    
-
     public Vehiculo getDato() {
         return dato;
     }
@@ -37,8 +35,6 @@ public class NodoListaDobleEnlazadaTopVehiculos {
     public void setBack(NodoListaDobleEnlazadaTopVehiculos back) {
         this.back = back;
     }
-
-   
 
     @Override
     public String toString() {

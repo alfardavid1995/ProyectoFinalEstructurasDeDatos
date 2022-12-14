@@ -1,9 +1,8 @@
-
 package EstructurasDeDatos.Vehiculo;
 
-
 public class NodePila_Extras {
-     private String extra;
+
+    private String extra;
     private NodePila_Extras siguiente;
 
     public NodePila_Extras() {
@@ -27,7 +26,4 @@ public class NodePila_Extras {
         this.siguiente = siguiente;
     }
 
-   
-    
-    
 }

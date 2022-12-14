@@ -2,7 +2,6 @@ package EstructurasDeDatos.Cliente;
 
 import ObjetosdelProyecto.Objetos.Cliente;
 
-
 public class ListaDobleEnlazadaTopClientes {
 
     private NodoListaDobleEnlazadaTopClientes cabeza;
@@ -37,10 +36,13 @@ public class ListaDobleEnlazadaTopClientes {
             ultimo = cabeza;
             ultimo.setNext(cabeza);
             ultimo.setBack(cabeza);
-        } else if (cliente.getCantidadDeAlquileresProcesados() > cabeza.getDato().getCantidadDeAlquileresProcesados()) {//es caso de que el numero sea a la izquierda de la cabeza
+        } else if (cliente.getCantidadDeAlquileresProcesados() > 
+                cabeza.getDato().getCantidadDeAlquileresProcesados()) 
+                {//es caso de que el numero sea a la izquierda de la cabeza
 
             //creamos el nodo que se llame aux
-            NodoListaDobleEnlazadaTopClientes aux = new NodoListaDobleEnlazadaTopClientes(cliente);
+            NodoListaDobleEnlazadaTopClientes aux = new 
+            NodoListaDobleEnlazadaTopClientes(cliente);
             //le ponemos que el next de aux sea la cabaza
             aux.setNext(cabeza);
             //le especificamos que el back de aux que sea el ultimo
@@ -51,11 +53,13 @@ public class ListaDobleEnlazadaTopClientes {
             ultimo.setNext(aux);
             //hacemos que aux sea nueva cabeza
             cabeza = aux;
-        }  else if (cliente.getCantidadDeAlquileresProcesados() <= ultimo.getDato().getCantidadDeAlquileresProcesados()) {
+        } else if (cliente.getCantidadDeAlquileresProcesados() <= 
+                ultimo.getDato().getCantidadDeAlquileresProcesados()) {
 
             //en caso para 3 o mas, para insertar de ultimo
             //creamos el nodo aux y le insertamos el nuevo dato
-            NodoListaDobleEnlazadaTopClientes aux = new NodoListaDobleEnlazadaTopClientes(cliente);
+            NodoListaDobleEnlazadaTopClientes aux = new 
+            NodoListaDobleEnlazadaTopClientes(cliente);
             //ultimo setnext aux
             ultimo.setNext(aux);
             //aux setback ultimo
@@ -70,10 +74,12 @@ public class ListaDobleEnlazadaTopClientes {
         } else {//en caso de en medio
 
 //            en caso de insertar en medio
-            NodoListaDobleEnlazadaTopClientes nuevoNodo = new NodoListaDobleEnlazadaTopClientes(cliente);
+            NodoListaDobleEnlazadaTopClientes nuevoNodo = new 
+            NodoListaDobleEnlazadaTopClientes(cliente);
 //            nodo aux es cabeza
             NodoListaDobleEnlazadaTopClientes aux = cabeza;
-            while (aux.getDato().getCantidadDeAlquileresProcesados() >= nuevoNodo.getDato().getCantidadDeAlquileresProcesados()) {
+            while (aux.getDato().getCantidadDeAlquileresProcesados() >= 
+                    nuevoNodo.getDato().getCantidadDeAlquileresProcesados()) {
                 aux = aux.getNext();
             }
             //usamos el back de aux como referencia
@@ -101,15 +107,15 @@ public class ListaDobleEnlazadaTopClientes {
 //            s += "Next: " + aux.getNext() + ",\n";
             s += "--------------------------\n";
             aux = aux.getNext();
-            int contador = 0 ;
+            int contador = 0;
             while (aux != cabeza && contador != 4) {
-                
+
 //                s += "back: " + aux.getBack() + ",\n";
                 s += aux.toString() + ",\n ";
 //                s += "Next: " + aux.getNext() + ",\n";
                 s += "--------------------------\n";
                 aux = aux.getNext();
-                contador +=1;
+                contador += 1;
             }
         } else {
             s += "No hay  clientes ";

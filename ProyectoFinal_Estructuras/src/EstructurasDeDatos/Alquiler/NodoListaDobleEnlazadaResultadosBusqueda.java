@@ -1,21 +1,20 @@
-package EstructurasDeDatos;
+package EstructurasDeDatos.Alquiler;
 
 import ObjetosdelProyecto.Objetos.Vehiculo;
 
-
-
 public class NodoListaDobleEnlazadaResultadosBusqueda {
+
     private Vehiculo dato;
     private NodoListaDobleEnlazadaResultadosBusqueda next;
     private NodoListaDobleEnlazadaResultadosBusqueda back;
-    
+
     @Override
-    public String toString(){
-        return ""+dato.listar3();
+    public String toString() {
+        return "" + dato.listar3();
     }
-    
-    public NodoListaDobleEnlazadaResultadosBusqueda(Vehiculo dato){
-        this.dato=dato;
+
+    public NodoListaDobleEnlazadaResultadosBusqueda(Vehiculo dato) {
+        this.dato = dato;
     }
 
     public Vehiculo getDato() {

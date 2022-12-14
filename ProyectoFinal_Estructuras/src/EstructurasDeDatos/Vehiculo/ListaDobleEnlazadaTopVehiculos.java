@@ -1,6 +1,5 @@
 package EstructurasDeDatos.Vehiculo;
 
-import EstructurasDeDatos.Vehiculo.NodoListaDobleEnlazadaTopVehiculos;
 import ObjetosdelProyecto.Objetos.Vehiculo;
 
 public class ListaDobleEnlazadaTopVehiculos {
@@ -36,10 +35,13 @@ public class ListaDobleEnlazadaTopVehiculos {
             ultimo = cabeza;
             ultimo.setNext(cabeza);
             ultimo.setBack(cabeza);
-        } else if (vehiculo.getCantidadDeVecesAlquilado() > cabeza.getDato().getCantidadDeVecesAlquilado()) {//es caso de que el numero sea a la izquierda de la cabeza
+        } else if (vehiculo.getCantidadDeVecesAlquilado() > 
+                cabeza.getDato().getCantidadDeVecesAlquilado()) {
+                //es caso de que el numero sea a la izquierda de la cabeza
 
             //creamos el nodo que se llame aux
-            NodoListaDobleEnlazadaTopVehiculos aux = new NodoListaDobleEnlazadaTopVehiculos(vehiculo);
+            NodoListaDobleEnlazadaTopVehiculos aux = new 
+        NodoListaDobleEnlazadaTopVehiculos(vehiculo);
             //le ponemos que el next de aux sea la cabaza
             aux.setNext(cabeza);
             //le especificamos que el back de aux que sea el ultimo
@@ -50,11 +52,13 @@ public class ListaDobleEnlazadaTopVehiculos {
             ultimo.setNext(aux);
             //hacemos que aux sea nueva cabeza
             cabeza = aux;
-        }  else if (vehiculo.getCantidadDeVecesAlquilado() <= ultimo.getDato().getCantidadDeVecesAlquilado()) {
+        } else if (vehiculo.getCantidadDeVecesAlquilado() <= ultimo.getDato().
+                getCantidadDeVecesAlquilado()) {
 
             //en caso para 3 o mas, para insertar de ultimo
             //creamos el nodo aux y le insertamos el nuevo dato
-            NodoListaDobleEnlazadaTopVehiculos aux = new NodoListaDobleEnlazadaTopVehiculos(vehiculo);
+            NodoListaDobleEnlazadaTopVehiculos aux = new 
+            NodoListaDobleEnlazadaTopVehiculos(vehiculo);
             //ultimo setnext aux
             ultimo.setNext(aux);
             //aux setback ultimo
@@ -69,10 +73,12 @@ public class ListaDobleEnlazadaTopVehiculos {
         } else {//en caso de en medio
 
 //            en caso de insertar en medio
-            NodoListaDobleEnlazadaTopVehiculos nuevoNodo = new NodoListaDobleEnlazadaTopVehiculos(vehiculo);
+            NodoListaDobleEnlazadaTopVehiculos nuevoNodo = new 
+            NodoListaDobleEnlazadaTopVehiculos(vehiculo);
 //            nodo aux es cabeza
             NodoListaDobleEnlazadaTopVehiculos aux = cabeza;
-            while (aux.getDato().getCantidadDeVecesAlquilado() >= nuevoNodo.getDato().getCantidadDeVecesAlquilado()) {
+            while (aux.getDato().getCantidadDeVecesAlquilado() >= 
+                    nuevoNodo.getDato().getCantidadDeVecesAlquilado()) {
                 aux = aux.getNext();
             }
             //usamos el back de aux como referencia
@@ -89,8 +95,7 @@ public class ListaDobleEnlazadaTopVehiculos {
         this.largo++;
     }
 
-   
-   @Override
+    @Override
     public String toString() {
         NodoListaDobleEnlazadaTopVehiculos aux = cabeza;
 
@@ -101,15 +106,15 @@ public class ListaDobleEnlazadaTopVehiculos {
 //            s += "Next: " + aux.getNext() + ",\n";
             s += "--------------------------\n";
             aux = aux.getNext();
-            int contador = 0 ;
+            int contador = 0;
             while (aux != cabeza && contador != 4) {
-                
+
 //                s += "back: " + aux.getBack() + ",\n";
                 s += aux.toString2() + ",\n ";
 //                s += "Next: " + aux.getNext() + ",\n";
                 s += "--------------------------\n";
                 aux = aux.getNext();
-                contador +=1;
+                contador += 1;
             }
         } else {
             s += "No hay  vehiculos ";

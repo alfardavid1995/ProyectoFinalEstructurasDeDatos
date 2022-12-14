@@ -1,15 +1,15 @@
-package EstructurasDeDatos;
+package EstructurasDeDatos.Alquiler;
 
 import ObjetosdelProyecto.Objetos.SolicitudDeAlquiler;
 
 public class NodoListaDobleEnlazadaAlquileresConsultar {
+
     private SolicitudDeAlquiler dato;
     private NodoListaDobleEnlazadaAlquileresConsultar next;
     private NodoListaDobleEnlazadaAlquileresConsultar back;
-    
-    
-    public NodoListaDobleEnlazadaAlquileresConsultar(SolicitudDeAlquiler dato){
-        this.dato=dato;
+
+    public NodoListaDobleEnlazadaAlquileresConsultar(SolicitudDeAlquiler dato) {
+        this.dato = dato;
     }
 
     public SolicitudDeAlquiler getDato() {
@@ -38,10 +38,10 @@ public class NodoListaDobleEnlazadaAlquileresConsultar {
 
     @Override
     public String toString() {
-        return  dato.toString() ;
+        return dato.toString();
     }
-    
+
     public String toString2() {
-        return  dato.toString2() ;
+        return dato.toString();
     }
 }

@@ -1,6 +1,5 @@
 package ObjetosdelProyecto.Objetos;
 import EstructurasDeDatos.Vehiculo.PilaExtras_Vehiculo;
-import EstructurasDeDatos.*;
 
 public class Vehiculo {
     private String numPlacadeVehiculo;
@@ -12,7 +11,8 @@ public class Vehiculo {
     private String tipoCombustibleDeVehiculo;
     private int cantPasajerosdeVehiculo;
     private double precioAlquilerXDiaDeVehiculo;
-    private String estadoParaSerAlquilado; // Disponible,Alquilado,En reparación,Fuera de circulación
+    // Disponible,Alquilado,En reparación,Fuera de circulación
+    private String estadoParaSerAlquilado; 
     private int cantidadDeVecesAlquilado;
     private PilaExtras_Vehiculo extrasPila = new PilaExtras_Vehiculo();
 
@@ -20,7 +20,11 @@ public class Vehiculo {
     }
 
     
-    public Vehiculo(String numPlacadeVehiculo, String marcaDeVehiculo, String modeloVehiculo, int aniodeVehiculo, String colorDeVehiculo, int cilindradaDeVehiculo, String tipoCombustibleDeVehiculo, int cantPasajerosdeVehiculo, double precioAlquilerXDiaDeVehiculo, String estadoParaSerAlquilado ) {
+    public Vehiculo(String numPlacadeVehiculo, String marcaDeVehiculo, 
+            String modeloVehiculo, int aniodeVehiculo, String colorDeVehiculo, 
+            int cilindradaDeVehiculo, String tipoCombustibleDeVehiculo, 
+            int cantPasajerosdeVehiculo, double precioAlquilerXDiaDeVehiculo, 
+            String estadoParaSerAlquilado ) {
         this.numPlacadeVehiculo = numPlacadeVehiculo;
         this.marcaDeVehiculo = marcaDeVehiculo;
         this.modeloVehiculo = modeloVehiculo;

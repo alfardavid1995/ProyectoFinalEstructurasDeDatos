@@ -33,7 +33,7 @@ public class Devolucion {
     @Override
     public String toString() {
         return "\n-------------------------Devolucion ------------------------- " + "\n"
-                + soli.toString2() + "\n"
+                + soli.toString() + "\n"
                 + "Condiciones del Vehiculo: " + condicionesVehiculo;
     }
     

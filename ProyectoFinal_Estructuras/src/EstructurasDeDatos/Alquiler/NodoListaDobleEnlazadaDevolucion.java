@@ -1,7 +1,6 @@
-package EstructurasDeDatos;
+package EstructurasDeDatos.Alquiler;
 
 import ObjetosdelProyecto.Objetos.Devolucion;
-
 
 public class NodoListaDobleEnlazadaDevolucion {
 
@@ -12,8 +11,6 @@ public class NodoListaDobleEnlazadaDevolucion {
     public NodoListaDobleEnlazadaDevolucion(Devolucion dato) {
         this.dato = dato;
     }
-
-    
 
     public Devolucion getDato() {
         return dato;
@@ -39,12 +36,9 @@ public class NodoListaDobleEnlazadaDevolucion {
         this.back = back;
     }
 
-   
-
     @Override
     public String toString() {
         return dato.toString();
     }
 
-    
 }

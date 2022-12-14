@@ -52,7 +52,8 @@ public class Pila_RegistroVehiculo {
         // de la pila.
         while (exist != true && aux != null) {
             // Compara si el value del node es igual que al de reference.
-            if (reference.equals(aux.getVehiculoNodo().getNumPlacadeVehiculo())) {
+            if (reference.equals(aux.getVehiculoNodo().
+                                                    getNumPlacadeVehiculo())) {
                 // Cambia el value de la bandera.
                 exist = true;
             } else {
@@ -135,7 +136,8 @@ public class Pila_RegistroVehiculo {
             NodePila_RegistroVehiculo cimapPilaAux = null;
             // Recoore la pila hasta llegar al node que tenga el value
             // igual que el de reference.
-            while (!reference.equals(cima.getVehiculoNodo().getNumPlacadeVehiculo())) {
+            while (!reference.equals(cima.getVehiculoNodo().
+                                            getNumPlacadeVehiculo())) {
                 // Crea un node temporal para agregarlos a la pila auxiliar.
                 NodePila_RegistroVehiculo temp = new NodePila_RegistroVehiculo();
                 // Ingresa el value al node temporal.

@@ -1,7 +1,6 @@
-package EstructurasDeDatos;
+package EstructurasDeDatos.Alquiler;
 
 import ObjetosdelProyecto.Objetos.Vehiculo;
-import javax.swing.JOptionPane;
 
 public class ListaDobleEnlazadaResultadosBusqueda {
 

@@ -1,6 +1,5 @@
 package ObjetosdelProyecto.Objetos;
 
-
 import java.time.LocalDate;
 import java.time.LocalTime;
 
@@ -27,8 +26,9 @@ public class SolicitudDeAlquiler {
     }
 
     public SolicitudDeAlquiler(String estadoDeSolicitud, int cantidadDeDiasSolicitud,
-            Cliente usuarioSolicitud, int pasajeros, String marca, int anio, String modelo,
-            String extra, LocalDate fechaInicial, LocalDate fechaFinal, double montoAlquiler) {
+            Cliente usuarioSolicitud, int pasajeros, String marca, 
+            int anio, String modelo,String extra, LocalDate fechaInicial, 
+            LocalDate fechaFinal, double montoAlquiler) {
         this.estadoDeSolicitud = estadoDeSolicitud;
         this.idSolicitud = IDSolicitudActual;
         this.cantidadDeDiasSolicitud = cantidadDeDiasSolicitud;
@@ -175,10 +175,7 @@ public class SolicitudDeAlquiler {
     public void setFechaCreacion(LocalDate fechaCreacion) {
         this.fechaCreacion = fechaCreacion;
     }
-    
-    
-    
-    
+
     public double calcularMonto(double precioVehiculo, int dias) {
         montoAlquiler = precioVehiculo * dias;
         double iva = montoAlquiler * 0.13;
@@ -188,28 +185,27 @@ public class SolicitudDeAlquiler {
 
     @Override
     public String toString() {
-        return "\n-----------------------Solicitud------------------ " + "\n"
-                + "Id Solicitud: " + idSolicitud + "\t\t"
-                + "Estado: " + estadoDeSolicitud + "\t\t"
-                + "Fecha: " + fechaCreacion + "\n"
-                + "Hora: "+ horaCreacion + "\t\t"
-                + "Monto: "+montoAlquiler + " \n"
-                + usuarioSolicitud.listar2() + "\n";
+        if (vehiculoSoli == null) {
+            return "\n-----------------------Solicitud------------------ " + "\n"
+                    + "Id Solicitud: " + idSolicitud + "\t\t"
+                    + "Estado: " + estadoDeSolicitud + "\t"
+                    + "Fecha: " + fechaCreacion + "\n"
+                    + "Hora: " + horaCreacion + "\t\t"
+                    + "Monto: " + montoAlquiler + " \n"
+                    + usuarioSolicitud.listar2() + "\n";
+        } else {
+            return "\n-----------------------------Solicitud-------------"
+                    + "----------------" + "\n"
+                    + "Id Solicitud: " + idSolicitud + "\t\t"
+                    + "Estado: " + estadoDeSolicitud + "\t\t"
+                    + "Fecha: " + fechaCreacion + "\n"
+                    + "Cantidad de dias: " + cantidadDeDiasSolicitud + "\t"
+                    + "Hora: " + horaCreacion + "\n"
+                    + "Inicia: " + fechaInicial + "\t\t"
+                    + "Termina: " + fechaFinal + "\n"
+                    + usuarioSolicitud.listar3() + "\n"
+                    + vehiculoSoli.listar4() + "\n"
+                    + "Monto: " + montoAlquiler;
+        }
     }
-
-    public String toString2() {
-
-        return "\n-----------------------------Solicitud-----------------------------" + "\n"
-                + "Id Solicitud: " + idSolicitud + "\t\t"
-                + "Estado: " + estadoDeSolicitud + "\t\t"
-                + "Fecha: " + fechaCreacion + "\n"
-                + "Cantidad de dias: " + cantidadDeDiasSolicitud + "\t"
-                + "Hora: "+ horaCreacion + "\n"
-                + "Inicia: "+ fechaInicial + "\t\t"
-                + "Termina: "+ fechaFinal + "\n"
-                + usuarioSolicitud.listar3() + "\n"
-                + vehiculoSoli.listar4()+"\n"
-                + "Monto: "+montoAlquiler;
-    }
-
 }

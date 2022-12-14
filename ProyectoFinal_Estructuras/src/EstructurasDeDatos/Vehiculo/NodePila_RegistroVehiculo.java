@@ -1,14 +1,13 @@
-
 package EstructurasDeDatos.Vehiculo;
 
 import ObjetosdelProyecto.Objetos.Vehiculo;
 
 public class NodePila_RegistroVehiculo {
+
     private Vehiculo vehiculoNodo;
     private NodePila_RegistroVehiculo siguiente;
-    
-    //constructor para inicializar
 
+    //constructor para inicializar
     public NodePila_RegistroVehiculo() {
         this.vehiculoNodo = null;
         this.siguiente = null;
@@ -30,5 +29,4 @@ public class NodePila_RegistroVehiculo {
         this.siguiente = siguiente;
     }
 
-   
 }

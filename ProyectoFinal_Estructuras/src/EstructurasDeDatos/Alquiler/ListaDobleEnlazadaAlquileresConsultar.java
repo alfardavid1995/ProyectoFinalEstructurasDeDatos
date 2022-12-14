@@ -1,7 +1,6 @@
-package EstructurasDeDatos;
+package EstructurasDeDatos.Alquiler;
 
 import ObjetosdelProyecto.Objetos.SolicitudDeAlquiler;
-import ObjetosdelProyecto.Objetos.Vehiculo;
 
 public class ListaDobleEnlazadaAlquileresConsultar {
 
@@ -9,6 +8,7 @@ public class ListaDobleEnlazadaAlquileresConsultar {
     private NodoListaDobleEnlazadaAlquileresConsultar ultimo;
     private int largo;
 
+    //este metodo agrega una solicitud
     public void agregarSolicitud(SolicitudDeAlquiler solicitud) {
         if (cabeza == null) {
             cabeza = new NodoListaDobleEnlazadaAlquileresConsultar(solicitud);
@@ -20,7 +20,8 @@ public class ListaDobleEnlazadaAlquileresConsultar {
         } else {
             //en caso para 3 o mas, para insertar de ultimo
             //creamos el nodo aux y le insertamos el nuevo dato
-            NodoListaDobleEnlazadaAlquileresConsultar aux = new NodoListaDobleEnlazadaAlquileresConsultar(solicitud);
+            NodoListaDobleEnlazadaAlquileresConsultar aux = new 
+        NodoListaDobleEnlazadaAlquileresConsultar(solicitud);
             //ultimo setnext aux
             ultimo.setNext(aux);
             //aux setback ultimo
@@ -73,7 +74,8 @@ public class ListaDobleEnlazadaAlquileresConsultar {
                 } else {
 
                     NodoListaDobleEnlazadaAlquileresConsultar aux = cabeza;
-                    while (aux.getNext() != cabeza && aux.getNext().getDato().getIdSolicitud() != idSoli) {
+                    while (aux.getNext() != cabeza && aux.getNext().getDato().
+                            getIdSolicitud() != idSoli) {
                         aux = aux.getNext();
                     }
                     if (aux.getNext().getDato().getIdSolicitud() == idSoli) {
@@ -88,15 +90,16 @@ public class ListaDobleEnlazadaAlquileresConsultar {
         }
 
     }
-    
+
     public boolean buscarXPlaca(String placa) {
         int cont = 0;
         boolean exist = false;
         NodoListaDobleEnlazadaAlquileresConsultar aux = cabeza;
         while (!exist && cont != tamanio()) {
 
-            if (aux.getDato().getVehiculoSoli()!= null && 
-                    aux.getDato().getVehiculoSoli().getNumPlacadeVehiculo().equals(placa)) {
+            if (aux.getDato().getVehiculoSoli() != null
+                    && aux.getDato().getVehiculoSoli().getNumPlacadeVehiculo().
+                            equals(placa)) {
                 exist = true;
             }
             aux = aux.getNext();
@@ -106,14 +109,15 @@ public class ListaDobleEnlazadaAlquileresConsultar {
 
         return exist;
     }
-    
+
     public void eliminaXPlaca(String placa) {
         int tamanioAntes = tamanio();
         int cont = 0;
         NodoListaDobleEnlazadaAlquileresConsultar aux = cabeza;
         while (cont != tamanioAntes) {
 
-            if (aux.getDato().getVehiculoSoli() == null || !aux.getDato().getVehiculoSoli().getNumPlacadeVehiculo().equals(placa)) {
+            if (aux.getDato().getVehiculoSoli() == null || !aux.getDato().
+                    getVehiculoSoli().getNumPlacadeVehiculo().equals(placa)) {
                 eliminarDeLaLista(aux.getDato().getIdSolicitud());
 
             }
@@ -121,8 +125,8 @@ public class ListaDobleEnlazadaAlquileresConsultar {
             cont += 1;
         }
     }
-    
-     public boolean buscarXCedula(int cedula) {
+
+    public boolean buscarXCedula(int cedula) {
         int cont = 0;
         boolean exist = false;
         NodoListaDobleEnlazadaAlquileresConsultar aux = cabeza;
@@ -138,14 +142,14 @@ public class ListaDobleEnlazadaAlquileresConsultar {
 
         return exist;
     }
-    
+
     public void eliminaXCedula(int cedula) {
         int tamanioAntes = tamanio();
         int cont = 0;
         NodoListaDobleEnlazadaAlquileresConsultar aux = cabeza;
         while (cont != tamanioAntes) {
 
-            if (aux.getDato().getUsuarioSolicitud().getCedula()!= cedula) {
+            if (aux.getDato().getUsuarioSolicitud().getCedula() != cedula) {
                 eliminarDeLaLista(aux.getDato().getIdSolicitud());
 
             }
@@ -153,8 +157,8 @@ public class ListaDobleEnlazadaAlquileresConsultar {
             cont += 1;
         }
     }
-    
-     public boolean buscarXEstado(String estado) {
+
+    public boolean buscarXEstado(String estado) {
         int cont = 0;
         boolean exist = false;
         NodoListaDobleEnlazadaAlquileresConsultar aux = cabeza;
@@ -170,7 +174,7 @@ public class ListaDobleEnlazadaAlquileresConsultar {
 
         return exist;
     }
-    
+
     public void eliminaXEstado(String estado) {
         int tamanioAntes = tamanio();
         int cont = 0;
@@ -184,47 +188,6 @@ public class ListaDobleEnlazadaAlquileresConsultar {
             aux = aux.getNext();
             cont += 1;
         }
-    }
-    
-    
-    public SolicitudDeAlquiler traerSoli(int idSoli) {
-        NodoListaDobleEnlazadaAlquileresConsultar aux = cabeza;
-        SolicitudDeAlquiler soli = new SolicitudDeAlquiler();
-        boolean exist = false;
-        int cont = 0;
-        while (!exist && cont != tamanio()) {
-            if (aux.getDato().getIdSolicitud() == idSoli) {
-                soli = aux.getDato();
-                exist = true;
-            } else {
-                if (aux.getNext() == ultimo) {
-                    if (aux.getNext().getDato().getIdSolicitud() == idSoli) {
-                        soli = aux.getNext().getDato();
-                        exist = true;
-                    }
-                }
-                aux = aux.getNext();
-                cont += 1;
-            }
-        }
-        return soli;
-    }
-
-    public boolean buscarVehiculo(Vehiculo vehiculo) {
-        int cont = 0;
-        boolean exist = false;
-        NodoListaDobleEnlazadaAlquileresConsultar aux = cabeza;
-        while (!exist && cont != tamanio()) {
-
-            if (aux.getDato().getVehiculoSoli() == vehiculo) {
-                exist = true;
-            }
-            aux = aux.getNext();
-            cont += 1;
-
-        }
-
-        return exist;
     }
 
     @Override

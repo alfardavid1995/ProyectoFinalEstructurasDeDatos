@@ -12,8 +12,6 @@ public class NodoListaDobleEnlazadaAlquileres_Cliente {
         this.dato = dato;
     }
 
-    
-
     public SolicitudDeAlquiler getDato() {
         return dato;
     }
@@ -38,14 +36,12 @@ public class NodoListaDobleEnlazadaAlquileres_Cliente {
         this.back = back;
     }
 
-   
-
     @Override
     public String toString() {
         return dato.toString();
     }
 
     public String toString2() {
-        return dato.toString2();
+        return dato.toString();
     }
 }
