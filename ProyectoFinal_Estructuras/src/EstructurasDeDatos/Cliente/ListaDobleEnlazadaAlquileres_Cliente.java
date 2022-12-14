@@ -1,4 +1,4 @@
-package EstructurasDeDatos;
+package EstructurasDeDatos.Cliente;
 
 import ObjetosdelProyecto.Objetos.SolicitudDeAlquiler;
 

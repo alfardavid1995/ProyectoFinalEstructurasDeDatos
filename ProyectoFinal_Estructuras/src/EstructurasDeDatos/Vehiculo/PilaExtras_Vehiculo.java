@@ -1,4 +1,4 @@
-package EstructurasDeDatos;
+package EstructurasDeDatos.Vehiculo;
 
 public class PilaExtras_Vehiculo {
 

@@ -1,5 +1,5 @@
 
-package EstructurasDeDatos;
+package EstructurasDeDatos.Vehiculo;
 
 
 public class NodePila_Extras {

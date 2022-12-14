@@ -1,5 +1,6 @@
 package ObjetosdelProyecto.Objetos;
 
+import EstructurasDeDatos.Cliente.ListaDobleEnlazadaAlquileres_Cliente;
 import java.util.Calendar;
 import EstructurasDeDatos.*;
 
@@ -119,5 +120,13 @@ public class Cliente {
     public String listar3() {
         return "\n --------------- Cliente --------------- \n"
                 + "\n Nombre: " + nombreCompleto;
+    }
+    
+      public String listar4() {
+        return "\n -------------------------- Cliente ------------------------- \n"
+                + "\n Nombre: " + nombreCompleto
+                + "\n Cédula: " + cedula
+                + "\n Cantidad de Alquileres: " + cantidadDeAlquileresProcesados
+                + "\n Categoría: " + categoria;
     }
 }

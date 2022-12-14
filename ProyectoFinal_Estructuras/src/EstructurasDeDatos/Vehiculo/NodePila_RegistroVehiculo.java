@@ -1,5 +1,5 @@
 
-package EstructurasDeDatos;
+package EstructurasDeDatos.Vehiculo;
 
 import ObjetosdelProyecto.Objetos.Vehiculo;
 

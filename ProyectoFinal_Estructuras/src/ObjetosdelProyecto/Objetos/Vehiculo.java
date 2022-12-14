@@ -1,4 +1,5 @@
 package ObjetosdelProyecto.Objetos;
+import EstructurasDeDatos.Vehiculo.PilaExtras_Vehiculo;
 import EstructurasDeDatos.*;
 
 public class Vehiculo {
@@ -174,5 +175,12 @@ public class Vehiculo {
                 "\n-- Placa: "  + numPlacadeVehiculo + 
                 "\n-- Marca: " + marcaDeVehiculo ;
     }
-
+    
+    
+     public String listar5(){
+        return  "\n---------------- Vehiculo ----------------" +
+                "\n-- Placa: "  + numPlacadeVehiculo + 
+                "\n-- Marca: " + marcaDeVehiculo +
+                "\n-- Cantidad veces alquilado: " + cantidadDeVecesAlquilado;
+    }
 }

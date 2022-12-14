@@ -1,4 +1,4 @@
-package EstructurasDeDatos;
+package EstructurasDeDatos.Vehiculo;
 
 import ObjetosdelProyecto.Objetos.Vehiculo;
 
@@ -34,17 +34,13 @@ public class Pila_RegistroVehiculo {
         this.largo++;
     }
 
-    public NodePila_RegistroVehiculo pop() {
-        NodePila_RegistroVehiculo aux= null;
+    public void pop() {
         if (!Vacia()) {
-            aux = this.cima;
             // Asigna como primer node al siguiente de la pila.
             this.cima = this.cima.getSiguiente();
-            
             // Decrementa el contador del tamaño de la pila
             this.largo--;
         }
-        return aux;
     }
 
     public boolean search(String reference) {
@@ -218,9 +214,6 @@ public class Pila_RegistroVehiculo {
         }
         return vehiculo;
     }
-    
-
-    
 
     public Vehiculo retornaVehiculoFiltro(int saltos) {
         NodePila_RegistroVehiculo aux = cima;

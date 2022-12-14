@@ -1,4 +1,4 @@
-package EstructurasDeDatos;
+package EstructurasDeDatos.Cliente;
 
 import ObjetosdelProyecto.Objetos.Cliente;
 
@@ -12,8 +12,6 @@ public class NodoListaDobleEnlazadaTopClientes {
     public NodoListaDobleEnlazadaTopClientes(Cliente dato) {
         this.dato = dato;
     }
-
-    
 
     public Cliente getDato() {
         return dato;
@@ -43,7 +41,7 @@ public class NodoListaDobleEnlazadaTopClientes {
 
     @Override
     public String toString() {
-        return dato.listar();
+        return dato.listar4();
     }
 
     

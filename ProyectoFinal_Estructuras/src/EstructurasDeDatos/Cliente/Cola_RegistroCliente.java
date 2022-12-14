@@ -1,4 +1,4 @@
-package EstructurasDeDatos;
+package EstructurasDeDatos.Cliente;
 
 import ObjetosdelProyecto.Objetos.Cliente;
 import javax.swing.JOptionPane;

@@ -1,7 +1,7 @@
-package EstructurasDeDatos;
+package EstructurasDeDatos.Cliente;
 
 import ObjetosdelProyecto.Objetos.Cliente;
-import ObjetosdelProyecto.Objetos.SolicitudDeAlquiler;
+
 
 public class ListaDobleEnlazadaTopClientes {
 
@@ -112,7 +112,7 @@ public class ListaDobleEnlazadaTopClientes {
                 contador +=1;
             }
         } else {
-            s += "No hay  vehiculos con las especificaciones dadas";
+            s += "No hay  clientes ";
         }
         return s;
     }

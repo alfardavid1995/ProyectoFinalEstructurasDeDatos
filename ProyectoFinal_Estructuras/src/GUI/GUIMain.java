@@ -1,5 +1,10 @@
 package GUI;
 
+import EstructurasDeDatos.Cliente.ListaDobleEnlazadaTopClientes;
+import EstructurasDeDatos.Cliente.ListaDobleEnlazadaAlquileres_Cliente;
+import EstructurasDeDatos.Cliente.Cola_RegistroCliente;
+import EstructurasDeDatos.Vehiculo.ListaDobleEnlazadaTopVehiculos;
+import EstructurasDeDatos.Vehiculo.Pila_RegistroVehiculo;
 import EstructurasDeDatos.*;
 
 import ObjetosdelProyecto.Objetos.Cliente;
@@ -592,7 +597,7 @@ public class GUIMain extends javax.swing.JFrame {
                         .addContainerGap(137, Short.MAX_VALUE))))
         );
 
-        pestañasVehiculo.addTab("Registrar Vehiculo", pestañaRegistrarVehiculo);
+        pestañasVehiculo.addTab("Registrar Vehiculo", new javax.swing.ImageIcon(getClass().getResource("/AnexosEImagenes/addImage.png")), pestañaRegistrarVehiculo); // NOI18N
 
         pestañaModificarEliminarVehiculo.setPreferredSize(new java.awt.Dimension(900, 550));
 
@@ -752,7 +757,7 @@ public class GUIMain extends javax.swing.JFrame {
                 .addGap(36, 36, 36))
         );
 
-        pestañasVehiculo.addTab("Modificar / Eliminar Vehiculo", pestañaModificarEliminarVehiculo);
+        pestañasVehiculo.addTab("Modificar / Eliminar Vehiculo", new javax.swing.ImageIcon(getClass().getResource("/AnexosEImagenes/editImage.png")), pestañaModificarEliminarVehiculo); // NOI18N
 
         jTextAreaVehiculo.setColumns(20);
         jTextAreaVehiculo.setRows(5);
@@ -838,7 +843,7 @@ public class GUIMain extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        pestañasVehiculo.addTab("Modificaciones Extras", null, pestañaExtras, "");
+        pestañasVehiculo.addTab("Modificaciones Extras", new javax.swing.ImageIcon(getClass().getResource("/AnexosEImagenes/golive.png")), pestañaExtras, ""); // NOI18N
 
         panelVehiculo.addTab("Vehiculo", pestañasVehiculo);
         pestañasVehiculo.getAccessibleContext().setAccessibleName("Registrar Vehículo");
@@ -1389,7 +1394,7 @@ public class GUIMain extends javax.swing.JFrame {
                         .addComponent(jLabel23)
                         .addGap(12, 12, 12))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGap(0, 23, Short.MAX_VALUE)
                         .addComponent(jLabel16)
                         .addGap(37, 37, 37)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -1912,16 +1917,36 @@ public class GUIMain extends javax.swing.JFrame {
                     vehiculo.setModeloVehiculo(modifica);
                     break;
                 case 2:
-                    int modifica2 = Integer.parseInt(jTextPaneValorAModificar.getText());
-                    vehiculo.setAniodeVehiculo(modifica2);
+                    int modifica2 = 0;
+                    try {
+
+                        modifica2 = Integer.parseInt(jTextPaneValorAModificar.getText());
+                        if (modifica2 >= 2000) {
+                            vehiculo.setAniodeVehiculo(modifica2);
+                        } else {
+                            JOptionPane.showMessageDialog(null, "Digite un año superior al 2000");
+                        }
+
+                    } catch (Exception e) {
+                        JOptionPane.showMessageDialog(null, "Digite un valor numerico");
+                    }
+
                     break;
                 case 3:
                     vehiculo.setColorDeVehiculo(modifica);
                     break;
                 case 4:
+                   
+                    try {
+
                     modifica2 = Integer.parseInt(jTextPaneValorAModificar.getText());
                     vehiculo.setCilindradaDeVehiculo(modifica2);
-                    break;
+
+                } catch (Exception e) {
+                    JOptionPane.showMessageDialog(null, "Digite un valor numerico");
+                }
+
+                break;
                 case 5:
                     switch (jComboBoxtipoCombustible.getSelectedIndex()) {
                         case 0:
@@ -1944,13 +1969,29 @@ public class GUIMain extends javax.swing.JFrame {
                     vehiculo.setTipoCombustibleDeVehiculo(modifica);
                     break;
                 case 6:
+                   
+                    try {
+
                     modifica2 = Integer.parseInt(jTextPaneValorAModificar.getText());
                     vehiculo.setCantPasajerosdeVehiculo(modifica2);
-                    break;
+
+                } catch (Exception e) {
+                    JOptionPane.showMessageDialog(null, "Digite un valor numerico");
+                }
+
+                break;
                 case 7:
+                   
+                    
+                     try {
+
                     modifica2 = Integer.parseInt(jTextPaneValorAModificar.getText());
                     vehiculo.setPrecioAlquilerXDiaDeVehiculo(modifica2);
-                    break;
+
+                } catch (Exception e) {
+                    JOptionPane.showMessageDialog(null, "Digite un valor numerico");
+                }
+                break;
                 case 8:
                     switch (jComboBox2Estado.getSelectedIndex()) {
                         case 0:
@@ -1974,14 +2015,14 @@ public class GUIMain extends javax.swing.JFrame {
                     break;
 
             }
-
+            jTextPaneDisplayRegistro2.setText(pilaRegistroVehiculo.traerVehiculo(numPlaca).toString());
         } else {
             JOptionPane.showMessageDialog(null, "el vehiculo no existe");
         }
     }//GEN-LAST:event_jButtonModificarActionPerformed
 
     private void jButtonMostrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonMostrarActionPerformed
-        jTextPaneDisplayModificar.setText(colaRegistroCliente.toString());
+       jTextPaneDisplayModificar.setText(colaRegistroCliente.listar2());
         jTextFieldCedulaClienteVerificar.setText("");
         jTextPaneValorAModificar.setText("");
         jComboBoxOpcionesCliente.setSelectedIndex(0);
@@ -2084,14 +2125,14 @@ public class GUIMain extends javax.swing.JFrame {
                 break;
         }
         int cantAlquileres = 0;
-        
+
         Cliente clientito = new Cliente(cedula, nombre, fechaNacimiento, correo,
                 categoria, cantAlquileres, false);
 
         colaRegistroCliente.encola(clientito);
 
-        jTextPaneDisplayRegistro1.setText(colaRegistroCliente.toString());
-
+        jTextPaneDisplayRegistro1.setText(colaRegistroCliente.listar2());
+        jTextPaneDisplayModificar.setText(colaRegistroCliente.listar2());
         limpiarConsola();
     }//GEN-LAST:event_jButtonRegistrarClienteActionPerformed
 
@@ -2183,7 +2224,7 @@ public class GUIMain extends javax.swing.JFrame {
         pilaRegistroVehiculo.push(vehiculito);
 
         jTextPaneDisplayRegistro.setText(pilaRegistroVehiculo.listar2());
-
+        jTextPaneDisplayRegistro2.setText(pilaRegistroVehiculo.listar2());
         limpiarConsola();
     }//GEN-LAST:event_jButtonRegistrarActionPerformed
 
@@ -2548,13 +2589,21 @@ public class GUIMain extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-            listaTopVehiculos.calculaMejorVehiculo(pilaRegistroVehiculo);
-            jTextAreaTopVehiculos.setText(listaTopVehiculos.toStringModificado());
+        int saltos = 0;
+        if (!listaTopVehiculos.Vacia()) {
+            listaTopVehiculos.limpiarLista();
+        }
+        while (saltos != pilaRegistroVehiculo.tamanio()) {
+            Vehiculo vehiculo = pilaRegistroVehiculo.retornaVehiculoFiltro(saltos);
+            listaTopVehiculos.agregarVehiculoTop(vehiculo);
+            saltos += 1;
+        }
+        jTextAreaTopVehiculos.setText(listaTopVehiculos.toString());
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         String s = "";
-
+        
         double promedioZafiro = 0;
         double promedioOro = 0;
         double promedioPlata = 0;
@@ -2580,19 +2629,19 @@ public class GUIMain extends javax.swing.JFrame {
 
         }
 
-        s = s + "El promedio de categoria Zafiro es: " + promedioZafiro 
-                + " y el total es: " 
+        s = s + "El promedio de categoria Zafiro es: " + promedioZafiro
+                + " y el total es: "
                 + listaSoli.getTotalSolicitudesProcesadasZafiro() + "\n\n"
-                + "El promedio de categoria Oro es: " 
-                + promedioOro + " y el total es: " 
+                + "El promedio de categoria Oro es: "
+                + promedioOro + " y el total es: "
                 + listaSoli.getTotalSolicitudesProcesadasOro() + "\n\n"
-                + "El promedio de categoria Plata es: " 
-                + promedioPlata + " y el total es: " 
+                + "El promedio de categoria Plata es: "
+                + promedioPlata + " y el total es: "
                 + listaSoli.getTotaldSolicitudesProcesadasPlata() + "\n\n"
-                + "El promedio de categoria Bronce es: " 
-                + promedioBronce + " y el total es: " 
+                + "El promedio de categoria Bronce es: "
+                + promedioBronce + " y el total es: "
                 + listaSoli.getTotalSolicitudesProcesadasBronce() + "\n\n"
-                + "El promedio de sin categoria es: " 
+                + "El promedio de sin categoria es: "
                 + promedioSinCategoria + " y el total es: "
                 + listaSoli.getTotalSolicitudesProcesadasSinCategoria() + "\n\n";
 
@@ -2663,7 +2712,7 @@ public class GUIMain extends javax.swing.JFrame {
     ListaDobleEnlazadaAlquileres_Cliente listaAlquileresCliente = new ListaDobleEnlazadaAlquileres_Cliente();
     ListaDobleEnlazadaDevolucion listaDevo = new ListaDobleEnlazadaDevolucion();
     ListaDobleEnlazadaTopClientes listaTopClientes = new ListaDobleEnlazadaTopClientes();
-    ListaOrdenadaTopVehiculos listaTopVehiculos = new ListaOrdenadaTopVehiculos();
+    ListaDobleEnlazadaTopVehiculos listaTopVehiculos = new ListaDobleEnlazadaTopVehiculos();
 
     boolean filtro = false;//variable para saber si busca con filtro
     // Variables declaration - do not modify//GEN-BEGIN:variables

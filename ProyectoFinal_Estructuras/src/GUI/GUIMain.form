@@ -60,6 +60,9 @@
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
                   <JTabbedPaneConstraints tabName="Registrar Vehiculo">
                     <Property name="tabTitle" type="java.lang.String" value="Registrar Vehiculo"/>
+                    <Property name="tabIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/AnexosEImagenes/addImage.png"/>
+                    </Property>
                   </JTabbedPaneConstraints>
                 </Constraint>
               </Constraints>
@@ -451,6 +454,9 @@
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
                   <JTabbedPaneConstraints tabName="Modificar / Eliminar Vehiculo">
                     <Property name="tabTitle" type="java.lang.String" value="Modificar / Eliminar Vehiculo"/>
+                    <Property name="tabIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/AnexosEImagenes/editImage.png"/>
+                    </Property>
                   </JTabbedPaneConstraints>
                 </Constraint>
               </Constraints>
@@ -737,6 +743,9 @@
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
                   <JTabbedPaneConstraints tabName="Modificaciones Extras" toolTip="">
                     <Property name="tabTitle" type="java.lang.String" value="Modificaciones Extras"/>
+                    <Property name="tabIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/AnexosEImagenes/golive.png"/>
+                    </Property>
                     <Property name="tabToolTip" type="java.lang.String" value=""/>
                   </JTabbedPaneConstraints>
                 </Constraint>
@@ -1228,7 +1237,7 @@
                                   </Group>
                               </Group>
                           </Group>
-                          <EmptySpace pref="131" max="32767" attributes="0"/>
+                          <EmptySpace pref="141" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -1265,7 +1274,7 @@
                           </Group>
                           <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
                           <Component id="jButtonModificar1" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace pref="130" max="32767" attributes="0"/>
+                          <EmptySpace pref="126" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -1419,7 +1428,7 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="jPanel5" min="-2" pref="356" max="-2" attributes="0"/>
-                          <EmptySpace pref="81" max="32767" attributes="0"/>
+                          <EmptySpace pref="85" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -1696,7 +1705,7 @@
                                   <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                  <EmptySpace min="0" pref="23" max="32767" attributes="0"/>
                                   <Component id="jLabel16" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="1" attributes="0">

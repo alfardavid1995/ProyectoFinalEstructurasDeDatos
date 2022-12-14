@@ -1,24 +1,24 @@
-package EstructurasDeDatos;
+package EstructurasDeDatos.Vehiculo;
 
-import ObjetosdelProyecto.Objetos.SolicitudDeAlquiler;
+import ObjetosdelProyecto.Objetos.Vehiculo;
 
 public class NodoListaDobleEnlazadaTopVehiculos {
 
-    private SolicitudDeAlquiler dato;
+    private Vehiculo dato;
     private NodoListaDobleEnlazadaTopVehiculos next;
     private NodoListaDobleEnlazadaTopVehiculos back;
 
-    public NodoListaDobleEnlazadaTopVehiculos(SolicitudDeAlquiler dato) {
+    public NodoListaDobleEnlazadaTopVehiculos(Vehiculo dato) {
         this.dato = dato;
     }
 
     
 
-    public SolicitudDeAlquiler getDato() {
+    public Vehiculo getDato() {
         return dato;
     }
 
-    public void setDato(SolicitudDeAlquiler dato) {
+    public void setDato(Vehiculo dato) {
         this.dato = dato;
     }
 
@@ -46,6 +46,6 @@ public class NodoListaDobleEnlazadaTopVehiculos {
     }
 
     public String toString2() {
-        return dato.toString2();
+        return dato.listar5();
     }
 }
