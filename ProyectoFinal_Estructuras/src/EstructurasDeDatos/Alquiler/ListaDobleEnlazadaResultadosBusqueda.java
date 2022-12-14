@@ -21,7 +21,8 @@ public class ListaDobleEnlazadaResultadosBusqueda {
 
             //en caso para 3 o mas, para insertar de ultimo
             //creamos el nodo aux y le insertamos el nuevo dato
-            NodoListaDobleEnlazadaResultadosBusqueda aux = new NodoListaDobleEnlazadaResultadosBusqueda(vehiculo);
+            NodoListaDobleEnlazadaResultadosBusqueda aux = new 
+            NodoListaDobleEnlazadaResultadosBusqueda(vehiculo);
             //ultimo setnext aux
             ultimo.setNext(aux);
             //aux setback ultimo
@@ -74,10 +75,12 @@ public class ListaDobleEnlazadaResultadosBusqueda {
                 } else {
 
                     NodoListaDobleEnlazadaResultadosBusqueda aux = cabeza;
-                    while (aux.getNext() != cabeza && !aux.getNext().getDato().getNumPlacadeVehiculo().equals(placa)) {
+                    while (aux.getNext() != cabeza && !aux.getNext().getDato().
+                            getNumPlacadeVehiculo().equals(placa)) {
                         aux = aux.getNext();
                     }
-                    if (aux.getNext().getDato().getNumPlacadeVehiculo().equals(placa)) {
+                    if (aux.getNext().getDato().getNumPlacadeVehiculo().
+                                                equals(placa)) {
                         aux.setNext(aux.getNext().getNext());
                         aux.getNext().setBack(aux);
                     }
@@ -96,7 +99,8 @@ public class ListaDobleEnlazadaResultadosBusqueda {
         NodoListaDobleEnlazadaResultadosBusqueda aux = cabeza;
         while (!exist && cont != tamanio()) {
 
-            if (aux.getDato().getEstadoParaSerAlquilado().equals("Disponible")) {
+            if (aux.getDato().getEstadoParaSerAlquilado().
+                        equals("Disponible")) {
                 exist = true;
             }
             aux = aux.getNext();
@@ -113,7 +117,8 @@ public class ListaDobleEnlazadaResultadosBusqueda {
         NodoListaDobleEnlazadaResultadosBusqueda aux = cabeza;
         while (cont != tamanioAntes) {
 
-            if (!aux.getDato().getEstadoParaSerAlquilado().equals("Disponible")) {
+            if (!aux.getDato().getEstadoParaSerAlquilado().
+                            equals("Disponible")) {
                 eliminarDeLaLista(aux.getDato().getNumPlacadeVehiculo());
 
             }

@@ -38,7 +38,8 @@ public class ListaDobleEnlazadaDevolucion {
         } else {
              //en caso para 3 o mas, para insertar de ultimo
             //creamos el nodo aux y le insertamos el nuevo dato
-            NodoListaDobleEnlazadaDevolucion aux = new NodoListaDobleEnlazadaDevolucion(devolucion);
+            NodoListaDobleEnlazadaDevolucion aux = new
+            NodoListaDobleEnlazadaDevolucion(devolucion);
             //ultimo setnext aux
             ultimo.setNext(aux);
             //aux setback ultimo

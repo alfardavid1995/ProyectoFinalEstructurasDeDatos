@@ -129,7 +129,8 @@ public class Cliente {
 
     public String listar3() {
         return "\n --------------- Cliente --------------- \n"
-                + "\n Nombre: " + nombreCompleto;
+                + "\n Nombre: " + nombreCompleto
+                + "\n Cédula: " + cedula;
     }
 
     public String listar4() {

@@ -1,5 +1,8 @@
 package EstructurasDeDatos.Vehiculo;
 
+import static java.awt.image.ImageObserver.HEIGHT;
+import javax.swing.JOptionPane;
+
 public class PilaExtras_Vehiculo {
 
     private NodePila_Extras cima;
@@ -103,7 +106,8 @@ public class PilaExtras_Vehiculo {
             // Libera la memoria utilizada por la pila auxiliar.
             cimaPilaAux = null;
         } else {
-            System.out.println("El nodo indicado no existe");
+            JOptionPane.showMessageDialog(null, 
+                        "No existe ese valor", "Alerta", HEIGHT);
         }
     }
 

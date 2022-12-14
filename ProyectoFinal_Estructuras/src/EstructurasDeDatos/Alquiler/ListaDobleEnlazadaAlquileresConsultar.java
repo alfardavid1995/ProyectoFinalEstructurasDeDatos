@@ -117,7 +117,7 @@ public class ListaDobleEnlazadaAlquileresConsultar {
         while (cont != tamanioAntes) {
 
             if (aux.getDato().getVehiculoSoli() == null || !aux.getDato().
-                    getVehiculoSoli().getNumPlacadeVehiculo().equals(placa)) {
+             getVehiculoSoli().getNumPlacadeVehiculo().equals(placa)) {
                 eliminarDeLaLista(aux.getDato().getIdSolicitud());
 
             }

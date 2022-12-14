@@ -2494,17 +2494,21 @@ public class GUIMain extends javax.swing.JFrame {
                     int diaAlquiler = Integer.parseInt
                                             (jTextFieldDiaAlquiler.getText());
 
-                    LocalDate fechaInicialAlquiler = LocalDate.of(anioAlquiler, 
+                    LocalDate fechaInicialAlquiler = 
+                            LocalDate.of(anioAlquiler, 
                             monthAlquiler, diaAlquiler);
                     LocalDate fechaFinalAlquiler = fechaInicialAlquiler.
                             plusDays(diasAlquiler);
 
                     soliAlquiler = new SolicitudDeAlquiler(
                             "Registrada", 
-                            diasAlquiler, clientito,
+                            diasAlquiler, 
+                            clientito,
                             cantPasajeros, marca, anio, modelo, extra, 
-                            fechaInicialAlquiler, fechaFinalAlquiler, 
+                            fechaInicialAlquiler, 
+                            fechaFinalAlquiler, 
                             0);
+                    
                     jTextAreaSoli.setText(soliAlquiler.toString());
                     listaSoli.agregarSolicitud(soliAlquiler);
 
@@ -2565,42 +2569,81 @@ public class GUIMain extends javax.swing.JFrame {
                                     
                                     soli.setVehiculoSoli(vehiculo);
                                     
-                                    soli.setEstadoDeSolicitud("Procesada");
+                                    soli.setEstadoDeSolicitud
+                                    ("Procesada");
                                     
-                                    soli.getUsuarioSolicitud().setCantidadDeAlquileresProcesados
+                                    soli.getUsuarioSolicitud().
+                                            setCantidadDeAlquileresProcesados
                                    (soli.getUsuarioSolicitud().
                                       getCantidadDeAlquileresProcesados() + 1);
                                     
-                                    soli.getUsuarioSolicitud().getListaAlquilerdeCliente().agregarAlquiler(soli);
-                                    soli.getUsuarioSolicitud().setAlquilando(true);
-                                    double monto = soliAlquiler.calcularMonto(vehiculo.getPrecioAlquilerXDiaDeVehiculo(), soli.getCantidadDeDiasSolicitud());
-                                    listaSoli.setCantidadSolicitudesProcesadasZafiro(listaSoli.getCantidadSolicitudesProcesadasZafiro() + 1);
-                                    listaSoli.setTotalSolicitudesProcesadasZafiro(listaSoli.getTotalSolicitudesProcesadasZafiro() + monto);
+                                    soli.getUsuarioSolicitud().
+                                            getListaAlquilerdeCliente().
+                                            agregarAlquiler(soli);
+                                    
+                                    soli.getUsuarioSolicitud().
+                                            setAlquilando(true);
+                                    
+                                    double monto = soliAlquiler.calcularMonto
+                         (vehiculo.getPrecioAlquilerXDiaDeVehiculo(), 
+                                    soli.getCantidadDeDiasSolicitud());
+                                    
+                                    listaSoli.setCantidadSolicitudesProcesadasZafiro
+                        (listaSoli.getCantidadSolicitudesProcesadasZafiro() + 1);
+                                    
+                                    listaSoli.setTotalSolicitudesProcesadasZafiro
+                      (listaSoli.getTotalSolicitudesProcesadasZafiro() + monto);
+                                    
                                     soli.setMontoAlquiler(monto);
 
-                                    jTextAreaSolicitudesRegistradas.setText(soli.toString());
-                                    jTextAreaSolicitudes.setText(listaSoli.toString());
+                                    jTextAreaSolicitudesRegistradas.setText
+                                                            (soli.toString());
+                                    
+                                    jTextAreaSolicitudes.setText(listaSoli.
+                                                            toString());
                                 } else {
-                                    jTextAreaSolicitudesRegistradas.setText("No hay  vehiculos de años recientes para clientes Zafiros");
-                                    soli.setEstadoDeSolicitud("Rechazada");
+                                    jTextAreaSolicitudesRegistradas.
+                                            setText("No hay  vehiculos de años"
+                                          + " recientes para clientes Zafiros");
+                                    
+                                    soli.setEstadoDeSolicitud
+                                                    ("Rechazada");
                                     listaFiltro.limpiarLista();
 
                                 }
 
                             } else {
                                 Vehiculo vehiculo = listaFiltro.asignarVehiculoASoli();
-                                vehiculo.setEstadoParaSerAlquilado("Alquilado");
-                                vehiculo.setCantidadDeVecesAlquilado(vehiculo.getCantidadDeVecesAlquilado() + 1);
+                                vehiculo.setEstadoParaSerAlquilado
+                                                ("Alquilado");
+                                
+                                vehiculo.setCantidadDeVecesAlquilado
+                                (vehiculo.getCantidadDeVecesAlquilado() + 1);
+                                
                                 soli.setVehiculoSoli(vehiculo);
-                                soli.setEstadoDeSolicitud("Procesada");
-                                soli.getUsuarioSolicitud().setCantidadDeAlquileresProcesados(soli.getUsuarioSolicitud().getCantidadDeAlquileresProcesados() + 1);
-                                soli.getUsuarioSolicitud().getListaAlquilerdeCliente().agregarAlquiler(soli);
-                                soli.getUsuarioSolicitud().setAlquilando(true);
-                                double monto = soliAlquiler.calcularMonto(vehiculo.getPrecioAlquilerXDiaDeVehiculo(), soli.getCantidadDeDiasSolicitud());
+                                
+                                soli.setEstadoDeSolicitud
+                                                    ("Procesada");
+                                
+                                soli.getUsuarioSolicitud().
+                                        setCantidadDeAlquileresProcesados
+                                                (soli.getUsuarioSolicitud().
+                                       getCantidadDeAlquileresProcesados() + 1);
+                                soli.getUsuarioSolicitud().
+                                        getListaAlquilerdeCliente().
+                                        agregarAlquiler(soli);
+                                
+                                soli.getUsuarioSolicitud().
+                                        setAlquilando(true);
+                                double monto = soliAlquiler.calcularMonto(
+                         vehiculo.getPrecioAlquilerXDiaDeVehiculo(),
+                                        soli.getCantidadDeDiasSolicitud());
 
                                 soli.setMontoAlquiler(monto);
-                                jTextAreaSolicitudesRegistradas.setText(soli.toString());
-                                jTextAreaSolicitudes.setText(listaSoli.toString());
+                                jTextAreaSolicitudesRegistradas.setText
+                                                            (soli.toString());
+                                jTextAreaSolicitudes.setText(
+                                        listaSoli.toString());
                             }
                         }
 
@@ -2608,22 +2651,45 @@ public class GUIMain extends javax.swing.JFrame {
                 } else if (listaSoli.existOro() != 0) {
                     idSoli = listaSoli.existOro();
                     SolicitudDeAlquiler soli = listaSoli.traerSoli(idSoli);
-                    JOptionPane.showMessageDialog(null, "La solicitud es oro");
+                    
+                    JOptionPane.showMessageDialog(null, 
+                            "La solicitud es oro");
+                    
                     creacionDeListaBusqueda(soli);
                     if (!listaFiltro.Vacia()) {
                         Vehiculo vehiculo = listaFiltro.asignarVehiculoASoli();
-                        vehiculo.setEstadoParaSerAlquilado("Alquilado");
-                        vehiculo.setCantidadDeVecesAlquilado(vehiculo.getCantidadDeVecesAlquilado() + 1);
+                        vehiculo.setEstadoParaSerAlquilado
+                                                ("Alquilado");
+                        vehiculo.setCantidadDeVecesAlquilado(
+                                vehiculo.getCantidadDeVecesAlquilado() + 1);
+                        
                         soli.setVehiculoSoli(vehiculo);
+                        
                         soli.setEstadoDeSolicitud("Procesada");
-                        soli.getUsuarioSolicitud().setCantidadDeAlquileresProcesados(soli.getUsuarioSolicitud().getCantidadDeAlquileresProcesados() + 1);
-                        soli.getUsuarioSolicitud().getListaAlquilerdeCliente().agregarAlquiler(soli);
+                        
+                        soli.getUsuarioSolicitud().
+                          setCantidadDeAlquileresProcesados(
+                                soli.getUsuarioSolicitud().
+                                        getCantidadDeAlquileresProcesados() + 1);
+                        
+                        soli.getUsuarioSolicitud().
+                                getListaAlquilerdeCliente().
+                                agregarAlquiler(soli);
+                        
                         soli.getUsuarioSolicitud().setAlquilando(true);
-                        double monto = soliAlquiler.calcularMonto(vehiculo.getPrecioAlquilerXDiaDeVehiculo(), soli.getCantidadDeDiasSolicitud());
-                        listaSoli.setCantidadSolicitudesProcesadasOro(listaSoli.getCantidadSolicitudesProcesadasOro() + 1);
-                        listaSoli.setTotalSolicitudesProcesadasOro(listaSoli.getTotalSolicitudesProcesadasOro() + monto);
+                        
+                        double monto = soliAlquiler.calcularMonto(
+                                vehiculo.getPrecioAlquilerXDiaDeVehiculo(), 
+                                soli.getCantidadDeDiasSolicitud());
+                        
+                        listaSoli.setCantidadSolicitudesProcesadasOro
+                        (listaSoli.getCantidadSolicitudesProcesadasOro() + 1);
+                        
+                        listaSoli.setTotalSolicitudesProcesadasOro
+                        (listaSoli.getTotalSolicitudesProcesadasOro() + monto);
+                        
                         if (monto > 70000) {
-                            subirCategoriaCliente(soli.getUsuarioSolicitud());
+                       subirCategoriaCliente(soli.getUsuarioSolicitud());
                         }
                         soli.setMontoAlquiler(monto);
                         jTextAreaSolicitudesRegistradas.setText(soli.toString());
@@ -2633,84 +2699,147 @@ public class GUIMain extends javax.swing.JFrame {
                 } else if (listaSoli.existPlata() != 0) {
                     idSoli = listaSoli.existPlata();
                     SolicitudDeAlquiler soli = listaSoli.traerSoli(idSoli);
-                    JOptionPane.showMessageDialog(null, "La solicitud es plata");
+                    JOptionPane.showMessageDialog
+                            (null, "La solicitud es plata");
+                    
                     creacionDeListaBusqueda(soli);
+                    
                     if (!listaFiltro.Vacia()) {
                         Vehiculo vehiculo = listaFiltro.asignarVehiculoASoli();
-                        vehiculo.setEstadoParaSerAlquilado("Alquilado");
-                        vehiculo.setCantidadDeVecesAlquilado(vehiculo.getCantidadDeVecesAlquilado() + 1);
+                        
+                        vehiculo.setEstadoParaSerAlquilado
+                                        ("Alquilado");
+                        
+                        vehiculo.setCantidadDeVecesAlquilado
+                                (vehiculo.getCantidadDeVecesAlquilado() + 1);
+                        
                         soli.setVehiculoSoli(vehiculo);
+                        
                         soli.setEstadoDeSolicitud("Procesada");
-                        soli.getUsuarioSolicitud().setCantidadDeAlquileresProcesados(soli.getUsuarioSolicitud().getCantidadDeAlquileresProcesados() + 1);
-                        soli.getUsuarioSolicitud().getListaAlquilerdeCliente().agregarAlquiler(soli);
+                        
+                        soli.getUsuarioSolicitud().
+                                setCantidadDeAlquileresProcesados
+           (soli.getUsuarioSolicitud().getCantidadDeAlquileresProcesados() + 1);
+                        
+                        soli.getUsuarioSolicitud().getListaAlquilerdeCliente().
+                                agregarAlquiler(soli);
+                        
                         soli.getUsuarioSolicitud().setAlquilando(true);
-                        double monto = soliAlquiler.calcularMonto(vehiculo.getPrecioAlquilerXDiaDeVehiculo(), soli.getCantidadDeDiasSolicitud());
-                        listaSoli.setCantidadSolicitudesProcesadasPlata(listaSoli.getCantidadSolicitudesProcesadasPlata() + 1);
-                        listaSoli.setTotaldSolicitudesProcesadasPlata(listaSoli.getTotaldSolicitudesProcesadasPlata() + monto);
+                        double monto = soliAlquiler.calcularMonto(
+                            vehiculo.getPrecioAlquilerXDiaDeVehiculo(),
+                                soli.getCantidadDeDiasSolicitud());
+                        
+                        listaSoli.setCantidadSolicitudesProcesadasPlata
+                       (listaSoli.getCantidadSolicitudesProcesadasPlata() + 1);
+                        
+                        listaSoli.setTotaldSolicitudesProcesadasPlata
+                    (listaSoli.getTotaldSolicitudesProcesadasPlata() + monto);
+                        
                         if (monto > 70000) {
                             subirCategoriaCliente(soli.getUsuarioSolicitud());
                         }
                         soli.setMontoAlquiler(monto);
+                        
                         jTextAreaSolicitudesRegistradas.setText(soli.toString());
+                        
                         jTextAreaSolicitudes.setText(listaSoli.toString());
                     }
                 } else if (listaSoli.existBronce() != 0) {
                     idSoli = listaSoli.existBronce();
+                    
                     SolicitudDeAlquiler soli = listaSoli.traerSoli(idSoli);
-                    JOptionPane.showMessageDialog(null, "La solicitud es bronce");
+                    JOptionPane.showMessageDialog(null, 
+                            "La solicitud es bronce");
                     creacionDeListaBusqueda(soli);
                     if (!listaFiltro.Vacia()) {
                         Vehiculo vehiculo = listaFiltro.asignarVehiculoASoli();
-                        vehiculo.setEstadoParaSerAlquilado("Alquilado");
-                        vehiculo.setCantidadDeVecesAlquilado(vehiculo.getCantidadDeVecesAlquilado() + 1);
+                        vehiculo.setEstadoParaSerAlquilado
+                                    ("Alquilado");
+                        vehiculo.setCantidadDeVecesAlquilado
+                                    (vehiculo.getCantidadDeVecesAlquilado() + 1);
+                        
                         soli.setVehiculoSoli(vehiculo);
                         soli.setEstadoDeSolicitud("Procesada");
-                        soli.getUsuarioSolicitud().setCantidadDeAlquileresProcesados(soli.getUsuarioSolicitud().getCantidadDeAlquileresProcesados() + 1);
-                        soli.getUsuarioSolicitud().getListaAlquilerdeCliente().agregarAlquiler(soli);
+                        soli.getUsuarioSolicitud().
+                                setCantidadDeAlquileresProcesados
+                                     (soli.getUsuarioSolicitud().
+                                      getCantidadDeAlquileresProcesados() + 1);
+                        
+                        soli.getUsuarioSolicitud().getListaAlquilerdeCliente().
+                                agregarAlquiler(soli);
+                        
                         soli.getUsuarioSolicitud().setAlquilando(true);
-                        double monto = soliAlquiler.calcularMonto(vehiculo.getPrecioAlquilerXDiaDeVehiculo(), soli.getCantidadDeDiasSolicitud());
-                        listaSoli.setCantidadSolicitudesProcesadasBronce(listaSoli.getCantidadSolicitudesProcesadasBronce() + 1);
-                        listaSoli.setTotalSolicitudesProcesadasBronce(listaSoli.getTotalSolicitudesProcesadasBronce() + monto);
+                        
+                        double monto = soliAlquiler.calcularMonto(
+                        vehiculo.getPrecioAlquilerXDiaDeVehiculo(), 
+                                soli.getCantidadDeDiasSolicitud());
+                        
+                        listaSoli.setCantidadSolicitudesProcesadasBronce
+                       (listaSoli.getCantidadSolicitudesProcesadasBronce() + 1);
+                        listaSoli.setTotalSolicitudesProcesadasBronce
+                      (listaSoli.getTotalSolicitudesProcesadasBronce() + monto);
                         if (monto > 70000) {
-                            subirCategoriaCliente(soli.getUsuarioSolicitud());
+                        subirCategoriaCliente(soli.getUsuarioSolicitud());
                         }
                         soli.setMontoAlquiler(monto);
-                        jTextAreaSolicitudesRegistradas.setText(soli.toString());
+                      jTextAreaSolicitudesRegistradas.setText(soli.toString());
                         jTextAreaSolicitudes.setText(listaSoli.toString());
                     }
 
                 } else {
                     idSoli = listaSoli.existSinCategoria();
                     SolicitudDeAlquiler soli = listaSoli.traerSoli(idSoli);
-                    JOptionPane.showMessageDialog(null, "La solicitud es sin categoria");
+                    JOptionPane.showMessageDialog(null, 
+                            "La solicitud es sin categoria");
+                    
                     creacionDeListaBusqueda(soli);
+                    
                     if (!listaFiltro.Vacia()) {
                         Vehiculo vehiculo = listaFiltro.asignarVehiculoASoli();
-                        vehiculo.setEstadoParaSerAlquilado("Alquilado");
-                        vehiculo.setCantidadDeVecesAlquilado(vehiculo.getCantidadDeVecesAlquilado() + 1);
+                        
+                        vehiculo.setEstadoParaSerAlquilado
+                                ("Alquilado");
+                        
+                        vehiculo.setCantidadDeVecesAlquilado(
+                                vehiculo.getCantidadDeVecesAlquilado() + 1);
+                        
                         soli.setVehiculoSoli(vehiculo);
                         soli.setEstadoDeSolicitud("Procesada");
-                        soli.getUsuarioSolicitud().setCantidadDeAlquileresProcesados(soli.getUsuarioSolicitud().getCantidadDeAlquileresProcesados() + 1);
-                        soli.getUsuarioSolicitud().getListaAlquilerdeCliente().agregarAlquiler(soli);
+                        soli.getUsuarioSolicitud().
+                                setCantidadDeAlquileresProcesados
+            (soli.getUsuarioSolicitud().getCantidadDeAlquileresProcesados() + 1);
+                        
+                        soli.getUsuarioSolicitud().getListaAlquilerdeCliente().
+                                agregarAlquiler(soli);
                         soli.getUsuarioSolicitud().setAlquilando(true);
-                        double monto = soliAlquiler.calcularMonto(vehiculo.getPrecioAlquilerXDiaDeVehiculo(), soli.getCantidadDeDiasSolicitud());
-                        listaSoli.setCantidadSolicitudesProcesadasSinCategoria(listaSoli.getCantidadSolicitudesProcesadasSinCategoria() + 1);
-                        listaSoli.setTotalSolicitudesProcesadasSinCategoria(listaSoli.getTotalSolicitudesProcesadasSinCategoria() + monto);
+                        
+                        double monto = soliAlquiler.calcularMonto(
+                         vehiculo.getPrecioAlquilerXDiaDeVehiculo(),
+                                soli.getCantidadDeDiasSolicitud());
+                        
+                        listaSoli.setCantidadSolicitudesProcesadasSinCategoria
+                (listaSoli.getCantidadSolicitudesProcesadasSinCategoria() + 1);
+                        
+                        listaSoli.setTotalSolicitudesProcesadasSinCategoria
+                (listaSoli.getTotalSolicitudesProcesadasSinCategoria() + monto);
+                        
                         if (monto > 70000) {
-                            subirCategoriaCliente(soli.getUsuarioSolicitud());
+                       subirCategoriaCliente(soli.getUsuarioSolicitud());
                         }
                         soli.setMontoAlquiler(monto);
-                        jTextAreaSolicitudesRegistradas.setText(soli.toString());
+                     jTextAreaSolicitudesRegistradas.setText(soli.toString());
                         jTextAreaSolicitudes.setText(listaSoli.toString());
                     }
 
                 }
 
             } else {
-                JOptionPane.showMessageDialog(null, "No hay solicitudes registradas");
+                JOptionPane.showMessageDialog(null, 
+                        "No hay solicitudes registradas");
             }
         } else {
-            JOptionPane.showMessageDialog(null, "No hay solicitudes que atender");
+            JOptionPane.showMessageDialog(null, 
+                    "No hay solicitudes que atender");
 
         }
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -2970,15 +3099,31 @@ public class GUIMain extends javax.swing.JFrame {
         });
     }
     Pila_RegistroVehiculo pilaRegistroVehiculo = new Pila_RegistroVehiculo();
+    
     Cola_RegistroCliente colaRegistroCliente = new Cola_RegistroCliente();
-    ListaDobleEnlazadaResultadosBusqueda listaFiltro = new ListaDobleEnlazadaResultadosBusqueda();
-    ListaDobleEnlazadaSolicitudesAlquiler listaSoli = new ListaDobleEnlazadaSolicitudesAlquiler();
+    
+    ListaDobleEnlazadaResultadosBusqueda listaFiltro = new
+         ListaDobleEnlazadaResultadosBusqueda();
+    
+    ListaDobleEnlazadaSolicitudesAlquiler listaSoli = new 
+        ListaDobleEnlazadaSolicitudesAlquiler();
+    
     SolicitudDeAlquiler soliAlquiler = new SolicitudDeAlquiler();
-    ListaDobleEnlazadaAlquileresConsultar listaConsulta = new ListaDobleEnlazadaAlquileresConsultar();
-    ListaDobleEnlazadaAlquileres_Cliente listaAlquileresCliente = new ListaDobleEnlazadaAlquileres_Cliente();
-    ListaDobleEnlazadaDevolucion listaDevo = new ListaDobleEnlazadaDevolucion();
-    ListaDobleEnlazadaTopClientes listaTopClientes = new ListaDobleEnlazadaTopClientes();
-    ListaDobleEnlazadaTopVehiculos listaTopVehiculos = new ListaDobleEnlazadaTopVehiculos();
+    
+    ListaDobleEnlazadaAlquileresConsultar listaConsulta = new 
+        ListaDobleEnlazadaAlquileresConsultar();
+    
+    ListaDobleEnlazadaAlquileres_Cliente listaAlquileresCliente = new 
+        ListaDobleEnlazadaAlquileres_Cliente();
+    
+    ListaDobleEnlazadaDevolucion listaDevo = new 
+        ListaDobleEnlazadaDevolucion();
+    
+    ListaDobleEnlazadaTopClientes listaTopClientes = new 
+        ListaDobleEnlazadaTopClientes();
+    
+    ListaDobleEnlazadaTopVehiculos listaTopVehiculos = new 
+        ListaDobleEnlazadaTopVehiculos();
 
     boolean filtro = false;//variable para saber si busca con filtro
     // Variables declaration - do not modify//GEN-BEGIN:variables

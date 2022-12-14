@@ -210,7 +210,8 @@ public class ListaDobleEnlazadaSolicitudesAlquiler {
         NodoListaDobleEnlazadaSolicitudesAlquiler aux = cabeza;
         while (!exist && cont != tamanio()) {
 
-            if (aux.getDato().getEstadoDeSolicitud().equals("Registrada")) {
+            if (aux.getDato().getEstadoDeSolicitud().
+                    equals("Registrada")) {
                 exist = true;
             }
             aux = aux.getNext();
