@@ -2129,44 +2129,48 @@ public class GUIMain extends javax.swing.JFrame {
     }//GEN-LAST:event_jComboBoxOpcionesClienteActionPerformed
 
     private void jButtonEliminar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEliminar1ActionPerformed
+        //si detecta que el campo está vacío, muestra el mensaje
         if (jTextFieldCedulaClienteVerificar.getText().equals("")) {
             JOptionPane.showMessageDialog(null, 
                     "Digite una cedula", "Alerta", HEIGHT);
         } else {
-
-            int cedula = Integer.parseInt(jTextFieldCedulaClienteVerificar.getText());
-
+            int cedula = Integer.parseInt
+                    (jTextFieldCedulaClienteVerificar.getText());
+            //si existe la cedula del cliente, traemos al cliente
             if (colaRegistroCliente.search(cedula)) {
-
                 Cliente cliente = colaRegistroCliente.traerCliente(cedula);
+                //si está alquilando no se puede eliminar y muestra el mensaje
                 if (cliente.isAlquilando()) {
                     JOptionPane.showMessageDialog(null, 
                             "No se puede eliminar al cliente, "
                                     + "porque ha iniciado un alquiler");
+                //si no está alquilando, lo elimina
                 } else {
-
                     colaRegistroCliente.eliminaModificado(cedula);
-
                 }
-
+            //en caso de que no exista, muestra el mensaje
             } else {
                 JOptionPane.showMessageDialog(null, 
                         "El cliente no existe");
             }
+            //muestra la lista actualizada
             jTextPaneDisplayModificar.setText(colaRegistroCliente.listar2());
         }
     }//GEN-LAST:event_jButtonEliminar1ActionPerformed
 
     private void jButtonBuscarCedulaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBuscarCedulaActionPerformed
+        //si detecta que el campo está vacío, muestra el mensaje
         if (jTextFieldCedulaClienteVerificar.getText().equals("")) {
             JOptionPane.showMessageDialog(null, 
                     "Digite una cedula", "Alerta", HEIGHT);
         } else {
-            int cedula = Integer.parseInt(jTextFieldCedulaClienteVerificar.getText());
-
+            int cedula = Integer.parseInt
+                    (jTextFieldCedulaClienteVerificar.getText());
+            //si existe la cedula buscada, muestra todos los datos de ese cliente
             if (colaRegistroCliente.search(cedula)) {
                 jTextPaneDisplayModificar.setText
                         (colaRegistroCliente.traerCliente(cedula).listar());
+            //en caso de que no exista, muestra el mensaje
             } else {
                 JOptionPane.showMessageDialog(null, 
                         "El cliente no existe");
@@ -2178,23 +2182,27 @@ public class GUIMain extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextFieldCedulaClienteVerificarActionPerformed
 
     private void jButtonModificar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonModificar1ActionPerformed
-
+        //si detecta que el campo está vacío, muestra el mensaje
         if (jTextFieldCedulaClienteVerificar.getText().equals("")) {
             JOptionPane.showMessageDialog(null, 
                     "Digite una cedula", "Alerta", HEIGHT);
         } else {
-            int cedula = Integer.parseInt(jTextFieldCedulaClienteVerificar.getText());
+            int cedula = Integer.parseInt
+                    (jTextFieldCedulaClienteVerificar.getText());
+            //si el valorAModificar está vacio, muestra el mensaje
             if (jTextPaneValorAModificar1.getText().equals("")) {
                 JOptionPane.showMessageDialog(null, 
                         "Complete todos los campos", 
                         "Alerta", HEIGHT);
             } else {
                 String modifica = jTextPaneValorAModificar1.getText();
-
+                //busca al cliente
                 if (colaRegistroCliente.search(cedula)) {
-                   //aca traemos el cliente a la GUI para que se trabaje desde ahi
+                   //aca traemos el cliente a la GUI para que se trabaje 
+                   //desde ahi
                     Cliente clientito = colaRegistroCliente.
                             traerCliente(cedula);
+                    //cambia el valor seleccionado por el que ingresó el usuario
                     switch (jComboBoxOpcionesCliente.getSelectedIndex()) {
                         case 0:
                             clientito.setNombreCompleto(modifica);
@@ -2208,11 +2216,12 @@ public class GUIMain extends javax.swing.JFrame {
                             clientito.setCorreoElectronico(modifica);
                             break;
                     }
-
+                //si el cliente no existe, muestra el mensaje
                 } else {
                     JOptionPane.showMessageDialog(null, 
                             "El cliente no existe");
                 }
+                //muestra los datos del cliente actualizados
                 jTextPaneDisplayModificar.setText(colaRegistroCliente.
                         traerCliente(cedula).listar());
             }
@@ -2229,6 +2238,7 @@ public class GUIMain extends javax.swing.JFrame {
 
     private void jButtonRegistrarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRegistrarClienteActionPerformed
         try {
+            //traemos todos los datos y los asignamos a las variables
             String nombre = jTextFieldNombreCliente.getText();
             int cedula = Integer.parseInt(jTextFieldCedulaCliente.getText());
             String correo = jTextFieldCorreoCliente.getText();
@@ -2258,22 +2268,23 @@ public class GUIMain extends javax.swing.JFrame {
             }
             int cantAlquileres = 0;
 
+            //creamos al clientito con todos los atributos necesarios
             Cliente clientito = new Cliente(cedula, nombre, 
                     fechaNacimiento, correo,
                     categoria, cantAlquileres, false);
-
+            //si no existe la cedula introducida, lo encola 
+            //y se muestra en los display y se limpian los campos
             if (!colaRegistroCliente.search(clientito.getCedula())) {
-
                 colaRegistroCliente.encola(clientito);
                 jTextPaneDisplayRegistro1.setText(colaRegistroCliente.listar2());
                 jTextPaneDisplayModificar.setText(colaRegistroCliente.listar2());
                 limpiarConsola();
-
+            //en caso de que exista, muestra el mensaje
             } else {
                 JOptionPane.showMessageDialog(null, 
                         "El cliente ya existe", "Alerta", HEIGHT);
             }
-
+        //si detecta que los campos están vacíos, muestra el mensaje
         } catch (NumberFormatException error) {
             JOptionPane.showMessageDialog(null, 
                     "Hay valores incorrectos, verifique los datos del "
@@ -2300,23 +2311,28 @@ public class GUIMain extends javax.swing.JFrame {
 
     private void jButtonConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonConsultarActionPerformed
         try {
+            //si detecta que el campo está vacío, muestra el mensaje
             if (jTextFieldCedulaConsulta.getText().equals("")) {
                 JOptionPane.showMessageDialog(null, 
                         "Digite una cedula", "Alerta", HEIGHT);
             } else {
-                int cedula = Integer.parseInt(jTextFieldCedulaConsulta.getText());
+                int cedula = Integer.parseInt
+                            (jTextFieldCedulaConsulta.getText());
+                //si existe el cliente, lo muestra
                 if (colaRegistroCliente.search(cedula)) {
                     jTextPaneInformacionClinete.setText(colaRegistroCliente.
                             traerCliente(cedula).listar());
+                //sino, muestra el mensaje y se limpia el campo de la cedula
                 } else {
                     jTextPaneInformacionClinete.setText("");
                     JOptionPane.showMessageDialog(null, 
                             "El cliente no existe", "Alerta", 
                             HEIGHT);
-
                     jTextFieldCedulaConsulta.setText("");
                 }
             }
+        //si se detecta texto, muestra el mensaje 
+        //y se limpia el campo de la cedula
         } catch (NumberFormatException error) {
             JOptionPane.showMessageDialog(null, 
                     "Digite un valor numerico", "Alerta", 
