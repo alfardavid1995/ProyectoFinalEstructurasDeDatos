@@ -2952,19 +2952,31 @@ public class GUIMain extends javax.swing.JFrame {
             if (!listaSoli.Vacia()) {
                 if (listaSoli.existVehiculoSoli(placa)) {
                     if (jTextFieldCondicionesDevo.getText().equals("")) {
+                       
                         JOptionPane.showMessageDialog(null, 
                "Digite el estado del vehiculo", "Alerta", HEIGHT);
+                        
                     } else {
                         SolicitudDeAlquiler soli = listaSoli.traerSoliVehiculo(placa);
+                        
+                        //el usuario en este momento se encuentra alquilando
                         soli.getUsuarioSolicitud().setAlquilando(false);
+                        
+                         //el vehiculo pasa ha estar disponible
                         soli.getVehiculoSoli().setEstadoParaSerAlquilado
                             ("Disponible");
+                        
+                        //la soli pasa ha estar en estado finalizada
                         soli.setEstadoDeSolicitud("Finalizada");
                         jTextAreaDevolucion.setText(soli.toString());
-
+                        
+                         //aqui se crea la nueva decolucion
                         Devolucion devolucion = new Devolucion(soli, 
                            jTextFieldCondicionesDevo.getText());
+                       //aqui se agrega la nueva devolucion a la lista
                         listaDevo.agregarDevolucion(devolucion);
+                        
+                        //se muestra en pantalla
                         jTextAreaDevo.setText(listaDevo.toString2());
                         jTextAreaSolicitudes.setText(listaSoli.toString());
                     }
